@@ -1,5 +1,6 @@
 package com.company.LP;
 
+import com.company.LD.clsInsertar;
 import com.company.LN.clsGestorLN;
 
 /**
@@ -59,6 +60,9 @@ public class clsMenu {
             op = UtilidadesLP.leerEntero();
             switch (op) {
                 case 1:
+                    //LLAMADA DE PRUEBA
+                    //clsInsertar.insertarBD();
+                    //LLAMADA DE PRUEBA
                     System.out.println("Título:");
                     String Titulo = UtilidadesLP.leerCadena();
                     System.out.println("Titulo_original:");
@@ -105,6 +109,7 @@ public class clsMenu {
                     int Calificacion = UtilidadesLP.leerEntero();
 
                     objGestorLN.crearPelicula(Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Formato, En_propiedad, En_busqueda, Precio, Genero, Premios, Director, Enlace_a_trailer, Sinopsis, Cantidad_actores, Actor1, Actor2, Actor3, Saga, Orden, Duracion, Calporedad, Calificacion);
+
                     break;
                 case 2:
 

@@ -6,15 +6,15 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
- * @author Ignacio Chapero
- * 		   Alvaro Husillos
+ * @author  RubenD AritzG
+ *
  *
  *La clase sirve para insertar un registro en la base de datos. Previamente, realiza una
  *conexión con la base de datos, y después de realizar el insert, vuelve a cerrar la conexión.
  */
 public class clsInsertar {
 
-    public void insertarBD(int id, String nombre, String apellido, String dni) {
+    public void insertarBD(String Titulo, int Año, String Duración, int Puntuación, int Calporedad, int Libreria_Multimedia_idLibreria_Multimedia) {
 
         // Instancias la clase que hemos creado anteriormente
         clsConexionBD SQL = new clsConexionBD();
@@ -25,14 +25,16 @@ public class clsInsertar {
         try {
             if ( objConn != null ) {
                 // Preparamos la insert
-                String query = "insert into alumno (id, nombre, apellido, dni) values (?, ?, ?, ?)";
+                String query = "insert into Peliculas (Título, Año, Duración, Puntuación, Calporedad, Libreria_Multimedia_idLibreria_Multimedia) values (?, ?, ?, ?, ?, ?)";
 
                 //Creamos las preparedstaments
                 PreparedStatement objSt = objConn.prepareStatement(query);
-                objSt.setInt(1, id);
-                objSt.setString(2, nombre);
-                objSt.setString(3, apellido);
-                objSt.setString(4, dni);
+                objSt.setString(1, Titulo);
+                objSt.setInt(2, Año);
+                objSt.setString(3, Duración);
+                objSt.setInt(4, Puntuación);
+                objSt.setInt(5, Calporedad);
+                objSt.setInt(6, Libreria_Multimedia_idLibreria_Multimedia);
 
                 //Ejecutamos la query que hemos preparado
                 objSt.execute();

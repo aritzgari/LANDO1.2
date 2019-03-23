@@ -58,7 +58,7 @@ public class clsGestorLN {
          * @author RubenD AritzG
          */
         clsLibro objLibro;
-        objLibro = new clsLibro();
+        objLibro = new clsLibro(/*Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Formato,En_propiedad, En_busqueda, Precio, Genero, Premiosint,*/Autor, Resumen, Editorial, Serie_SoN, Nombre_serie, Orden_serie, ISBN, Paginas);
         datosArticulos.add(objLibro);
     }
 
@@ -68,7 +68,7 @@ public class clsGestorLN {
          * @author RubenD AritzG
          */
         clsMusica objMusica;
-        objMusica = new clsMusica();
+        objMusica = new clsMusica(/*Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Formato,En_propiedad, En_busqueda, Precio, Genero, Premiosint,*/ Cantidad_musicos, Musico1, Musico2, Musico3, Musico4, Musico5, Album, Enlace_a_youtube, Videoclip);
         datosArticulos.add(objMusica);
     }
 }

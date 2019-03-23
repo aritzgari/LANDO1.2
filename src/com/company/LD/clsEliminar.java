@@ -26,7 +26,7 @@ public class clsEliminar {
         try {
             if ( objConn != null ) {
                 // Preparamos el delete
-                String query = "delete from alumno where id = ?";
+                String query = "delete from Peliculas where id = ?";
 
                 //Creamos las preparedstaments
                 PreparedStatement objSt = objConn.prepareStatement(query);

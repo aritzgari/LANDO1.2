@@ -19,7 +19,7 @@ public class clsMusica extends clsArticulo {
     String Enlace_a_youtube;
     boolean Videoclip;
 
-    public clsMusica(int _Cantidad_musicos,String _Album, String _Enlace_a_youtube, boolean _Videoclip,String _Musico1, String _Musico2, String _Musico3, String _Musico4, String _Musico5) {
+    public clsMusica(int _Cantidad_musicos, String _Musico1, String _Musico2, String _Musico3, String _Musico4, String _Musico5,String _Album, String _Enlace_a_youtube, boolean _Videoclip) {
         //Constructor
         Cantidad_musicos = _Cantidad_musicos;
         Musico1 = _Musico1;

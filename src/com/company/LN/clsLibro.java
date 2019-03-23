@@ -32,7 +32,5 @@ public class clsLibro extends clsArticulo {
         Paginas = _Paginas;
 
 
-
-
     }
 }

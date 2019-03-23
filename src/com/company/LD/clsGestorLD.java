@@ -7,4 +7,7 @@ package com.company.LD;
  */
 public class clsGestorLD {
 
+    /*public void insertarBD() {
+        clsInsertar.insertarBD();
+    }*/
 }

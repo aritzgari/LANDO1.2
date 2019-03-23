@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class clsConexionBD {
 
     //Nombre de la base de datos
-    public String database="alumnoBD";
+    public String database="lando";
 
     //host
     public String hostname="localhost";
@@ -26,7 +26,7 @@ public class clsConexionBD {
     public String user="root";
 
     //Password
-    public String password="";
+    public String password="1243";
 
     public Connection conectarBD() {
 
@@ -44,7 +44,7 @@ public class clsConexionBD {
 
     }
 
-	/*public void desconectarBD(Connection conexion) {
+	public void desconectarBD(Connection conexion) {
 
         try {
 
@@ -54,6 +54,6 @@ public class clsConexionBD {
             System.out.println("Ha fallado la desconexión");
         }
 
-	}*/
+	}
 
 }

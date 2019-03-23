@@ -27,16 +27,16 @@ public class clsConsultar {
             if ( objConn != null ) {
                 // Preparamos la consulta
                 Statement st = objConn.createStatement();
-                ResultSet rs = st.executeQuery ("select * from alumno");
+                ResultSet rs = st.executeQuery ("select * from Peliculas");
 
-                System.out.println("ALUMNOS RECUPERADOS");
+                System.out.println("PELICULAS RECUPERADOS");
                 System.out.println("-------------------");
 
                 // Recorremos el resultado, mientras haya registros para leer, y escribimos el resultado en pantalla.
                 while (rs.next())
                 {
-                    System.out.println (rs.getInt ("id") + " " + rs.getString ("nombre") + " " +
-                            rs.getString("apellido")  + " " + rs.getString("dni"));
+                    System.out.println (rs.getString ("Título") + " " + rs.getInt ("Año") + " " +
+                            rs.getString("Duración")  + " " + rs.getInt("Puntuación")  + " " + rs.getInt("Calporedad")+ " " + rs.getInt("Libreria_Multimedia_idLibreria_Multimedia"));
                 }
 
                 //Cerramos el resulset
