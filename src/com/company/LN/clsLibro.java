@@ -20,8 +20,18 @@ public class clsLibro extends clsArticulo {
     String ISBN;
     int Paginas;
 
-    public clsLibro() {
+    public clsLibro(String _Autor, String _Resumen, String _Editorial, boolean _Serie_SoN, String _Nombre_serie, double _Orden_serie, String _ISBN, int _Paginas) {
         //Constructor (No se usa porque el padre tiene constructor)
+        Autor = _Autor;
+        Resumen = _Resumen;
+        Editorial = _Editorial;
+        Serie_SoN = _Serie_SoN;
+        Nombre_serie = _Nombre_serie;
+        Orden_serie = _Orden_serie;
+        ISBN = _ISBN;
+        Paginas = _Paginas;
+
+
 
 
     }
