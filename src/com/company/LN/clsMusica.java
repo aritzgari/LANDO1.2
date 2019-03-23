@@ -9,6 +9,8 @@ package com.company.LN;
 public class clsMusica extends clsArticulo {
     //Constructor
     public clsMusica() {
+
+        /*atributos de la clase musica*/
         int Cantidad_musicos;
         String Musico1;
         String Musico2;

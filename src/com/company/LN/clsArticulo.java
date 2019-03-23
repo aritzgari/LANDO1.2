@@ -9,6 +9,9 @@ package com.company.LN;
 public class clsArticulo {
     //Constructor
     public clsArticulo() {
+
+        /*atributos de la clase articulo*/
+
         String Titulo;
         String Titulo_original;
         //ESTE SERA UN DATE O ALGO

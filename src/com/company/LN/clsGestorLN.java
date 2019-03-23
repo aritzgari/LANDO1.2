@@ -10,6 +10,8 @@ import java.util.ArrayList;
 
 public class clsGestorLN {
 
+/*Los arrays que contienen los datos de los diferentes articulos*/
+
     private static ArrayList<clsPelicula> datosPeliculas;
     private static ArrayList<clsLibro> datosLibros;
     private static ArrayList<clsMusica> datosMusicas;

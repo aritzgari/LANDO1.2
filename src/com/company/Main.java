@@ -2,16 +2,18 @@ package com.company;
 
 import com.company.LP.clsMenu;
 
+/**
+ * Donde empieza la magia, llamda al menu del programa.
+ *
+ * @author RubenD AritzG
+ */
+
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-        clsMenu.MenuPrincipal();
-        System.out.println("inicio");
-        System.out.println("otracosa");
 
-        System.out.println("otracosa");
-        System.out.println("eerniqebrkghekrhguqehgqoi");
-        System.out.println("15:52");
+        clsMenu.MenuPrincipal();
+
     }
 }

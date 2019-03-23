@@ -7,6 +7,9 @@ package com.company.LN;
  */
 
 public class clsPelicula extends clsArticulo {
+
+    /*atributos de la clase pelicula*/
+
     String Director;
     String Enlace_a_trailer;
     String Sinopsis;
