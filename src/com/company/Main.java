@@ -8,6 +8,6 @@ public class Main {
 	// write your code here
         clsMenu.MenuPrincipal();
         System.out.println("inicio");
-        System.out.println("inicio");
+        System.out.println("otracosa");
     }
 }
