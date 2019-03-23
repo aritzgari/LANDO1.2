@@ -9,7 +9,9 @@ package com.company.LN;
 public class clsLibro extends clsArticulo {
     //Constructor (No se usa porque el padre tiene constructor)
     public clsLibro() {
+
         /*atributos de la clase libro*/
+
         String Autor;
         String Resumen;
         String Editorial;

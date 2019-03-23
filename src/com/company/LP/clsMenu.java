@@ -14,17 +14,17 @@ public class clsMenu {
 
     public static void MenuPrincipal() {
         /**
-         * Este mï¿½todo permite navegar entre los submenus
+         * Este método permite navegar entre los submenus
          */
         int op = 0;
         do {
             System.out.println("MENU PRINCIPAL\n" +
                     "------------\n" +
-                    "1.-Aï¿½adir cosas\n" +
+                    "1.-Añadir cosas\n" +
                     "2.-Mostrar cosas\n" +
                     "3.-Salir\n" +
                     "------------\n" +
-                    "Opciï¿½n:");
+                    "Opción:");
             op = UtilidadesLP.leerEntero();
             switch (op) {
                 case 1:
@@ -34,7 +34,7 @@ public class clsMenu {
                     SubMenu2();
                     break;
                 case 3:
-                    System.out.println("Cerrando aplicaciï¿½n.");
+                    System.out.println("Cerrando aplicaci?n.");
                     break;
             }
         } while (op != 3);
@@ -44,22 +44,22 @@ public class clsMenu {
 
     private static void SubMenu1() {
         /**
-         * El Submemu1 se encarga de Aï¿½adir items
+         * El Submemu1 se encarga de A?adir items
          */
         int op = 0;
         do {
-            System.out.println("MENU - Aï¿½adir\n" +
+            System.out.println("MENU - Añadir\n" +
                     "------------\n" +
-                    "1.-Aï¿½adir Peliculas\n" +
-                    "2.-Aï¿½adir Libros\n" +
-                    "3.-Aï¿½adir Musica\n" +
+                    "1.-Añadir Peliculas\n" +
+                    "2.-Añadir Libros\n" +
+                    "3.-Añadir Musica\n" +
                     "4.-Menu Principal\n" +
                     "------------\n" +
-                    "Opciï¿½n:");
+                    "Opci?n:");
             op = UtilidadesLP.leerEntero();
             switch (op) {
                 case 1:
-                    System.out.println("Titulo:");
+                    System.out.println("Título:");
                     String Titulo = UtilidadesLP.leerCadena();
                     System.out.println("Titulo_original:");
                     String Titulo_original = UtilidadesLP.leerCadena();
@@ -101,7 +101,7 @@ public class clsMenu {
                     int Duracion = UtilidadesLP.leerEntero();
                     System.out.println("Calporedad:");
                     int Calporedad = UtilidadesLP.leerEntero();
-                    System.out.println("Calificacion:");
+                    System.out.println("Calificación:");
                     int Calificacion = UtilidadesLP.leerEntero();
 
                     objGestorLN.crearPelicula(Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Formato, En_propiedad, En_busqueda, Precio, Genero, Premios, Director, Enlace_a_trailer, Sinopsis, Cantidad_actores, Actor1, Actor2, Actor3, Saga, Orden, Duracion, Calporedad, Calificacion);
@@ -133,11 +133,11 @@ public class clsMenu {
                     "3.-Mostrar Musica\n" +
                     "4.-Menu Principal\n" +
                     "------------\n" +
-                    "Opciï¿½n:");
+                    "Opción:");
             op = UtilidadesLP.leerEntero();
             switch (op) {
                 case 1:
-                    //No se leerï¿½ mï¿½s que la ubicaciï¿½n de memoria, hay que recorrer el Array. (Averiguar como)
+                    //No se leer? m?s que la ubicaci?n de memoria, hay que recorrer el Array. (Averiguar como)
                     System.out.println(objGestorLN.getDatosPeliculas());
                     break;
                 case 2:
