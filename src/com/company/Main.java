@@ -9,5 +9,7 @@ public class Main {
         clsMenu.MenuPrincipal();
         System.out.println("inicio");
         System.out.println("otracosa");
+        System.out.println("otracosa");
+
     }
 }
