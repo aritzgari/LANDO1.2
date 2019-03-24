@@ -25,7 +25,7 @@ public class clsPelicula extends clsArticulo implements itfProperty {
     int Calporedad;
     int Calificacion;
 
-    //Constructor (No se usa)
+    //Constructor (No se usa / o sí, parece que si, en teoría debería)
     public clsPelicula(/*String Titulo, String Titulo_original, String Anno_de_publicacion, String Tipo_DoA, String Formato, boolean En_propiedad, boolean En_busqueda, double Precio, String Genero, String Premios, */String _Director, String _Enlace_a_trailer, String _Sinopsis, int _Cantidad_actores, String _Actor1, String _Actor2, String _Actor3, String _Saga, Double _Orden, int _Duracion, int _Calporedad, int _Calificacion) {
         //Variables "Heredadas":
 
@@ -71,6 +71,27 @@ public class clsPelicula extends clsArticulo implements itfProperty {
             case "Premios":
                 propResultado = Premios;
                 break;
+            case "Director":
+                propResultado = Director;
+                break;
+            case "Enlace_a_trailer":
+                propResultado = Enlace_a_trailer;
+                break;
+            case "Sinopsis":
+                propResultado = Sinopsis;
+                break;
+            case "Actor1":
+                propResultado = Actor1;
+                break;
+            case "Actor2":
+                propResultado = Actor2;
+                break;
+            case "Actor3":
+                propResultado = Actor3;
+                break;
+            case "Saga":
+                propResultado = Saga;
+                break;
             default:
                 System.out.println("Propiedad no encontrada.");
                 break;
@@ -82,7 +103,17 @@ public class clsPelicula extends clsArticulo implements itfProperty {
     public Integer getIntegerProperty(String propiedad) {
         int propResultado = 0;
         switch (propiedad) {
-            case "":
+            case "Cantidad_actores":
+                propResultado = Cantidad_actores;
+                break;
+            case "Duracion":
+                propResultado = Duracion;
+                break;
+            case "Calporedad":
+                propResultado = Calporedad;
+                break;
+            case "Calificacion":
+                propResultado = Calificacion;
                 break;
             default:
                 System.out.println("Propiedad no encontrada.");
@@ -110,6 +141,9 @@ public class clsPelicula extends clsArticulo implements itfProperty {
         switch (propiedad) {
             case "Precio":
                 propResultado = Precio;
+                break;
+            case "Orden":
+                propResultado = Orden;
                 break;
             default:
                 System.out.println("Propiedad no encontrada.");

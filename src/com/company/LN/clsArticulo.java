@@ -24,7 +24,5 @@ public class clsArticulo {
 
     //Constructor
     public clsArticulo() {
-
-
     }
 }

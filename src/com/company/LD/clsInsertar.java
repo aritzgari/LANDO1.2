@@ -15,7 +15,7 @@ import java.sql.SQLException;
  */
 public class clsInsertar {
 
-    public void insertarBD(String Titulo, int Año, String Duración, int Puntuación, int Calporedad, int Libreria_Multimedia_idLibreria_Multimedia) {
+    public void insertarBD(String Titulo, int Año, String Duración, int Puntuación, int Calporedad/*, int Libreria_Multimedia_idLibreria_Multimedia*/) {
 
         // Instancias la clase que hemos creado anteriormente
         clsConexionBD SQL = new clsConexionBD();
@@ -26,7 +26,8 @@ public class clsInsertar {
         try {
             if (objConn != null) {
                 // Preparamos la insert
-                String query = "insert into Peliculas (Título, Año, Duración, Puntuación, Calporedad, Libreria_Multimedia_idLibreria_Multimedia) values (?, ?, ?, ?, ?, ?)";
+                //Se borra Libreria_Multimedia_idLibreria_Multimedia 24/3 - 13:39
+                String query = "insert into Películas (Título, Año, Duración, Puntuación, Calporedad, ) values (?, ?, ?, ?, ?, ?)";
 
                 //Creamos las preparedstaments
                 PreparedStatement objSt = objConn.prepareStatement(query);
@@ -35,7 +36,7 @@ public class clsInsertar {
                 objSt.setString(3, Duración);
                 objSt.setInt(4, Puntuación);
                 objSt.setInt(5, Calporedad);
-                objSt.setInt(6, Libreria_Multimedia_idLibreria_Multimedia);
+                //objSt.setInt(6, Libreria_Multimedia_idLibreria_Multimedia);
 
                 //Ejecutamos la query que hemos preparado
                 objSt.execute();

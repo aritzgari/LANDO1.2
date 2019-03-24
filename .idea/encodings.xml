@@ -3,8 +3,8 @@
   <component name="Encoding" addBOMForNewFiles="with NO BOM">
     <file url="file://$PROJECT_DIR$/src/com/company/LD/clsConexionBD.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LD/clsConsultar.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LD/clsDatos.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LD/clsEliminar.java" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/src/com/company/LD/clsGestorLD.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LD/clsInsertar.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LD/itfDatos.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsArticulo.java" charset="ISO-8859-1" />

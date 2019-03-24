@@ -46,7 +46,7 @@ public class clsMenu {
 
     private static void SubMenu1() {
         /**
-         * El Submemu1 se encarga de A?adir items
+         * El Submemu1 se encarga de Añadir items.
          */
         int op = 0;
         do {

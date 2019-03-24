@@ -1,5 +1,7 @@
 package com.company.LN;
 
+import com.company.LD.clsDatos;
+
 import java.util.ArrayList;
 
 /**
@@ -16,6 +18,7 @@ public class clsGestorLN {
     private static ArrayList<clsPelicula> datosPeliculas;
     private static ArrayList<clsLibro> datosLibros;
     private static ArrayList<clsMusica> datosMusicas;
+    //Estos tres de arriba, para mi que no los usamos.
     private static ArrayList<clsArticulo> datosArticulos;
 
     public clsGestorLN() {
@@ -31,10 +34,12 @@ public class clsGestorLN {
     }
 
     public static ArrayList<clsLibro> getDatosLibros() {
+
         return datosLibros;
     }
 
     public static ArrayList<clsMusica> getDatosMusicas() {
+
         return datosMusicas;
     }
 
@@ -51,6 +56,10 @@ public class clsGestorLN {
         clsPelicula objPelicula;
         objPelicula = new clsPelicula(Director, Enlace_a_trailer, Sinopsis, Cantidad_actores, Actor1, Actor2, Actor3, Saga, Orden, Duracion, Calporedad, Calificacion);
         datosArticulos.add(objPelicula);
+        //Vale, aquí, que esto es LN, voy a crear un objGestorLD, creo que esto se puede hacer,
+        // y con este obj voy a intentar añadir las pelis directamente a la BBDD. Ni yo me creo lo que digo, pero en teoría esto está bien.
+        clsDatos objDatos = new clsDatos();
+        objDatos.insertarPeliculaBD(Titulo, Integer.parseInt(Anno_de_publicacion), Integer.toString(Duracion), Calificacion, Calporedad);
     }
 
     public static void crearLibro(String Titulo, String Titulo_original, String Anno_de_publicacion, String Tipo_DoA, String Formato, boolean En_propiedad, boolean En_busqueda, double Precio, String Genero, String Premios, String Autor, String Resumen, String Editorial, boolean Serie_SoN, String Nombre_serie, double Orden_serie, String ISBN, int Paginas) {

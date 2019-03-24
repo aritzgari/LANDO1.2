@@ -2,6 +2,9 @@ package com.company.LD;
 /**
  * @author Ruben Domínguez
  * Aritz Garitano
+ * <p>
+ * Esta clase es la que establece conexion con la BD, se le dan los parámetros de conexión y con ellos forma una expresión de conexión;
+ * que luego será leída por el driver de mySQL. O al menos ese es el plan, pero tiene pinta de ser un plan muy alejado del resultado real.
  */
 //import java.sql.* ---->importamos todas las clases del paquete java.sql
 
