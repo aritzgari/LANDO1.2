@@ -1,6 +1,10 @@
 package com.company.LD;
-
+/**
+ * @author Ruben Domínguez
+ * Aritz Garitano
+ */
 //import java.sql.* ---->importamos todas las clases del paquete java.sql
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -11,22 +15,22 @@ import java.sql.SQLException;
 public class clsConexionBD {
 
     //Nombre de la base de datos
-    public String database="lando";
+    public String database = "lando";
 
     //host
-    public String hostname="localhost";
+    public String hostname = "localhost";
 
     //puerto
-    public String port="3306";
+    public String port = "3306";
 
     //Ruta de la base de datos (jdbc:mysql://localhost:3306/alumnoBD?useTimezone=true&serverTimezone=GMT&useSSL=false)
-    public String url="jdbc:mysql://" + hostname + ":" + port + "/" + database + "?useTimezone=true&serverTimezone=GMT&useSSL=false";
+    public String url = "jdbc:mysql://" + hostname + ":" + port + "/" + database + "?useTimezone=true&serverTimezone=GMT&useSSL=false";
 
     //Nombre de usuario
-    public String user="root";
+    public String user = "root";
 
     //Password
-    public String password="1243";
+    public String password = "1243";
 
     public Connection conectarBD() {
 
@@ -34,7 +38,7 @@ public class clsConexionBD {
 
         try {
 
-            objConn = DriverManager.getConnection (url, user, password);
+            objConn = DriverManager.getConnection(url, user, password);
 
         } catch (SQLException e) {
             System.out.println("Ha fallado la conexión" + e);
@@ -44,16 +48,16 @@ public class clsConexionBD {
 
     }
 
-	public void desconectarBD(Connection conexion) {
+    public void desconectarBD(Connection conexion) {
 
         try {
 
-        	conexion.close();
+            conexion.close();
 
         } catch (SQLException e) {
             System.out.println("Ha fallado la desconexión");
         }
 
-	}
+    }
 
 }

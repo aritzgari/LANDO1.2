@@ -1,16 +1,17 @@
 package com.company.LD;
 
 //import java.sql.* ---->importamos todas las clases del paquete java.sql
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
- * @author  RubenD AritzG
- *
- *
- *La clase sirve para insertar un registro en la base de datos. Previamente, realiza una
- *conexión con la base de datos, y después de realizar el insert, vuelve a cerrar la conexión.
+ * @author Ruben Domínguez
+ * Aritz Garitano
+ * <p>
+ * La clase sirve para insertar un registro en la base de datos. Previamente, realiza una
+ * conexión con la base de datos, y después de realizar el insert, vuelve a cerrar la conexión.
  */
 public class clsInsertar {
 
@@ -23,7 +24,7 @@ public class clsInsertar {
         Connection objConn = SQL.conectarBD();
 
         try {
-            if ( objConn != null ) {
+            if (objConn != null) {
                 // Preparamos la insert
                 String query = "insert into Peliculas (Título, Año, Duración, Puntuación, Calporedad, Libreria_Multimedia_idLibreria_Multimedia) values (?, ?, ?, ?, ?, ?)";
 

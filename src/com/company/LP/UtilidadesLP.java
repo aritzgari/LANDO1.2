@@ -1,4 +1,8 @@
 package com.company.LP;
+/**
+ * @author Ruben Domínguez
+ * Aritz Garitano
+ */
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -9,30 +13,23 @@ public class UtilidadesLP {
      realizando las comprobaciones pertienentes.
      @return Devuelve el n�mero entero que se haya introducido por teclado.
      */
-    public static int leerEntero()
-    {
+    public static int leerEntero() {
         InputStreamReader isr = new InputStreamReader(System.in);
         BufferedReader br = new BufferedReader(isr);
         Integer entero = null;
         boolean error = true;
-        do
-        {
-            try
-            {
+        do {
+            try {
                 String cadena = br.readLine();
                 entero = new Integer(cadena);
                 error = false;
-            }
-            catch(NumberFormatException nfe)
-            {
+            } catch (NumberFormatException nfe) {
                 System.out.println("No tecle� un n�mero entero-Repetir");
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 System.out.println("Error de entrada-Repetir ");
             }
         }
-        while(error);
+        while (error);
         return entero.intValue();
     }
 
@@ -41,30 +38,23 @@ public class UtilidadesLP {
      las comprobaciones pertienentes.
      @return Devuelve el n�mero real que se haya introducido por teclado.
      */
-    public static double leerReal()
-    {
+    public static double leerReal() {
         InputStreamReader isr = new InputStreamReader(System.in);
         BufferedReader br = new BufferedReader(isr);
         Double real = null;
         boolean error = true;
-        do
-        {
-            try
-            {
+        do {
+            try {
                 String cadena = br.readLine();
                 real = new Double(cadena);
                 error = false;
-            }
-            catch(NumberFormatException nfe)
-            {
+            } catch (NumberFormatException nfe) {
                 System.out.println("No tecle� un n�mero real-Repetir ");
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 System.out.println("Error de entrada-Repetir ");
             }
         }
-        while(error);
+        while (error);
         return real.doubleValue();
     }
 
@@ -73,24 +63,19 @@ public class UtilidadesLP {
      realizando las comprobaciones pertienentes.
      @return Devuelve el caracter que se haya introducido por teclado.
      */
-    public static char leerCaracter()
-    {
+    public static char leerCaracter() {
         char caracter = 0;
         boolean error = true;
-        do
-        {
-            try
-            {
-                caracter = (char)System.in.read();
+        do {
+            try {
+                caracter = (char) System.in.read();
                 System.in.skip(System.in.available());
                 error = false;
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 System.out.println("Error de entrada-Repetir ");
             }
         }
-        while(error);
+        while (error);
         return caracter;
     }
 
@@ -99,25 +84,20 @@ public class UtilidadesLP {
      realizando las comprobaciones pertienentes.
      @return Devuelve la cadena de caracteres que se haya introducido por teclado.
      */
-    public static String leerCadena()
-    {
+    public static String leerCadena() {
         InputStreamReader isr = new InputStreamReader(System.in);
         BufferedReader br = new BufferedReader(isr);
         String cadena = null;
         boolean error = true;
-        do
-        {
-            try
-            {
+        do {
+            try {
                 cadena = br.readLine();
                 error = false;
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 System.out.println("Error de entrada-Repetir ");
             }
         }
-        while(error);
+        while (error);
         return cadena;
     }
 }

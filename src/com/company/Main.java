@@ -5,7 +5,8 @@ import com.company.LP.clsMenu;
 /**
  * Donde empieza la magia, llamada al menu del programa.
  *
- * @author RubenD AritzG
+ * @author Ruben Domínguez
+ * Aritz Garitano
  */
 
 

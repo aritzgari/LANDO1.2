@@ -6,7 +6,8 @@ import com.company.LN.clsGestorLN;
 /**
  * Clase para gestionar y coordinar el flujo del programa.
  *
- * @author RubenD AritzG
+ * @author Ruben Domínguez
+ * Aritz Garitano
  */
 
 public class clsMenu {

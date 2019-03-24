@@ -3,7 +3,8 @@ package com.company.LN;
 /**
  * Clase para guardar datos de Musica en nuestra Base de Datos
  *
- * @author RubenD AritzG
+ * @author Ruben Domínguez
+ * Aritz Garitano
  */
 
 public class clsMusica extends clsArticulo {
@@ -19,7 +20,7 @@ public class clsMusica extends clsArticulo {
     String Enlace_a_youtube;
     boolean Videoclip;
 
-    public clsMusica(int _Cantidad_musicos, String _Musico1, String _Musico2, String _Musico3, String _Musico4, String _Musico5,String _Album, String _Enlace_a_youtube, boolean _Videoclip) {
+    public clsMusica(int _Cantidad_musicos, String _Musico1, String _Musico2, String _Musico3, String _Musico4, String _Musico5, String _Album, String _Enlace_a_youtube, boolean _Videoclip) {
         //Constructor
         Cantidad_musicos = _Cantidad_musicos;
         Musico1 = _Musico1;

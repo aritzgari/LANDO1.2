@@ -2,17 +2,18 @@ package com.company.LD;
 
 
 //import java.sql.* ---->importamos todas las clases del paquete java.sql
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * @author Ignacio Chapero
- * 		   Alvaro Husillos
- *
- *La clase sirve para ejecutar una consulta en la base de datos. Previamente, realiza una
- *conexión con la base de datos, y después de realizar la consulta, vuelve a cerrar la conexión.
+ * @author Ruben Domínguez
+ * Aritz Garitano
+ * <p>
+ * La clase sirve para ejecutar una consulta en la base de datos. Previamente, realiza una
+ * conexión con la base de datos, y después de realizar la consulta, vuelve a cerrar la conexión.
  */
 public class clsConsultar {
 
@@ -24,19 +25,18 @@ public class clsConsultar {
         Connection objConn = SQL.conectarBD();
 
         try {
-            if ( objConn != null ) {
+            if (objConn != null) {
                 // Preparamos la consulta
                 Statement st = objConn.createStatement();
-                ResultSet rs = st.executeQuery ("select * from Peliculas");
+                ResultSet rs = st.executeQuery("select * from Peliculas");
 
                 System.out.println("PELICULAS RECUPERADOS");
                 System.out.println("-------------------");
 
                 // Recorremos el resultado, mientras haya registros para leer, y escribimos el resultado en pantalla.
-                while (rs.next())
-                {
-                    System.out.println (rs.getString ("Título") + " " + rs.getInt ("Año") + " " +
-                            rs.getString("Duración")  + " " + rs.getInt("Puntuación")  + " " + rs.getInt("Calporedad")+ " " + rs.getInt("Libreria_Multimedia_idLibreria_Multimedia"));
+                while (rs.next()) {
+                    System.out.println(rs.getString("Título") + " " + rs.getInt("Año") + " " +
+                            rs.getString("Duración") + " " + rs.getInt("Puntuación") + " " + rs.getInt("Calporedad") + " " + rs.getInt("Libreria_Multimedia_idLibreria_Multimedia"));
                 }
 
                 //Cerramos el resulset

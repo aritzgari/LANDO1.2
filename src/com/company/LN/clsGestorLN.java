@@ -5,12 +5,13 @@ import java.util.ArrayList;
 /**
  * Clase que intercomunica LP con LN
  *
- * @author RubenD AritzG
+ * @author Ruben Domínguez
+ * Aritz Garitano
  */
 
 public class clsGestorLN {
 
-/*Los arrays que contienen los datos de los diferentes articulos*/
+    /*Los arrays que contienen los datos de los diferentes articulos*/
 
     private static ArrayList<clsPelicula> datosPeliculas;
     private static ArrayList<clsLibro> datosLibros;
@@ -48,7 +49,7 @@ public class clsGestorLN {
          * @author RubenD AritzG
          */
         clsPelicula objPelicula;
-        objPelicula = new clsPelicula(Director,Enlace_a_trailer,Sinopsis,Cantidad_actores,Actor1,Actor2,Actor3,Saga,Orden,Duracion,Calporedad,Calificacion);
+        objPelicula = new clsPelicula(Director, Enlace_a_trailer, Sinopsis, Cantidad_actores, Actor1, Actor2, Actor3, Saga, Orden, Duracion, Calporedad, Calificacion);
         datosArticulos.add(objPelicula);
     }
 

@@ -2,16 +2,17 @@ package com.company.LD;
 
 
 //import java.sql.* ---->importamos todas las clases del paquete java.sql
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
- * @author Ignacio Chapero
- * 		   Alvaro Husillos
- *
- *La clase sirve para eliminar un registro de la base de datos. Previamente, realiza una
- *conexión con la base de datos, y después de eliminar el registro, vuelve a cerrar la conexión.
+ * @author Ruben Domínguez
+ * Aritz Garitano
+ * <p>
+ * La clase sirve para eliminar un registro de la base de datos. Previamente, realiza una
+ * conexión con la base de datos, y después de eliminar el registro, vuelve a cerrar la conexión.
  */
 public class clsEliminar {
 
@@ -24,7 +25,7 @@ public class clsEliminar {
         Connection objConn = SQL.conectarBD();
 
         try {
-            if ( objConn != null ) {
+            if (objConn != null) {
                 // Preparamos el delete
                 String query = "delete from Peliculas where id = ?";
 

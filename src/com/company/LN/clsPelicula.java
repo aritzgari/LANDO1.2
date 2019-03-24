@@ -3,7 +3,8 @@ package com.company.LN;
 /**
  * Clase para guardar datos de Peliculas en nuestra Base de Datos
  *
- * @author RubenD AritzG
+ * @author Ruben Domínguez
+ * Aritz Garitano
  */
 
 public class clsPelicula extends clsArticulo {

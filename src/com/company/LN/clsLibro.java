@@ -3,7 +3,9 @@ package com.company.LN;
 /**
  * Clase para guardar datos de Libros en nuestra Base de Datos
  *
- * @author RubenD AritzG
+ * @author Ruben Domínguez
+ * <p>
+ * Aritz Garitano
  */
 
 public class clsLibro extends clsArticulo {
