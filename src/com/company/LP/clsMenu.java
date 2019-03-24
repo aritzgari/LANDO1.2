@@ -1,5 +1,6 @@
 package com.company.LP;
 
+import com.company.LD.clsConsultar;
 import com.company.LD.clsInsertar;
 import com.company.LN.clsGestorLN;
 
@@ -21,11 +22,11 @@ public class clsMenu {
         int op = 0;
         do {
             System.out.println("MENU PRINCIPAL\n" +
-                    "------------\n" +
-                    "1.-Añadir cosas\n" +
-                    "2.-Mostrar cosas\n" +
+                    "--------------------\n" +
+                    "1.-Añadir registros\n" +
+                    "2.-Mostrar registros\n" +
                     "3.-Salir\n" +
-                    "------------\n" +
+                    "--------------------\n" +
                     "Opción:");
             op = UtilidadesLP.leerEntero();
             switch (op) {
@@ -36,7 +37,7 @@ public class clsMenu {
                     SubMenu2();
                     break;
                 case 3:
-                    System.out.println("Cerrando aplicaci?n.");
+                    System.out.println("Cerrando aplicación.");
                     break;
             }
         } while (op != 3);
@@ -50,20 +51,34 @@ public class clsMenu {
          */
         int op = 0;
         do {
-            System.out.println("MENU - Añadir\n" +
-                    "------------\n" +
-                    "1.-Añadir Peliculas\n" +
-                    "2.-Añadir Libros\n" +
-                    "3.-Añadir Musica\n" +
-                    "4.-Menu Principal\n" +
-                    "------------\n" +
+            System.out.println("MENÚ - Añadir\n" +
+                    "--------------------\n" +
+                    "2.-Añadir Librería\n" +
+                    "2.-Añadir Películas\n" +
+                    "3.-Añadir Libros\n" +
+                    "4.-Añadir Música\n" +
+                    "5.-Menú Principal\n" +
+                    "--------------------\n" +
                     "Opción:");
             op = UtilidadesLP.leerEntero();
             switch (op) {
                 case 1:
+                    System.out.println("Datos para crear la Librería:");
+                    System.out.println("Un ID para identificarla (int)");
+                    int idLibreria_Multimedia = UtilidadesLP.leerEntero();
+                    System.out.println("Un Nombre para saber que libreria es. (String)\n" +
+                            "ej. 'Casa' ó 'Oficina'.");
+                    String Nombre = UtilidadesLP.leerCadena();
+                    System.out.println("Añade una descripción para saber que es lo que va a contener esta librería");
+                    String Descripcion = UtilidadesLP.leerCadena();
+                    objGestorLN.crearLiberia(idLibreria_Multimedia, Nombre, Descripcion);
+
+                    break;
+                case 2:
                     //LLAMADA DE PRUEBA
                     //clsInsertar.insertarBD();
                     //LLAMADA DE PRUEBA
+                    System.out.println("Datos para crear la Película:");
                     System.out.println("Título:");
                     String Titulo = UtilidadesLP.leerCadena();
                     System.out.println("Titulo_original:");
@@ -108,21 +123,23 @@ public class clsMenu {
                     int Calporedad = UtilidadesLP.leerEntero();
                     System.out.println("Calificación:");
                     int Calificacion = UtilidadesLP.leerEntero();
+                    System.out.println("ID de la librería a la que pertenece:");
+                    int Libreria_Multimedia_idLibreria_Multimedia = UtilidadesLP.leerEntero();
 
-                    objGestorLN.crearPelicula(Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Formato, En_propiedad, En_busqueda, Precio, Genero, Premios, Director, Enlace_a_trailer, Sinopsis, Cantidad_actores, Actor1, Actor2, Actor3, Saga, Orden, Duracion, Calporedad, Calificacion);
-
-                    break;
-                case 2:
+                    objGestorLN.crearPelicula(Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Formato, En_propiedad, En_busqueda, Precio, Genero, Premios, Director, Enlace_a_trailer, Sinopsis, Cantidad_actores, Actor1, Actor2, Actor3, Saga, Orden, Duracion, Calporedad, Calificacion, Libreria_Multimedia_idLibreria_Multimedia);
 
                     break;
                 case 3:
 
                     break;
                 case 4:
-                    System.out.println("Menu principal.");
+
+                    break;
+                case 5:
+                    System.out.println("Menú principal.");
                     break;
             }
-        } while (op != 4);
+        } while (op != 5);
 
     }
 
@@ -131,31 +148,37 @@ public class clsMenu {
          * El Submemu2 se encarga de Mostrar items
          */
         int op = 0;
+        clsConsultar objConsultor = new clsConsultar();
         do {
-            System.out.println("MENU - Mostrar\n" +
-                    "------------\n" +
-                    "1.-Mostrar Peliculas\n" +
-                    "2.-Mostrar Libros\n" +
-                    "3.-Mostrar Musica\n" +
-                    "4.-Menu Principal\n" +
-                    "------------\n" +
+            System.out.println("MENÚ - Mostrar\n" +
+                    "--------------------\n" +
+                    "1.-Mostrar Librerías\n" +
+                    "2.-Mostrar Películas\n" +
+                    "3.-Mostrar Libros\n" +
+                    "4.-Mostrar Música\n" +
+                    "5.-Menú Principal\n" +
+                    "--------------------\n" +
                     "Opción:");
             op = UtilidadesLP.leerEntero();
             switch (op) {
                 case 1:
-                    //No se leer? m?s que la ubicaci?n de memoria, hay que recorrer el Array. (Averiguar como)
-                    System.out.println(objGestorLN.getDatosPeliculas());
+                    objConsultor.consultarLibreriasEnBD();
                     break;
                 case 2:
-                    objGestorLN.getDatosLibros();
+                    /*No se leer? m?s que la ubicaci?n de memoria, hay que recorrer el Array. (Averiguar como)
+                    System.out.println(objGestorLN.getDatosPeliculas());*/
+                    objConsultor.consultarPeliculasEnBD();
                     break;
                 case 3:
-                    objGestorLN.getDatosMusicas();
+                    //objGestorLN.getDatosLibros();
                     break;
                 case 4:
-                    System.out.println("Menu principal.");
+                    //objGestorLN.getDatosMusicas();
+                    break;
+                case 5:
+                    System.out.println("Menú principal.");
                     break;
             }
-        } while (op != 4);
+        } while (op != 5);
     }
 }

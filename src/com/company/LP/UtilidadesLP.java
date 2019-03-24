@@ -9,9 +9,10 @@ import java.io.InputStreamReader;
 
 public class UtilidadesLP {
     /**
-     Permite introducir por teclado en la consola un n?mero entero (32 bits = -2147483648 <-> 2147483648)
-     realizando las comprobaciones pertienentes.
-     @return Devuelve el n?mero entero que se haya introducido por teclado.
+     * Permite introducir por teclado en la consola un n?mero entero (32 bits = -2147483648 <-> 2147483648)
+     * realizando las comprobaciones pertienentes.
+     *
+     * @return Devuelve el n?mero entero que se haya introducido por teclado.
      */
     public static int leerEntero() {
         InputStreamReader isr = new InputStreamReader(System.in);
@@ -24,7 +25,7 @@ public class UtilidadesLP {
                 entero = new Integer(cadena);
                 error = false;
             } catch (NumberFormatException nfe) {
-                System.out.println("No tecle? un n?mero entero-Repetir");
+                System.out.println("No tecleó un número entero, repetir, por favor.");
             } catch (Exception e) {
                 System.out.println("Error de entrada-Repetir ");
             }
@@ -34,9 +35,10 @@ public class UtilidadesLP {
     }
 
     /**
-     Permite introducir por teclado en la consola un n?mero real realizando
-     las comprobaciones pertienentes.
-     @return Devuelve el n?mero real que se haya introducido por teclado.
+     * Permite introducir por teclado en la consola un n?mero real realizando
+     * las comprobaciones pertienentes.
+     *
+     * @return Devuelve el n?mero real que se haya introducido por teclado.
      */
     public static double leerReal() {
         InputStreamReader isr = new InputStreamReader(System.in);
@@ -49,7 +51,7 @@ public class UtilidadesLP {
                 real = new Double(cadena);
                 error = false;
             } catch (NumberFormatException nfe) {
-                System.out.println("No tecle? un n?mero real-Repetir ");
+                System.out.println("No tecleó un número real, repetir, por favor.");
             } catch (Exception e) {
                 System.out.println("Error de entrada-Repetir ");
             }
@@ -59,9 +61,10 @@ public class UtilidadesLP {
     }
 
     /**
-     Permite introducir por teclado en la consola un caracter (8 bits = -128 <-> 127)
-     realizando las comprobaciones pertienentes.
-     @return Devuelve el caracter que se haya introducido por teclado.
+     * Permite introducir por teclado en la consola un caracter (8 bits = -128 <-> 127)
+     * realizando las comprobaciones pertienentes.
+     *
+     * @return Devuelve el caracter que se haya introducido por teclado.
      */
     public static char leerCaracter() {
         char caracter = 0;
@@ -80,9 +83,10 @@ public class UtilidadesLP {
     }
 
     /**
-     Permite introducir por teclado en la consola una cadena de caracteres (String)
-     realizando las comprobaciones pertienentes.
-     @return Devuelve la cadena de caracteres que se haya introducido por teclado.
+     * Permite introducir por teclado en la consola una cadena de caracteres (String)
+     * realizando las comprobaciones pertienentes.
+     *
+     * @return Devuelve la cadena de caracteres que se haya introducido por teclado.
      */
     public static String leerCadena() {
         InputStreamReader isr = new InputStreamReader(System.in);

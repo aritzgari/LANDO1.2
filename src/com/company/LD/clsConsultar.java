@@ -17,7 +17,7 @@ import java.sql.Statement;
  */
 public class clsConsultar {
 
-    public void consultarBD() {
+    public void consultarPeliculasEnBD() {
         // Instancias la clase que hemos creado anteriormente
         clsConexionBD SQL = new clsConexionBD();
 
@@ -28,7 +28,7 @@ public class clsConsultar {
             if (objConn != null) {
                 // Preparamos la consulta
                 Statement st = objConn.createStatement();
-                ResultSet rs = st.executeQuery("select * from Peliculas");
+                ResultSet rs = st.executeQuery("select * from lando.Peliculas");
 
                 System.out.println("PELICULAS RECUPERADOS");
                 System.out.println("-------------------");
@@ -55,5 +55,43 @@ public class clsConsultar {
         }
     }
 
+    public void consultarLibreriasEnBD() {
+        // Instancias la clase que hemos creado anteriormente
+        clsConexionBD SQL = new clsConexionBD();
+
+        // Llamas al método que tiene la clase y te devuelve una conexión
+        Connection objConn = SQL.conectarBD();
+
+        try {
+            if (objConn != null) {
+                // Preparamos la consulta
+                Statement st = objConn.createStatement();
+                ResultSet rs = st.executeQuery("select * from lando.Libreria_Multimedia");
+
+                System.out.println("Liberias RECUPERADAS");
+                System.out.println("-------------------");
+                System.out.println("ID  Nombre     Descripción");
+
+                // Recorremos el resultado, mientras haya registros para leer, y escribimos el resultado en pantalla.
+                while (rs.next()) {
+                    System.out.println(rs.getInt("idLibreria_Multimedia") + "   " + rs.getString("Nombre") + "      " +
+                            rs.getString("Descripcion"));
+                }
+
+                //Cerramos el resulset
+                rs.close();
+                //Cerramos el statement
+                st.close();
+                //Cerramos la conexión
+                objConn.close();
+
+            } else {
+                System.out.println("No existe conexión");
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Ha fallado la consulta: " + e);
+        }
+    }
 }
 

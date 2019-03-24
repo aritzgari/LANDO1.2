@@ -15,7 +15,7 @@ import java.sql.SQLException;
  */
 public class clsInsertar {
 
-    public void insertarBD(String Titulo, int Año, String Duración, int Puntuación, int Calporedad/*, int Libreria_Multimedia_idLibreria_Multimedia*/) {
+    public void insertarPeliculaEnBD(String Titulo, int Año, String Duración, int Puntuación, int Calporedad, int Libreria_Multimedia_idLibreria_Multimedia) {
 
         // Instancias la clase que hemos creado anteriormente
         clsConexionBD SQL = new clsConexionBD();
@@ -27,7 +27,7 @@ public class clsInsertar {
             if (objConn != null) {
                 // Preparamos la insert
                 //Se borra Libreria_Multimedia_idLibreria_Multimedia 24/3 - 13:39
-                String query = "insert into Películas (Título, Año, Duración, Puntuación, Calporedad, ) values (?, ?, ?, ?, ?, ?)";
+                String query = "insert into Películas (Título, Año, Duración, Puntuación, Calporedad, Libreria_Multimedia_idLibreria_Multimedia) values (?, ?, ?, ?, ?, ?)";
 
                 //Creamos las preparedstaments
                 PreparedStatement objSt = objConn.prepareStatement(query);
@@ -36,7 +36,47 @@ public class clsInsertar {
                 objSt.setString(3, Duración);
                 objSt.setInt(4, Puntuación);
                 objSt.setInt(5, Calporedad);
-                //objSt.setInt(6, Libreria_Multimedia_idLibreria_Multimedia);
+                objSt.setInt(6, Libreria_Multimedia_idLibreria_Multimedia);
+
+                //Ejecutamos la query que hemos preparado
+                objSt.execute();
+
+                System.out.println("Se ha insertado el registro correctamente");
+
+                //Cerramos el preparedStatement
+                objSt.close();
+
+                //Cerramos la conexión
+                objConn.close();
+
+            } else {
+                System.out.println("No existe conexión");
+            }
+
+        } catch (SQLException e) {
+            System.out.println("No se ha podido realizar el insert: " + e);
+        }
+    }
+
+    public void insertarLibreriaEnBD(int idLibreria_Multimedia, String Nombre, String Descripcion) {
+
+        // Instancias la clase que hemos creado anteriormente
+        clsConexionBD SQL = new clsConexionBD();
+
+        // Llamas al método que tiene la clase y te devuelve una conexión
+        Connection objConn = SQL.conectarBD();
+
+        try {
+            if (objConn != null) {
+                // Preparamos la insert
+                //Se borra Libreria_Multimedia_idLibreria_Multimedia 24/3 - 13:39
+                String query = "insert into Libreria_Multimedia (idLibreria_Multimedia, Nombre, Descripcion) values (?, ?, ?)";
+
+                //Creamos las preparedstaments
+                PreparedStatement objSt = objConn.prepareStatement(query);
+                objSt.setInt(1, idLibreria_Multimedia);
+                objSt.setString(2, Nombre);
+                objSt.setString(3, Descripcion);
 
                 //Ejecutamos la query que hemos preparado
                 objSt.execute();

@@ -24,9 +24,11 @@ public class clsPelicula extends clsArticulo implements itfProperty {
     int Duracion;
     int Calporedad;
     int Calificacion;
+    //Añadidos a posteriori para identificarlos de forma relacional:
+    int Libreria_Multimedia_idLibreria_Multimedia = 0;
 
     //Constructor (No se usa / o sí, parece que si, en teoría debería)
-    public clsPelicula(/*String Titulo, String Titulo_original, String Anno_de_publicacion, String Tipo_DoA, String Formato, boolean En_propiedad, boolean En_busqueda, double Precio, String Genero, String Premios, */String _Director, String _Enlace_a_trailer, String _Sinopsis, int _Cantidad_actores, String _Actor1, String _Actor2, String _Actor3, String _Saga, Double _Orden, int _Duracion, int _Calporedad, int _Calificacion) {
+    public clsPelicula(/*String Titulo, String Titulo_original, String Anno_de_publicacion, String Tipo_DoA, String Formato, boolean En_propiedad, boolean En_busqueda, double Precio, String Genero, String Premios, */String _Director, String _Enlace_a_trailer, String _Sinopsis, int _Cantidad_actores, String _Actor1, String _Actor2, String _Actor3, String _Saga, Double _Orden, int _Duracion, int _Calporedad, int _Calificacion, int _Libreria_Multimedia_idLibreria_Multimedia) {
         //Variables "Heredadas":
 
         //super.Titulo = _Titulo;
@@ -44,6 +46,7 @@ public class clsPelicula extends clsArticulo implements itfProperty {
         Duracion = _Duracion;
         Calporedad = _Calporedad;
         Calificacion = _Calificacion;
+        Libreria_Multimedia_idLibreria_Multimedia = _Libreria_Multimedia_idLibreria_Multimedia;
     }
 
     @Override
@@ -114,6 +117,9 @@ public class clsPelicula extends clsArticulo implements itfProperty {
                 break;
             case "Calificacion":
                 propResultado = Calificacion;
+                break;
+            case "Libreria_Multimedia_idLibreria_Multimedia":
+                propResultado = Libreria_Multimedia_idLibreria_Multimedia;
                 break;
             default:
                 System.out.println("Propiedad no encontrada.");
