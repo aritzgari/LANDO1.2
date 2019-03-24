@@ -7,33 +7,33 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
- * @author Ruben Dom铆nguez
+ * @author Ruben Dom韓guez
  * Aritz Garitano
  * <p>
  * La clase sirve para insertar un registro en la base de datos. Previamente, realiza una
- * conexi贸n con la base de datos, y despu茅s de realizar el insert, vuelve a cerrar la conexi贸n.
+ * conexi髇 con la base de datos, y despu閟 de realizar el insert, vuelve a cerrar la conexi髇.
  */
 public class clsInsertar {
 
-    public void insertarBD(String Titulo, int A帽o, String Duraci贸n, int Puntuaci贸n, int Calporedad, int Libreria_Multimedia_idLibreria_Multimedia) {
+    public void insertarBD(String Titulo, int A駉, String Duraci髇, int Puntuaci髇, int Calporedad, int Libreria_Multimedia_idLibreria_Multimedia) {
 
         // Instancias la clase que hemos creado anteriormente
         clsConexionBD SQL = new clsConexionBD();
 
-        // Llamas al m茅todo que tiene la clase y te devuelve una conexi贸n
+        // Llamas al m閠odo que tiene la clase y te devuelve una conexi髇
         Connection objConn = SQL.conectarBD();
 
         try {
             if (objConn != null) {
                 // Preparamos la insert
-                String query = "insert into Peliculas (T铆tulo, A帽o, Duraci贸n, Puntuaci贸n, Calporedad, Libreria_Multimedia_idLibreria_Multimedia) values (?, ?, ?, ?, ?, ?)";
+                String query = "insert into Peliculas (T韙ulo, A駉, Duraci髇, Puntuaci髇, Calporedad, Libreria_Multimedia_idLibreria_Multimedia) values (?, ?, ?, ?, ?, ?)";
 
                 //Creamos las preparedstaments
                 PreparedStatement objSt = objConn.prepareStatement(query);
                 objSt.setString(1, Titulo);
-                objSt.setInt(2, A帽o);
-                objSt.setString(3, Duraci贸n);
-                objSt.setInt(4, Puntuaci贸n);
+                objSt.setInt(2, A駉);
+                objSt.setString(3, Duraci髇);
+                objSt.setInt(4, Puntuaci髇);
                 objSt.setInt(5, Calporedad);
                 objSt.setInt(6, Libreria_Multimedia_idLibreria_Multimedia);
 
@@ -45,11 +45,11 @@ public class clsInsertar {
                 //Cerramos el preparedStatement
                 objSt.close();
 
-                //Cerramos la conexi贸n
+                //Cerramos la conexi髇
                 objConn.close();
 
             } else {
-                System.out.println("No existe conexi贸n");
+                System.out.println("No existe conexi髇");
             }
 
         } catch (SQLException e) {

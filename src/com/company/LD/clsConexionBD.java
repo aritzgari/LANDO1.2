@@ -1,6 +1,6 @@
 package com.company.LD;
 /**
- * @author Ruben DomÃ­nguez
+ * @author Ruben Domínguez
  * Aritz Garitano
  */
 //import java.sql.* ---->importamos todas las clases del paquete java.sql
@@ -41,7 +41,7 @@ public class clsConexionBD {
             objConn = DriverManager.getConnection(url, user, password);
 
         } catch (SQLException e) {
-            System.out.println("Ha fallado la conexiÃ³n" + e);
+            System.out.println("Ha fallado la conexión" + e);
         }
 
         return objConn;
@@ -55,7 +55,7 @@ public class clsConexionBD {
             conexion.close();
 
         } catch (SQLException e) {
-            System.out.println("Ha fallado la desconexiÃ³n");
+            System.out.println("Ha fallado la desconexión");
         }
 
     }

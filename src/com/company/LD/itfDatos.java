@@ -3,7 +3,7 @@ package com.company.LD;
 /**
  * Interfaz de acceso a datos(Ejemplo en ALUD)
  *
- * @author Ruben DomÃ­nguez
+ * @author Ruben Domínguez
  * Aritz Garitano
  */
 

@@ -4,7 +4,7 @@ package com.company.LN;
  * Interfaz para la independencia entre la LN y la LP.
  * Esto es una copia directa de el ejemplo de ALUD requerira cambios.
  *
- * @author Ruben DomÃ­nguez
+ * @author Ruben Domínguez
  * Aritz Garitano
  */
 public interface itfProperty {
@@ -44,5 +44,12 @@ public interface itfProperty {
      * @para propiedad nombre de la propiedad a devolver del objeto.
      */
     char getCharProperty(String propiedad);
+
+    /**
+     * Devuelve la propiedad solicitada por nombre de tipo char.
+     *
+     * @para propiedad nombre de la propiedad a devolver del objeto.
+     */
+    boolean getBooleanProperty(String propiedad);
 
 }

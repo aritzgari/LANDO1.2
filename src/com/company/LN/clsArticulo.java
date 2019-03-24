@@ -3,7 +3,7 @@ package com.company.LN;
 /**
  * Clase padre. Contiene atributos comunes de clsLibro, clsMusica y clsPelicula.
  *
- * @author Ruben DomÃ­nguez
+ * @author Ruben Domínguez
  * Aritz Garitano
  */
 

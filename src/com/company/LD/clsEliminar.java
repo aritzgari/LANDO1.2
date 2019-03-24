@@ -8,11 +8,11 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
- * @author Ruben Dom铆nguez
+ * @author Ruben Dom韓guez
  * Aritz Garitano
  * <p>
  * La clase sirve para eliminar un registro de la base de datos. Previamente, realiza una
- * conexi贸n con la base de datos, y despu茅s de eliminar el registro, vuelve a cerrar la conexi贸n.
+ * conexi髇 con la base de datos, y despu閟 de eliminar el registro, vuelve a cerrar la conexi髇.
  */
 public class clsEliminar {
 
@@ -21,7 +21,7 @@ public class clsEliminar {
         // Instancias la clase que hemos creado anteriormente
         clsConexionBD SQL = new clsConexionBD();
 
-        // Llamas al m茅todo que tiene la clase y te devuelve una conexi贸n
+        // Llamas al m閠odo que tiene la clase y te devuelve una conexi髇
         Connection objConn = SQL.conectarBD();
 
         try {
@@ -41,11 +41,11 @@ public class clsEliminar {
                 //Cerramos el preparedStatement
                 objSt.close();
 
-                //Cerramos la conexi贸n
+                //Cerramos la conexi髇
                 objConn.close();
 
             } else {
-                System.out.println("No existe conexi贸n");
+                System.out.println("No existe conexi髇");
             }
 
         } catch (SQLException e) {

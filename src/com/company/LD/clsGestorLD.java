@@ -3,7 +3,7 @@ package com.company.LD;
 /**
  * Clase que intercomunica LN con LD
  *
- * @author Ruben DomÃ­nguez
+ * @author Ruben Domínguez
  * Aritz Garitano
  */
 public class clsGestorLD {

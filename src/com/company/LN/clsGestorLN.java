@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Clase que intercomunica LP con LN
  *
- * @author Ruben DomÃ­nguez
+ * @author Ruben Domínguez
  * Aritz Garitano
  */
 

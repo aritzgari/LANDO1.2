@@ -9,11 +9,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * @author Ruben Dom铆nguez
+ * @author Ruben Dom韓guez
  * Aritz Garitano
  * <p>
  * La clase sirve para ejecutar una consulta en la base de datos. Previamente, realiza una
- * conexi贸n con la base de datos, y despu茅s de realizar la consulta, vuelve a cerrar la conexi贸n.
+ * conexi髇 con la base de datos, y despu閟 de realizar la consulta, vuelve a cerrar la conexi髇.
  */
 public class clsConsultar {
 
@@ -21,7 +21,7 @@ public class clsConsultar {
         // Instancias la clase que hemos creado anteriormente
         clsConexionBD SQL = new clsConexionBD();
 
-        // Llamas al m茅todo que tiene la clase y te devuelve una conexi贸n
+        // Llamas al m閠odo que tiene la clase y te devuelve una conexi髇
         Connection objConn = SQL.conectarBD();
 
         try {
@@ -35,19 +35,19 @@ public class clsConsultar {
 
                 // Recorremos el resultado, mientras haya registros para leer, y escribimos el resultado en pantalla.
                 while (rs.next()) {
-                    System.out.println(rs.getString("T铆tulo") + " " + rs.getInt("A帽o") + " " +
-                            rs.getString("Duraci贸n") + " " + rs.getInt("Puntuaci贸n") + " " + rs.getInt("Calporedad") + " " + rs.getInt("Libreria_Multimedia_idLibreria_Multimedia"));
+                    System.out.println(rs.getString("T韙ulo") + " " + rs.getInt("A駉") + " " +
+                            rs.getString("Duraci髇") + " " + rs.getInt("Puntuaci髇") + " " + rs.getInt("Calporedad") + " " + rs.getInt("Libreria_Multimedia_idLibreria_Multimedia"));
                 }
 
                 //Cerramos el resulset
                 rs.close();
                 //Cerramos el statement
                 st.close();
-                //Cerramos la conexi贸n
+                //Cerramos la conexi髇
                 objConn.close();
 
             } else {
-                System.out.println("No existe conexi贸n");
+                System.out.println("No existe conexi髇");
             }
 
         } catch (SQLException e) {

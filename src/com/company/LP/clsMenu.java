@@ -57,7 +57,7 @@ public class clsMenu {
                     "3.-Añadir Musica\n" +
                     "4.-Menu Principal\n" +
                     "------------\n" +
-                    "Opci?n:");
+                    "Opción:");
             op = UtilidadesLP.leerEntero();
             switch (op) {
                 case 1:

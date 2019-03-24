@@ -1,6 +1,6 @@
 package com.company.LP;
 /**
- * @author Ruben DomÃ­nguez
+ * @author Ruben Domínguez
  * Aritz Garitano
  */
 
@@ -9,9 +9,9 @@ import java.io.InputStreamReader;
 
 public class UtilidadesLP {
     /**
-     Permite introducir por teclado en la consola un nï¿½mero entero (32 bits = -2147483648 <-> 2147483648)
+     Permite introducir por teclado en la consola un n?mero entero (32 bits = -2147483648 <-> 2147483648)
      realizando las comprobaciones pertienentes.
-     @return Devuelve el nï¿½mero entero que se haya introducido por teclado.
+     @return Devuelve el n?mero entero que se haya introducido por teclado.
      */
     public static int leerEntero() {
         InputStreamReader isr = new InputStreamReader(System.in);
@@ -24,7 +24,7 @@ public class UtilidadesLP {
                 entero = new Integer(cadena);
                 error = false;
             } catch (NumberFormatException nfe) {
-                System.out.println("No tecleï¿½ un nï¿½mero entero-Repetir");
+                System.out.println("No tecle? un n?mero entero-Repetir");
             } catch (Exception e) {
                 System.out.println("Error de entrada-Repetir ");
             }
@@ -34,9 +34,9 @@ public class UtilidadesLP {
     }
 
     /**
-     Permite introducir por teclado en la consola un nï¿½mero real realizando
+     Permite introducir por teclado en la consola un n?mero real realizando
      las comprobaciones pertienentes.
-     @return Devuelve el nï¿½mero real que se haya introducido por teclado.
+     @return Devuelve el n?mero real que se haya introducido por teclado.
      */
     public static double leerReal() {
         InputStreamReader isr = new InputStreamReader(System.in);
@@ -49,7 +49,7 @@ public class UtilidadesLP {
                 real = new Double(cadena);
                 error = false;
             } catch (NumberFormatException nfe) {
-                System.out.println("No tecleï¿½ un nï¿½mero real-Repetir ");
+                System.out.println("No tecle? un n?mero real-Repetir ");
             } catch (Exception e) {
                 System.out.println("Error de entrada-Repetir ");
             }
