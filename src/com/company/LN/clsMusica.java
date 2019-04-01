@@ -1,7 +1,7 @@
 package com.company.LN;
 
 /**
- * Clase para guardar datos de Musica en nuestra Base de Datos
+ * Clase para guardar datos de Música en nuestra Base de Datos
  *
  * @author Ruben Domínguez
  * Aritz Garitano

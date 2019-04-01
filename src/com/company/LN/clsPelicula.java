@@ -20,7 +20,7 @@ public class clsPelicula extends clsArticulo implements itfProperty {
     String Actor3;
     String Saga;
     Double Orden;
-    // el siguiente es la duracion (Puede ser un TIME o algo asi)
+    // el siguiente es la duración (Puede ser un TIME o algo asi)
     int Duracion;
     int Calporedad;
     int Calificacion;
