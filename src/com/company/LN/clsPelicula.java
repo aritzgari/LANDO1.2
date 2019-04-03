@@ -1,4 +1,5 @@
 package com.company.LN;
+import com.company.Excepciones.clsPropiedadNonExistantException;
 
 /**
  * Clase para guardar datos de Peliculas en nuestra Base de Datos
@@ -27,6 +28,7 @@ public class clsPelicula extends clsArticulo implements itfProperty {
     //Añadidos a posteriori para identificarlos de forma relacional:
     int Libreria_Multimedia_idLibreria_Multimedia = 0;
 
+
     //Constructor (No se usa / o sí, parece que si, en teoría debería)
     public clsPelicula(/*String Titulo, String Titulo_original, String Anno_de_publicacion, String Tipo_DoA, String Formato, boolean En_propiedad, boolean En_busqueda, double Precio, String Genero, String Premios, */String _Director, String _Enlace_a_trailer, String _Sinopsis, int _Cantidad_actores, String _Actor1, String _Actor2, String _Actor3, String _Saga, Double _Orden, int _Duracion, int _Calporedad, int _Calificacion, int _Libreria_Multimedia_idLibreria_Multimedia) {
         //Variables "Heredadas":
@@ -50,7 +52,7 @@ public class clsPelicula extends clsArticulo implements itfProperty {
     }
 
     @Override
-    public String getStringProperty(String propiedad) {
+    public String getStringProperty(String propiedad) throws clsPropiedadNonExistantException {
         String propResultado = "";
         switch (propiedad) {
             case "Titulo":
@@ -96,14 +98,13 @@ public class clsPelicula extends clsArticulo implements itfProperty {
                 propResultado = Saga;
                 break;
             default:
-                System.out.println("Propiedad no encontrada.");
-                break;
+                throw new clsPropiedadNonExistantException();
         }
         return propResultado;
     }
 
     @Override
-    public Integer getIntegerProperty(String propiedad) {
+    public Integer getIntegerProperty(String propiedad) throws clsPropiedadNonExistantException {
         int propResultado = 0;
         switch (propiedad) {
             case "Cantidad_actores":
@@ -122,27 +123,25 @@ public class clsPelicula extends clsArticulo implements itfProperty {
                 propResultado = Libreria_Multimedia_idLibreria_Multimedia;
                 break;
             default:
-                System.out.println("Propiedad no encontrada.");
-                break;
+                throw new clsPropiedadNonExistantException();
         }
         return propResultado;
     }
 
     @Override
-    public Float getFloatProperty(String propiedad) {
+    public Float getFloatProperty(String propiedad) throws clsPropiedadNonExistantException {
         Float propResultado = null;
         switch (propiedad) {
             case "":
                 break;
             default:
-                System.out.println("Propiedad no encontrada.");
-                break;
+                throw new clsPropiedadNonExistantException();
         }
         return propResultado;
     }
 
     @Override
-    public Double getDoubleProperty(String propiedad) {
+    public Double getDoubleProperty(String propiedad) throws clsPropiedadNonExistantException {
         Double propResultado = 0.0;
         switch (propiedad) {
             case "Precio":
@@ -152,27 +151,25 @@ public class clsPelicula extends clsArticulo implements itfProperty {
                 propResultado = Orden;
                 break;
             default:
-                System.out.println("Propiedad no encontrada.");
-                break;
+                throw new clsPropiedadNonExistantException();
         }
         return propResultado;
     }
 
     @Override
-    public char getCharProperty(String propiedad) {
+    public char getCharProperty(String propiedad) throws clsPropiedadNonExistantException {
         char propResultado = ' ';
         switch (propiedad) {
             case "":
                 break;
             default:
-                System.out.println("Propiedad no encontrada.");
-                break;
+                throw new clsPropiedadNonExistantException();
         }
         return propResultado;
     }
 
     @Override
-    public boolean getBooleanProperty(String propiedad) {
+    public boolean getBooleanProperty(String propiedad) throws clsPropiedadNonExistantException {
         boolean propResultado = false;
         switch (propiedad) {
             case "En_propiedad":
@@ -182,8 +179,7 @@ public class clsPelicula extends clsArticulo implements itfProperty {
                 propResultado = En_busqueda;
                 break;
             default:
-                System.out.println("Propiedad no encontrada.");
-                break;
+                throw new clsPropiedadNonExistantException();
         }
         return propResultado;
     }

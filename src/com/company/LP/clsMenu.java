@@ -53,7 +53,7 @@ public class clsMenu {
         do {
             System.out.println("MENÚ - Añadir\n" +
                     "--------------------\n" +
-                    "2.-Añadir Librería\n" +
+                    "1.-Añadir Librería\n" +
                     "2.-Añadir Películas\n" +
                     "3.-Añadir Libros\n" +
                     "4.-Añadir Música\n" +

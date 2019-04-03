@@ -71,6 +71,9 @@ public class clsGestorLN {
          */
         clsPelicula objPelicula;
         objPelicula = new clsPelicula(Director, Enlace_a_trailer, Sinopsis, Cantidad_actores, Actor1, Actor2, Actor3, Saga, Orden, Duracion, Calporedad, Calificacion, Libreria_Multimedia_idLibreria_Multimedia);
+        //LINEA PARA PROBAR EXCEPCION - BORRAR AL ACABAR
+        objPelicula.getBooleanProperty("PropiedadMAL");
+        //LINEA PARA PROBAR EXCEPCION - BORRAR AL ACABAR
         datosArticulos.add(objPelicula);
         //Vale, aquí, que esto es LN, voy a crear un objGestorLD, creo que esto se puede hacer,
         // y con este obj voy a intentar añadir las pelis directamente a la BBDD. Ni yo me creo lo que digo, pero en teoría esto está bien.
