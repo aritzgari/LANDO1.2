@@ -8,14 +8,12 @@ package com.company.LD;
  */
 //import java.sql.* ---->importamos todas las clases del paquete java.sql
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-
-/*Esta es la clase de conexiones con la BD esta sacada/copiada del programa de alvaro necesitaremos cambiarla.*/
+import java.sql.*;
 
 
-public class clsConexionBD {
+public abstract class clsConexionBD
+{
+
 
     //Nombre de la base de datos
     public String database = "lando";
@@ -35,29 +33,99 @@ public class clsConexionBD {
     //Password
     public String password = "1243";
 
-    public Connection conectarBD() {
+    private Connection objCon;
+    private PreparedStatement objSt;
+    private ResultSet objRs;
 
-        Connection objConn = null;
+    public void setObjCon(Connection objCon) {
+        this.objCon = objCon;
+    }
+
+    public void setObjSt(PreparedStatement objSt) {
+        this.objSt = objSt;
+    }
+
+    public void setObjRs(ResultSet objRs) {
+        this.objRs = objRs;
+    }
+
+    public Connection getObjCon() {
+        return objCon;
+    }
+
+    public PreparedStatement getObjSt() {
+        return objSt;
+    }
+
+    public ResultSet getObjRs() {
+        return objRs;
+    }
+
+    public void conectarBD()
+    {
+
+        objCon = null;
 
         try {
 
-            objConn = DriverManager.getConnection(url, user, password);
+            objCon = DriverManager.getConnection(url, user, password);
 
         } catch (SQLException e) {
             System.out.println("Ha fallado la conexión" + e);
         }
 
-        return objConn;
+    }
+
+    public ResultSet sendSelect (String query)
+    {
+
+        try
+        {
+            objSt = objCon.prepareStatement(query);
+            objRs= objSt.executeQuery();
+
+        }
+        catch (SQLException e)
+        {
+            //haced algo.
+        }
+
+        return objRs;
 
     }
 
+    public abstract int sendInsert(String query);
+    public abstract int sendUpdate(String query);
+
+    public void sendDelete(String query, int id)
+    {
+
+        try
+        {
+            objSt = objCon.prepareStatement(query);
+            objSt.setInt(1, id);
+            objSt.executeUpdate();
+        }
+        catch(SQLException e)
+        {
+            //Algo
+        }
+
+    }
+
+
     public void desconectarBD(Connection conexion) {
 
-        try {
+        try
+        {
 
-            conexion.close();
+            objCon.close();
+            objSt.close();
+            objRs.close();
 
-        } catch (SQLException e) {
+        }
+        catch (SQLException e)
+        {
             System.out.println("Ha fallado la desconexión");
         }
 
