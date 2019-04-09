@@ -2,14 +2,14 @@ package com.company.LD;
 
 import java.sql.SQLException;
 
-public class clsPeliculaBD extends clsConexionBD
+public class clsLibreria_MultimediaBD extends clsConexionBD
 {
 
 
     @Override
-    public int sendInsert(String query)
+    public int sendInsert(String query/*, String _Nombre, String _Descripcion*/)
     {
-
+        this.conectarBD();
         int regActualizados=0;
         int retorno=0;
 
@@ -18,9 +18,12 @@ public class clsPeliculaBD extends clsConexionBD
 
         try
         {
-
+            //con la siguiente linea me hace la prepareStatement con mi query y el AI. Se supone que lo hace solo.
             this.setObjSt(this.getObjCon().prepareStatement(query,this.getObjSt().RETURN_GENERATED_KEYS));
-            this.getObjSt().setString(1,"");
+            this.getObjSt().setInt(1,this.getObjSt().RETURN_GENERATED_KEYS);
+
+          /*  this.getObjSt().setString(2, _Nombre);
+            this.getObjSt().setString(3, _Descripcion);*/
 
             /**
             ps.setString(1, dni);
@@ -40,7 +43,7 @@ public class clsPeliculaBD extends clsConexionBD
                 }
             }
 
-            //AQUI tenemos que insertar teniendo en id el valor de retorno(?)
+            //AQUI tenemos que insertar teniendo en id el valor de retorno(?) - Tiene pinta de que no, que lo ahce solo.
 
 
         }
@@ -50,6 +53,8 @@ public class clsPeliculaBD extends clsConexionBD
             e.printStackTrace();
         }
 
+        //CERRAMOS AQUI LA CONEXION, TAL VEZ MAS TARDE MEJOR
+        this.desconectarBD(this.getObjCon());
         return retorno;
 
 

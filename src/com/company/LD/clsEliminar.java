@@ -15,7 +15,7 @@ import java.sql.SQLException;
  * conexión con la base de datos, y después de eliminar el registro, vuelve a cerrar la conexión.
  */
 public class clsEliminar {
-
+/*
     public void eliminarBD(int id) {
 
         // Instancias la clase que hemos creado anteriormente
@@ -51,6 +51,6 @@ public class clsEliminar {
         } catch (SQLException e) {
             System.out.println("No se ha podido eliminar el registro: " + e);
         }
-    }
+    }*/
 
 }

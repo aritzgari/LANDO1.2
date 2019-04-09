@@ -14,7 +14,6 @@ import java.sql.*;
 public abstract class clsConexionBD
 {
 
-
     //Nombre de la base de datos
     public String database = "lando";
 
@@ -25,7 +24,7 @@ public abstract class clsConexionBD
     public String port = "3306";
 
     //Ruta de la base de datos (jdbc:mysql://localhost:3306/alumnoBD?useTimezone=true&serverTimezone=GMT&useSSL=false)
-    public String url = "jdbc:mysql://" + hostname + ":" + port + "/" + database + "?useTimezone=true&serverTimezone=GMT&useSSL=false";
+    public String url = "jdbc:mysql://" + hostname + ":" + port + "/" + database + "?useTimezone=true&serverTimezone=GMT&allowPublicKeyRetrieval=true&useSSL=false";
 
     //Nombre de usuario
     public String user = "root";

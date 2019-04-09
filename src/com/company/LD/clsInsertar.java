@@ -15,7 +15,7 @@ import java.sql.SQLException;
  */
 public class clsInsertar {
 
-    public void insertarPeliculaEnBD(String Titulo, int Año, String Duración, int Puntuación, int Calporedad, int Libreria_Multimedia_idLibreria_Multimedia) {
+    /*public void insertarPeliculaEnBD(String Titulo, int Año, String Duración, int Puntuación, int Calporedad, int Libreria_Multimedia_idLibreria_Multimedia) {
 
         // Instancias la clase que hemos creado anteriormente.
         clsConexionBD SQL = new clsConexionBD();
@@ -97,6 +97,6 @@ public class clsInsertar {
             System.out.println("No se ha podido realizar el insert: " + e);
         }
     }
-
+*/
 }
 

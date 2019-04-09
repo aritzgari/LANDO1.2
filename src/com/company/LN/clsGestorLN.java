@@ -1,7 +1,9 @@
 package com.company.LN;
 
 import com.company.LD.clsDatos;
+import com.company.LD.clsLibreria_MultimediaBD;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -50,18 +52,38 @@ public class clsGestorLN {
         return datosArticulos;
     }
 
-    public static void crearLiberia(int idLibreria_Multimedia, String Nombre, String Descripcion) {
+    public static void crearLiberia(int idLibreria_Multimedia, String Nombre, String Descripcion) /*Excepcion no tratadathrows SQLException */ {
         /**
          * Metodo para crear Librerias en el Gestor con datos que recibamos de LP
          * @author RubenD AritzG
          */
+        //UPDATE 05/04: Aqui creamos la query con los parametros que nos pasan a este metodo;
+        //con esta query llamamos a clsLibreriaMultimediaBD.sendInsert(query)
+        //QUE PASA, que el id es AutoIncremental, asique igual conviene mandar la query sin el AutoIncremental,
+        // y este añadirlo con el retorno (L39) del metodo de clsLibreriaMultimediaBD.sendInsert.
+        // (mas bien se añadirá solo)
+        String query = "insert into Libreria_Multimedia (idLibreria_Multimedia, Nombre, Descripcion) values (?, ?, ?)";
+        clsLibreria_MultimediaBD objLibreria_MultimediaBD = new clsLibreria_MultimediaBD();
+        try {
+
+            objLibreria_MultimediaBD.getObjSt().setString(2, Nombre);
+            objLibreria_MultimediaBD.getObjSt().setString(3, Descripcion);
+            objLibreria_MultimediaBD.sendInsert(query);
+        } catch (SQLException e) {
+            System.out.println("ERROR FATAL DE SQL");
+        }
         clsLibreriaMultimedia objLibreria;
+        //Esto habrá que cambiarlo porque no podemos crear las librerias en la RAM con el id proporcionado.
         objLibreria = new clsLibreriaMultimedia(idLibreria_Multimedia, Nombre, Descripcion);
         datosLibrerias.add(objLibreria);
+
         //Vale, aquí, que esto es LN, voy a crear un objGestorLD, creo que esto se puede hacer,
-        // y con este obj voy a intentar añadir las pelis directamente a la BBDD. Ni yo me creo lo que digo, pero en teoría esto está bien.
-        clsDatos objDatos = new clsDatos();
-        objDatos.insertarLiberiaBD(idLibreria_Multimedia, Nombre, Descripcion);
+        // y con este obj voy a intentar añadir las librerias directamente a la BBDD. Ni yo me creo lo que digo, pero en teoría esto está bien.
+
+        //METODO ANTIGUO:
+        /* clsDatos objDatos = new clsDatos();
+        objDatos.insertarLiberiaBD(idLibreria_Multimedia, Nombre, Descripcion);*/
+        //FIN METODO ANTIGUO
     }
 
     public static void crearPelicula(String Titulo, String Titulo_original, String Anno_de_publicacion, String Tipo_DoA, String Formato, boolean En_propiedad, boolean En_busqueda, double Precio, String Genero, String Premios, String Director, String Enlace_a_trailer, String Sinopsis, int Cantidad_actores, String Actor1, String Actor2, String Actor3, String Saga, Double Orden, int Duracion, int Calporedad, int Calificacion, int Libreria_Multimedia_idLibreria_Multimedia) {

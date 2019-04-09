@@ -162,12 +162,12 @@ public class clsMenu {
             op = UtilidadesLP.leerEntero();
             switch (op) {
                 case 1:
-                    objConsultor.consultarLibreriasEnBD();
+                    //objConsultor.consultarLibreriasEnBD();
                     break;
                 case 2:
                     /*No se leer? m?s que la ubicaci?n de memoria, hay que recorrer el Array. (Averiguar como)
                     System.out.println(objGestorLN.getDatosPeliculas());*/
-                    objConsultor.consultarPeliculasEnBD();
+                    //objConsultor.consultarPeliculasEnBD();
                     break;
                 case 3:
                     //objGestorLN.getDatosLibros();

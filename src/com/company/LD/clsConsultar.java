@@ -15,22 +15,21 @@ import java.sql.Statement;
  * La clase sirve para ejecutar una consulta en la base de datos. Previamente, realiza una
  * conexión con la base de datos, y después de realizar la consulta, vuelve a cerrar la conexión.
  */
-public class clsConsultar
-{
+public class clsConsultar {
     private Statement objSt;
     private ResultSet objrs;
     private Connection objCon;
 
-    public clsConsultar ()
-    {
-        objSt=null;
-        objrs=null;
-        objCon=null;
+    public clsConsultar() {
+        objSt = null;
+        objrs = null;
+        objCon = null;
     }
+/*
 
-    public void consultarPeliculasEnBD()
-    {
+    public void consultarPeliculasEnBD() {
         // Instancias la clase que hemos creado anteriormente
+
         clsConexionBD SQL = new clsConexionBD();
 
         // Llamas al método que tiene la clase y te devuelve una conexión
@@ -104,6 +103,7 @@ public class clsConsultar
         } catch (SQLException e) {
             System.out.println("Ha fallado la consulta: " + e);
         }
-    }
+    }*/
 }
+
 
