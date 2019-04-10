@@ -2,7 +2,8 @@ package com.company.LN;
 
 import com.company.LD.clsDatos;
 import com.company.LD.clsLibreria_MultimediaBD;
-
+//import com.company.Común.clsConstantes;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -62,20 +63,25 @@ public class clsGestorLN {
         //QUE PASA, que el id es AutoIncremental, asique igual conviene mandar la query sin el AutoIncremental,
         // y este añadirlo con el retorno (L39) del metodo de clsLibreriaMultimediaBD.sendInsert.
         // (mas bien se añadirá solo)
+        //La siguiente linea convendría que fuera una constante:
         String query = "insert into Libreria_Multimedia (idLibreria_Multimedia, Nombre, Descripcion) values (?, ?, ?)";
-        clsLibreria_MultimediaBD objLibreria_MultimediaBD = new clsLibreria_MultimediaBD();
-        try {
+        clsLibreria_MultimediaBD objLibreria_MultimediaBD = new clsLibreria_MultimediaBD(Nombre, Descripcion);
+        //objLibreria_MultimediaBD.sendInsert(queryInsertLibreria);
+        objLibreria_MultimediaBD.sendInsert("insert into Libreria_Multimedia (idLibreria_Multimedia, Nombre, Descripcion) values (?, ?, ?)");
+        /*try {
 
             objLibreria_MultimediaBD.getObjSt().setString(2, Nombre);
             objLibreria_MultimediaBD.getObjSt().setString(3, Descripcion);
             objLibreria_MultimediaBD.sendInsert(query);
         } catch (SQLException e) {
             System.out.println("ERROR FATAL DE SQL");
-        }
-        clsLibreriaMultimedia objLibreria;
+        }*/
+
+        //10/04/2019: Quito esto siguiente porque lo haremos con el nuevo metodo: (4 lineas)
+        /*clsLibreriaMultimedia objLibreria;
         //Esto habrá que cambiarlo porque no podemos crear las librerias en la RAM con el id proporcionado.
         objLibreria = new clsLibreriaMultimedia(idLibreria_Multimedia, Nombre, Descripcion);
-        datosLibrerias.add(objLibreria);
+        datosLibrerias.add(objLibreria);*/
 
         //Vale, aquí, que esto es LN, voy a crear un objGestorLD, creo que esto se puede hacer,
         // y con este obj voy a intentar añadir las librerias directamente a la BBDD. Ni yo me creo lo que digo, pero en teoría esto está bien.
@@ -121,5 +127,13 @@ public class clsGestorLN {
         clsMusica objMusica;
         objMusica = new clsMusica(/*Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Formato,En_propiedad, En_busqueda, Precio, Genero, Premiosint,*/ Cantidad_musicos, Musico1, Musico2, Musico3, Musico4, Musico5, Album, Enlace_a_youtube, Videoclip);
         datosArticulos.add(objMusica);
+    }
+
+    public ResultSet consultarLibreriasEnBD() {
+        ResultSet retorno = null;
+        clsLibreria_MultimediaBD objLibreria_MultimediaBD = new clsLibreria_MultimediaBD();
+        //Ojo aquí la query como constante:
+        retorno = objLibreria_MultimediaBD.sendSelect("SELECT * FROM lando.libreria_multimedia;");
+        return retorno;
     }
 }

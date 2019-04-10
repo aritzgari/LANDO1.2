@@ -4,6 +4,9 @@ import com.company.LD.clsConsultar;
 import com.company.LD.clsInsertar;
 import com.company.LN.clsGestorLN;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  * Clase para gestionar y coordinar el flujo del programa.
  *
@@ -143,7 +146,7 @@ public class clsMenu {
 
     }
 
-    private static void SubMenu2() {
+    private static void SubMenu2() /*10/04/2019: Añadida excepcion aqui provisionalmente:throws SQLException*/ {
         /**
          * El Submemu2 se encarga de Mostrar items
          */
@@ -163,6 +166,19 @@ public class clsMenu {
             switch (op) {
                 case 1:
                     //objConsultor.consultarLibreriasEnBD();
+
+                    //Codigo provisional, intento 2:
+                    ResultSet resultado = objGestorLN.consultarLibreriasEnBD();
+                    //AQUI FALLA: Creo que por no mostrar el ResultSet como debe. Habrá que asignar los valores del resulset a mis Arraylists en la RAM en el gestor y aqui mostrar esos arraylists o algo asi.
+                    try {
+                        while (resultado.next()) {
+                            System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripción: " + resultado.getString(3));
+                        }
+                    } catch (SQLException e) {
+                        System.out.println("Error SQL");
+                        System.out.println(e);
+                    }
+
                     break;
                 case 2:
                     /*No se leer? m?s que la ubicaci?n de memoria, hay que recorrer el Array. (Averiguar como)

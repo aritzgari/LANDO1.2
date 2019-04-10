@@ -11,8 +11,7 @@ package com.company.LD;
 import java.sql.*;
 
 
-public abstract class clsConexionBD
-{
+public abstract class clsConexionBD {
 
     //Nombre de la base de datos
     public String database = "lando";
@@ -60,8 +59,7 @@ public abstract class clsConexionBD
         return objRs;
     }
 
-    public void conectarBD()
-    {
+    public void conectarBD() {
 
         objCon = null;
 
@@ -75,38 +73,32 @@ public abstract class clsConexionBD
 
     }
 
-    public ResultSet sendSelect (String query)
-    {
-
-        try
-        {
+    public ResultSet sendSelect(String query) {
+        this.conectarBD();
+        try {
             objSt = objCon.prepareStatement(query);
-            objRs= objSt.executeQuery();
+            objRs = objSt.executeQuery();
 
-        }
-        catch (SQLException e)
-        {
+        } catch (SQLException e) {
             //haced algo.
         }
-
+        //10/04/2019->LA DEJO SIN DESCONECTAR PARA UNA PRUEBA, PORQUE NO PUEDO LEER EL RESULSET DESDE clsMenu SI LO CIERRO
+        //this.desconectarBD(objCon);
         return objRs;
 
     }
 
     public abstract int sendInsert(String query);
+
     public abstract int sendUpdate(String query);
 
-    public void sendDelete(String query, int id)
-    {
+    public void sendDelete(String query, int id) {
 
-        try
-        {
+        try {
             objSt = objCon.prepareStatement(query);
             objSt.setInt(1, id);
             objSt.executeUpdate();
-        }
-        catch(SQLException e)
-        {
+        } catch (SQLException e) {
             //Algo
         }
 
@@ -115,16 +107,13 @@ public abstract class clsConexionBD
 
     public void desconectarBD(Connection conexion) {
 
-        try
-        {
+        try {
 
             objCon.close();
             objSt.close();
             objRs.close();
 
-        }
-        catch (SQLException e)
-        {
+        } catch (SQLException e) {
             System.out.println("Ha fallado la desconexión");
         }
 
