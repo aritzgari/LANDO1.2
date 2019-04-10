@@ -2,9 +2,11 @@ package com.company.LP;
 
 import com.company.LD.clsConsultar;
 import com.company.LN.clsGestorLN;
+import com.company.LN.clsLibreriaMultimedia;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Clase para gestionar y coordinar el flujo del programa.
@@ -167,17 +169,14 @@ public class clsMenu {
                     //objConsultor.consultarLibreriasEnBD();
 
                     //Codigo provisional, intento 2:
-                    ResultSet resultado = objGestorLN.consultarLibreriasEnBD();
-                    //AQUI FALLA: Creo que por no mostrar el ResultSet como debe. Habrá que asignar los valores del resulset a mis Arraylists en la RAM en el gestor y aqui mostrar esos arraylists o algo asi.
-                    try {
-                        while (resultado.next()) {
-                            System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripción: " + resultado.getString(3));
-                        }
-                    } catch (SQLException e) {
-                        System.out.println("Error SQL");
-                        System.out.println(e);
+                    ArrayList<clsLibreriaMultimedia> resultado = objGestorLN.consultarLibreriasEnBD();
+                    System.out.println("----------------------------\n" +
+                            "\t\tLibrerias\n" +
+                            "----------------------------");
+                    for (clsLibreriaMultimedia L : resultado
+                    ) {
+                        System.out.println("id: " + L.getIdLibreria_Multimedia() + " Nombre: " + L.getNombre() + " Descripcion: " + L.getDescripcion());
                     }
-
                     break;
                 case 2:
                     /*No se leer? m?s que la ubicaci?n de memoria, hay que recorrer el Array. (Averiguar como)

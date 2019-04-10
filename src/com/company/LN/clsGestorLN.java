@@ -130,11 +130,29 @@ public class clsGestorLN {
         datosArticulos.add(objMusica);
     }
 
-    public ResultSet consultarLibreriasEnBD() {
-        ResultSet retorno = null;
+    public /*DevuelvoObjeto:*/ArrayList<clsLibreriaMultimedia> consultarLibreriasEnBD() {
+        ResultSet resultado = null;
+        //Declarado mas abajo, ignorar: clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia();
         clsLibreria_MultimediaBD objLibreria_MultimediaBD = new clsLibreria_MultimediaBD();
-        //Ojo aquí la query como constante:
-        retorno = objLibreria_MultimediaBD.sendSelect(queryConsultaLibreria);
-        return retorno;
+        //En este metodo tendremos que crear librerias y asignarles de alguna manera los valores antes de cerrar la conexuión
+        //Para ello:
+        //...
+        //ABRIR CONEXION:
+        objLibreria_MultimediaBD.conectarBD();
+        resultado = objLibreria_MultimediaBD.sendSelect(queryConsultaLibreria);
+        //Meto rs en objeto
+        try {
+            while (resultado.next()) {
+                clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia(resultado.getInt(1),resultado.getString(2),resultado.getString(3));
+                //Esto era para visualizar: System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripción: " + resultado.getString(3));
+                datosLibrerias.add(objLibreriaMultimedia);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error SQL");
+            System.out.println(e);
+        }
+        //Cierro conexion
+        objLibreria_MultimediaBD.desconectarBD(objLibreria_MultimediaBD.getObjCon());
+        return datosLibrerias;
     }
 }
