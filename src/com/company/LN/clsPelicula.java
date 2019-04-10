@@ -12,21 +12,21 @@ public class clsPelicula extends clsArticulo implements itfProperty {
 
     /*atributos de la clase pelicula*/
 
-    String Director;
-    String Enlace_a_trailer;
-    String Sinopsis;
-    int Cantidad_actores;
-    String Actor1;
-    String Actor2;
-    String Actor3;
-    String Saga;
-    Double Orden;
+    private String Director;
+    private String Enlace_a_trailer;
+    private   String Sinopsis;
+    private   int Cantidad_actores;
+    private  String Actor1;
+    private  String Actor2;
+    private    String Actor3;
+    private   String Saga;
+    private   Double Orden;
     // el siguiente es la duración (Puede ser un TIME o algo asi)
-    int Duracion;
-    int Calporedad;
-    int Calificacion;
+    private   int Duracion;
+    private   int Calporedad;
+    private  int Calificacion;
     //Añadidos a posteriori para identificarlos de forma relacional:
-    int Libreria_Multimedia_idLibreria_Multimedia = 0;
+    private    int Libreria_Multimedia_idLibreria_Multimedia = 0;
 
 
     //Constructor (No se usa / o sí, parece que si, en teoría debería)
@@ -56,25 +56,25 @@ public class clsPelicula extends clsArticulo implements itfProperty {
         String propResultado = "";
         switch (propiedad) {
             case "Titulo":
-                propResultado = Titulo;
+                propResultado = getTitulo();
                 break;
             case "Titulo_original":
-                propResultado = Titulo_original;
+                propResultado = getTitulo_original();
                 break;
             case "Anno_de_publicacion":
-                propResultado = Anno_de_publicacion;
+                propResultado = getAnno_de_publicacion();
                 break;
             case "Tipo_DoA":
-                propResultado = Tipo_DoA;
+                propResultado = getTipo_DoA();
                 break;
             case "Formato":
-                propResultado = Formato;
+                propResultado = getFormato();
                 break;
             case "Genero":
-                propResultado = Genero;
+                propResultado = getGenero();
                 break;
             case "Premios":
-                propResultado = Premios;
+                propResultado = getPremios();
                 break;
             case "Director":
                 propResultado = Director;
@@ -145,7 +145,7 @@ public class clsPelicula extends clsArticulo implements itfProperty {
         Double propResultado = 0.0;
         switch (propiedad) {
             case "Precio":
-                propResultado = Precio;
+                propResultado = getPrecio();
                 break;
             case "Orden":
                 propResultado = Orden;
@@ -173,10 +173,10 @@ public class clsPelicula extends clsArticulo implements itfProperty {
         boolean propResultado = false;
         switch (propiedad) {
             case "En_propiedad":
-                propResultado = En_propiedad;
+                propResultado = getEn_propiedad();
                 break;
             case "En_busqueda":
-                propResultado = En_busqueda;
+                propResultado = getEn_busqueda();
                 break;
             default:
                 throw new clsPropiedadNonExistantException();

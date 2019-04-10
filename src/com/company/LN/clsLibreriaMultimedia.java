@@ -1,9 +1,9 @@
 package com.company.LN;
 
 public class clsLibreriaMultimedia {
-    int idLibreria_Multimedia = 0;
-    String Nombre = "";
-    String Descripcion = "";
+    private int idLibreria_Multimedia = 0;
+    private String Nombre = "";
+    private String Descripcion = "";
 
     public int getIdLibreria_Multimedia() {
         return idLibreria_Multimedia;

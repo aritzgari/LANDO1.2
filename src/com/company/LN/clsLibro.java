@@ -10,19 +10,19 @@ package com.company.LN;
 public class clsLibro extends clsArticulo implements itfProperty{
 
     /*atributos de la clase libro*/
-    String Autor;
-    String Resumen;
-    String Editorial;
+    private String Autor;
+    private String Resumen;
+    private  String Editorial;
     //Formato se hereda
-    boolean Serie_SoN;
-    String Nombre_serie;
-    double Orden_serie;
+    private   boolean Serie_SoN;
+    private  String Nombre_serie;
+    private    double Orden_serie;
     //ISBN no es un int porque es demasiado grande.
-    String ISBN;
-    int Paginas;
+    private  String ISBN;
+    private  int Paginas;
 
     public clsLibro(String _Autor, String _Resumen, String _Editorial, boolean _Serie_SoN, String _Nombre_serie, double _Orden_serie, String _ISBN, int _Paginas) {
-        //Constructor (No se usa porque el padre tiene constructor)
+        //Tal ves haya que usar setters aqui.
         Autor = _Autor;
         Resumen = _Resumen;
         Editorial = _Editorial;
@@ -39,25 +39,25 @@ public class clsLibro extends clsArticulo implements itfProperty{
         String propResultado = "";
         switch (propiedad) {
             case "Titulo":
-                propResultado = Titulo;
+                propResultado = getTitulo();
                 break;
             case "Titulo_original":
-                propResultado = Titulo_original;
+                propResultado = getTitulo_original();
                 break;
             case "Anno_de_publicacion":
-                propResultado = Anno_de_publicacion;
+                propResultado = getAnno_de_publicacion();
                 break;
             case "Tipo_DoA":
-                propResultado = Tipo_DoA;
+                propResultado = getTipo_DoA();
                 break;
             case "Formato":
-                propResultado = Formato;
+                propResultado = getFormato();
                 break;
             case "Genero":
-                propResultado = Genero;
+                propResultado = getGenero();
                 break;
             case "Premios":
-                propResultado = Premios;
+                propResultado = getPremios();
                 break;
             default:
                 System.out.println("Propiedad no encontrada.");
@@ -97,7 +97,7 @@ public class clsLibro extends clsArticulo implements itfProperty{
         Double propResultado = 0.0;
         switch (propiedad) {
             case "Precio":
-                propResultado = Precio;
+                propResultado = getPrecio();
                 break;
             default:
                 System.out.println("Propiedad no encontrada.");
@@ -124,10 +124,10 @@ public class clsLibro extends clsArticulo implements itfProperty{
         boolean propResultado = false;
         switch (propiedad) {
             case "En_propiedad":
-                propResultado = En_propiedad;
+                propResultado = getEn_propiedad();
                 break;
             case "En_busqueda":
-                propResultado = En_busqueda;
+                propResultado = getEn_busqueda();
                 break;
             default:
                 System.out.println("Propiedad no encontrada.");
