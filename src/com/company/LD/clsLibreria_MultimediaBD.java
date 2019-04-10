@@ -45,16 +45,14 @@ public class clsLibreria_MultimediaBD extends clsConexionBD {
         try {
             //con la siguiente linea me hace la prepareStatement con mi query y el AI. Se supone que lo hace solo.
             this.setObjSt(this.getObjCon().prepareStatement(query, this.getObjSt().RETURN_GENERATED_KEYS));
-            this.getObjSt().setInt(1, this.getObjSt().RETURN_GENERATED_KEYS);
 
-            this.getObjSt().setString(2, getNombre());
-            this.getObjSt().setString(3, getDescripcion());
+            //this.getObjSt().setInt(1, this.getObjSt().RETURN_GENERATED_KEYS);
 
-            /**
-             ps.setString(1, dni);
-             ps.setString(2, nombre);
-             ps.setString(3, apellido);
-             **/
+
+            //this.getObjSt().setInt(1, ?);
+
+            this.getObjSt().setString(1, getNombre());
+            this.getObjSt().setString(2, getDescripcion());
 
             regActualizados = this.getObjSt().executeUpdate();
 

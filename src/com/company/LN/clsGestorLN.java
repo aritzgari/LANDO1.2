@@ -2,10 +2,12 @@ package com.company.LN;
 
 import com.company.LD.clsDatos;
 import com.company.LD.clsLibreria_MultimediaBD;
-//import com.company.Común.clsConstantes;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+import static com.company.Comun.clsConstantes.queryConsultaLibreria;
+import static com.company.Comun.clsConstantes.queryInsertLibreria;
 
 /**
  * Clase que intercomunica LP con LN
@@ -53,7 +55,7 @@ public class clsGestorLN {
         return datosArticulos;
     }
 
-    public static void crearLiberia(int idLibreria_Multimedia, String Nombre, String Descripcion) /*Excepcion no tratadathrows SQLException */ {
+    public static void crearLiberia(/*int idLibreria_Multimedia, */String Nombre, String Descripcion) /*Excepcion no tratadathrows SQLException */ {
         /**
          * Metodo para crear Librerias en el Gestor con datos que recibamos de LP
          * @author RubenD AritzG
@@ -64,10 +66,9 @@ public class clsGestorLN {
         // y este añadirlo con el retorno (L39) del metodo de clsLibreriaMultimediaBD.sendInsert.
         // (mas bien se añadirá solo)
         //La siguiente linea convendría que fuera una constante:
-        String query = "insert into Libreria_Multimedia (idLibreria_Multimedia, Nombre, Descripcion) values (?, ?, ?)";
         clsLibreria_MultimediaBD objLibreria_MultimediaBD = new clsLibreria_MultimediaBD(Nombre, Descripcion);
         //objLibreria_MultimediaBD.sendInsert(queryInsertLibreria);
-        objLibreria_MultimediaBD.sendInsert("insert into Libreria_Multimedia (idLibreria_Multimedia, Nombre, Descripcion) values (?, ?, ?)");
+        objLibreria_MultimediaBD.sendInsert(queryInsertLibreria);
         /*try {
 
             objLibreria_MultimediaBD.getObjSt().setString(2, Nombre);
@@ -133,7 +134,7 @@ public class clsGestorLN {
         ResultSet retorno = null;
         clsLibreria_MultimediaBD objLibreria_MultimediaBD = new clsLibreria_MultimediaBD();
         //Ojo aquí la query como constante:
-        retorno = objLibreria_MultimediaBD.sendSelect("SELECT * FROM lando.libreria_multimedia;");
+        retorno = objLibreria_MultimediaBD.sendSelect(queryConsultaLibreria);
         return retorno;
     }
 }

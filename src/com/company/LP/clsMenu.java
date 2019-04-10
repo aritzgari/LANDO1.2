@@ -1,7 +1,6 @@
 package com.company.LP;
 
 import com.company.LD.clsConsultar;
-import com.company.LD.clsInsertar;
 import com.company.LN.clsGestorLN;
 
 import java.sql.ResultSet;
@@ -67,14 +66,14 @@ public class clsMenu {
             switch (op) {
                 case 1:
                     System.out.println("Datos para crear la Librería:");
-                    System.out.println("Un ID para identificarla (int)");
-                    int idLibreria_Multimedia = UtilidadesLP.leerEntero();
+                    //System.out.println("Un ID para identificarla (int)");
+                    //int idLibreria_Multimedia = UtilidadesLP.leerEntero();
                     System.out.println("Un Nombre para saber que libreria es. (String)\n" +
                             "ej. 'Casa' ó 'Oficina'.");
                     String Nombre = UtilidadesLP.leerCadena();
                     System.out.println("Añade una descripción para saber que es lo que va a contener esta librería");
                     String Descripcion = UtilidadesLP.leerCadena();
-                    objGestorLN.crearLiberia(idLibreria_Multimedia, Nombre, Descripcion);
+                    objGestorLN.crearLiberia(/*idLibreria_Multimedia,*/ Nombre, Descripcion);
 
                     break;
                 case 2:
