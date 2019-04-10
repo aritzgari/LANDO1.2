@@ -75,7 +75,7 @@ public class clsMenu {
                     String Nombre = UtilidadesLP.leerCadena();
                     System.out.println("Añade una descripción para saber que es lo que va a contener esta librería");
                     String Descripcion = UtilidadesLP.leerCadena();
-                    objGestorLN.crearLiberia(/*idLibreria_Multimedia,*/ Nombre, Descripcion);
+                    objGestorLN.crearLibreria(/*idLibreria_Multimedia,*/ Nombre, Descripcion);
 
                     break;
                 case 2:
