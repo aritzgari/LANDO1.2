@@ -1,7 +1,12 @@
 package com.company.LD;
 
 import java.sql.SQLException;
-
+/*
+*
+*
+* @author Ruben Domíngu4htez
+* Aritz Garitano
+ */
 public class clsPeliculaBD extends clsConexionBD
 {
     private String Titulo;

@@ -2,6 +2,12 @@ package com.company.LD;
 
 import java.sql.SQLException;
 
+/*
+ *
+ * @author Ruben Domínguez
+ * Aritz Garitano
+ */
+
 public class clsLibreria_MultimediaBD extends clsConexionBD {
 
 

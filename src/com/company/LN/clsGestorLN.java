@@ -1,12 +1,13 @@
 package com.company.LN;
 
-import com.company.LD.clsDatos;
+//import com.company.LD.clsCompareLibreriaMultimedia;
 import com.company.LD.clsLibreria_MultimediaBD;
 import com.company.LD.clsPeliculaBD;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import static com.company.Comun.clsConstantes.queryConsultaLibreria;
 import static com.company.Comun.clsConstantes.queryInsertLibreria;
@@ -160,7 +161,6 @@ public class clsGestorLN {
 
     public /*DevuelvoObjeto:*/ArrayList<clsLibreriaMultimedia> consultarLibreriasEnBD() {
         ResultSet resultado = null;
-        //Declarado mas abajo, ignorar: clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia();
         clsLibreria_MultimediaBD objLibreria_MultimediaBD = new clsLibreria_MultimediaBD();
         //En este metodo tendremos que crear librerias y asignarles de alguna manera los valores antes de cerrar la conexuión
         //Para ello:
@@ -169,10 +169,30 @@ public class clsGestorLN {
         objLibreria_MultimediaBD.conectarBD();
         resultado = objLibreria_MultimediaBD.sendSelect(queryConsultaLibreria);
         //Meto rs en objeto
+
         try {
             while (resultado.next()) {
                 clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia(resultado.getInt(1), resultado.getString(2), resultado.getString(3));
                 //Esto era para visualizar: System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripción: " + resultado.getString(3));
+                //--------------------->
+                //--------------------->
+                // clsCompareLibreriaMultimedia  comparacion = new clsCompareLibreriaMultimedia();
+                //--------------------->
+                //--------------------->
+                //Collections.sort(objLibreria_MultimediaBD,comparacion);
+                //
+                // mi idea es que de alguna forma, cada vez que se cree un objLibreriaMultimedia coja el nombre y
+                // lo compare con el nombre que ya tiene de una anterior y deje pasar el que tenga el nombre con unas letras
+                // anteriores en el abecedario, en caso de empate en las letras que coja las primeras de la descripcion
+                // aunque de esta forma nose si seria preciso dell todo ya que se podrian colar nombres que tedrian que ir delante de anteriores
+                // --> He pensado que igual seria mas facil coger el numero de id y darle la vuelta pero este orden por nombre
+                // tiene mas sentido
+                // -->El principal problema que tengo es como hacer que cada objeto que pasa cree una variable cosa que no se hacer
+                // (que sorpresa) en los ejmplos que he encontrado lo que hacen es bastante mas simple.
+                //--------------------->
+                //--------------------->
+
+
                 datosLibrerias.add(objLibreriaMultimedia);
             }
         } catch (SQLException e) {

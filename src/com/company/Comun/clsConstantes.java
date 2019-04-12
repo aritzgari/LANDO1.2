@@ -1,5 +1,10 @@
 package com.company.Comun;
 
+/*
+ *
+ * @author Ruben Domínguez
+ * Aritz Garitano
+ */
 public class clsConstantes {
     //INTENTOquery3:*/  public static final String queryInsertLibreria = "insert into Libreria_Multimedia (idLibreria_Multimedia, Nombre, Descripcion) values (null, ?, ?)";
     /*INTENTOquery2:*/ public static final String queryInsertLibreria = "insert into Libreria_Multimedia (Nombre, Descripcion) values (?, ?)";
