@@ -3,6 +3,7 @@ package com.company.LN;
 import com.company.LD.clsDatos;
 import com.company.LD.clsLibreria_MultimediaBD;
 import com.company.LD.clsPeliculaBD;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -31,15 +32,19 @@ public class clsGestorLN {
     private static ArrayList<clsLibreriaMultimedia> datosLibrerias;
 
     public clsGestorLN() {
-        datosPeliculas = new ArrayList<clsPelicula>();
+       /* datosPeliculas = new ArrayList<clsPelicula>();
         datosLibros = new ArrayList<clsLibro>();
         datosMusicas = new ArrayList<clsMusica>();
         datosArticulos = new ArrayList<clsArticulo>();
-        datosLibrerias = new ArrayList<clsLibreriaMultimedia>();
+        datosLibrerias = new ArrayList<clsLibreriaMultimedia>();*/
 
     }
 
 
+    public static ArrayList<clsLibreriaMultimedia> getDatosLibrerias() {
+
+        return datosLibrerias;
+    }
 
     public static ArrayList<clsLibro> getDatosLibros() {
 
@@ -100,7 +105,7 @@ public class clsGestorLN {
          * Metodo para crear peliculas en el Gestor con datos que recibamos de LP
          * @author RubenD AritzG
          */
-        clsPeliculaBD objPelicula = new clsPeliculaBD(Titulo,Titulo_original,Anno_de_publicacion, Tipo_DoA,Formato,En_propiedad,En_busqueda, Duracion, Calporedad,Calificacion, Libreria_Multimedia_idLibreria_Multimedia);
+        clsPeliculaBD objPelicula = new clsPeliculaBD(Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Formato, En_propiedad, En_busqueda, Duracion, Calporedad, Calificacion, Libreria_Multimedia_idLibreria_Multimedia);
         objPelicula.sendInsert(queryInsertPelicula);
     }
 
@@ -138,7 +143,7 @@ public class clsGestorLN {
         //Meto rs en objeto
         try {
             while (resultado.next()) {
-                clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia(resultado.getInt(1),resultado.getString(2),resultado.getString(3));
+                clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia(resultado.getInt(1), resultado.getString(2), resultado.getString(3));
                 //Esto era para visualizar: System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripción: " + resultado.getString(3));
                 datosLibrerias.add(objLibreriaMultimedia);
             }
@@ -151,7 +156,6 @@ public class clsGestorLN {
 
         return datosPeliculas;
     }
-
 
 
     public /*DevuelvoObjeto:*/ArrayList<clsLibreriaMultimedia> consultarLibreriasEnBD() {
@@ -167,7 +171,7 @@ public class clsGestorLN {
         //Meto rs en objeto
         try {
             while (resultado.next()) {
-                clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia(resultado.getInt(1),resultado.getString(2),resultado.getString(3));
+                clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia(resultado.getInt(1), resultado.getString(2), resultado.getString(3));
                 //Esto era para visualizar: System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripción: " + resultado.getString(3));
                 datosLibrerias.add(objLibreriaMultimedia);
             }
