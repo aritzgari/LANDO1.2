@@ -1,14 +1,14 @@
 package com.company.LD;
 
 import java.sql.SQLException;
-/*
-*
-*
-* @author Ruben Domíngu4htez
-* Aritz Garitano
- */
-public class clsPeliculaBD extends clsConexionBD
-{
+
+/**
+ * @author Ruben Domínguez
+ * Aritz Garitano
+ *
+ * Clase para crear y almacenar peliculas.
+ **/
+public class clsPeliculaBD extends clsConexionBD {
     private String Titulo;
     private String Titulo_original;
     private String Anno_de_publicacion;
@@ -21,17 +21,17 @@ public class clsPeliculaBD extends clsConexionBD
     private String Premios;
     private String Director;
     private String Enlace_a_trailer;
-    private   String Sinopsis;
-    private   int Cantidad_actores;
-    private  String Actor1;
-    private  String Actor2;
-    private    String Actor3;
-    private   String Saga;
-    private   Double Orden;
-    private   int Duracion;
-    private   int Calporedad;
-    private  int Calificacion;
-    private    int Libreria_Multimedia_idLibreria_Multimedia = 0;
+    private String Sinopsis;
+    private int Cantidad_actores;
+    private String Actor1;
+    private String Actor2;
+    private String Actor3;
+    private String Saga;
+    private Double Orden;
+    private int Duracion;
+    private int Calporedad;
+    private int Calificacion;
+    private int Libreria_Multimedia_idLibreria_Multimedia = 0;
 
     public clsPeliculaBD(String titulo, String titulo_original, String anno_de_publicacion, String tipo_doA, String formato, boolean en_propiedad, boolean en_busqueda, int duracion, int calporedad, int calificacion, int libreria_multimedia_idLibreria_multimedia) {
         super();
@@ -226,62 +226,54 @@ public class clsPeliculaBD extends clsConexionBD
     }
 
     @Override
-    public int sendInsert(String query)
-    {
+    public int sendInsert(String query) {
         this.conectarBD();
-        int regActualizados=0;
-        int retorno=0;
+        int regActualizados = 0;
+        int retorno = 0;
 
 
+        try {
+
+            this.setObjSt(this.getObjCon().prepareStatement(query, this.getObjSt().RETURN_GENERATED_KEYS));
+            this.getObjSt().setString(1, getTitulo());
+            this.getObjSt().setString(2, getTitulo_original());
+            this.getObjSt().setString(3, getAnno_de_publicacion());
+            this.getObjSt().setString(4, getTipo_DoA());
+            this.getObjSt().setString(5, getFormato());
+            this.getObjSt().setBoolean(6, getEn_propiedad());
+            this.getObjSt().setBoolean(7, getEn_busqueda());
+            this.getObjSt().setDouble(8, getPrecio());
+            this.getObjSt().setString(9, getGenero());
+            this.getObjSt().setString(10, getPremios());
+            this.getObjSt().setString(11, getDirector());
+            this.getObjSt().setString(12, getEnlace_a_trailer());
+            this.getObjSt().setString(13, getSinopsis());
+            this.getObjSt().setInt(14, getCantidad_actores());
+            this.getObjSt().setString(15, getActor1());
+            this.getObjSt().setString(16, getActor2());
+            this.getObjSt().setString(17, getActor3());
+            this.getObjSt().setString(18, getSaga());
+            this.getObjSt().setDouble(19, getOrden());
+            this.getObjSt().setInt(20, getDuracion());
+            this.getObjSt().setInt(21, getCalporedad());
+            this.getObjSt().setInt(22, getCalificacion());
+            this.getObjSt().setInt(23, getLibreria_Multimedia_idLibreria_Multimedia());
 
 
-        try
-        {
+            regActualizados = this.getObjSt().executeUpdate();
 
-            this.setObjSt(this.getObjCon().prepareStatement(query,this.getObjSt().RETURN_GENERATED_KEYS));
-            this.getObjSt().setString(1,getTitulo());
-            this.getObjSt().setString(2,getTitulo_original());
-            this.getObjSt().setString(3,getAnno_de_publicacion());
-            this.getObjSt().setString(4,getTipo_DoA());
-            this.getObjSt().setString(5,getFormato());
-            this.getObjSt().setBoolean(6,getEn_propiedad());
-            this.getObjSt().setBoolean(7,getEn_busqueda());
-            this.getObjSt().setDouble(8,getPrecio());
-            this.getObjSt().setString(9,getGenero());
-            this.getObjSt().setString(10,getPremios());
-            this.getObjSt().setString(11,getDirector());
-            this.getObjSt().setString(12,getEnlace_a_trailer());
-            this.getObjSt().setString(13,getSinopsis());
-            this.getObjSt().setInt(14,getCantidad_actores());
-            this.getObjSt().setString(15,getActor1());
-            this.getObjSt().setString(16,getActor2());
-            this.getObjSt().setString(17,getActor3());
-            this.getObjSt().setString(18,getSaga());
-            this.getObjSt().setDouble(19,getOrden());
-            this.getObjSt().setInt(20,getDuracion());
-            this.getObjSt().setInt(21,getCalporedad());
-            this.getObjSt().setInt(22,getCalificacion());
-            this.getObjSt().setInt(23,getLibreria_Multimedia_idLibreria_Multimedia());
-
-
-            regActualizados=this.getObjSt().executeUpdate();
-
-            if(regActualizados ==1)
-            {
+            if (regActualizados == 1) {
                 this.setObjRs(this.getObjSt().getGeneratedKeys());
-                if(this.getObjRs().next())
-                {
+                if (this.getObjRs().next()) {
                     //En este retorno me da el AutoIncremental con el +1 hecho, es decir, listo para insertarlo.
-                    retorno= this.getObjRs().getInt(1);
+                    retorno = this.getObjRs().getInt(1);
                 }
             }
 
             //AQUI tenemos que insertar teniendo en id el valor de retorno(?)
 
 
-        }
-        catch (SQLException e)
-        {
+        } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
@@ -289,13 +281,10 @@ public class clsPeliculaBD extends clsConexionBD
         return retorno;
 
 
-
-
     }
 
     @Override
-    public int sendUpdate(String query)
-    {
+    public int sendUpdate(String query) {
         return 0;
     }
 }

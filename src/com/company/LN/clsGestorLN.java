@@ -1,6 +1,7 @@
 package com.company.LN;
 
 //import com.company.LD.clsCompareLibreriaMultimedia;
+
 import com.company.LD.clsLibreria_MultimediaBD;
 import com.company.LD.clsPeliculaBD;
 
@@ -25,6 +26,7 @@ public class clsGestorLN {
 
     /*Los arrays que contienen los datos de los diferentes articulos*/
 
+    private static ArrayList<itfProperty> datosItf;
     private static ArrayList<clsPelicula> datosPeliculas;
     private static ArrayList<clsLibro> datosLibros;
     private static ArrayList<clsMusica> datosMusicas;
@@ -33,12 +35,12 @@ public class clsGestorLN {
     private static ArrayList<clsLibreriaMultimedia> datosLibrerias;
 
     public clsGestorLN() {
-       /* datosPeliculas = new ArrayList<clsPelicula>();
+        datosItf = new ArrayList<itfProperty>();
+        datosPeliculas = new ArrayList<clsPelicula>();
         datosLibros = new ArrayList<clsLibro>();
         datosMusicas = new ArrayList<clsMusica>();
         datosArticulos = new ArrayList<clsArticulo>();
-        datosLibrerias = new ArrayList<clsLibreriaMultimedia>();*/
-
+        datosLibrerias = new ArrayList<clsLibreriaMultimedia>();
     }
 
 
@@ -159,7 +161,7 @@ public class clsGestorLN {
     }
 
 
-    public /*DevuelvoObjeto:*/ArrayList<clsLibreriaMultimedia> consultarLibreriasEnBD() {
+    public /*DevuelvoObjeto:*/ArrayList<itfProperty> consultarLibreriasEnBD() {
         ResultSet resultado = null;
         clsLibreria_MultimediaBD objLibreria_MultimediaBD = new clsLibreria_MultimediaBD();
         //En este metodo tendremos que crear librerias y asignarles de alguna manera los valores antes de cerrar la conexuión
@@ -173,26 +175,6 @@ public class clsGestorLN {
         try {
             while (resultado.next()) {
                 clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia(resultado.getInt(1), resultado.getString(2), resultado.getString(3));
-                //Esto era para visualizar: System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripción: " + resultado.getString(3));
-                //--------------------->
-                //--------------------->
-                // clsCompareLibreriaMultimedia  comparacion = new clsCompareLibreriaMultimedia();
-                //--------------------->
-                //--------------------->
-                //Collections.sort(objLibreria_MultimediaBD,comparacion);
-                //
-                // mi idea es que de alguna forma, cada vez que se cree un objLibreriaMultimedia coja el nombre y
-                // lo compare con el nombre que ya tiene de una anterior y deje pasar el que tenga el nombre con unas letras
-                // anteriores en el abecedario, en caso de empate en las letras que coja las primeras de la descripcion
-                // aunque de esta forma nose si seria preciso dell todo ya que se podrian colar nombres que tedrian que ir delante de anteriores
-                // --> He pensado que igual seria mas facil coger el numero de id y darle la vuelta pero este orden por nombre
-                // tiene mas sentido
-                // -->El principal problema que tengo es como hacer que cada objeto que pasa cree una variable cosa que no se hacer
-                // (que sorpresa) en los ejmplos que he encontrado lo que hacen es bastante mas simple.
-                //--------------------->
-                //--------------------->
-
-
                 datosLibrerias.add(objLibreriaMultimedia);
             }
         } catch (SQLException e) {
@@ -201,6 +183,20 @@ public class clsGestorLN {
         }
         //Cierro conexion
         objLibreria_MultimediaBD.desconectarBD(objLibreria_MultimediaBD.getObjCon());
-        return datosLibrerias;
+        return castclsLibreriaMultimediaToItfProperty(datosLibrerias);
+    }
+
+    public ArrayList<itfProperty> castclsLibreriaMultimediaToItfProperty(ArrayList</*Aqui me gustaria que fueran objects pero no traga*/clsLibreriaMultimedia> AO) {
+        //Ordenamos por Nombre:
+        Collections.sort(AO, new clsCompareLibreriaMultimedia());
+        //Creamos el objeto en el que vamos a castear las librerias
+        itfProperty castObject;
+        //Las casteamos y metemos en datosItf
+        for (clsLibreriaMultimedia o : AO
+        ) {
+            castObject = (itfProperty) o;
+            datosItf.add(castObject);
+        }
+        return datosItf;
     }
 }

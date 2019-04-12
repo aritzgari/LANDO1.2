@@ -2,7 +2,7 @@ package com.company.LP;
 
 import com.company.LD.clsConsultar;
 import com.company.LN.clsGestorLN;
-import com.company.LN.clsLibreriaMultimedia;
+import com.company.LN.itfProperty;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -169,14 +169,18 @@ public class clsMenu {
                     //objConsultor.consultarLibreriasEnBD();
 
                     //Codigo provisional, intento 2:
-                    ArrayList<clsLibreriaMultimedia> resultado = objGestorLN.consultarLibreriasEnBD();
+                    ArrayList<itfProperty> resultado = objGestorLN.consultarLibreriasEnBD();
                     System.out.println("----------------------------\n" +
                             "\t\tLibrerias\n" +
                             "----------------------------");
-                    for (clsLibreriaMultimedia L : resultado
+                    for (itfProperty L : resultado
+                    ) {
+                        System.out.println(L.toString());
+                    }
+                  /*  for (clsLibreriaMultimedia L : resultado
                     ) {
                         System.out.println("id: " + L.getIdLibreria_Multimedia() + " Nombre: " + L.getNombre() + " Descripcion: " + L.getDescripcion());
-                    }
+                    }*/
                     break;
                 case 2:
                     /*No se leer? m?s que la ubicaci?n de memoria, hay que recorrer el Array. (Averiguar como)
