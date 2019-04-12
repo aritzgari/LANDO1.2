@@ -5,9 +5,9 @@ import java.sql.SQLException;
 /**
  * @author Ruben Domínguez
  * Aritz Garitano
- *
+ * <p>
  * Clase para crear y almacenar peliculas.
- **/
+ */
 public class clsPeliculaBD extends clsConexionBD {
     private String Titulo;
     private String Titulo_original;

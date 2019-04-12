@@ -2,6 +2,7 @@ package com.company.Excepciones;
 
 /**
  * Excepción en caso de que se repita el insert de película.
+ *
  * @author Ruben Domínguez
  * Aritz Garitano
  */

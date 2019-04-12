@@ -7,19 +7,19 @@ package com.company.LN;
  * Aritz Garitano
  */
 
-public class clsLibro extends clsArticulo implements itfProperty{
+public class clsLibro extends clsArticulo implements itfProperty {
 
     /*atributos de la clase libro*/
     private String Autor;
     private String Resumen;
-    private  String Editorial;
+    private String Editorial;
     //Formato se hereda
-    private   boolean Serie_SoN;
-    private  String Nombre_serie;
-    private    double Orden_serie;
+    private boolean Serie_SoN;
+    private String Nombre_serie;
+    private double Orden_serie;
     //ISBN no es un int porque es demasiado grande.
-    private  String ISBN;
-    private  int Paginas;
+    private String ISBN;
+    private int Paginas;
 
     public clsLibro(String _Autor, String _Resumen, String _Editorial, boolean _Serie_SoN, String _Nombre_serie, double _Orden_serie, String _ISBN, int _Paginas) {
         //Tal ves haya que usar setters aqui.
@@ -34,6 +34,7 @@ public class clsLibro extends clsArticulo implements itfProperty{
 
 
     }
+
     @Override
     public String getStringProperty(String propiedad) {
         String propResultado = "";

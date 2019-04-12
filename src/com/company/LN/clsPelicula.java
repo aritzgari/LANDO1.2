@@ -1,4 +1,5 @@
 package com.company.LN;
+
 import com.company.Excepciones.clsPropiedadNonExistantException;
 
 /**
@@ -14,19 +15,19 @@ public class clsPelicula extends clsArticulo implements itfProperty {
 
     private String Director;
     private String Enlace_a_trailer;
-    private   String Sinopsis;
-    private   int Cantidad_actores;
-    private  String Actor1;
-    private  String Actor2;
-    private    String Actor3;
-    private   String Saga;
-    private   Double Orden;
+    private String Sinopsis;
+    private int Cantidad_actores;
+    private String Actor1;
+    private String Actor2;
+    private String Actor3;
+    private String Saga;
+    private Double Orden;
     // el siguiente es la duración (Puede ser un TIME o algo asi)
-    private   int Duracion;
-    private   int Calporedad;
-    private  int Calificacion;
+    private int Duracion;
+    private int Calporedad;
+    private int Calificacion;
     //Añadidos a posteriori para identificarlos de forma relacional:
-    private    int Libreria_Multimedia_idLibreria_Multimedia = 0;
+    private int Libreria_Multimedia_idLibreria_Multimedia = 0;
 
 
     //Constructor (No se usa / o sí, parece que si, en teoría debería)

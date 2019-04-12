@@ -3,13 +3,14 @@ package com.company.LN;
 
 import com.company.Excepciones.clsPropiedadNonExistantException;
 
+
 public class clsLibreriaMultimedia implements Comparable, itfProperty {
     /**
      * @author Ruben Domínguez
      * Aritz Garitano
      * <p>
      * Clase para crear y almacenar Liberrias de objetos multimedia.
-     **/
+     */
     private int idLibreria_Multimedia = 0;
     private String Nombre = "";
     private String Descripcion = "";
