@@ -93,14 +93,14 @@ public abstract class clsConexionBD {
 
     public abstract int sendUpdate(String query);
 
-    public void sendDelete(String query, int id) {
+    public void sendDelete/*byID*/(String query, int id) {
 
         try {
             objSt = objCon.prepareStatement(query);
             objSt.setInt(1, id);
             objSt.executeUpdate();
         } catch (SQLException e) {
-            //Algo
+
         }
 
     }

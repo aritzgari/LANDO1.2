@@ -9,17 +9,22 @@ import com.company.Excepciones.clsPropiedadNonExistantException;
  */
 public class clsDirector implements itfPropertyV2 {
     //Atributos
+    private int idDirector;
+    private String Nombre;
+    private String Apellido;
+    //Constructor con Parámetros: Aun no
 
     //Constructor sin Parámetros
-
+    public clsDirector() {
+    }
 
     @Override
     public Object getObjectProperty(String propiedad) {
         Object retorno = new Object();
 
         switch (propiedad) {
-            case "idActores":
-                retorno = (Object) idActores;
+            case "idDirector":
+                retorno = (Object) idDirector;
                 break;
             case "Nombre":
                 retorno = (Object) Nombre;
