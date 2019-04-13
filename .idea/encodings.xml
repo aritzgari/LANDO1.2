@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$/src/com/company/Comun/itfPropertyV2.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/Excepciones/clsPeliRepeException.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/Excepciones/clsPropiedadNonExistantException.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LD/clsConexionBD.java" charset="ISO-8859-1" />
@@ -10,12 +11,17 @@
     <file url="file://$PROJECT_DIR$/src/com/company/LD/clsInsertar.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LD/clsLibreria_MultimediaBD.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LD/clsPeliculaBD.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LN/clsActor.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsArticulo.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsCompareLibreriaMultimedia.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LN/clsDirector.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LN/clsGenero.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsGestorLN.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsLibro.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsMusica.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsPelicula.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LN/clsPremios.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LN/clsPremios_Pelicula.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/itfProperty.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/UtilidadesLP.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/clsMenu.java" charset="ISO-8859-1" />
