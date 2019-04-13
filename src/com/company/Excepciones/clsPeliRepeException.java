@@ -5,6 +5,7 @@ package com.company.Excepciones;
  *
  * @author Ruben Domínguez
  * Aritz Garitano
+ * @return Devuelve un mensaje de error para cuando repetimos una insercion en BD.
  */
 
 public class clsPeliRepeException extends Exception {

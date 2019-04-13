@@ -12,7 +12,7 @@ public class UtilidadesLP {
      * Permite introducir por teclado en la consola un n?mero entero (32 bits = -2147483648 <-> 2147483648)
      * realizando las comprobaciones pertienentes.
      *
-     * @return Devuelve el n?mero entero que se haya introducido por teclado.
+     * @return Devuelve el número entero que se haya introducido por teclado.
      */
     public static int leerEntero() {
         InputStreamReader isr = new InputStreamReader(System.in);

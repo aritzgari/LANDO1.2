@@ -5,6 +5,7 @@ package com.company.Excepciones;
  *
  * @author Ruben Domínguez
  * Aritz Garitano
+ * @return Devuelve un mensaje de error para cuando programamos mal la petición de una propiedad, y para la ejecución.
  */
 public class clsPropiedadNonExistantException extends RuntimeException {
 
