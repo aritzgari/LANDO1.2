@@ -3,7 +3,7 @@ package com.company.Comun;
 /**
  * Clase para albergar las constante de insercion, consulta y demas.
  *
- * @author Ruben DomÃ­nguez
+ * @author Ruben Domínguez
  * Aritz Garitano
  */
 public class clsConstantes {
@@ -12,6 +12,6 @@ public class clsConstantes {
     //INTENTOquery4:*/ public static final String queryInsertLibreria = "insert into Libreria_Multimedia (idLibreria_Multimedia, Nombre, Descripcion) values (null, ?, ?)";
     //INTENTOquery1:*/ public static final String queryInsertLibreria = "insert into Libreria_Multimedia (idLibreria_Multimedia, Nombre, Descripcion) values (?, ?, ?)";
     public static final String queryConsultaLibreria = "SELECT * FROM lando.libreria_multimedia;";
-    public static final String queryInsertPelicula = "insert into PelÃ­culas (Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Formato, En_propiedad, En_busqueda, Precio, Genero, Premios,Director, Enlace_a_trailer, Sinopsis, Cantidad_actores, Actor1, Actor2, Actor3, Saga, Orden, Duracion, Calporedad, Calificacion, Libreria_Multimedia_idLibreria_Multimedia) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
-    public static final String queryConsultaPelicula = "SELECT * FROM lando.PelÃ­cula";
+    public static final String queryInsertPelicula = "insert into Películas (Libreria_Multimedia_idLibreria_Multimedia, Título, Título_original, Año, Duración, Puntuación, Calporedad, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Saga, Orden_en_Saga, Sinopsis, Enlace_al_trailer) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+    public static final String queryConsultaPelicula = "SELECT * FROM lando.Película";
 }

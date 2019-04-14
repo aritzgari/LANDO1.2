@@ -6,23 +6,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f28a05cc-8887-48c4-8678-c8f41d95bdcd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/Excepciones/clsCampoContenidoVacio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LANDO_BBDD/Modelo_LANDO.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/LANDO_BBDD/Modelo_LANDO.mwb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LANDO_BBDD/Modelo_LANDO.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/LANDO_BBDD/Modelo_LANDO.mwb.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/clsMenuUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/clsMenuUsuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/frmLista.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/frmLista.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LD/clsLibreria_MultimediaBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LD/clsLibreria_MultimediaBD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LD/clsPeliculaBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LD/clsPeliculaBD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LN/clsArticulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LN/clsArticulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Comun/clsConstantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Comun/clsConstantes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/LN/clsGestorLN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LN/clsGestorLN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LN/clsLibro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LN/clsLibro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LN/clsMusica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LN/clsMusica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LN/clsPelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LN/clsPelicula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LP/clsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LP/clsMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LP/clsMenuUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LP/clsMenuUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LP/frmLista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LP/frmLista.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/LD/clsPeliculaBD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="218" column="65" lean-forward="true" selection-start-line="218" selection-start-column="65" selection-end-line="218" selection-end-column="65" />
+            <state relative-caret-position="170">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
               <folding>
                 <element signature="e#2206#2207#0" expanded="true" />
                 <element signature="e#2270#2271#0" expanded="true" />
@@ -54,20 +42,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Comun/clsConstantes.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsGestorLN.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+            <state relative-caret-position="268">
+              <caret line="110" column="189" selection-start-line="110" selection-start-column="181" selection-end-line="110" selection-end-column="189" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Comun/clsConstantes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="278" selection-start-line="14" selection-start-column="278" selection-end-line="14" selection-end-column="278" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/LP/clsMenuUsuario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="254" column="252" lean-forward="true" selection-start-line="254" selection-start-column="33" selection-end-line="254" selection-end-column="252" />
+            <state relative-caret-position="154">
+              <caret line="254" column="252" selection-start-line="254" selection-start-column="33" selection-end-line="254" selection-end-column="252" />
             </state>
           </provider>
         </entry>
@@ -115,7 +115,6 @@
         <option value="$PROJECT_DIR$/src/com/company/LD/clsComparatorLibreriaMultimedia.java" />
         <option value="$PROJECT_DIR$/src/com/company/LD/Estudiante.java" />
         <option value="$PROJECT_DIR$/src/com/company/LD/clsCompareLibreriaMultimedia.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Comun/clsConstantes.java" />
         <option value="$PROJECT_DIR$/src/com/company/LP/UtilidadesLP.java" />
         <option value="$PROJECT_DIR$/src/com/company/Excepciones/clsPeliRepeException.java" />
         <option value="$PROJECT_DIR$/src/com/company/Excepciones/clsPropiedadNonExistantException.java" />
@@ -140,9 +139,10 @@
         <option value="$PROJECT_DIR$/src/com/company/LN/clsPelicula.java" />
         <option value="$PROJECT_DIR$/src/com/company/LN/clsLibro.java" />
         <option value="$PROJECT_DIR$/src/com/company/LN/clsMusica.java" />
-        <option value="$PROJECT_DIR$/src/com/company/LN/clsGestorLN.java" />
         <option value="$PROJECT_DIR$/src/com/company/LP/clsMenu.java" />
         <option value="$PROJECT_DIR$/src/com/company/LP/clsMenuUsuario.java" />
+        <option value="$PROJECT_DIR$/src/com/company/LN/clsGestorLN.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Comun/clsConstantes.java" />
       </list>
     </option>
   </component>
@@ -162,6 +162,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -220,12 +221,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555263538526" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555268653224" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Proyectos de ejemplo del Foro/SwingComboAndList/SwingComboAndList" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -301,8 +301,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.497545" visible="true" weight="0.23524962" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.497545" visible="true" weight="0.23903178" />
       <window_info id="Structure" order="1" sideWeight="0.5008183" side_tool="true" weight="0.2647504" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -311,7 +312,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.502455" side_tool="true" weight="0.13918306" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23731588" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23731588" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -662,9 +663,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/LP/clsInsLibreria_MultimediaV1.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/LP/clsInsLibreria_MultimediaV1.form" />
     <entry file="file://$PROJECT_DIR$/src/com/company/LP/frmLista.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -672,20 +671,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/LP/clsInsLibreria_MultimediaV1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-210">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsGestorLN.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="110" column="267" lean-forward="true" selection-start-line="110" selection-start-column="55" selection-end-line="110" selection-end-column="267" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/LP/clsInsLibreria_MultimediaV1.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/LP/clsMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
@@ -786,8 +772,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/LD/clsPeliculaBD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="218" column="65" lean-forward="true" selection-start-line="218" selection-start-column="65" selection-end-line="218" selection-end-column="65" />
+        <state relative-caret-position="170">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
           <folding>
             <element signature="e#2206#2207#0" expanded="true" />
             <element signature="e#2270#2271#0" expanded="true" />
@@ -797,17 +783,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/LP/clsMenuUsuario.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsGestorLN.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="254" column="252" lean-forward="true" selection-start-line="254" selection-start-column="33" selection-end-line="254" selection-end-column="252" />
+        <state relative-caret-position="268">
+          <caret line="110" column="189" selection-start-line="110" selection-start-column="181" selection-end-line="110" selection-end-column="189" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Comun/clsConstantes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+          <caret line="14" column="278" selection-start-line="14" selection-start-column="278" selection-end-line="14" selection-end-column="278" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/LP/clsMenuUsuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="254" column="252" selection-start-line="254" selection-start-column="33" selection-end-line="254" selection-end-column="252" />
         </state>
       </provider>
     </entry>

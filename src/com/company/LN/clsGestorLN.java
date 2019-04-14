@@ -108,7 +108,7 @@ public class clsGestorLN {
          * Metodo para crear peliculas en el Gestor con datos que recibamos de LP
          * @author RubenD AritzG
          */
-        clsPeliculaBD objPeliculaBD = new clsPeliculaBD(Libreria_Multimedia_idLibreria_Multimedia, Titulo, Titulo_original,Anno_de_publicacion, Duracion,Calificacion, Calporedad, Tipo_DoA,Precio,En_propiedad,En_busqueda,Formato, Saga,Orden, Sinopsis, Enlace_a_trailer);
+        clsPeliculaBD objPeliculaBD = new clsPeliculaBD(Libreria_Multimedia_idLibreria_Multimedia, Titulo, Titulo_original, Anno_de_publicacion, Duracion, Calificacion, Calporedad, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Saga, Orden, Sinopsis, Enlace_a_trailer);
         objPeliculaBD.sendInsert(queryInsertPelicula);
     }
 
