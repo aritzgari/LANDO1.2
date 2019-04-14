@@ -158,13 +158,11 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
             case "ActionInsertMusica":
                 break;
             case "ActionConsLibrerias_Multimedia":
+                frmLista window = new frmLista();
                 ArrayList<itfProperty> resultado = objGestorLN.consultarLibreriasEnBD();
-                System.out.println("----------------------------\n" +
-                        "\t\tLibrerias\n" +
-                        "----------------------------");
                 for (itfProperty L : resultado
                 ) {
-                    System.out.println(L.toString());
+                    window.setItem(L);
                 }
                 break;
             case "ActionConsPeliculas":

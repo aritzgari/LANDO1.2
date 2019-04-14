@@ -72,11 +72,7 @@ public class clsLibreriaMultimedia implements Comparable, itfProperty {
 
     @Override
     public String toString() {
-        return "clsLibreriaMultimedia{" +
-                "idLibreria_Multimedia=" + idLibreria_Multimedia +
-                ", Nombre='" + Nombre + '\'' +
-                ", Descripcion='" + Descripcion + '\'' +
-                '}';
+        return Nombre;
     }
 
     @Override
