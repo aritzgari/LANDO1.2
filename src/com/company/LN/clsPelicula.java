@@ -12,44 +12,45 @@ import com.company.Excepciones.clsPropiedadNonExistantException;
 public class clsPelicula extends clsArticulo implements itfProperty {
 
     /*atributos de la clase pelicula*/
-
-    private String Director;
-    private String Enlace_a_trailer;
-    private String Sinopsis;
-    private int Cantidad_actores;
-    private String Actor1;
-    private String Actor2;
-    private String Actor3;
-    private String Saga;
-    private Double Orden;
-    // el siguiente es la duración (Puede ser un TIME o algo asi)
+    private int Libreria_Multimedia_idLibreria_Multimedia;
+    private String Titulo;
+    private String Titulo_original;
+    private int Anno_de_publicacion;
     private int Duracion;
-    private int Calporedad;
     private int Calificacion;
-    //Añadidos a posteriori para identificarlos de forma relacional:
-    private int Libreria_Multimedia_idLibreria_Multimedia = 0;
+    private int Calporedad;
+    private String Tipo_DoA;
+    private double Precio;
+    private boolean En_propiedad;
+    private boolean En_busqueda;
+    private String Formato;
+    private String Saga;
+    private double Orden;
+    private String Sinopsis;
+    private String Enlace_a_trailer;
 
 
-    //Constructor (No se usa / o sí, parece que si, en teoría debería)
-    public clsPelicula(/*String Titulo, String Titulo_original, String Anno_de_publicacion, String Tipo_DoA, String Formato, boolean En_propiedad, boolean En_busqueda, double Precio, String Genero, String Premios, */String _Director, String _Enlace_a_trailer, String _Sinopsis, int _Cantidad_actores, String _Actor1, String _Actor2, String _Actor3, String _Saga, Double _Orden, int _Duracion, int _Calporedad, int _Calificacion, int _Libreria_Multimedia_idLibreria_Multimedia) {
+    //Constructor
+    public clsPelicula(int _libreria_Multimedia_idLibreria_Multimedia, String _titulo, String _titulo_original, int _anno_de_publicacion, int _duracion, int _calificacion, int _calporedad, String _tipo_DoA, double _precio, boolean _en_propiedad, boolean _en_busqueda, String _formato, String _saga, Double _orden, String _sinopsis, String _enlace_a_trailer) {
         //Variables "Heredadas":
 
-        //super.Titulo = _Titulo;
-
         //Variables de la clase:
-        Director = _Director;
-        Enlace_a_trailer = _Enlace_a_trailer;
-        Sinopsis = _Sinopsis;
-        Cantidad_actores = _Cantidad_actores;
-        Actor1 = _Actor1;
-        Actor2 = _Actor2;
-        Actor3 = _Actor3;
-        Saga = _Saga;
-        Orden = _Orden;
-        Duracion = _Duracion;
-        Calporedad = _Calporedad;
-        Calificacion = _Calificacion;
-        Libreria_Multimedia_idLibreria_Multimedia = _Libreria_Multimedia_idLibreria_Multimedia;
+        Libreria_Multimedia_idLibreria_Multimedia = _libreria_Multimedia_idLibreria_Multimedia;
+        Titulo = _titulo;
+        Titulo_original = _titulo_original;
+        Anno_de_publicacion = _anno_de_publicacion;
+        Duracion = _duracion;
+        Calificacion = _calificacion;
+        Calporedad = _calporedad;
+        Tipo_DoA = _tipo_DoA;
+        Precio = _precio;
+        En_propiedad = _en_propiedad;
+        En_busqueda = _en_busqueda;
+        Formato = _formato;
+        Saga = _saga;
+        Orden = _orden;
+        Sinopsis = _sinopsis;
+        Enlace_a_trailer = _enlace_a_trailer;
     }
 
     @Override
@@ -74,23 +75,11 @@ public class clsPelicula extends clsArticulo implements itfProperty {
             case "Premios":
                 propResultado = getPremios();
                 break;
-            case "Director":
-                propResultado = Director;
-                break;
             case "Enlace_a_trailer":
                 propResultado = Enlace_a_trailer;
                 break;
             case "Sinopsis":
                 propResultado = Sinopsis;
-                break;
-            case "Actor1":
-                propResultado = Actor1;
-                break;
-            case "Actor2":
-                propResultado = Actor2;
-                break;
-            case "Actor3":
-                propResultado = Actor3;
                 break;
             case "Saga":
                 propResultado = Saga;
@@ -105,9 +94,6 @@ public class clsPelicula extends clsArticulo implements itfProperty {
     public Integer getIntegerProperty(String propiedad) throws clsPropiedadNonExistantException {
         int propResultado = 0;
         switch (propiedad) {
-            case "Cantidad_actores":
-                propResultado = Cantidad_actores;
-                break;
             case "Duracion":
                 propResultado = Duracion;
                 break;
@@ -159,14 +145,8 @@ public class clsPelicula extends clsArticulo implements itfProperty {
 
     @Override
     public char getCharProperty(String propiedad) throws clsPropiedadNonExistantException {
-        char propResultado = ' ';
-        switch (propiedad) {
-            case "":
-                break;
-            default:
-                throw new clsPropiedadNonExistantException();
-        }
-        return propResultado;
+        //char propResultado = ' ';
+        throw new clsPropiedadNonExistantException();
     }
 
     @Override
@@ -183,5 +163,10 @@ public class clsPelicula extends clsArticulo implements itfProperty {
                 throw new clsPropiedadNonExistantException();
         }
         return propResultado;
+    }
+
+    @Override
+    public String toString() {
+        return Titulo;
     }
 }

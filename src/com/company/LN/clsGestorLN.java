@@ -133,31 +133,31 @@ public class clsGestorLN {
     }
 
 
-    public static ArrayList<clsPelicula> consultarPeliculaEnBD() {
+    public ArrayList<itfProperty> consultarPeliculaEnBD() {
         ResultSet resultado = null;
         //Declarado mas abajo, ignorar: clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia();
-        clsPeliculaBD objPelicula = new clsPeliculaBD();
+        clsPeliculaBD objPeliculaBD = new clsPeliculaBD();
         //En este metodo tendremos que crear librerias y asignarles de alguna manera los valores antes de cerrar la conexuión
         //Para ello:
         //...
         //ABRIR CONEXION:
-        objPelicula.conectarBD();
-        resultado = objPelicula.sendSelect(queryConsultaPelicula);
+        objPeliculaBD.conectarBD();
+        resultado = objPeliculaBD.sendSelect(queryConsultaPelicula);
         //Meto rs en objeto
         try {
             while (resultado.next()) {
-                clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia(resultado.getInt(1), resultado.getString(2), resultado.getString(3));
+                clsPelicula objPelicula = new clsPelicula(resultado.getInt(16), resultado.getString(1), resultado.getString(2), resultado.getInt(3), resultado.getInt(4), resultado.getInt(5), resultado.getInt(6), resultado.getString(7), resultado.getDouble(8), resultado.getBoolean(9), resultado.getBoolean(10), resultado.getString(11), resultado.getString(12), resultado.getDouble(13), resultado.getString(14), resultado.getString(15));
                 //Esto era para visualizar: System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripción: " + resultado.getString(3));
-                datosLibrerias.add(objLibreriaMultimedia);
+                datosPeliculas.add(objPelicula);
             }
         } catch (SQLException e) {
             System.out.println("Error SQL");
             System.out.println(e);
         }
         //Cierro conexion
-        objPelicula.desconectarBD(objPelicula.getObjCon());
+        objPeliculaBD.desconectarBD(objPeliculaBD.getObjCon());
 
-        return datosPeliculas;
+        return castclsPeliculaToItfProperty(datosPeliculas);
     }
 
 
@@ -193,6 +193,20 @@ public class clsGestorLN {
         itfProperty castObject;
         //Las casteamos y metemos en datosItf
         for (clsLibreriaMultimedia o : AO
+        ) {
+            castObject = (itfProperty) o;
+            datosItf.add(castObject);
+        }
+        return datosItf;
+    }
+
+    public ArrayList<itfProperty> castclsPeliculaToItfProperty(ArrayList</*Aqui me gustaria que fueran objects pero no traga*/clsPelicula> AO) {
+        //Ordenamos por Nombre:
+        //NO CONFIGURADO PARA PELICULAS Collections.sort(AO, new clsCompareLibreriaMultimedia());
+        //Creamos el objeto en el que vamos a castear las librerias
+        itfProperty castObject;
+        //Las casteamos y metemos en datosItf
+        for (clsPelicula o : AO
         ) {
             castObject = (itfProperty) o;
             datosItf.add(castObject);

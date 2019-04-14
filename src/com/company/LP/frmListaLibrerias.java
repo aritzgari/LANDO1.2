@@ -9,7 +9,7 @@ import java.awt.*;
 import java.util.LinkedList;
 
 
-public class frmLista extends JFrame implements ListSelectionListener
+public class frmListaLibrerias extends JFrame implements ListSelectionListener
 {
 	//Objeto visual
 	private JList<itfProperty> jlista;
@@ -23,7 +23,7 @@ public class frmLista extends JFrame implements ListSelectionListener
 	/**
 	 * Create the application.
 	 */
-	public frmLista()
+	public frmListaLibrerias()
 	{
 		setTitle("Lista de Librerías");
 		

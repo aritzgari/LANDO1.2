@@ -263,15 +263,21 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
 
 
     private void caseConsLibrerias() {
-        frmLista window = new frmLista();
+        frmListaLibrerias VentanaConsLibrerias = new frmListaLibrerias();
         ArrayList<itfProperty> resultado = objGestorLN.consultarLibreriasEnBD();
         for (itfProperty L : resultado
         ) {
-            window.setItem(L);
+            VentanaConsLibrerias.setItem(L);
         }
     }
 
     private void caseConsPeliculas() {
+        frmListaLibrerias VentanaConsPeliculas = new frmListaLibrerias();
+        ArrayList<itfProperty> resultado = objGestorLN.consultarPeliculaEnBD();
+        for (itfProperty L : resultado
+        ) {
+            VentanaConsPeliculas.setItem(L);
+        }
     }
 
     private void caseConsLibros() {
