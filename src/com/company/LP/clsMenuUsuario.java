@@ -8,6 +8,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+/**
+ * Nuevo y mejorado interfaz de usuario.
+ *
+ * @author Ruben Domínguez
+ * Aritz Garitano
+ */
+
 public class clsMenuUsuario extends JFrame implements ActionListener {
     //Declaraciones funcionales
     private static clsGestorLN objGestorLN = new clsGestorLN();
@@ -272,7 +279,7 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
     }
 
     private void caseConsPeliculas() {
-        frmListaLibrerias VentanaConsPeliculas = new frmListaLibrerias();
+        frmListaPeliculas VentanaConsPeliculas = new frmListaPeliculas();
         ArrayList<itfProperty> resultado = objGestorLN.consultarPeliculaEnBD();
         for (itfProperty L : resultado
         ) {

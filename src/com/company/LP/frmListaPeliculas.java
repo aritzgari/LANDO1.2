@@ -8,6 +8,12 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.util.LinkedList;
 
+/**
+ * Ventana para mostrar la lista de ºpeliculas de la base de datos.
+ *
+ * @author Ruben Domínguez
+ * Aritz Garitano
+ */
 
 public class frmListaPeliculas extends JFrame implements ListSelectionListener {
     //Objeto visual

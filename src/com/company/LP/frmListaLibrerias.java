@@ -8,7 +8,12 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.util.LinkedList;
 
-
+/**
+ * Ventana para mostrar la lista de librerias multimedia que hay en la base de datos.
+ *
+ * @author Ruben Domínguez
+ * Aritz Garitano
+ */
 public class frmListaLibrerias extends JFrame implements ListSelectionListener
 {
 	//Objeto visual
@@ -21,7 +26,7 @@ public class frmListaLibrerias extends JFrame implements ListSelectionListener
 	
 	
 	/**
-	 * Create the application.
+	 *
 	 */
 	public frmListaLibrerias()
 	{

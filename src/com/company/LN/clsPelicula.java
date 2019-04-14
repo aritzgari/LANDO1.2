@@ -13,17 +13,17 @@ public class clsPelicula extends clsArticulo implements itfProperty {
 
     /*atributos de la clase pelicula*/
     private int Libreria_Multimedia_idLibreria_Multimedia;
-    private String Titulo;
-    private String Titulo_original;
-    private int Anno_de_publicacion;
+    //private String Titulo;
+    //  private String Titulo_original;
+    //  private int Anno_de_publicacion;
     private int Duracion;
     private int Calificacion;
     private int Calporedad;
-    private String Tipo_DoA;
-    private double Precio;
-    private boolean En_propiedad;
-    private boolean En_busqueda;
-    private String Formato;
+    //  private String Tipo_DoA;
+   // private double Precio;
+    //   private boolean En_propiedad;
+    //  private boolean En_busqueda;
+    //  private String Formato;
     private String Saga;
     private double Orden;
     private String Sinopsis;
@@ -36,22 +36,31 @@ public class clsPelicula extends clsArticulo implements itfProperty {
 
         //Variables de la clase:
         Libreria_Multimedia_idLibreria_Multimedia = _libreria_Multimedia_idLibreria_Multimedia;
-        Titulo = _titulo;
-        Titulo_original = _titulo_original;
-        Anno_de_publicacion = _anno_de_publicacion;
+        //Titulo = _titulo;
+        setTitulo(_titulo);
+        //  Titulo_original = _titulo_original;
+        setTitulo_original(_titulo_original);
+        //  Anno_de_publicacion = _anno_de_publicacion;
+        setAnno_de_publicacion(_anno_de_publicacion);
         Duracion = _duracion;
         Calificacion = _calificacion;
         Calporedad = _calporedad;
-        Tipo_DoA = _tipo_DoA;
-        Precio = _precio;
-        En_propiedad = _en_propiedad;
-        En_busqueda = _en_busqueda;
-        Formato = _formato;
+        //  Tipo_DoA = _tipo_DoA;
+        setTipo_DoA(_tipo_DoA);
+        //   Precio = _precio;
+        setPrecio(_precio);
+        //  En_propiedad = _en_propiedad;
+        setEn_propiedad(_en_propiedad);
+        //  En_busqueda = _en_busqueda;
+        setEn_busqueda(_en_propiedad);
+        // Formato = _formato;
+        setFormato(_formato);
         Saga = _saga;
         Orden = _orden;
         Sinopsis = _sinopsis;
         Enlace_a_trailer = _enlace_a_trailer;
     }
+
 
     @Override
     public String getStringProperty(String propiedad) throws clsPropiedadNonExistantException {
@@ -167,6 +176,6 @@ public class clsPelicula extends clsArticulo implements itfProperty {
 
     @Override
     public String toString() {
-        return Titulo;
+        return getTitulo();
     }
 }
