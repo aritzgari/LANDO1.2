@@ -7,6 +7,7 @@ import java.util.Comparator;
  *
  * @author Ruben Domínguez
  * Aritz Garitano
+ * @see clsLibreriaMultimedia
  */
 
 public class clsCompareLibreriaMultimedia implements Comparator<clsLibreriaMultimedia> {

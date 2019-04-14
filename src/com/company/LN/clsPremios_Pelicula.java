@@ -5,6 +5,7 @@ import com.company.Excepciones.clsPropiedadNonExistantException;
 /**
  * @author Ruben Domínguez
  * Aritz Garitano
+ * <p>
  * @version 2.0 En la versión 1.0 esta clase no necesitaba implementar getObjectProperty porque lo heredaba.
  */
 public class clsPremios_Pelicula extends clsPremios {

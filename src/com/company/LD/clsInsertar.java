@@ -12,6 +12,8 @@ import java.sql.SQLException;
  * <p>
  * La clase sirve para insertar un registro en la base de datos. Previamente, realiza una
  * conexión con la base de datos, y después de realizar el insert, vuelve a cerrar la conexión.
+ * @deprecated  Los insert de hacen desde otra clase.
+ * @see clsPeliculaBD
  */
 public class clsInsertar {
 

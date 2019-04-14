@@ -7,6 +7,7 @@ import java.sql.SQLException;
  * Aritz Garitano
  * <p>
  * Clase para crear y almacenar peliculas.
+ * @see SQLException
  */
 public class clsPeliculaBD extends clsConexionBD {
     //Atributos de Pelicula en BD

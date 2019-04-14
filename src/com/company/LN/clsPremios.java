@@ -6,6 +6,7 @@ import com.company.Excepciones.clsPropiedadNonExistantException;
 /**
  * @author Ruben Domínguez
  * Aritz Garitano
+ * <p>
  * @version 2.0 En la versión 1.0 esta clase no era abstracta y el metodo getObjectProperty se implementaba en ella. No se descarta volver a ese modelo.
  */
 

@@ -9,10 +9,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- * Clase para gestionar y coordinar el flujo del programa.
+ * Clase obsoleta.
+ * <p>
  *
  * @author Ruben Domínguez
  * Aritz Garitano
+ * @deprecated Sustituido por la nueva ventana.
  */
 
 public class clsMenu {
@@ -130,7 +132,7 @@ public class clsMenu {
                     System.out.println("ID de la librería a la que pertenece:");
                     int Libreria_Multimedia_idLibreria_Multimedia = UtilidadesLP.leerEntero();
 
-                    objGestorLN.crearPelicula(Libreria_Multimedia_idLibreria_Multimedia, Titulo, Titulo_original,Anno_de_publicacion, Duracion,Calificacion, Calporedad, Tipo_DoA,Precio,En_propiedad,En_busqueda,Formato, Saga,Orden, Sinopsis, Enlace_a_trailer);
+                    objGestorLN.crearPelicula(Libreria_Multimedia_idLibreria_Multimedia, Titulo, Titulo_original, Anno_de_publicacion, Duracion, Calificacion, Calporedad, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Saga, Orden, Sinopsis, Enlace_a_trailer);
 
                     break;
                 case 3:

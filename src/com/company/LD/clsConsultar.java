@@ -14,6 +14,7 @@ import java.sql.Statement;
  * <p>
  * La clase sirve para ejecutar una consulta en la base de datos. Previamente, realiza una
  * conexión con la base de datos, y después de realizar la consulta, vuelve a cerrar la conexión.
+ * @deprecated Sustituida.
  */
 public class clsConsultar {
     private Statement objSt;

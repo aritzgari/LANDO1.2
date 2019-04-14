@@ -1,10 +1,11 @@
 package com.company.LD;
 
 /**
- * Clase que intercomunica LN con LD
+ * Clase que intercomunica LN con LD.
  *
  * @author Ruben Domínguez
  * Aritz Garitano
+ * @deprecated Sin uso actualmente.
  */
 public class clsDatos {
     public void insertarLiberiaBD(int idLibreria_Multimedia, String Nombre, String Descripcion) {

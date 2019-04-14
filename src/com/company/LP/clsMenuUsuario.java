@@ -10,9 +10,11 @@ import java.util.ArrayList;
 
 /**
  * Nuevo y mejorado interfaz de usuario.
+ * <p>
  *
  * @author Ruben Domínguez
  * Aritz Garitano
+ * @see clsGestorLN
  */
 
 public class clsMenuUsuario extends JFrame implements ActionListener {
@@ -180,7 +182,11 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
 
     }
 
-
+    /**
+     * Clase insertar librerias desde la ventana.
+     *
+     * @see clsGestorLN
+     */
     private void caseInsertarLibrerias() {
         //Declaraciones
         String Nombre;
@@ -195,6 +201,11 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
         objGestorLN.crearLibreria(/*idLibreria_Multimedia,*/ Nombre, Descripcion);
     }
 
+    /**
+     * Clase insertar peliculas desde la ventana.
+     *
+     * @see clsGestorLN
+     */
     private void caseInsertPeliculas() {
         //Declaraciones
         int Libreria_Multimedia_idLibreria_Multimedia;
@@ -268,6 +279,9 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
     private void caseInsertarMusica() {
     }
 
+    /**
+     * Clase consultar librerias desde la ventana.
+     */
 
     private void caseConsLibrerias() {
         frmListaLibrerias VentanaConsLibrerias = new frmListaLibrerias();
@@ -277,7 +291,9 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
             VentanaConsLibrerias.setItem(L);
         }
     }
-
+    /**
+     * Clase consultar peliculas desde la ventana.
+     */
     private void caseConsPeliculas() {
         frmListaPeliculas VentanaConsPeliculas = new frmListaPeliculas();
         ArrayList<itfProperty> resultado = objGestorLN.consultarPeliculaEnBD();

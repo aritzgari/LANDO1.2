@@ -2,7 +2,7 @@ package com.company.Comun;
 
 /**
  * Clase para albergar las constante de insercion, consulta y demas.
- *
+ *<p>
  * @author Ruben Domínguez
  * Aritz Garitano
  */

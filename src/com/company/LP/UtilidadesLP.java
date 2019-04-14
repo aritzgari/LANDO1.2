@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 
 public class UtilidadesLP {
     /**
-     * Permite introducir por teclado en la consola un n?mero entero (32 bits = -2147483648 <-> 2147483648)
+     * Permite introducir por teclado en la consola un numero entero (32 bits = -2147483648 <-> 2147483648)
      * realizando las comprobaciones pertienentes.
      *
      * @return Devuelve el número entero que se haya introducido por teclado.

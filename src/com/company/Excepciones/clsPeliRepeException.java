@@ -2,7 +2,7 @@ package com.company.Excepciones;
 
 /**
  * Excepción en caso de que se repita el insert de película.
- *
+ *<p>
  * @author Ruben Domínguez
  * Aritz Garitano
  * @return Devuelve un mensaje de error para cuando repetimos una insercion en BD.

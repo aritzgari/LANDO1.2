@@ -10,9 +10,11 @@ import java.util.LinkedList;
 
 /**
  * Ventana para mostrar la lista de ºpeliculas de la base de datos.
+ * <p>
  *
  * @author Ruben Domínguez
  * Aritz Garitano
+ * @see ModeloLista
  */
 
 public class frmListaPeliculas extends JFrame implements ListSelectionListener {
@@ -26,7 +28,9 @@ public class frmListaPeliculas extends JFrame implements ListSelectionListener {
 
 
     /**
-     * Create the application.
+     * Creación de lista de  librerias.
+     *
+     * @see ModeloLista
      */
     public frmListaPeliculas() {
         setTitle("Lista de Peliculas");

@@ -10,7 +10,7 @@ import java.util.LinkedList;
 
 /**
  * Ventana para mostrar la lista de librerias multimedia que hay en la base de datos.
- *
+ * <p>
  * @author Ruben Domínguez
  * Aritz Garitano
  */
@@ -23,10 +23,12 @@ public class frmListaLibrerias extends JFrame implements ListSelectionListener
 	
 	//Lista auxiliar de Objetos
 	private LinkedList<itfProperty> Objetos;
-	
-	
+
+
 	/**
+	 * Creación de lista de  librerias.
 	 *
+	 * @see ModeloLista
 	 */
 	public frmListaLibrerias()
 	{

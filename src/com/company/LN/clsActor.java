@@ -6,6 +6,8 @@ import com.company.Excepciones.clsPropiedadNonExistantException;
 /**
  * @author Ruben Domínguez
  * Aritz Garitano
+ * @see itfPropertyV2
+ * @see clsPropiedadNonExistantException
  */
 public class clsActor implements itfPropertyV2 {
     //Atributos
