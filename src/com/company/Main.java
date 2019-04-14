@@ -1,9 +1,10 @@
 package com.company;
 
 import com.company.LP.clsMenu;
+import com.company.LP.clsMenuUsuario;
 
 /**
- * Donde empieza la magia, llamada al menu del programa.
+ * Donde empieza el programa, llamada al menu del programa.
  *
  * @author Ruben Domínguez
  * Aritz Garitano
@@ -14,7 +15,8 @@ public class Main {
 
 
     public static void main(String[] args) {
-
-        clsMenu.MenuPrincipal();
+        clsMenuUsuario miFrame = new clsMenuUsuario();
+        miFrame.setVisible(true);
+        //clsMenu.MenuPrincipal();
     }
 }

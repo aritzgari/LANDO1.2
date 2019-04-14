@@ -6,9 +6,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f28a05cc-8887-48c4-8678-c8f41d95bdcd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/company/LP/clsMenuUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LD/clsConexionBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LD/clsConexionBD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LN/clsDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LN/clsDirector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/Comun/clsConstantes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/Comun/clsConstantes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/Excepciones/clsPeliRepeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/Excepciones/clsPeliRepeException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/Excepciones/clsPropiedadNonExistantException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/Excepciones/clsPropiedadNonExistantException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LD/clsConexionBD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LD/clsConexionBD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LD/clsLibreria_MultimediaBD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LD/clsLibreria_MultimediaBD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsCompareLibreriaMultimedia.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsCompareLibreriaMultimedia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsGestorLN.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsGestorLN.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsLibreriaMultimedia.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsLibreriaMultimedia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsLibro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsLibro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsPelicula.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsPelicula.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/itfProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/itfProperty.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,40 +39,49 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/LD/clsLibreria_MultimediaBD.java">
+        <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsGestorLN.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-117">
-              <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+            <state relative-caret-position="141">
+              <caret line="163" column="79" lean-forward="true" selection-start-line="163" selection-start-column="79" selection-end-line="163" selection-end-column="79" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsPremios_Pelicula.java">
+        <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsCompareLibreriaMultimedia.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
-              <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+            <state relative-caret-position="204">
+              <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/LP/clsMenu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2006">
+              <caret line="178" column="21" lean-forward="true" selection-start-line="171" selection-start-column="20" selection-end-line="178" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/company/LD/clsConexionBD.java">
+        <entry file="file://$PROJECT_DIR$/src/com/company/LP/clsMenuUsuario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="99" column="32" lean-forward="true" selection-start-line="99" selection-start-column="32" selection-end-line="99" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsActor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="167">
+              <caret line="89" column="44" lean-forward="true" selection-start-line="89" selection-start-column="44" selection-end-line="89" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -76,7 +98,16 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>Ha fallado la conexión</find>
+      <find>menuInsertar</find>
+      <find>Archivo</find>
+      <find>Edicion</find>
+      <find>menuItemMusica</find>
+      <find>ASier</find>
+      <find>menuConsultar.addSeparator();</find>
     </findStrings>
+    <replaceStrings>
+      <replace>menuItemInsMusica</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -87,7 +118,6 @@
         <option value="$PROJECT_DIR$/src/com/company/LN/itfProperties.java" />
         <option value="$PROJECT_DIR$/src/com/company/LD/clsConsultas.java" />
         <option value="$PROJECT_DIR$/src/com/company/LD/itfDatos.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
         <option value="$PROJECT_DIR$/src/com/company/LD/clsGestorLD.java" />
         <option value="$PROJECT_DIR$/src/com/company/LD/clsInsertar.java" />
         <option value="$PROJECT_DIR$/src/com/company/LD/clsConsultar.java" />
@@ -110,7 +140,6 @@
         <option value="$PROJECT_DIR$/src/com/company/LP/UtilidadesLP.java" />
         <option value="$PROJECT_DIR$/src/com/company/Excepciones/clsPeliRepeException.java" />
         <option value="$PROJECT_DIR$/src/com/company/Excepciones/clsPropiedadNonExistantException.java" />
-        <option value="$PROJECT_DIR$/src/com/company/LN/clsCompareLibreriaMultimedia.java" />
         <option value="$PROJECT_DIR$/src/com/company/Comun/itfPropertyV2.java" />
         <option value="$PROJECT_DIR$/src/com/company/LN/itfProperty.java" />
         <option value="$PROJECT_DIR$/src/com/company/LN/clsPremios.java" />
@@ -120,11 +149,14 @@
         <option value="$PROJECT_DIR$/src/com/company/LN/clsDirector.java" />
         <option value="$PROJECT_DIR$/src/com/company/Excepciones/clsErrorSQL.java" />
         <option value="$PROJECT_DIR$/src/com/company/LD/clsConexionBD.java" />
+        <option value="$PROJECT_DIR$/src/com/company/LN/clsCompareLibreriaMultimedia.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/company/LP/clsMenuUsuario.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="676" />
+    <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
@@ -133,8 +165,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -192,29 +222,32 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555166248674" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/company/LD" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555200766135" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Proyectos de ejemplo del Foro/SwingComboAndList/SwingComboAndList" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.29885057" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Universidad\Program 2\LANDO1.1\LANDO1.2\src\com\company\LD" />
-      <recent name="C:\Universidad\Program 2\LANDO1.1\LANDO1.2\.idea" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Datos\Programacion II\LANDO - GIT - V1.2\LANDO1.2\src\com\company\LN" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.company.LP" />
       <recent name="com.company.Excepciones" />
       <recent name="com.company.Comun" />
       <recent name="com.company.LN" />
       <recent name="com.company.LD" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Datos\Programacion II\LANDO - GIT - V1.2\LANDO1.2\src\com\company\LN" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Universidad\Program 2\LANDO1.1\LANDO1.2\src\com\company\LD" />
+      <recent name="C:\Universidad\Program 2\LANDO1.1\LANDO1.2\.idea" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -270,8 +303,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.497545" visible="true" weight="0.20801815" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.497545" visible="true" weight="0.21104388" />
       <window_info id="Structure" order="1" sideWeight="0.5008183" side_tool="true" weight="0.2647504" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -280,7 +314,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.502455" side_tool="true" weight="0.13918306" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33387887" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23731588" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -355,27 +389,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mysql-connector-java/com/mysql/cj/ParseInfo.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="481" selection-start-line="481" selection-end-line="481" />
-          <folding>
-            <element signature="e#20817#20818#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysql-connector-java/com/mysql/cj/NativeSession.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="1035" selection-start-line="1035" selection-end-line="1035" />
-          <folding>
-            <element signature="e#49906#49907#0" expanded="true" />
-            <element signature="e#49942#49943#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mysql-connector-java/com/mysql/cj/protocol/a/NativeCapabilities.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -495,13 +508,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/Comparator.iml" />
     <entry file="file://$PROJECT_DIR$/src/com/company/LD/clsComparatorLibreriaMultimedia.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/LD/Curso.java" />
@@ -603,20 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/LP/clsMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2975">
-          <caret line="181" column="55" selection-start-line="181" selection-start-column="55" selection-end-line="181" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsCompareLibreriaMultimedia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/LP/UtilidadesLP.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-170">
@@ -645,13 +637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsGestorLN.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -741,16 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsActor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Excepciones/clsPeliRepeException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -775,31 +750,84 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Excepciones/clsErrorSQL.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/LD/clsLibreria_MultimediaBD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-117">
+        <state relative-caret-position="17">
           <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsPremios_Pelicula.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
+        <state relative-caret-position="17">
           <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Excepciones/clsErrorSQL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="32" lean-forward="true" selection-start-column="32" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/LD/clsConexionBD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="99" column="32" lean-forward="true" selection-start-line="99" selection-start-column="32" selection-end-line="99" selection-end-column="32" />
+        <state relative-caret-position="2">
+          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsActor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsCompareLibreriaMultimedia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.desktop/java/awt/event/ActionEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="244" column="18" selection-start-line="244" selection-start-column="18" selection-end-line="244" selection-end-column="18" />
+          <folding>
+            <element signature="e#8093#8094#0" expanded="true" />
+            <element signature="e#8129#8130#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/LP/clsMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2006">
+          <caret line="178" column="21" lean-forward="true" selection-start-line="171" selection-start-column="20" selection-end-line="178" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsGestorLN.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="163" column="79" lean-forward="true" selection-start-line="163" selection-start-column="79" selection-end-line="163" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/LP/clsMenuUsuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="89" column="44" lean-forward="true" selection-start-line="89" selection-start-column="44" selection-end-line="89" selection-end-column="44" />
         </state>
       </provider>
     </entry>
