@@ -62,9 +62,6 @@ public class clsPelicula extends clsArticulo implements itfProperty {
             case "Titulo_original":
                 propResultado = getTitulo_original();
                 break;
-            case "Anno_de_publicacion":
-                propResultado = getAnno_de_publicacion();
-                break;
             case "Tipo_DoA":
                 propResultado = getTipo_DoA();
                 break;
@@ -122,6 +119,9 @@ public class clsPelicula extends clsArticulo implements itfProperty {
                 break;
             case "Libreria_Multimedia_idLibreria_Multimedia":
                 propResultado = Libreria_Multimedia_idLibreria_Multimedia;
+                break;
+            case "Anno_de_publicacion":
+                propResultado = getAnno_de_publicacion();
                 break;
             default:
                 throw new clsPropiedadNonExistantException();

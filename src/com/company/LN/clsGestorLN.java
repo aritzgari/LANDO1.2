@@ -103,13 +103,13 @@ public class clsGestorLN {
     }
 
 
-    public static void crearPelicula(String Titulo, String Titulo_original, String Anno_de_publicacion, String Tipo_DoA, String Formato, boolean En_propiedad, boolean En_busqueda, double Precio, String Genero, String Premios, String Director, String Enlace_a_trailer, String Sinopsis, int Cantidad_actores, String Actor1, String Actor2, String Actor3, String Saga, Double Orden, int Duracion, int Calporedad, int Calificacion, int Libreria_Multimedia_idLibreria_Multimedia) {
+    public static void crearPelicula(int Libreria_Multimedia_idLibreria_Multimedia, String Titulo, String Titulo_original, int Anno_de_publicacion, int Duracion, int Calificacion, int Calporedad, String Tipo_DoA, double Precio, boolean En_propiedad, boolean En_busqueda, String Formato, String Saga, Double Orden, String Sinopsis, String Enlace_a_trailer) {
         /**
          * Metodo para crear peliculas en el Gestor con datos que recibamos de LP
          * @author RubenD AritzG
          */
-        clsPeliculaBD objPelicula = new clsPeliculaBD(Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Formato, En_propiedad, En_busqueda, Duracion, Calporedad, Calificacion, Libreria_Multimedia_idLibreria_Multimedia);
-        objPelicula.sendInsert(queryInsertPelicula);
+        clsPeliculaBD objPeliculaBD = new clsPeliculaBD(Libreria_Multimedia_idLibreria_Multimedia, Titulo, Titulo_original,Anno_de_publicacion, Duracion,Calificacion, Calporedad, Tipo_DoA,Precio,En_propiedad,En_busqueda,Formato, Saga,Orden, Sinopsis, Enlace_a_trailer);
+        objPeliculaBD.sendInsert(queryInsertPelicula);
     }
 
     public static void crearLibro(String Titulo, String Titulo_original, String Anno_de_publicacion, String Tipo_DoA, String Formato, boolean En_propiedad, boolean En_busqueda, double Precio, String Genero, String Premios, String Autor, String Resumen, String Editorial, boolean Serie_SoN, String Nombre_serie, double Orden_serie, String ISBN, int Paginas) {

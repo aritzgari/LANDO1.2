@@ -9,36 +9,66 @@ import java.sql.SQLException;
  * Clase para crear y almacenar peliculas.
  */
 public class clsPeliculaBD extends clsConexionBD {
+    //Atributos de Pelicula en BD
+    private int Libreria_Multimedia_idLibreria_Multimedia;
     private String Titulo;
     private String Titulo_original;
-    private String Anno_de_publicacion;
+    private int Anno_de_publicacion;
+    private int Duracion;
+    private int Calificacion;
+    private int Calporedad;
     private String Tipo_DoA;
-    private String Formato;
+    private double Precio;
     private boolean En_propiedad;
     private boolean En_busqueda;
-    private double Precio;
+    private String Formato;
+    private String Saga;
+    private Double Orden;
+    private String Sinopsis;
+    private String Enlace_a_trailer;
+
+    //No utilizados en esta clase
     private String Genero;
     private String Premios;
     private String Director;
-    private String Enlace_a_trailer;
-    private String Sinopsis;
     private int Cantidad_actores;
     private String Actor1;
     private String Actor2;
     private String Actor3;
-    private String Saga;
-    private Double Orden;
-    private int Duracion;
-    private int Calporedad;
-    private int Calificacion;
-    private int Libreria_Multimedia_idLibreria_Multimedia = 0;
 
-    public clsPeliculaBD(String titulo, String titulo_original, String anno_de_publicacion, String tipo_doA, String formato, boolean en_propiedad, boolean en_busqueda, int duracion, int calporedad, int calificacion, int libreria_multimedia_idLibreria_multimedia) {
-        super();
+
+    //Constructor con parametros, pensado para el insert
+    public clsPeliculaBD(int _libreria_Multimedia_idLibreria_Multimedia, String _titulo, String _titulo_original, int _anno_de_publicacion, int _duracion, int _calificacion, int _calporedad, String _tipo_DoA, double _precio, boolean _en_propiedad, boolean _en_busqueda, String _formato, String _saga, Double _orden, String _sinopsis, String _enlace_a_trailer) {
+        setLibreria_Multimedia_idLibreria_Multimedia(_libreria_Multimedia_idLibreria_Multimedia);
+        setTitulo(_titulo);
+        setTitulo_original(_titulo_original);
+        setAnno_de_publicacion(_anno_de_publicacion);
+        setDuracion(_duracion);
+        setCalificacion(_calificacion);
+        setCalporedad(_calporedad);
+        setTipo_DoA(_tipo_DoA);
+        setPrecio(_precio);
+        setEn_propiedad(_en_propiedad);
+        setEn_busqueda(_en_busqueda);
+        setFormato(_formato);
+        setSaga(_saga);
+        setOrden(_orden);
+        setSinopsis(_sinopsis);
+        setEnlace_a_trailer(_enlace_a_trailer);
     }
 
+    //Constructor sin parametros, pensado para el select
     public clsPeliculaBD() {
 
+    }
+
+
+    public int getLibreria_Multimedia_idLibreria_Multimedia() {
+        return Libreria_Multimedia_idLibreria_Multimedia;
+    }
+
+    public void setLibreria_Multimedia_idLibreria_Multimedia(int libreria_Multimedia_idLibreria_Multimedia) {
+        Libreria_Multimedia_idLibreria_Multimedia = libreria_Multimedia_idLibreria_Multimedia;
     }
 
     public String getTitulo() {
@@ -57,12 +87,36 @@ public class clsPeliculaBD extends clsConexionBD {
         Titulo_original = titulo_original;
     }
 
-    public String getAnno_de_publicacion() {
+    public int getAnno_de_publicacion() {
         return Anno_de_publicacion;
     }
 
-    public void setAnno_de_publicacion(String anno_de_publicacion) {
+    public void setAnno_de_publicacion(int anno_de_publicacion) {
         Anno_de_publicacion = anno_de_publicacion;
+    }
+
+    public int getDuracion() {
+        return Duracion;
+    }
+
+    public void setDuracion(int duracion) {
+        Duracion = duracion;
+    }
+
+    public int getCalificacion() {
+        return Calificacion;
+    }
+
+    public void setCalificacion(int calificacion) {
+        Calificacion = calificacion;
+    }
+
+    public int getCalporedad() {
+        return Calporedad;
+    }
+
+    public void setCalporedad(int calporedad) {
+        Calporedad = calporedad;
     }
 
     public String getTipo_DoA() {
@@ -73,12 +127,12 @@ public class clsPeliculaBD extends clsConexionBD {
         Tipo_DoA = tipo_DoA;
     }
 
-    public String getFormato() {
-        return Formato;
+    public double getPrecio() {
+        return Precio;
     }
 
-    public void setFormato(String formato) {
-        Formato = formato;
+    public void setPrecio(double precio) {
+        Precio = precio;
     }
 
     public boolean getEn_propiedad() {
@@ -97,84 +151,12 @@ public class clsPeliculaBD extends clsConexionBD {
         En_busqueda = en_busqueda;
     }
 
-    public double getPrecio() {
-        return Precio;
+    public String getFormato() {
+        return Formato;
     }
 
-    public void setPrecio(double precio) {
-        Precio = precio;
-    }
-
-    public String getGenero() {
-        return Genero;
-    }
-
-    public void setGenero(String genero) {
-        Genero = genero;
-    }
-
-    public String getPremios() {
-        return Premios;
-    }
-
-    public void setPremios(String premios) {
-        Premios = premios;
-    }
-
-    public String getDirector() {
-        return Director;
-    }
-
-    public void setDirector(String director) {
-        Director = director;
-    }
-
-    public String getEnlace_a_trailer() {
-        return Enlace_a_trailer;
-    }
-
-    public void setEnlace_a_trailer(String enlace_a_trailer) {
-        Enlace_a_trailer = enlace_a_trailer;
-    }
-
-    public String getSinopsis() {
-        return Sinopsis;
-    }
-
-    public void setSinopsis(String sinopsis) {
-        Sinopsis = sinopsis;
-    }
-
-    public int getCantidad_actores() {
-        return Cantidad_actores;
-    }
-
-    public void setCantidad_actores(int cantidad_actores) {
-        Cantidad_actores = cantidad_actores;
-    }
-
-    public String getActor1() {
-        return Actor1;
-    }
-
-    public void setActor1(String actor1) {
-        Actor1 = actor1;
-    }
-
-    public String getActor2() {
-        return Actor2;
-    }
-
-    public void setActor2(String actor2) {
-        Actor2 = actor2;
-    }
-
-    public String getActor3() {
-        return Actor3;
-    }
-
-    public void setActor3(String actor3) {
-        Actor3 = actor3;
+    public void setFormato(String formato) {
+        Formato = formato;
     }
 
     public String getSaga() {
@@ -193,36 +175,20 @@ public class clsPeliculaBD extends clsConexionBD {
         Orden = orden;
     }
 
-    public int getDuracion() {
-        return Duracion;
+    public String getSinopsis() {
+        return Sinopsis;
     }
 
-    public void setDuracion(int duracion) {
-        Duracion = duracion;
+    public void setSinopsis(String sinopsis) {
+        Sinopsis = sinopsis;
     }
 
-    public int getCalporedad() {
-        return Calporedad;
+    public String getEnlace_a_trailer() {
+        return Enlace_a_trailer;
     }
 
-    public void setCalporedad(int calporedad) {
-        Calporedad = calporedad;
-    }
-
-    public int getCalificacion() {
-        return Calificacion;
-    }
-
-    public void setCalificacion(int calificacion) {
-        Calificacion = calificacion;
-    }
-
-    public int getLibreria_Multimedia_idLibreria_Multimedia() {
-        return Libreria_Multimedia_idLibreria_Multimedia;
-    }
-
-    public void setLibreria_Multimedia_idLibreria_Multimedia(int libreria_Multimedia_idLibreria_Multimedia) {
-        Libreria_Multimedia_idLibreria_Multimedia = libreria_Multimedia_idLibreria_Multimedia;
+    public void setEnlace_a_trailer(String enlace_a_trailer) {
+        Enlace_a_trailer = enlace_a_trailer;
     }
 
     @Override
@@ -233,32 +199,24 @@ public class clsPeliculaBD extends clsConexionBD {
 
 
         try {
-
             this.setObjSt(this.getObjCon().prepareStatement(query, this.getObjSt().RETURN_GENERATED_KEYS));
-            this.getObjSt().setString(1, getTitulo());
-            this.getObjSt().setString(2, getTitulo_original());
-            this.getObjSt().setString(3, getAnno_de_publicacion());
-            this.getObjSt().setString(4, getTipo_DoA());
-            this.getObjSt().setString(5, getFormato());
-            this.getObjSt().setBoolean(6, getEn_propiedad());
-            this.getObjSt().setBoolean(7, getEn_busqueda());
-            this.getObjSt().setDouble(8, getPrecio());
-            this.getObjSt().setString(9, getGenero());
-            this.getObjSt().setString(10, getPremios());
-            this.getObjSt().setString(11, getDirector());
-            this.getObjSt().setString(12, getEnlace_a_trailer());
-            this.getObjSt().setString(13, getSinopsis());
-            this.getObjSt().setInt(14, getCantidad_actores());
-            this.getObjSt().setString(15, getActor1());
-            this.getObjSt().setString(16, getActor2());
-            this.getObjSt().setString(17, getActor3());
-            this.getObjSt().setString(18, getSaga());
-            this.getObjSt().setDouble(19, getOrden());
-            this.getObjSt().setInt(20, getDuracion());
-            this.getObjSt().setInt(21, getCalporedad());
-            this.getObjSt().setInt(22, getCalificacion());
-            this.getObjSt().setInt(23, getLibreria_Multimedia_idLibreria_Multimedia());
 
+            this.getObjSt().setInt(1, getLibreria_Multimedia_idLibreria_Multimedia());
+            this.getObjSt().setString(2, getTitulo());
+            this.getObjSt().setString(3, getTitulo_original());
+            this.getObjSt().setInt(4, getAnno_de_publicacion());
+            this.getObjSt().setInt(5, getDuracion());
+            this.getObjSt().setInt(6, getCalificacion());
+            this.getObjSt().setInt(7, getCalporedad());
+            this.getObjSt().setString(8, getTipo_DoA());
+            this.getObjSt().setDouble(9, getPrecio());
+            this.getObjSt().setBoolean(10, getEn_propiedad());
+            this.getObjSt().setBoolean(11, getEn_busqueda());
+            this.getObjSt().setString(12, getFormato());
+            this.getObjSt().setString(13, getSaga());
+            this.getObjSt().setDouble(14, getOrden());
+            this.getObjSt().setString(15, getSinopsis());
+            this.getObjSt().setString(16, getEnlace_a_trailer());
 
             regActualizados = this.getObjSt().executeUpdate();
 
@@ -270,8 +228,6 @@ public class clsPeliculaBD extends clsConexionBD {
                 }
             }
 
-            //AQUI tenemos que insertar teniendo en id el valor de retorno(?)
-
 
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -279,8 +235,6 @@ public class clsPeliculaBD extends clsConexionBD {
         }
         this.desconectarBD(this.getObjCon());
         return retorno;
-
-
     }
 
     @Override

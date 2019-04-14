@@ -27,7 +27,7 @@ public class frmLista extends JFrame implements ListSelectionListener
 	{
 		setTitle("Lista de Librerías");
 		
-		setBounds(100, 100, 200, 500);
+		setBounds(100, 100, 400, 500);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		// pone la ventana en el Centro de la pantalla
 		setLocationRelativeTo(null);

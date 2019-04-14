@@ -12,7 +12,7 @@ public class clsArticulo {
     private String Titulo;
     private String Titulo_original;
     //ESTE SERA UN DATE O ALGO
-    private String Anno_de_publicacion;
+    private int Anno_de_publicacion;
     private String Tipo_DoA;
     private String Formato;
     private boolean En_propiedad;
@@ -42,11 +42,11 @@ public class clsArticulo {
         Titulo_original = titulo_original;
     }
 
-    public String getAnno_de_publicacion() {
+    public int getAnno_de_publicacion() {
         return Anno_de_publicacion;
     }
 
-    public void setAnno_de_publicacion(String anno_de_publicacion) {
+    public void setAnno_de_publicacion(int anno_de_publicacion) {
         Anno_de_publicacion = anno_de_publicacion;
     }
 

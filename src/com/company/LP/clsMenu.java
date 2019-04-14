@@ -88,7 +88,7 @@ public class clsMenu {
                     System.out.println("Titulo_original:");
                     String Titulo_original = UtilidadesLP.leerCadena();
                     System.out.println("Anno_de_publicacion:");
-                    String Anno_de_publicacion = UtilidadesLP.leerCadena();
+                    int Anno_de_publicacion = UtilidadesLP.leerEntero();
                     System.out.println("Tipo_DoA:");
                     String Tipo_DoA = UtilidadesLP.leerCadena();
                     System.out.println("Formato:");
@@ -130,7 +130,7 @@ public class clsMenu {
                     System.out.println("ID de la librería a la que pertenece:");
                     int Libreria_Multimedia_idLibreria_Multimedia = UtilidadesLP.leerEntero();
 
-                    objGestorLN.crearPelicula(Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Formato, En_propiedad, En_busqueda, Precio, Genero, Premios, Director, Enlace_a_trailer, Sinopsis, Cantidad_actores, Actor1, Actor2, Actor3, Saga, Orden, Duracion, Calporedad, Calificacion, Libreria_Multimedia_idLibreria_Multimedia);
+                    objGestorLN.crearPelicula(Libreria_Multimedia_idLibreria_Multimedia, Titulo, Titulo_original,Anno_de_publicacion, Duracion,Calificacion, Calporedad, Tipo_DoA,Precio,En_propiedad,En_busqueda,Formato, Saga,Orden, Sinopsis, Enlace_a_trailer);
 
                     break;
                 case 3:

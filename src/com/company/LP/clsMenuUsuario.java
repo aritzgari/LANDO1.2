@@ -141,41 +141,145 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         System.out.println("Has seleccionado: " + e.getActionCommand());
-        switch (e.getActionCommand()){
+        switch (e.getActionCommand()) {
             case "ActionInsertLibrerias_Multimedia":
-                System.out.println("Datos para crear la Librería:");
-                System.out.println("Un Nombre para saber que libreria es. (String)\n" +
-                        "ej. 'Casa' ó 'Oficina'.");
-                String Nombre = UtilidadesLP.leerCadena();
-                System.out.println("Añade una descripción para saber que es lo que va a contener esta librería");
-                String Descripcion = UtilidadesLP.leerCadena();
-                objGestorLN.crearLibreria(/*idLibreria_Multimedia,*/ Nombre, Descripcion);
+                caseInsertarLibrerias();
                 break;
             case "ActionInsertPeliculas":
+                caseInsertPeliculas();
                 break;
             case "ActionInsertLibros":
+                caseInsertarLibros();
                 break;
             case "ActionInsertMusica":
+                caseInsertarMusica();
                 break;
             case "ActionConsLibrerias_Multimedia":
-                frmLista window = new frmLista();
-                ArrayList<itfProperty> resultado = objGestorLN.consultarLibreriasEnBD();
-                for (itfProperty L : resultado
-                ) {
-                    window.setItem(L);
-                }
+                caseConsLibrerias();
                 break;
             case "ActionConsPeliculas":
+                caseConsPeliculas();
                 break;
             case "ActionConsLibros":
+                caseConsLibros();
                 break;
             case "ActionConsMusica":
+                caseConsMusica();
+
                 break;
 
         }
 
 
     }
+
+
+    private void caseInsertarLibrerias() {
+        //Declaraciones
+        String Nombre;
+        String Descripcion;
+        //Codigo
+        System.out.println("Datos para crear la Librería:");
+        System.out.println("Un Nombre para saber que libreria es. (String)\n" +
+                "ej. 'Casa' ó 'Oficina'.");
+        Nombre = UtilidadesLP.leerCadena();
+        System.out.println("Añade una descripción para saber que es lo que va a contener esta librería");
+        Descripcion = UtilidadesLP.leerCadena();
+        objGestorLN.crearLibreria(/*idLibreria_Multimedia,*/ Nombre, Descripcion);
+    }
+
+    private void caseInsertPeliculas() {
+        //Declaraciones
+        int Libreria_Multimedia_idLibreria_Multimedia;
+        String Titulo;
+        String Titulo_original;
+        int Anno_de_publicacion;
+        int Duracion;
+        int Calificacion;
+        int Calporedad;
+        String Tipo_DoA;
+        double Precio;
+        boolean En_propiedad = false;
+        boolean En_busqueda = false;
+        String Formato;
+        String Saga;
+        Double Orden;
+        String Sinopsis;
+        String Enlace_a_trailer;
+
+        //Codigo
+        System.out.println("Datos para crear la Pelicula:");
+        System.out.println("ID de la libreria a la que pertenece:(int)");
+        Libreria_Multimedia_idLibreria_Multimedia = UtilidadesLP.leerEntero();
+        System.out.println("Titulo: (String)");
+        Titulo = UtilidadesLP.leerCadena();
+        System.out.println("Titulo original: (String)");
+        Titulo_original = UtilidadesLP.leerCadena();
+        System.out.println("Año de publicación: (int)");
+        Anno_de_publicacion = UtilidadesLP.leerEntero();
+        System.out.println("Duracion: (int)");
+        Duracion = UtilidadesLP.leerEntero();
+        System.out.println("Calificacion: (int)");
+        Calificacion = UtilidadesLP.leerEntero();
+        System.out.println("Calificación por edad: (int)");
+        Calporedad = UtilidadesLP.leerEntero();
+        System.out.println("Tipo de formato: (String Digital ó Analógico)");
+        Tipo_DoA = UtilidadesLP.leerCadena();
+        System.out.println("Precio: (Double)");
+        Precio = UtilidadesLP.leerReal();
+        System.out.println("Lo tengo: (boolean 0 o 1)");
+        int valor = UtilidadesLP.leerEntero();
+        if (valor == 0) {
+            En_propiedad = false;
+        } else if (valor == 1) {
+            En_propiedad = true;
+        }
+        System.out.println("Lo quiero: (boolean 0 o 1)");
+        valor = UtilidadesLP.leerEntero();
+        if (valor == 0) {
+            En_busqueda = false;
+        } else if (valor == 1) {
+            En_busqueda = true;
+        }
+        System.out.println("Formato: (String) - Ej: .mp3 o Vinilo o BluRay");
+        Formato = UtilidadesLP.leerCadena();
+        System.out.println("Nombre de la saga a la que pertenece (String)");
+        Saga = UtilidadesLP.leerCadena();
+        System.out.println("En esa saga, que numero es: (Double)");
+        Orden = UtilidadesLP.leerReal();
+        System.out.println("Sinopsis: (String)");
+        Sinopsis = UtilidadesLP.leerCadena();
+        System.out.println("Puedes añadir el enlace al trailer: (String)");
+        Enlace_a_trailer = UtilidadesLP.leerCadena();
+
+        objGestorLN.crearPelicula(Libreria_Multimedia_idLibreria_Multimedia, Titulo, Titulo_original, Anno_de_publicacion, Duracion, Calificacion, Calporedad, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Saga, Orden, Sinopsis, Enlace_a_trailer);
+    }
+
+    private void caseInsertarLibros() {
+    }
+
+    private void caseInsertarMusica() {
+    }
+
+
+    private void caseConsLibrerias() {
+        frmLista window = new frmLista();
+        ArrayList<itfProperty> resultado = objGestorLN.consultarLibreriasEnBD();
+        for (itfProperty L : resultado
+        ) {
+            window.setItem(L);
+        }
+    }
+
+    private void caseConsPeliculas() {
+    }
+
+    private void caseConsLibros() {
+    }
+
+    private void caseConsMusica() {
+    }
+
 }
 
 

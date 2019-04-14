@@ -41,20 +41,15 @@ public class clsLibreria_MultimediaBD extends clsConexionBD {
 
 
     @Override
-    public int sendInsert(String query/*, String _Nombre, String _Descripcion*/) {
+    public int sendInsert(String query) {
         this.conectarBD();
         int regActualizados = 0;
         int retorno = 0;
 
 
         try {
-            //con la siguiente linea me hace la prepareStatement con mi query y el AI. Se supone que lo hace solo.
+            //Con la siguiente linea me hace la prepareStatement con mi query y el AI. Se supone que lo hace solo.
             this.setObjSt(this.getObjCon().prepareStatement(query, this.getObjSt().RETURN_GENERATED_KEYS));
-
-            //this.getObjSt().setInt(1, this.getObjSt().RETURN_GENERATED_KEYS);
-
-
-            //this.getObjSt().setInt(1, ?);
 
             this.getObjSt().setString(1, getNombre());
             this.getObjSt().setString(2, getDescripcion());
@@ -64,13 +59,10 @@ public class clsLibreria_MultimediaBD extends clsConexionBD {
             if (regActualizados == 1) {
                 this.setObjRs(this.getObjSt().getGeneratedKeys());
                 if (this.getObjRs().next()) {
-                    //En este retorno me da el AutoIncremental con el +1 hecho, es decir, listo para insertarlo.
+                    //En este retorno me da el AutoIncremental con el +1 hecho.
                     retorno = this.getObjRs().getInt(1);
                 }
             }
-
-            //AQUI tenemos que insertar teniendo en id el valor de retorno(?) - Tiene pinta de que no, que lo ahce solo.
-
 
         } catch (SQLException e) {
             // TODO Auto-generated catch block

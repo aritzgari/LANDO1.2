@@ -43,9 +43,6 @@ public class clsMusica extends clsArticulo implements itfProperty {
             case "Titulo_original":
                 propResultado = getTitulo_original();
                 break;
-            case "Anno_de_publicacion":
-                propResultado = getAnno_de_publicacion();
-                break;
             case "Tipo_DoA":
                 propResultado = getTipo_DoA();
                 break;
@@ -69,7 +66,8 @@ public class clsMusica extends clsArticulo implements itfProperty {
     public Integer getIntegerProperty(String propiedad) {
         int propResultado = 0;
         switch (propiedad) {
-            case "":
+            case "Anno_de_publicacion":
+                propResultado = getAnno_de_publicacion();
                 break;
             default:
                 System.out.println("Propiedad no encontrada.");
