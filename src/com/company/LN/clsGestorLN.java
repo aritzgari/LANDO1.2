@@ -4,6 +4,7 @@ package com.company.LN;
 
 import com.company.LD.clsLibreria_MultimediaBD;
 import com.company.LD.clsPeliculaBD;
+import com.company.LD.clsLibrosBD;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,6 +15,9 @@ import static com.company.Comun.clsConstantes.queryConsultaLibreria;
 import static com.company.Comun.clsConstantes.queryInsertLibreria;
 import static com.company.Comun.clsConstantes.queryConsultaPelicula;
 import static com.company.Comun.clsConstantes.queryInsertPelicula;
+import static com.company.Comun.clsConstantes.queryConsultaLibro;
+import static com.company.Comun.clsConstantes.queryInsertLibro;
+
 
 /**
  * Clase que intercomunica LP con LN
@@ -112,14 +116,14 @@ public class clsGestorLN {
         objPeliculaBD.sendInsert(queryInsertPelicula);
     }
 
-    public static void crearLibro(String Titulo, String Titulo_original, String Anno_de_publicacion, String Tipo_DoA, String Formato, boolean En_propiedad, boolean En_busqueda, double Precio, String Genero, String Premios, String Autor, String Resumen, String Editorial, boolean Serie_SoN, String Nombre_serie, double Orden_serie, String ISBN, int Paginas) {
+    public static void crearLibro(int Libreria_Multimedia_idLibreria_Multimedia, String ISBN,  String Titulo, String Titulo_original, int Anno_de_publicacion, String Tipo_DoA, double Precio,  boolean En_propiedad, boolean En_busqueda, String Formato, int Paginas,  String Resumen, boolean Serie_SoN, String Nombre_serie, double Orden_serie) {
         /**
          * Metodo para crear Libros en el Gestor con datos que recibamos de LP
          * @author RubenD AritzG
          */
-        clsLibro objLibro;
-        objLibro = new clsLibro(/*Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Formato,En_propiedad, En_busqueda, Precio, Genero, Premiosint,*/Autor, Resumen, Editorial, Serie_SoN, Nombre_serie, Orden_serie, ISBN, Paginas);
-        datosArticulos.add(objLibro);
+
+        clsLibrosBD objLibro = new clsLibrosBD(Libreria_Multimedia_idLibreria_Multimedia, ISBN, Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, Serie_SoN, Nombre_serie, Orden_serie);
+        objLibro.sendInsert(queryInsertLibro);
     }
 
     public static void crearMusica(String Titulo, String Titulo_original, String Anno_de_publicacion, String Tipo_DoA, String Formato, boolean En_propiedad, boolean En_busqueda, double Precio, String Genero, String Premiosint, int Cantidad_musicos, String Musico1, String Musico2, String Musico3, String Musico4, String Musico5, String Album, String Enlace_a_youtube, boolean Videoclip) {
@@ -131,6 +135,41 @@ public class clsGestorLN {
         objMusica = new clsMusica(/*Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Formato,En_propiedad, En_busqueda, Precio, Genero, Premiosint,*/ Cantidad_musicos, Musico1, Musico2, Musico3, Musico4, Musico5, Album, Enlace_a_youtube, Videoclip);
         datosArticulos.add(objMusica);
     }
+
+
+
+
+
+    public ArrayList<itfProperty> consultarLibrosEnBD() {
+        ResultSet resultado = null;
+        //Declarado mas abajo, ignorar: clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia();
+        clsLibrosBD objLibrosBD = new clsLibrosBD();
+        //En este metodo tendremos que crear librerias y asignarles de alguna manera los valores antes de cerrar la conexuión
+        //Para ello:
+        //...
+        //ABRIR CONEXION:
+        objLibrosBD.conectarBD();
+        resultado = objLibrosBD.sendSelect(queryConsultaLibro);
+        //Meto rs en objeto
+        try {
+            while (resultado.next()) {
+                clsLibro objLibros = new clsLibro(resultado.getInt(15), resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getInt(4), resultado.getString(5), resultado.getDouble(6), resultado.getBoolean(7), resultado.getBoolean(8), resultado.getString(9), resultado.getInt(10), resultado.getString(11), resultado.getBoolean(11), resultado.getString(12), resultado.getDouble(13) );
+                //Esto era para visualizar: System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripción: " + resultado.getString(3));
+                datosLibros.add(objLibros);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error SQL");
+            System.out.println(e);
+        }
+        //Cierro conexion
+        objLibrosBD.desconectarBD(objLibrosBD.getObjCon());
+
+        return castclsLibroToItfProperty(datosLibros);
+    }
+
+
+
+
 
 
     public ArrayList<itfProperty> consultarPeliculaEnBD() {
@@ -207,6 +246,19 @@ public class clsGestorLN {
         itfProperty castObject;
         //Las casteamos y metemos en datosItf
         for (clsPelicula o : AO
+        ) {
+            castObject = (itfProperty) o;
+            datosItf.add(castObject);
+        }
+        return datosItf;
+    }
+    public ArrayList<itfProperty> castclsLibroToItfProperty(ArrayList</*Aqui me gustaria que fueran objects pero no traga*/clsLibro> AO) {
+        //Ordenamos por Nombre:
+        //NO CONFIGURADO PARA PELICULAS Collections.sort(AO, new clsCompareLibreriaMultimedia());
+        //Creamos el objeto en el que vamos a castear las librerias
+        itfProperty castObject;
+        //Las casteamos y metemos en datosItf
+        for (clsLibro o : AO
         ) {
             castObject = (itfProperty) o;
             datosItf.add(castObject);

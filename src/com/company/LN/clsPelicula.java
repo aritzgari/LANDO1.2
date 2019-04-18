@@ -52,7 +52,7 @@ public class clsPelicula extends clsArticulo implements itfProperty {
         //  En_propiedad = _en_propiedad;
         setEn_propiedad(_en_propiedad);
         //  En_busqueda = _en_busqueda;
-        setEn_busqueda(_en_propiedad);
+        setEn_busqueda(_en_busqueda);
         // Formato = _formato;
         setFormato(_formato);
         Saga = _saga;

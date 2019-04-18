@@ -174,7 +174,6 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
                 break;
             case "ActionConsMusica":
                 caseConsMusica();
-
                 break;
 
         }
@@ -272,9 +271,84 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
 
         objGestorLN.crearPelicula(Libreria_Multimedia_idLibreria_Multimedia, Titulo, Titulo_original, Anno_de_publicacion, Duracion, Calificacion, Calporedad, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Saga, Orden, Sinopsis, Enlace_a_trailer);
     }
+    /**
+     * Clase insertar libros desde la ventana.
+     *
+     * @see clsGestorLN
+     */
 
     private void caseInsertarLibros() {
-    }
+            //Declaraciones
+            int Libreria_Multimedia_idLibreria_Multimedia;
+            String ISBN;
+            String Titulo;
+            String Titulo_original;
+            int Anno_de_publicacion;
+            String Tipo_DoA;
+            double Precio;
+            boolean En_propiedad = false;
+            boolean En_busqueda = false;
+            String Formato;
+            int Paginas;
+            String Resumen;
+            boolean SerieSoN = false;
+            String Nombre_serie;
+            double Orden_serie;
+
+            //Codigo
+            System.out.println("Datos para crear el libro:");
+            System.out.println("ID de la libreria a la que pertenece:(int)");
+            Libreria_Multimedia_idLibreria_Multimedia = UtilidadesLP.leerEntero();
+            System.out.println("ISBN: (String)");
+            ISBN = UtilidadesLP.leerCadena();
+            System.out.println("Titulo: (String)");
+            Titulo = UtilidadesLP.leerCadena();
+            System.out.println("Titulo original: (String)");
+            Titulo_original = UtilidadesLP.leerCadena();
+            System.out.println("Año de publicación: (int)");
+            Anno_de_publicacion = UtilidadesLP.leerEntero();
+            System.out.println("Tipo de formato: (String Digital ó Analógico)");
+            Tipo_DoA = UtilidadesLP.leerCadena();
+            System.out.println("Precio: (Double)");
+            Precio = UtilidadesLP.leerReal();
+            System.out.println("Lo tengo: (boolean 0 o 1)");
+            int valor = UtilidadesLP.leerEntero();
+            if (valor == 0) {
+                En_propiedad = false;
+            } else if (valor == 1) {
+                En_propiedad = true;
+            }
+            System.out.println("Lo quiero: (boolean 0 o 1)");
+            valor = UtilidadesLP.leerEntero();
+            if (valor == 0) {
+                En_busqueda = false;
+            } else if (valor == 1) {
+                En_busqueda = true;
+            }
+            System.out.println("Formato: (String) - Ej: .mp3 o Vinilo o BluRay");
+            Formato = UtilidadesLP.leerCadena();
+            System.out.println("Paginas que tiene: (int)");
+            Paginas = UtilidadesLP.leerEntero();
+            System.out.println("Un resumen: (String)");
+            Resumen = UtilidadesLP.leerCadena();
+            System.out.println("Pertenece a una serie de libros: (boolean 0 o 1)");
+            valor = UtilidadesLP.leerEntero();
+            if (valor == 0) {
+            SerieSoN = false;
+            } else if (valor == 1) {
+            SerieSoN = true;
+            }
+            System.out.println("Como se llama la serie: (String)");
+            Nombre_serie = UtilidadesLP.leerCadena();
+            System.out.println(" Orden cronológico de la serie a la que pertenece: (Double)");
+            Orden_serie = UtilidadesLP.leerReal();
+
+
+
+            objGestorLN.crearLibro(Libreria_Multimedia_idLibreria_Multimedia,ISBN, Titulo, Titulo_original, Anno_de_publicacion,  Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, SerieSoN, Nombre_serie, Orden_serie);
+        }
+
+
 
     private void caseInsertarMusica() {
     }
@@ -304,6 +378,12 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
     }
 
     private void caseConsLibros() {
+        frmListaLibros VentanaConsLibros = new frmListaLibros();
+        ArrayList<itfProperty> resultado = objGestorLN.consultarLibrosEnBD();
+        for (itfProperty L : resultado
+        ) {
+            VentanaConsLibros.setItem(L);
+        }
     }
 
     private void caseConsMusica() {

@@ -10,9 +10,10 @@ package com.company.LN;
 public class clsLibro extends clsArticulo implements itfProperty {
 
     /*atributos de la clase libro*/
-    private String Autor;
+    //-->private String Autor;
+    private int Libreria_Multimedia_idLibreria_Multimedia;
     private String Resumen;
-    private String Editorial;
+    //-->private String Editorial;
     //Formato se hereda
     private boolean Serie_SoN;
     private String Nombre_serie;
@@ -21,17 +22,26 @@ public class clsLibro extends clsArticulo implements itfProperty {
     private String ISBN;
     private int Paginas;
 
-    public clsLibro(String _Autor, String _Resumen, String _Editorial, boolean _Serie_SoN, String _Nombre_serie, double _Orden_serie, String _ISBN, int _Paginas) {
+    //--> creados las clases editorial y autor.
+    public clsLibro(int _libreria_Multimedia_idLibreria_Multimedia, String _ISBN, String _titulo, String _titulo_original, int _anno_de_publicacion, String _tipo_DoA, double _precio,boolean _en_propiedad, boolean _en_busqueda, String _formato, int _Paginas, String _Resumen, boolean _Serie_SoN, String _Nombre_serie, double _Orden_serie) {
         //Tal ves haya que usar setters aqui.
-        Autor = _Autor;
+        //-->Autor = _Autor;
+        //-->Editorial = _Editorial;
+        Libreria_Multimedia_idLibreria_Multimedia = _libreria_Multimedia_idLibreria_Multimedia;
+        ISBN = _ISBN;
+        setTitulo(_titulo);
+        setTitulo_original(_titulo_original);
+        setAnno_de_publicacion(_anno_de_publicacion);
+        setTipo_DoA(_tipo_DoA);
+        setPrecio(_precio);
+        setEn_propiedad(_en_propiedad);
+        setEn_busqueda(_en_busqueda);
+        setFormato(_formato);
+        Paginas = _Paginas;
         Resumen = _Resumen;
-        Editorial = _Editorial;
         Serie_SoN = _Serie_SoN;
         Nombre_serie = _Nombre_serie;
         Orden_serie = _Orden_serie;
-        ISBN = _ISBN;
-        Paginas = _Paginas;
-
 
     }
 
@@ -57,6 +67,15 @@ public class clsLibro extends clsArticulo implements itfProperty {
             case "Premios":
                 propResultado = getPremios();
                 break;
+            case "ISBN":
+                propResultado = ISBN;
+                break;
+            case "Resumen":
+                propResultado = Resumen;
+                break;
+            case "Nombre_serie":
+                propResultado = Nombre_serie;
+                break;
             default:
                 System.out.println("Propiedad no encontrada.");
                 break;
@@ -70,6 +89,12 @@ public class clsLibro extends clsArticulo implements itfProperty {
         switch (propiedad) {
             case "Anno_de_publicacion":
                 propResultado = getAnno_de_publicacion();
+                break;
+            case "Paginas":
+                propResultado = Paginas;
+                break;
+            case "Libreria_Multimedia_idLibreria_Multimedia":
+                propResultado = Libreria_Multimedia_idLibreria_Multimedia;
                 break;
             default:
                 System.out.println("Propiedad no encontrada.");
@@ -97,6 +122,9 @@ public class clsLibro extends clsArticulo implements itfProperty {
         switch (propiedad) {
             case "Precio":
                 propResultado = getPrecio();
+                break;
+            case "Orden_serie":
+                propResultado = Orden_serie;
                 break;
             default:
                 System.out.println("Propiedad no encontrada.");
@@ -127,6 +155,9 @@ public class clsLibro extends clsArticulo implements itfProperty {
                 break;
             case "En_busqueda":
                 propResultado = getEn_busqueda();
+                break;
+            case "Serie_SoN":
+                propResultado = Serie_SoN;
                 break;
             default:
                 System.out.println("Propiedad no encontrada.");
