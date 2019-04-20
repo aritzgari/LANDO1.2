@@ -74,8 +74,8 @@ public class frmListaLibros extends JFrame implements ListSelectionListener {
                         ", Formato='" + ((itfProperty) jlista.getSelectedValue()).getStringProperty("Formato") + '\'' +
                         ", Paginas=" + ((itfProperty) jlista.getSelectedValue()).getIntegerProperty("Paginas") +
                         ", Resumen='" + ((itfProperty) jlista.getSelectedValue()).getStringProperty("Resumen") + '\'' +
-                        ", SerieSoN=" + ((itfProperty) jlista.getSelectedValue()).getBooleanProperty("SerieSoN") +
-                        ", Nombre_serie='" + ((itfProperty) jlista.getSelectedValue()).getStringProperty("Nombre_serie") + '\'' +
+                        ", Serie_SoN=" + ((itfProperty) jlista.getSelectedValue()).getBooleanProperty("Serie_SoN") +
+                        ", Nombre_serie='" + ((itfProperty) jlista.getSelectedValue()).getStringProperty("Nombre_serie") +
                         ", Orden_serie='" + ((itfProperty) jlista.getSelectedValue()).getStringProperty("Orden_serie") + '\'' +
                         '}';
                 System.out.println("Atributos: " + TextoAMostrar);

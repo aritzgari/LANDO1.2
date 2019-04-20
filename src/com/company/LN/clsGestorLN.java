@@ -121,9 +121,8 @@ public class clsGestorLN {
          * Metodo para crear Libros en el Gestor con datos que recibamos de LP
          * @author RubenD AritzG
          */
-
-        clsLibrosBD objLibro = new clsLibrosBD(Libreria_Multimedia_idLibreria_Multimedia, ISBN, Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, Serie_SoN, Nombre_serie, Orden_serie);
-        objLibro.sendInsert(queryInsertLibro);
+        clsLibrosBD objLibroBD = new clsLibrosBD(Libreria_Multimedia_idLibreria_Multimedia, ISBN, Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, Serie_SoN, Nombre_serie, Orden_serie);
+        objLibroBD.sendInsert(queryInsertLibro);
     }
 
     public static void crearMusica(String Titulo, String Titulo_original, String Anno_de_publicacion, String Tipo_DoA, String Formato, boolean En_propiedad, boolean En_busqueda, double Precio, String Genero, String Premiosint, int Cantidad_musicos, String Musico1, String Musico2, String Musico3, String Musico4, String Musico5, String Album, String Enlace_a_youtube, boolean Videoclip) {
@@ -135,10 +134,6 @@ public class clsGestorLN {
         objMusica = new clsMusica(/*Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Formato,En_propiedad, En_busqueda, Precio, Genero, Premiosint,*/ Cantidad_musicos, Musico1, Musico2, Musico3, Musico4, Musico5, Album, Enlace_a_youtube, Videoclip);
         datosArticulos.add(objMusica);
     }
-
-
-
-
 
     public ArrayList<itfProperty> consultarLibrosEnBD() {
         ResultSet resultado = null;
@@ -153,7 +148,7 @@ public class clsGestorLN {
         //Meto rs en objeto
         try {
             while (resultado.next()) {
-                clsLibro objLibros = new clsLibro(resultado.getInt(15), resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getInt(4), resultado.getString(5), resultado.getDouble(6), resultado.getBoolean(7), resultado.getBoolean(8), resultado.getString(9), resultado.getInt(10), resultado.getString(11), resultado.getBoolean(11), resultado.getString(12), resultado.getDouble(13) );
+                clsLibro objLibros = new clsLibro(resultado.getInt(15), resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getInt(4), resultado.getString(5), resultado.getDouble(6), resultado.getBoolean(7), resultado.getBoolean(8), resultado.getString(9), resultado.getInt(10), resultado.getString(11), resultado.getBoolean(12), resultado.getString(13), resultado.getDouble(14) );
                 //Esto era para visualizar: System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripción: " + resultado.getString(3));
                 datosLibros.add(objLibros);
             }
@@ -166,10 +161,6 @@ public class clsGestorLN {
 
         return castclsLibroToItfProperty(datosLibros);
     }
-
-
-
-
 
 
     public ArrayList<itfProperty> consultarPeliculaEnBD() {
@@ -242,7 +233,7 @@ public class clsGestorLN {
     public ArrayList<itfProperty> castclsPeliculaToItfProperty(ArrayList</*Aqui me gustaria que fueran objects pero no traga*/clsPelicula> AO) {
         //Ordenamos por Nombre:
         //NO CONFIGURADO PARA PELICULAS Collections.sort(AO, new clsCompareLibreriaMultimedia());
-        //Creamos el objeto en el que vamos a castear las librerias
+        //Creamos el objeto en el que vamos a castear las pelicualas
         itfProperty castObject;
         //Las casteamos y metemos en datosItf
         for (clsPelicula o : AO
@@ -252,10 +243,10 @@ public class clsGestorLN {
         }
         return datosItf;
     }
-    public ArrayList<itfProperty> castclsLibroToItfProperty(ArrayList</*Aqui me gustaria que fueran objects pero no traga*/clsLibro> AO) {
+    public ArrayList<itfProperty> castclsLibroToItfProperty(ArrayList<clsLibro> AO) {
         //Ordenamos por Nombre:
-        //NO CONFIGURADO PARA PELICULAS Collections.sort(AO, new clsCompareLibreriaMultimedia());
-        //Creamos el objeto en el que vamos a castear las librerias
+        //NO CONFIGURADO PARA LIBROS TAMPOCO Collections.sort(AO, new clsCompareLibreriaMultimedia());
+        //Creamos el objeto en el que vamos a castear los libros
         itfProperty castObject;
         //Las casteamos y metemos en datosItf
         for (clsLibro o : AO

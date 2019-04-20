@@ -26,6 +26,8 @@ public class clsLibrosBD extends clsConexionBD {
         private boolean Serie_SoN;
         private String Nombre_serie;
         private double Orden_serie;
+        //no utilizados pero deberian id_genero, id_autor, id_editorial y id_premios.
+
 
 
         //Constructor con parametros, pensado para el insert

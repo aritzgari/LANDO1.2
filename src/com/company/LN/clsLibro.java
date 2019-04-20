@@ -23,7 +23,7 @@ public class clsLibro extends clsArticulo implements itfProperty {
     private int Paginas;
 
     //--> creados las clases editorial y autor.
-    public clsLibro(int _libreria_Multimedia_idLibreria_Multimedia, String _ISBN, String _titulo, String _titulo_original, int _anno_de_publicacion, String _tipo_DoA, double _precio,boolean _en_propiedad, boolean _en_busqueda, String _formato, int _Paginas, String _Resumen, boolean _Serie_SoN, String _Nombre_serie, double _Orden_serie) {
+    public clsLibro(int _libreria_Multimedia_idLibreria_Multimedia, String _ISBN, String _titulo, String _titulo_original, int _anno_de_publicacion, String _tipo_DoA, double _precio, boolean _en_propiedad, boolean _en_busqueda, String _formato, int _Paginas, String _Resumen, boolean _Serie_SoN, String _Nombre_serie, double _Orden_serie) {
         //Tal ves haya que usar setters aqui.
         //-->Autor = _Autor;
         //-->Editorial = _Editorial;
@@ -62,10 +62,10 @@ public class clsLibro extends clsArticulo implements itfProperty {
                 propResultado = getFormato();
                 break;
             case "Genero":
-                propResultado = getGenero();
+                propResultado = getGenero();// no usado pero esta
                 break;
             case "Premios":
-                propResultado = getPremios();
+                propResultado = getPremios();// no usado pero esta
                 break;
             case "ISBN":
                 propResultado = ISBN;
