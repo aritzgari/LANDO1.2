@@ -295,6 +295,10 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
             String Nombre_serie;
             double Orden_serie;
 
+            //Prueba:
+            int idGenero =1;
+            int idAutor =0;
+
             //Codigo
             System.out.println("Datos para crear el libro:");
             System.out.println("ID de la libreria a la que pertenece:(int)");
@@ -340,12 +344,16 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
             }
             System.out.println("Como se llama la serie: (String)");
             Nombre_serie = UtilidadesLP.leerCadena();
-            System.out.println(" Orden cronológico de la serie a la que pertenece: (Double)");
+            System.out.println("Orden cronológico de la serie a la que pertenece: (Double)");
             Orden_serie = UtilidadesLP.leerReal();
+            //Prueba
+            //System.out.println("idGenero(INT)");
+
+            //System.out.println("Yoquesetio(INT)");
 
 
 
-            objGestorLN.crearLibro(Libreria_Multimedia_idLibreria_Multimedia,ISBN, Titulo, Titulo_original, Anno_de_publicacion,  Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, SerieSoN, Nombre_serie, Orden_serie);
+            objGestorLN.crearLibro(Libreria_Multimedia_idLibreria_Multimedia,ISBN, Titulo, Titulo_original, Anno_de_publicacion,  Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, SerieSoN, Nombre_serie, Orden_serie, idGenero, idAutor);
         }
 
 
@@ -354,7 +362,7 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
     }
 
     /**
-     * Clase consultar librerias desde la ventana.
+     * Método consultar librerias desde la ventana.
      */
 
     private void caseConsLibrerias() {
@@ -366,7 +374,7 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
         }
     }
     /**
-     * Clase consultar peliculas desde la ventana.
+     * Método consultar peliculas desde la ventana.
      */
     private void caseConsPeliculas() {
         frmListaPeliculas VentanaConsPeliculas = new frmListaPeliculas();
@@ -377,6 +385,9 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
         }
     }
 
+    /**
+     * Método consultar Libros desde la ventana.
+     */
     private void caseConsLibros() {
         frmListaLibros VentanaConsLibros = new frmListaLibros();
         ArrayList<itfProperty> resultado = objGestorLN.consultarLibrosEnBD();

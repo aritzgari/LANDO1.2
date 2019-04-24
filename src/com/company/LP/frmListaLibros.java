@@ -19,7 +19,7 @@ public class frmListaLibros extends JFrame implements ListSelectionListener {
 
 
         /**
-         * CreaciÃ³n de lista de  librerias.
+         * Creación de lista de  librerias.
          *
          * @see ModeloLista
          */

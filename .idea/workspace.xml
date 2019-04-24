@@ -6,16 +6,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f28a05cc-8887-48c4-8678-c8f41d95bdcd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LANDO_BBDD/Modelo_LANDO.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/LANDO_BBDD/Modelo_LANDO.mwb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LANDO_BBDD/Modelo_LANDO.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/LANDO_BBDD/Modelo_LANDO.mwb.bak" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/Comun/clsConstantes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/Comun/clsConstantes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LD/clsConexionBD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LD/clsConexionBD.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LD/clsLibrosBD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LD/clsLibrosBD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsAutor$clsActor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsAutor$clsActor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsGestorLN.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsGestorLN.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsLibro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsLibro.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/clsMenuUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/clsMenuUsuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/frmListaLibros.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/frmListaLibros.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Comun/clsConstantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Comun/clsConstantes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/LD/clsConexionBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LD/clsConexionBD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/LD/clsLibrosBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LD/clsLibrosBD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/LN/clsAutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LN/clsAutor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/LN/clsGestorLN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LN/clsGestorLN.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/LN/clsLibro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LN/clsLibro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/LP/clsMenuUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LP/clsMenuUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/LP/frmListaLibros.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LP/frmListaLibros.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -33,14 +41,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsGestorLN.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="83" column="33" selection-start-line="83" selection-start-column="33" selection-end-line="83" selection-end-column="33" />
+            <state relative-caret-position="86">
+              <caret line="148" column="13" selection-start-line="148" selection-start-column="13" selection-end-line="148" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/LD/clsLibrosBD.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2210">
+              <caret line="196" column="15" selection-start-line="196" selection-start-column="15" selection-end-line="196" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Comun/clsConstantes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="361" selection-start-line="26" selection-start-column="361" selection-end-line="26" selection-end-column="361" />
             </state>
           </provider>
         </entry>
@@ -48,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/LP/clsMenuUsuario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="199" column="20" selection-start-line="199" selection-start-column="20" selection-end-line="199" selection-end-column="20" />
+            <state relative-caret-position="5933">
+              <caret line="355" column="28" selection-start-line="355" selection-start-column="28" selection-end-line="355" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -57,29 +83,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Comun/clsConstantes.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsLibro.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+            <state relative-caret-position="850">
+              <caret line="50" column="27" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/LD/clsConexionBD.java">
+        <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsPelicula.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/LD/clsLibreria_MultimediaBD.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
-              <caret line="52" selection-start-line="52" selection-end-line="52" />
+            <state relative-caret-position="1326">
+              <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -152,17 +169,17 @@
         <option value="$PROJECT_DIR$/src/com/company/Excepciones/clsCampoContenidoVacio.java" />
         <option value="$PROJECT_DIR$/src/com/company/Comun/itfPropertyV2.java" />
         <option value="$PROJECT_DIR$/src/com/company/Excepciones/clsPropiedadNonExistantException.java" />
-        <option value="$PROJECT_DIR$/src/com/company/LN/clsAutor.java" />
         <option value="$PROJECT_DIR$/src/com/company/LN/clsEditorial.java" />
         <option value="$PROJECT_DIR$/src/com/company/LN/clsPelicula.java" />
         <option value="$PROJECT_DIR$/src/com/company/LD/clsLibroBD.java" />
+        <option value="$PROJECT_DIR$/src/com/company/LP/frmListaLibros.java" />
+        <option value="$PROJECT_DIR$/src/com/company/LD/clsConexionBD.java" />
+        <option value="$PROJECT_DIR$/src/com/company/LN/clsAutor.java" />
         <option value="$PROJECT_DIR$/src/com/company/Comun/clsConstantes.java" />
         <option value="$PROJECT_DIR$/src/com/company/LD/clsLibrosBD.java" />
+        <option value="$PROJECT_DIR$/src/com/company/LP/clsMenuUsuario.java" />
         <option value="$PROJECT_DIR$/src/com/company/LN/clsLibro.java" />
         <option value="$PROJECT_DIR$/src/com/company/LN/clsGestorLN.java" />
-        <option value="$PROJECT_DIR$/src/com/company/LP/frmListaLibros.java" />
-        <option value="$PROJECT_DIR$/src/com/company/LP/clsMenuUsuario.java" />
-        <option value="$PROJECT_DIR$/src/com/company/LD/clsConexionBD.java" />
       </list>
     </option>
   </component>
@@ -173,7 +190,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="676" />
+    <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
@@ -182,7 +199,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -240,12 +256,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555272525713" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556136796039" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -322,7 +339,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.497545" visible="true" weight="0.25416037" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.497545" visible="true" weight="0.2118003" />
       <window_info id="Structure" order="1" sideWeight="0.5008183" side_tool="true" weight="0.2647504" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -331,14 +348,14 @@
       <window_info id="Favorites" order="6" sideWeight="0.502455" side_tool="true" weight="0.13918306" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.6923077" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.59738135" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289689" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -358,13 +375,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/LD/clsLibreria_MultimediaBD.java</url>
-          <line>51</line>
+          <line>52</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/LD/clsLibreria_MultimediaBD.java</url>
-          <line>44</line>
+          <line>45</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
@@ -376,15 +393,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/LN/clsGestorLN.java</url>
-          <line>174</line>
+          <line>204</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/LP/clsMenuUsuario.java</url>
-          <line>160</line>
+          <line>169</line>
           <properties />
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mysql-connector-java/com/mysql/cj/jdbc/ClientPreparedStatement.class</url>
+          <line>785</line>
+          <properties />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -510,37 +533,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsArticulo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-358">
-          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-          <folding>
-            <element signature="e#683#684#0" expanded="true" />
-            <element signature="e#712#713#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsActor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsAutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsDirector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -548,27 +540,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysql-connector-java/com/mysql/cj/jdbc/exceptions/SQLError.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysql-connector-java/com/mysql/cj/jdbc/exceptions/SQLExceptionsMapping.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysql-connector-java/com/mysql/cj/jdbc/ClientPreparedStatement.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="827" selection-start-line="827" selection-end-line="827" />
         </state>
       </provider>
     </entry>
@@ -587,13 +558,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
           <caret line="404" column="49" selection-start-line="404" selection-start-column="49" selection-end-line="404" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/LP/frmListaLibrerias.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -625,41 +589,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/LD/clsPeliculaBD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="212" column="54" lean-forward="true" selection-start-line="212" selection-start-column="54" selection-end-line="212" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/LD/clsEliminar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="14" column="97" lean-forward="true" selection-start-line="14" selection-start-column="97" selection-end-line="14" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsPelicula.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="110" column="22" lean-forward="true" selection-start-line="110" selection-start-column="22" selection-end-line="110" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsLibro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-865">
-          <caret line="67" column="66" selection-start-line="67" selection-start-column="66" selection-end-line="67" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/LP/frmListaLibros.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="83" column="9" lean-forward="true" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -687,141 +620,150 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../mysql-connector-java-8.0.15 (2)/com/mysql/cj/jdbc/Driver.class">
+    <entry file="file://$PROJECT_DIR$/../../mysql-connector-java-8.0.15 (2)/com/mysql/cj/jdbc/Driver.class" />
+    <entry file="file://$PROJECT_DIR$/../../mysql-connector-java-8.0.15 (2)/com/mysql/cj/jdbc/AbandonedConnectionCleanupThread.class" />
+    <entry file="file://$PROJECT_DIR$/../../mysql-connector-java-8.0.15 (2)/com/mysql/cj/util/StringUtils.class" />
+    <entry file="file://$PROJECT_DIR$/../../mysql-connector-java-8.0.15 (2)/com/mysql/cj/conf/ConnectionUrlParser.class" />
+    <entry file="file://$PROJECT_DIR$/../../mysql-connector-java-8.0.15 (2)/com/mysql/cj/conf/ConnectionUrl.class" />
+    <entry file="file://$PROJECT_DIR$/../../mysql-connector-java-8.0.15 (2)/com/mysql/cj/jdbc/NonRegisteringDriver.class" />
+    <entry file="file://$PROJECT_DIR$/../../mysql-connector-java-8.0.15 (2)/com/mysql/cj/jdbc/ConnectionImpl.class" />
+    <entry file="file://$PROJECT_DIR$/src/com/company/LP/frmListaLibrerias.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#528#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../mysql-connector-java-8.0.15 (2)/com/mysql/cj/jdbc/AbandonedConnectionCleanupThread.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="151" selection-start-line="151" selection-end-line="151" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../mysql-connector-java-8.0.15 (2)/com/mysql/cj/util/StringUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="603" selection-start-line="603" selection-end-line="603" />
-          <folding>
-            <element signature="e#37296#37297#0" expanded="true" />
-            <element signature="e#37353#37354#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../mysql-connector-java-8.0.15 (2)/com/mysql/cj/conf/ConnectionUrlParser.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="368" selection-start-line="368" selection-end-line="368" />
-          <folding>
-            <element signature="e#16072#16073#0" expanded="true" />
-            <element signature="e#16106#16107#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../mysql-connector-java-8.0.15 (2)/com/mysql/cj/conf/ConnectionUrl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="91" selection-start-line="91" selection-end-line="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../mysql-connector-java-8.0.15 (2)/com/mysql/cj/jdbc/NonRegisteringDriver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../mysql-connector-java-8.0.15 (2)/com/mysql/cj/jdbc/ConnectionImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="1267" selection-start-line="1267" selection-end-line="1267" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/LD/clsLibrosBD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="183" selection-start-line="183" selection-end-line="183" />
-          <folding>
-            <element signature="e#2438#2439#0" expanded="true" />
-            <element signature="e#2470#2471#0" expanded="true" />
-            <element signature="e#2576#2577#0" expanded="true" />
-            <element signature="e#2607#2608#0" expanded="true" />
-            <element signature="e#2749#2750#0" expanded="true" />
-            <element signature="e#2798#2799#0" expanded="true" />
-            <element signature="e#2950#2951#0" expanded="true" />
-            <element signature="e#3007#3008#0" expanded="true" />
-            <element signature="e#3121#3122#0" expanded="true" />
-            <element signature="e#3156#3157#0" expanded="true" />
-            <element signature="e#3262#3263#0" expanded="true" />
-            <element signature="e#3293#3294#0" expanded="true" />
-            <element signature="e#3425#3426#0" expanded="true" />
-            <element signature="e#3468#3469#0" expanded="true" />
-            <element signature="e#3596#3597#0" expanded="true" />
-            <element signature="e#3637#3638#0" expanded="true" />
-            <element signature="e#3747#3748#0" expanded="true" />
-            <element signature="e#3780#3781#0" expanded="true" />
-            <element signature="e#3884#3885#0" expanded="true" />
-            <element signature="e#3917#3918#0" expanded="true" />
-            <element signature="e#4027#4028#0" expanded="true" />
-            <element signature="e#4060#4061#0" expanded="true" />
-            <element signature="e#4180#4181#0" expanded="true" />
-            <element signature="e#4217#4218#0" expanded="true" />
-            <element signature="e#4347#4348#0" expanded="true" />
-            <element signature="e#4390#4391#0" expanded="true" />
-            <element signature="e#4516#4517#0" expanded="true" />
-            <element signature="e#4557#4558#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-738">
+          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/LD/clsConexionBD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+        <state relative-caret-position="66">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/LD/clsLibreria_MultimediaBD.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="53">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysql-connector-java/com/mysql/cj/jdbc/exceptions/SQLExceptionsMapping.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysql-connector-java/com/mysql/cj/jdbc/ClientPreparedStatement.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="786" selection-start-line="786" selection-end-line="786" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/LP/frmListaLibros.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="83" column="9" lean-forward="true" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/LD/clsPeliculaBD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="204" column="36" selection-start-line="204" selection-start-column="36" selection-end-line="204" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysql-connector-java/com/mysql/cj/jdbc/exceptions/SQLError.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsAutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsActor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsArticulo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="60" column="18" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
+          <folding>
+            <element signature="e#683#684#0" expanded="true" />
+            <element signature="e#712#713#0" expanded="true" />
+            <element signature="e#1370#1371#0" expanded="true" />
+            <element signature="e#1400#1401#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsGestorLN.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="83" column="33" selection-start-line="83" selection-start-column="33" selection-end-line="83" selection-end-column="33" />
+        <state relative-caret-position="86">
+          <caret line="148" column="13" selection-start-line="148" selection-start-column="13" selection-end-line="148" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/LP/clsMenuUsuario.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/LD/clsLibrosBD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="199" column="20" selection-start-line="199" selection-start-column="20" selection-end-line="199" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="2210">
+          <caret line="196" column="15" selection-start-line="196" selection-start-column="15" selection-end-line="196" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Comun/clsConstantes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        <state relative-caret-position="442">
+          <caret line="26" column="361" selection-start-line="26" selection-start-column="361" selection-end-line="26" selection-end-column="361" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/LP/clsMenuUsuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5933">
+          <caret line="355" column="28" selection-start-line="355" selection-start-column="28" selection-end-line="355" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsLibro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="50" column="27" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsPelicula.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1326">
+          <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
         </state>
       </provider>
     </entry>

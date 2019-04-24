@@ -116,12 +116,12 @@ public class clsGestorLN {
         objPeliculaBD.sendInsert(queryInsertPelicula);
     }
 
-    public static void crearLibro(int Libreria_Multimedia_idLibreria_Multimedia, String ISBN,  String Titulo, String Titulo_original, int Anno_de_publicacion, String Tipo_DoA, double Precio,  boolean En_propiedad, boolean En_busqueda, String Formato, int Paginas,  String Resumen, boolean Serie_SoN, String Nombre_serie, double Orden_serie) {
+    public static void crearLibro(int Libreria_Multimedia_idLibreria_Multimedia, String ISBN,  String Titulo, String Titulo_original, int Anno_de_publicacion, String Tipo_DoA, double Precio,  boolean En_propiedad, boolean En_busqueda, String Formato, int Paginas,  String Resumen, boolean Serie_SoN, String Nombre_serie, double Orden_serie, int idGenero, int idAutor) {
         /**
          * Metodo para crear Libros en el Gestor con datos que recibamos de LP
          * @author RubenD AritzG
          */
-        clsLibrosBD objLibroBD = new clsLibrosBD(Libreria_Multimedia_idLibreria_Multimedia, ISBN, Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, Serie_SoN, Nombre_serie, Orden_serie);
+        clsLibrosBD objLibroBD = new clsLibrosBD(Libreria_Multimedia_idLibreria_Multimedia, ISBN, Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, Serie_SoN, Nombre_serie, Orden_serie, idGenero, idAutor);
         objLibroBD.sendInsert(queryInsertLibro);
     }
 
@@ -148,7 +148,7 @@ public class clsGestorLN {
         //Meto rs en objeto
         try {
             while (resultado.next()) {
-                clsLibro objLibros = new clsLibro(resultado.getInt(15), resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getInt(4), resultado.getString(5), resultado.getDouble(6), resultado.getBoolean(7), resultado.getBoolean(8), resultado.getString(9), resultado.getInt(10), resultado.getString(11), resultado.getBoolean(12), resultado.getString(13), resultado.getDouble(14) );
+                clsLibro objLibros = new clsLibro(resultado.getInt(17), resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getInt(4), resultado.getString(5), resultado.getDouble(6), resultado.getBoolean(7), resultado.getBoolean(8), resultado.getString(9), resultado.getInt(10), resultado.getString(11), resultado.getBoolean(12), resultado.getString(13), resultado.getDouble(14), resultado.getInt(15), resultado.getInt(16) );
                 //Esto era para visualizar: System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripción: " + resultado.getString(3));
                 datosLibros.add(objLibros);
             }

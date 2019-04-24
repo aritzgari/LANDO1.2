@@ -21,9 +21,14 @@ public class clsLibro extends clsArticulo implements itfProperty {
     //ISBN no es un int porque es demasiado grande.
     private String ISBN;
     private int Paginas;
+    private int idGenero;
+    private int idAutor;
 
     //--> creados las clases editorial y autor.
-    public clsLibro(int _libreria_Multimedia_idLibreria_Multimedia, String _ISBN, String _titulo, String _titulo_original, int _anno_de_publicacion, String _tipo_DoA, double _precio, boolean _en_propiedad, boolean _en_busqueda, String _formato, int _Paginas, String _Resumen, boolean _Serie_SoN, String _Nombre_serie, double _Orden_serie) {
+
+    //FALTAN AUTOR Y GENERO @importante #Urgente
+
+    public clsLibro(int _libreria_Multimedia_idLibreria_Multimedia, String _ISBN, String _titulo, String _titulo_original, int _anno_de_publicacion, String _tipo_DoA, double _precio, boolean _en_propiedad, boolean _en_busqueda, String _formato, int _Paginas, String _Resumen, boolean _Serie_SoN, String _Nombre_serie, double _Orden_serie, int _idGenero, int _idAutor) {
         //Tal ves haya que usar setters aqui.
         //-->Autor = _Autor;
         //-->Editorial = _Editorial;
@@ -42,7 +47,8 @@ public class clsLibro extends clsArticulo implements itfProperty {
         Serie_SoN = _Serie_SoN;
         Nombre_serie = _Nombre_serie;
         Orden_serie = _Orden_serie;
-
+        idGenero = _idGenero;
+        idAutor = _idAutor;
     }
 
     @Override

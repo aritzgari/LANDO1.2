@@ -27,7 +27,7 @@ public class clsAutor {
             Object retorno = new Object();
 
             switch (propiedad) {
-                case "idActores":
+                case "idAutor":
                     retorno = (Object) idAutor;
                     break;
                 case "Nombre":
