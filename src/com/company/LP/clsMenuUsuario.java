@@ -25,9 +25,9 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
     private JMenuBar barraMenu;
     private JMenu menuInsertar, menuConsultar;
     /* items del menu Insertar */
-    private JMenuItem menuItemInsLibrerias_Multimedia, menuItemInsPeliculas, menuItemInsLibros, menuItemInsMusica, menuItemInsActor;
+    private JMenuItem menuItemInsLibrerias_Multimedia, menuItemInsPeliculas, menuItemInsLibros, menuItemInsMusica, menuItemInsActor, menuItemInsDirector;
     /* items del menu Consultar */
-    private JMenuItem menuItemConsLibrerias_Multimedia, menuItemConsPeliculas, menuItemConsLibros, menuItemConsMusica, menuItemConsActor;
+    private JMenuItem menuItemConsLibrerias_Multimedia, menuItemConsPeliculas, menuItemConsLibros, menuItemConsMusica, menuItemConsActor, menuItemConsDirector;
     /*labels de los menus para mostrar en pantalla*/
 
 
@@ -76,12 +76,14 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
         menuItemInsLibros = new JMenuItem();
         menuItemInsMusica = new JMenuItem();
         menuItemInsActor = new JMenuItem();
+        menuItemInsDirector = new JMenuItem();
 
         menuItemConsLibrerias_Multimedia = new JMenuItem();
         menuItemConsPeliculas = new JMenuItem();
         menuItemConsLibros = new JMenuItem();
         menuItemConsMusica = new JMenuItem();
         menuItemConsActor = new JMenuItem();
+        menuItemConsDirector = new JMenuItem();
 
 
 
@@ -104,10 +106,17 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
         menuItemInsMusica.setText("Musica");
         menuItemInsMusica.setActionCommand("ActionInsertMusica");
         menuInsertar.add(menuItemInsMusica);
+        menuInsertar.addSeparator();
 
         menuItemInsActor.setText("Actor");
         menuItemInsActor.setActionCommand("ActionInsertActor");
         menuInsertar.add(menuItemInsActor);
+        menuInsertar.addSeparator();
+
+        menuItemInsDirector.setText("Director");
+        menuItemInsDirector.setActionCommand("ActionInsertDirector");
+        menuInsertar.add(menuItemInsDirector);
+        menuInsertar.addSeparator();
 
         /* Crea los items del menu Consultar */
         menuItemConsLibrerias_Multimedia.setText("Librerias Multimedia");
@@ -128,11 +137,17 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
         menuItemConsMusica.setText("Musica");
         menuItemConsMusica.setActionCommand("ActionConsMusica");
         menuConsultar.add(menuItemConsMusica);
+        menuConsultar.addSeparator();
 
         menuItemConsActor.setText("Actor");
         menuItemConsActor.setActionCommand("ActionConsActor");
         menuConsultar.add(menuItemConsActor);
+        menuConsultar.addSeparator();
 
+        menuItemConsDirector.setText("Director");
+        menuItemConsDirector.setActionCommand("ActionConsDirector");
+        menuConsultar.add(menuItemConsDirector);
+        menuConsultar.addSeparator();
 
 
         /* Agrega los Menus de la barra de Menu */
@@ -150,11 +165,14 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
         menuItemInsLibros.addActionListener(this);
         menuItemInsMusica.addActionListener(this);
         menuItemInsActor.addActionListener(this);
+        menuItemInsDirector.addActionListener(this);
+
         menuItemConsLibrerias_Multimedia.addActionListener(this);
         menuItemConsPeliculas.addActionListener(this);
         menuItemConsLibros.addActionListener(this);
         menuItemConsMusica.addActionListener(this);
         menuItemConsActor.addActionListener(this);
+        menuItemConsDirector.addActionListener(this);
 
 
     }
@@ -178,6 +196,9 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
             case "ActionInsertActor":
                 caseInsertarActor();
                 break;
+            case "ActionInsertDirector":
+                caseInsertarDirector();
+                break;
             case "ActionConsLibrerias_Multimedia":
                 caseConsLibrerias();
                 break;
@@ -192,6 +213,9 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
                 break;
             case "ActionConsActor":
                 caseConsActor();
+                break;
+            case "ActionConsDirector":
+                caseConsDirector();
                 break;
 
         }
@@ -388,14 +412,27 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
     private void caseInsertarActor() {
         //Declaraciones
         String Nombre;
-        String Descripcion;
+        String Apellido;
         //Codigo
         System.out.println("Datos para crear el actor:");
         System.out.println("Nombre del actor:");
         Nombre = UtilidadesLP.leerCadena();
         System.out.println("Apellido del actor:");
-        Descripcion = UtilidadesLP.leerCadena();
-        objGestorLN.crearActor(Nombre, Descripcion);
+        Apellido = UtilidadesLP.leerCadena();
+        objGestorLN.crearActor(Nombre, Apellido);
+    }
+
+    private void caseInsertarDirector() {
+        //Declaraciones
+        String Nombre;
+        String Apellido;
+        //Codigo
+        System.out.println("Datos para crear el director:");
+        System.out.println("Nombre del director:");
+        Nombre = UtilidadesLP.leerCadena();
+        System.out.println("Apellido del director:");
+        Apellido = UtilidadesLP.leerCadena();
+        objGestorLN.crearDirector(Nombre, Apellido);
     }
 
     /**
@@ -443,6 +480,14 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
         for (itfProperty L : resultado
         ) {
             VentanaConsActor.setItem(L);
+        }
+    }
+    private void caseConsDirector() {
+        frmListaDirector VentanaConsDirector = new frmListaDirector();
+        ArrayList<itfProperty> resultado = objGestorLN.consultarDirectorEnBD();
+        for (itfProperty L : resultado
+        ) {
+            VentanaConsDirector.setItem(L);
         }
     }
 

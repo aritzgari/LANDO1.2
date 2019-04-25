@@ -12,10 +12,9 @@ public class clsDirector implements itfPropertyV2 {
     private int idDirector;
     private String Nombre;
     private String Apellido;
-    //Constructor con Parámetros: Aun no
 
     //Constructor sin Parámetros
-    public clsDirector() {
+    public clsDirector(int idDirector, String Nombre, String Apelido) {
     }
 
     @Override
@@ -35,5 +34,9 @@ public class clsDirector implements itfPropertyV2 {
                 throw new clsPropiedadNonExistantException();
         }
         return retorno;
+    }
+    @Override
+    public String toString() {
+        return Nombre;
     }
 }

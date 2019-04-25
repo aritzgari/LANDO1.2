@@ -53,4 +53,31 @@ public class clsConstantes {
 
     public static final String queryInsertGeneroPeli = "insert into Género_Película (Nombre) values (?)";
     public static final String queryConsultaGeneroPeli = "SELECT * FROM lando.género_película;";
+
+    /**
+     * Constantes para querys de autor de libro.
+     */
+
+    public static final String queryInsertAutores = "insert into Autor (Nombre, Apellido) values (?, ?)";
+    public static final String queryConsultaAutores = "SELECT * FROM lando.autor;";
+
+    /**
+     * Constantes para querys de editorial de libro.
+     */
+
+    public static final String queryInsertEditorial = "insert into Editorial (Nombre) values (?)";
+    public static final String queryConsultaEditorial = "SELECT * FROM lando.editorial;";
+
+    /**
+     * Constantes para querys de genero de libros.
+     */
+
+    public static final String queryInsertGeneroLibro= "insert into Género_Película (Nombre) values (?)";
+    public static final String queryConsultaGeneroLibro = "SELECT * FROM lando.género_libro;";
+    /**
+     * Constantes para querys de premios de libros.
+     */
+
+    public static final String queryInsertPremiosLibros = "insert into Premios_Película (Nombre, Categoria, Año) values (?, ?, ?)";
+    public static final String queryConsultaPremiosLibros = "SELECT * FROM lando.premios_libro;";
 }

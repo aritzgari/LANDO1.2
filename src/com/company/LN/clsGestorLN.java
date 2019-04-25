@@ -233,6 +233,34 @@ public class clsGestorLN {
 
         return castclsActoresToItfProperty(datosActor);
     }
+    public ArrayList<itfProperty> consultarDirectorEnBD() {
+        ResultSet resultado = null;
+        //Declarado mas abajo, ignorar: clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia();
+        clsDirectorBD objDirectorBD = new clsDirectorBD();
+        //En este metodo tendremos que crear librerias y asignarles de alguna manera los valores antes de cerrar la conexuión
+        //Para ello:
+        //...
+        //ABRIR CONEXION:
+        objDirectorBD.conectarBD();
+        resultado = objDirectorBD.sendSelect(queryConsultaDirector);
+        //Meto rs en objeto
+        try {
+            while (resultado.next()) {
+                clsDirector objDirector = new clsDirector(resultado.getInt(1), resultado.getString(2), resultado.getString(3));
+                datosDirector.add(objDirector);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error SQL");
+            System.out.println(e);
+        }
+        //Cierro conexion
+        objDirectorBD.desconectarBD(objDirectorBD.getObjCon());
+
+        return castclsDirectorToItfProperty(datosDirector);
+    }
+
+    private ArrayList<itfProperty> castclsDirectorToItfProperty(ArrayList<clsDirector> datosDirector) {
+    return datosItf;}
 
 
     public ArrayList<itfProperty> consultarLibrosEnBD() {

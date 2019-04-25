@@ -51,6 +51,10 @@ public class clsActor implements itfProperty {
         }
         return propResultado;
     }
+    @Override
+    public String toString() {
+        return Nombre;
+    }
 
     @Override
     public Float getFloatProperty(String propiedad) {
