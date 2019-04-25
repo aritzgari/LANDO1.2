@@ -9,34 +9,66 @@ import com.company.Excepciones.clsPropiedadNonExistantException;
  * @see itfPropertyV2
  * @see clsPropiedadNonExistantException
  */
-public class clsActor implements itfPropertyV2 {
-    //Atributos
+public class clsActor implements itfProperty {
     private int idActores;
     private String Nombre;
     private String Apellido;
 
-    //Constructor con Parametros: Aun no
 
-    //Constructor sin Parametros
-    public clsActor() {
+    //Constructor
+    public clsActor(int _idActor, String _Nombre, String _Apellido) {
+        idActores=_idActor;
+        Nombre=_Nombre;
+        Apellido=_Apellido;
     }
 
-    @Override
-    public Object getObjectProperty(String propiedad) {
-        Object retorno = new Object();
 
+    @Override
+    public String getStringProperty(String propiedad) throws clsPropiedadNonExistantException {
+        String propResultado = "";
         switch (propiedad) {
-            case "idActores":
-                retorno = (Object) idActores;
-                break;
             case "Nombre":
-                retorno = (Object) Nombre;
+                propResultado = Nombre;
                 break;
             case "Apellido":
-                retorno = (Object) Apellido;
+                propResultado = Apellido;
+                break;
             default:
                 throw new clsPropiedadNonExistantException();
         }
-        return retorno;
+        return propResultado;
+    }
+
+    @Override
+    public Integer getIntegerProperty(String propiedad) throws clsPropiedadNonExistantException {
+        int propResultado = 0;
+        switch (propiedad) {
+            case "idActores":
+                propResultado = idActores;
+                break;
+            default:
+                throw new clsPropiedadNonExistantException();
+        }
+        return propResultado;
+    }
+
+    @Override
+    public Float getFloatProperty(String propiedad) {
+        return null;
+    }
+
+    @Override
+    public Double getDoubleProperty(String propiedad) {
+        return null;
+    }
+
+    @Override
+    public char getCharProperty(String propiedad) {
+        return 0;
+    }
+
+    @Override
+    public boolean getBooleanProperty(String propiedad) {
+        return false;
     }
 }

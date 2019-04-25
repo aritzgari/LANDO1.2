@@ -13,7 +13,7 @@ import com.company.Excepciones.clsPropiedadNonExistantException;
 public abstract class clsPremios implements itfPropertyV2 {
     //Atributos, por ahora son protected.
     private int idPremios;
-    private String Nombre_del_Premio;
+    private String Nombre;
     private String Categoria;
     private int Año;
 
@@ -25,12 +25,12 @@ public abstract class clsPremios implements itfPropertyV2 {
         this.idPremios = idPremios;
     }
 
-    public String getNombre_del_Premio() {
-        return Nombre_del_Premio;
+    public String getNombre() {
+        return Nombre;
     }
 
-    public void setNombre_del_Premio(String nombre_del_Premio) {
-        Nombre_del_Premio = nombre_del_Premio;
+    public void setNombre(String nombre) {
+        Nombre = nombre;
     }
 
     public String getCategoria() {

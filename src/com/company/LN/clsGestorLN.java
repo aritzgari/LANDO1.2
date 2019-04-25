@@ -5,6 +5,10 @@ package com.company.LN;
 import com.company.LD.clsLibreria_MultimediaBD;
 import com.company.LD.clsPeliculaBD;
 import com.company.LD.clsLibrosBD;
+import com.company.LD.clsDirectorBD;
+import com.company.LD.clsActoresBD;
+import com.company.LD.clsPremios_PeliculaBD;
+import com.company.LD.clsGeneroPeliBD;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,6 +21,16 @@ import static com.company.Comun.clsConstantes.queryConsultaPelicula;
 import static com.company.Comun.clsConstantes.queryInsertPelicula;
 import static com.company.Comun.clsConstantes.queryConsultaLibro;
 import static com.company.Comun.clsConstantes.queryInsertLibro;
+import static com.company.Comun.clsConstantes.queryConsultaActores;
+import static com.company.Comun.clsConstantes.queryInsertActores;
+import static com.company.Comun.clsConstantes.queryConsultaDirector;
+import static com.company.Comun.clsConstantes.queryInsertDirector;
+import static com.company.Comun.clsConstantes.queryConsultaPremiosPeli;
+import static com.company.Comun.clsConstantes.queryInsertPremiosPeli;
+import static com.company.Comun.clsConstantes.queryConsultaGeneroPeli;
+import static com.company.Comun.clsConstantes.queryInsertGeneroPeli;
+
+
 
 
 /**
@@ -37,6 +51,13 @@ public class clsGestorLN {
     //Estos tres de arriba, para mi que no los usamos.
     private static ArrayList<clsArticulo> datosArticulos;
     private static ArrayList<clsLibreriaMultimedia> datosLibrerias;
+    private static ArrayList<clsActor> datosActor;
+    private static ArrayList<clsGeneroPeli> datosGeneroPeli;
+    private static ArrayList<clsPremios> datosPremios;
+    private static ArrayList<clsPremios_Pelicula> datosPremiosPeli;
+    private static ArrayList<clsDirector> datosDirector;
+
+
 
     public clsGestorLN() {
         datosItf = new ArrayList<itfProperty>();
@@ -45,27 +66,56 @@ public class clsGestorLN {
         datosMusicas = new ArrayList<clsMusica>();
         datosArticulos = new ArrayList<clsArticulo>();
         datosLibrerias = new ArrayList<clsLibreriaMultimedia>();
+        datosActor = new ArrayList<clsActor>();
+        datosGeneroPeli = new ArrayList<clsGeneroPeli>();
+        datosPremios = new ArrayList<clsPremios>();
+        datosPremiosPeli = new ArrayList<clsPremios_Pelicula>();
+        datosDirector = new ArrayList<clsDirector>();
     }
 
 
-    public static ArrayList<clsLibreriaMultimedia> getDatosLibrerias() {
+    public static ArrayList<itfProperty> getDatosItf() {
+        return datosItf;
+    }
 
-        return datosLibrerias;
+    public static ArrayList<clsPelicula> getDatosPeliculas() {
+        return datosPeliculas;
     }
 
     public static ArrayList<clsLibro> getDatosLibros() {
-
         return datosLibros;
     }
 
     public static ArrayList<clsMusica> getDatosMusicas() {
-
         return datosMusicas;
     }
 
     public static ArrayList<clsArticulo> getDatosArticulos() {
-
         return datosArticulos;
+    }
+
+    public static ArrayList<clsLibreriaMultimedia> getDatosLibrerias() {
+        return datosLibrerias;
+    }
+
+    public static ArrayList<clsActor> getDatosActor() {
+        return datosActor;
+    }
+
+    public static ArrayList<clsGeneroPeli> getDatosGeneroPeli() {
+        return datosGeneroPeli;
+    }
+
+    public static ArrayList<clsPremios> getDatosPremios() {
+        return datosPremios;
+    }
+
+    public static ArrayList<clsPremios_Pelicula> getDatosPremiosPeli() {
+        return datosPremiosPeli;
+    }
+
+    public static ArrayList<clsDirector> getDatosDirector() {
+        return datosDirector;
     }
 
     public static void crearLibreria(/*int idLibreria_Multimedia, */String Nombre, String Descripcion) /*Excepcion no tratadathrows SQLException */ {
@@ -135,6 +185,56 @@ public class clsGestorLN {
         datosArticulos.add(objMusica);
     }
 
+    public static void crearActor (String Nombre, String Apellido){
+    /**
+    * Metodo para crear actores en el Gestor con datos que recibamos de LP
+    *  @author RubenD AritzG
+    */
+        clsActoresBD objActorBD = new clsActoresBD(Nombre, Apellido);
+        objActorBD.sendInsert(queryInsertActores);
+    }
+    public static void crearDirector (String Nombre, String Apellido){
+
+        clsDirectorBD objDirectorBD = new clsDirectorBD(Nombre, Apellido);
+        objDirectorBD.sendInsert(queryInsertDirector);
+    }
+    public static void crearGeneroPeli (String Nombre){
+
+        clsGeneroPeliBD objGeneroPeliBD = new clsGeneroPeliBD(Nombre);
+        objGeneroPeliBD.sendInsert(queryInsertGeneroPeli);
+    }
+    public static void crearPremiosPeli (String Nombre, String Categoria, int Anno){
+
+        clsPremios_PeliculaBD objPremiosPeliBD = new clsPremios_PeliculaBD(Nombre, Categoria, Anno);
+        objPremiosPeliBD.sendInsert(queryInsertDirector);
+    }
+    public ArrayList<itfProperty> consultarActoresEnBD() {
+        ResultSet resultado = null;
+        //Declarado mas abajo, ignorar: clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia();
+        clsActoresBD objActoresBD = new clsActoresBD();
+        //En este metodo tendremos que crear librerias y asignarles de alguna manera los valores antes de cerrar la conexuión
+        //Para ello:
+        //...
+        //ABRIR CONEXION:
+        objActoresBD.conectarBD();
+        resultado = objActoresBD.sendSelect(queryConsultaActores);
+        //Meto rs en objeto
+        try {
+            while (resultado.next()) {
+                clsActor objActores = new clsActor(resultado.getInt(1), resultado.getString(2), resultado.getString(3));
+                datosActor.add(objActores);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error SQL");
+            System.out.println(e);
+        }
+        //Cierro conexion
+        objActoresBD.desconectarBD(objActoresBD.getObjCon());
+
+        return castclsActoresToItfProperty(datosActor);
+    }
+
+
     public ArrayList<itfProperty> consultarLibrosEnBD() {
         ResultSet resultado = null;
         //Declarado mas abajo, ignorar: clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia();
@@ -194,13 +294,8 @@ public class clsGestorLN {
     public /*DevuelvoObjeto:*/ArrayList<itfProperty> consultarLibreriasEnBD() {
         ResultSet resultado = null;
         clsLibreria_MultimediaBD objLibreria_MultimediaBD = new clsLibreria_MultimediaBD();
-        //En este metodo tendremos que crear librerias y asignarles de alguna manera los valores antes de cerrar la conexuión
-        //Para ello:
-        //...
-        //ABRIR CONEXION:
         objLibreria_MultimediaBD.conectarBD();
         resultado = objLibreria_MultimediaBD.sendSelect(queryConsultaLibreria);
-        //Meto rs en objeto
 
         try {
             while (resultado.next()) {
@@ -250,6 +345,19 @@ public class clsGestorLN {
         itfProperty castObject;
         //Las casteamos y metemos en datosItf
         for (clsLibro o : AO
+        ) {
+            castObject = (itfProperty) o;
+            datosItf.add(castObject);
+        }
+        return datosItf;
+    }
+    public ArrayList<itfProperty> castclsActoresToItfProperty(ArrayList<clsActor> AO) {
+        //Ordenamos por Nombre:
+        //NO CONFIGURADO PARA Actores Collections.sort(AO, new clsCompareLibreriaMultimedia());
+        //Creamos el objeto en el que vamos a castear las pelicualas
+        itfProperty castObject;
+        //Las casteamos y metemos en datosItf
+        for (clsActor o : AO
         ) {
             castObject = (itfProperty) o;
             datosItf.add(castObject);

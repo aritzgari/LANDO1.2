@@ -25,9 +25,9 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
     private JMenuBar barraMenu;
     private JMenu menuInsertar, menuConsultar;
     /* items del menu Insertar */
-    private JMenuItem menuItemInsLibrerias_Multimedia, menuItemInsPeliculas, menuItemInsLibros, menuItemInsMusica;
+    private JMenuItem menuItemInsLibrerias_Multimedia, menuItemInsPeliculas, menuItemInsLibros, menuItemInsMusica, menuItemInsActor;
     /* items del menu Consultar */
-    private JMenuItem menuItemConsLibrerias_Multimedia, menuItemConsPeliculas, menuItemConsLibros, menuItemConsMusica;
+    private JMenuItem menuItemConsLibrerias_Multimedia, menuItemConsPeliculas, menuItemConsLibros, menuItemConsMusica, menuItemConsActor;
     /*labels de los menus para mostrar en pantalla*/
 
 
@@ -75,11 +75,13 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
         menuItemInsPeliculas = new JMenuItem();
         menuItemInsLibros = new JMenuItem();
         menuItemInsMusica = new JMenuItem();
+        menuItemInsActor = new JMenuItem();
 
         menuItemConsLibrerias_Multimedia = new JMenuItem();
         menuItemConsPeliculas = new JMenuItem();
         menuItemConsLibros = new JMenuItem();
         menuItemConsMusica = new JMenuItem();
+        menuItemConsActor = new JMenuItem();
 
 
 
@@ -103,6 +105,10 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
         menuItemInsMusica.setActionCommand("ActionInsertMusica");
         menuInsertar.add(menuItemInsMusica);
 
+        menuItemInsActor.setText("Actor");
+        menuItemInsActor.setActionCommand("ActionInsertActor");
+        menuInsertar.add(menuItemInsActor);
+
         /* Crea los items del menu Consultar */
         menuItemConsLibrerias_Multimedia.setText("Librerias Multimedia");
         menuItemConsLibrerias_Multimedia.setActionCommand("ActionConsLibrerias_Multimedia");
@@ -123,6 +129,10 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
         menuItemConsMusica.setActionCommand("ActionConsMusica");
         menuConsultar.add(menuItemConsMusica);
 
+        menuItemConsActor.setText("Actor");
+        menuItemConsActor.setActionCommand("ActionConsActor");
+        menuConsultar.add(menuItemConsActor);
+
 
 
         /* Agrega los Menus de la barra de Menu */
@@ -139,10 +149,12 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
         menuItemInsPeliculas.addActionListener(this);
         menuItemInsLibros.addActionListener(this);
         menuItemInsMusica.addActionListener(this);
+        menuItemInsActor.addActionListener(this);
         menuItemConsLibrerias_Multimedia.addActionListener(this);
         menuItemConsPeliculas.addActionListener(this);
         menuItemConsLibros.addActionListener(this);
         menuItemConsMusica.addActionListener(this);
+        menuItemConsActor.addActionListener(this);
 
 
     }
@@ -163,6 +175,9 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
             case "ActionInsertMusica":
                 caseInsertarMusica();
                 break;
+            case "ActionInsertActor":
+                caseInsertarActor();
+                break;
             case "ActionConsLibrerias_Multimedia":
                 caseConsLibrerias();
                 break;
@@ -174,6 +189,9 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
                 break;
             case "ActionConsMusica":
                 caseConsMusica();
+                break;
+            case "ActionConsActor":
+                caseConsActor();
                 break;
 
         }
@@ -362,6 +380,25 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
     }
 
     /**
+     * Clase insertar actores desde la ventana.
+     *
+     * @see clsGestorLN
+     */
+
+    private void caseInsertarActor() {
+        //Declaraciones
+        String Nombre;
+        String Descripcion;
+        //Codigo
+        System.out.println("Datos para crear el actor:");
+        System.out.println("Nombre del actor:");
+        Nombre = UtilidadesLP.leerCadena();
+        System.out.println("Apellido del actor:");
+        Descripcion = UtilidadesLP.leerCadena();
+        objGestorLN.crearActor(Nombre, Descripcion);
+    }
+
+    /**
      * Método consultar librerias desde la ventana.
      */
 
@@ -397,8 +434,21 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
         }
     }
 
+    /**
+     * Método consultar Actores desde la ventana.
+     */
+    private void caseConsActor() {
+        frmListaActor VentanaConsActor = new frmListaActor();
+        ArrayList<itfProperty> resultado = objGestorLN.consultarActoresEnBD();
+        for (itfProperty L : resultado
+        ) {
+            VentanaConsActor.setItem(L);
+        }
+    }
+
     private void caseConsMusica() {
     }
+
 
 }
 

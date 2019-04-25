@@ -24,6 +24,33 @@ public class clsConstantes {
     /**
      * Constantes para querys de Libros.
      */
-    public static final String queryInsertLibro = "insert into libros (Libreria_Multimedia_idLibreria_Multimedia, ISBN, Título, Título_original, Año, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, Serie_SoN, Nombre_serie, Orden_serie, Género_Libro_idGénero_Libro, Autor_idAutor)  values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+    public static final String queryInsertLibro = "insert into Libros (Libreria_Multimedia_idLibreria_Multimedia, ISBN, Título, Título_original, Año, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, Serie_SoN, Nombre_serie, Orden_serie, Género_Libro_idGénero_Libro, Autor_idAutor)  values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
     public static final String queryConsultaLibro = "SELECT * FROM lando.libros";
+
+    /**
+     * Constantes para querys de actores de peliculas.
+     */
+
+    public static final String queryInsertActores = "insert into Actores (Nombre, Apellido) values (?, ?)";
+    public static final String queryConsultaActores = "SELECT * FROM lando.actores;";
+
+    /**
+     * Constantes para querys de director de peliculas.
+     */
+
+    public static final String queryInsertDirector = "insert into Director (Nombre, Apellido) values (?, ?)";
+    public static final String queryConsultaDirector = "SELECT * FROM lando.director;";
+
+    /**
+     * Constantes para querys de premios de peliculas.
+     */
+
+    public static final String queryInsertPremiosPeli = "insert into Premios_Película (Nombre, Categoria, Año) values (?, ?, ?)";
+    public static final String queryConsultaPremiosPeli = "SELECT * FROM lando.premios_película;";
+    /**
+     * Constantes para querys de genero de peliculas.
+     */
+
+    public static final String queryInsertGeneroPeli = "insert into Género_Película (Nombre) values (?)";
+    public static final String queryConsultaGeneroPeli = "SELECT * FROM lando.género_película;";
 }

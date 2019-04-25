@@ -28,7 +28,7 @@ public class clsPremios_Pelicula extends clsPremios {
                 retorno = (Object) getIdPremios();
                 break;
             case "Nombre_del_Premio":
-                retorno = (Object) getNombre_del_Premio();
+                retorno = (Object) getNombre();
                 break;
             case "Categoria":
                 retorno = (Object) getCategoria();
