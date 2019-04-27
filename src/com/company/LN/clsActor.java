@@ -53,7 +53,7 @@ public class clsActor implements itfProperty {
     }
     @Override
     public String toString() {
-        return Nombre;
+        return Nombre + " " + Apellido;
     }
 
     @Override

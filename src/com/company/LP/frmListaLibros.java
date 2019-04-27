@@ -8,7 +8,7 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.util.LinkedList;
 
-public class frmListaLibros extends JFrame implements ListSelectionListener {
+public class frmListaLibros extends JInternalFrame implements ListSelectionListener {
         //Objeto visual
         private JList<itfProperty> jlista;
         //Modelo de la vista
@@ -28,8 +28,6 @@ public class frmListaLibros extends JFrame implements ListSelectionListener {
 
             setBounds(100, 100, 400, 500);
             setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-            // pone la ventana en el Centro de la pantalla
-            setLocationRelativeTo(null);
 
             Objetos = new LinkedList<itfProperty>();
 
@@ -42,6 +40,9 @@ public class frmListaLibros extends JFrame implements ListSelectionListener {
             this.getContentPane().add(scroll, BorderLayout.CENTER);
 
             setVisible(true);
+            this.setResizable(true);
+            this.setClosable(true);
+            this.setIconifiable(true);
         }
 
 

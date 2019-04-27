@@ -37,6 +37,6 @@ public class clsDirector implements itfPropertyV2 {
     }
     @Override
     public String toString() {
-        return Nombre;
+        return Nombre + " " + Apellido;
     }
 }

@@ -14,7 +14,7 @@ import java.util.LinkedList;
      * @author Ruben Domínguez
      * Aritz Garitano
      */
-    public class frmListaDirector extends JFrame implements ListSelectionListener
+    public class frmListaDirector extends JInternalFrame implements ListSelectionListener
     {
         //Objeto visual
         private JList<itfProperty> jlista;
@@ -36,8 +36,6 @@ import java.util.LinkedList;
 
             setBounds(100, 100, 400, 500);
             setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-            // pone la ventana en el Centro de la pantalla
-            setLocationRelativeTo(null);
 
             Objetos = new LinkedList<itfProperty>();
 
@@ -50,6 +48,9 @@ import java.util.LinkedList;
             this.getContentPane().add(scroll, BorderLayout.CENTER);
 
             setVisible(true);
+            this.setResizable(true);
+            this.setClosable(true);
+            this.setIconifiable(true);
         }
 
 
