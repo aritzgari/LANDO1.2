@@ -3,6 +3,7 @@ package com.company;
 
 import com.company.LP.clsMenu;
 import com.company.LP.clsMenuUsuario;
+import com.company.LP.frmPrincipal;
 
 /**
  * Donde empieza el programa, llamada al menu del programa.
@@ -13,14 +14,28 @@ import com.company.LP.clsMenuUsuario;
  */
 
 
-public class Main {
+public class clsMain {
 
     /**
      * Este metodo llama a la ventana menu que gestiona el programa.
      */
     public static void main(String[] args) {
-        clsMenuUsuario miFrame = new clsMenuUsuario();
-        miFrame.setVisible(true);
-        //clsMenu.MenuPrincipal();
+        //Iniciar programa con frmPrincipal
+        javax.swing.SwingUtilities.invokeLater(new Runnable()
+        {
+            public void run()
+            {
+                //Create and set up the window.
+                frmPrincipal VentanaPrincipal = new frmPrincipal("LANDO V0.6");
+                VentanaPrincipal.createAndShowGUI();
+
+            }
+        });
+
+
+        //Iniciar programa con clsMenuUsuario
+        /*clsMenuUsuario miFrame = new clsMenuUsuario();
+        miFrame.setVisible(true);*/
+
     }
 }
