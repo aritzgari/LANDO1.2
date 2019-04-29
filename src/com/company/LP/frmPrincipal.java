@@ -12,8 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
-public class frmPrincipal extends JFrame implements InternalFrameListener, ActionListener
-{
+public class frmPrincipal extends JFrame implements InternalFrameListener, ActionListener {
     //Declaraciones funcionales
     private static clsGestorLN objGestorLN = new clsGestorLN();
     /*Tudo lo que contiene el menu*/
@@ -31,17 +30,16 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     JDesktopPane desktop;
     JInternalFrame displayWindow;
     JInternalFrame listenedToWindow;
-    
+
     static final String SHOW = "show";
     static final String CLEAR = "clear";
     String newline = "\n";
     static final int desktopWidth = 500;
     static final int desktopHeight = 300;
 
-    public frmPrincipal(String title)
-    {
-    
-    	super(title);
+    public frmPrincipal(String title) {
+
+        super(title);
 
         //Set up the GUI.
         desktop = new JDesktopPane();
@@ -55,8 +53,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     }
 
     //Ventana que muestra la informaci?n de eventos.
-    protected void createDisplayWindow() 
-    {
+    protected void createDisplayWindow() {
         JButton b1 = new JButton("Show internal frame");
         b1.setActionCommand(SHOW);
         b1.addActionListener(this);
@@ -74,14 +71,14 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         textScroller.setMinimumSize(new Dimension(10, 10));
 
         displayWindow = new JInternalFrame("Event Watcher",
-                                           true,  //resizable
-                                           false, //not closable
-                                           true, //not maximizable
-                                           true); //iconifiable
+                true,  //resizable
+                false, //not closable
+                true, //not maximizable
+                true); //iconifiable
         JPanel contentPane = new JPanel();
-        contentPane.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        contentPane.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         contentPane.setLayout(new BoxLayout(contentPane,
-                                            BoxLayout.PAGE_AXIS));
+                BoxLayout.PAGE_AXIS));
         b1.setAlignmentX(CENTER_ALIGNMENT);
         contentPane.add(b1);
         contentPane.add(Box.createRigidArea(new Dimension(0, 5)));
@@ -131,10 +128,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     }
 
     //Handle events on the  buttons and menus.
-    public void actionPerformed(ActionEvent e)
-    {
-        switch(e.getActionCommand())
-        {
+    public void actionPerformed(ActionEvent e) {
+        switch (e.getActionCommand()) {
 
             case "ActionInsertLibrerias_Multimedia":
                 caseInsertarLibrerias();
@@ -172,16 +167,14 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
             case "ActionConsDirector":
                 caseConsDirector();
                 break;
-        
+
         }
-    	
 
 
     }
 
-    private void quit()
-    {
-    	System.exit(0);
+    private void quit() {
+        System.exit(0);
     }
     
     /*protected void createFrame()
@@ -193,7 +186,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
             frame.setSelected(true);
         } catch (java.beans.PropertyVetoException e) {}
     }*/
-    
+
     protected JMenuBar createMenuBar() {
         //JMenuBar menuBar = new JMenuBar();
 
@@ -337,11 +330,10 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
 
         return barraMenu;
     }
-   
-    public void createAndShowGUI() 
-    {
-       
-        
+
+    public void createAndShowGUI() {
+
+
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setJMenuBar(createMenuBar());
         //Display the window.
@@ -440,6 +432,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
 
         objGestorLN.crearPelicula(Libreria_Multimedia_idLibreria_Multimedia, Titulo, Titulo_original, Anno_de_publicacion, Duracion, Calificacion, Calporedad, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Saga, Orden, Sinopsis, Enlace_a_trailer);
     }
+
     /**
      * Clase insertar libros desde la ventana.
      *
@@ -465,8 +458,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         double Orden_serie;
 
         //Prueba:
-        int idGenero =1;
-        int idAutor =0;
+        int idGenero = 1;
+        int idAutor = 0;
 
         //Codigo
         System.out.println("Datos para crear el libro:");
@@ -521,10 +514,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         //System.out.println("Yoquesetio(INT)");
 
 
-
-        objGestorLN.crearLibro(Libreria_Multimedia_idLibreria_Multimedia,ISBN, Titulo, Titulo_original, Anno_de_publicacion,  Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, SerieSoN, Nombre_serie, Orden_serie, idGenero, idAutor);
+        objGestorLN.crearLibro(Libreria_Multimedia_idLibreria_Multimedia, ISBN, Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, SerieSoN, Nombre_serie, Orden_serie, idGenero, idAutor);
     }
-
 
 
     private void caseInsertarMusica() {
@@ -572,9 +563,10 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         for (itfProperty L : resultado
         ) {
             VentanaConsLibrerias.setItem(L);
-            desktop.add(VentanaConsLibrerias);
         }
+        desktop.add(VentanaConsLibrerias);
     }
+
     /**
      * Método consultar peliculas desde la ventana.
      */
@@ -584,8 +576,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         for (itfProperty L : resultado
         ) {
             VentanaConsPeliculas.setItem(L);
-            desktop.add(VentanaConsPeliculas);
         }
+        desktop.add(VentanaConsPeliculas);
     }
 
     /**
@@ -597,8 +589,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         for (itfProperty L : resultado
         ) {
             VentanaConsLibros.setItem(L);
-            desktop.add(VentanaConsLibros);
         }
+        desktop.add(VentanaConsLibros);
     }
 
     /**
@@ -610,23 +602,22 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         for (itfProperty L : resultado
         ) {
             VentanaConsActor.setItem(L);
-            desktop.add(VentanaConsActor);
         }
+        desktop.add(VentanaConsActor);
     }
+
     private void caseConsDirector() {
         frmListaDirector VentanaConsDirector = new frmListaDirector();
         ArrayList<itfProperty> resultado = objGestorLN.consultarDirectorEnBD();
         for (itfProperty L : resultado
         ) {
             VentanaConsDirector.setItem(L);
-            desktop.add(VentanaConsDirector);
         }
+        desktop.add(VentanaConsDirector);
     }
 
     private void caseConsMusica() {
     }
-
-
 
 
 }
