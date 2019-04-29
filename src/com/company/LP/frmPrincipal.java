@@ -34,8 +34,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     static final String SHOW = "show";
     static final String CLEAR = "clear";
     String newline = "\n";
-    static final int desktopWidth = 500;
-    static final int desktopHeight = 300;
+    static final int desktopWidth = 1000;
+    static final int desktopHeight = 600;
 
     public frmPrincipal(String title) {
 
@@ -348,6 +348,10 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
      * @see clsGestorLN
      */
     private void caseInsertarLibrerias() {
+
+        frmInsertLibrerias VentanaInsertLibrerias = new frmInsertLibrerias(objGestorLN);
+        desktop.add(VentanaInsertLibrerias);
+        /*
         //Declaraciones
         String Nombre;
         String Descripcion;
@@ -358,7 +362,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         Nombre = UtilidadesLP.leerCadena();
         System.out.println("Añade una descripción para saber que es lo que va a contener esta librería");
         Descripcion = UtilidadesLP.leerCadena();
-        objGestorLN.crearLibreria(/*idLibreria_Multimedia,*/ Nombre, Descripcion);
+        objGestorLN.crearLibreria(*//*idLibreria_Multimedia,*//* Nombre, Descripcion);*/
     }
 
     /**
