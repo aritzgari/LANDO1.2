@@ -7,6 +7,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
+/**
+ * @author Ruben Domínguez
+ * Aritz Garitano
+ */
+
 public class frmInsertGeneroPeli extends JInternalFrame implements ActionListener {
     //Declaraciones
     //Necesitamos un JPanel que es donde se ponen todos los componentes, creo.
@@ -40,7 +46,7 @@ public class frmInsertGeneroPeli extends JInternalFrame implements ActionListene
 
         //Propiedades de la ventana
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        this.setResizable(true);
+        this.setResizable(false);
         this.setClosable(true);
         this.setIconifiable(true);
         this.setVisible(true);
@@ -85,7 +91,7 @@ public class frmInsertGeneroPeli extends JInternalFrame implements ActionListene
                 }
                 break;
             case "Cancelar":
-                System.out.println("Cancelando");
+                JTFNombre.setText("");
                 break;
             default:
                 //Igual una excepcion de Runtime?

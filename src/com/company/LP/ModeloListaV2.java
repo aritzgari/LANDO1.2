@@ -31,6 +31,7 @@ public class ModeloListaV2 extends DefaultListModel<itfPropertyV2> {
 
     @Override
     public void addElement(itfPropertyV2 element) {
+        //este add no tiene criterio y nos duplica el contenido en la lista
         lista.add(element);
         this.fireContentsChanged(this, lista.size(), lista.size());
     }

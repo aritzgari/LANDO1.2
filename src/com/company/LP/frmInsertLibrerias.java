@@ -1,11 +1,15 @@
 package com.company.LP;
 
 import com.company.LN.clsGestorLN;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+/**
+ * @author Ruben Domínguez
+ * Aritz Garitano
+ */
 
 public class frmInsertLibrerias extends JInternalFrame implements ActionListener {
     //Declaraciones
@@ -93,7 +97,8 @@ public class frmInsertLibrerias extends JInternalFrame implements ActionListener
                 }
                 break;
             case "Cancelar":
-                System.out.println("Cancelando");
+                JTFNombre.setText("");
+                JTFDescripcion.setText("");
                 break;
             default:
                 //Igual una excepcion de Runtime?

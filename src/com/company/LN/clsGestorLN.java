@@ -348,15 +348,35 @@ public class clsGestorLN {
 
 
     public /*DevuelvoObjeto:*/ArrayList<itfProperty> consultarLibreriasEnBD() {
+        //Declaraciones
+
+        boolean IDDiferente = false;
+        int diferentes = 0;
+
         ResultSet resultado = null;
         clsLibreria_MultimediaBD objLibreria_MultimediaBD = new clsLibreria_MultimediaBD();
+        //Conexion
         objLibreria_MultimediaBD.conectarBD();
         resultado = objLibreria_MultimediaBD.sendSelect(queryConsultaLibreria);
-
+        //Codigo
         try {
             while (resultado.next()) {
                 clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia(resultado.getInt(1), resultado.getString(2), resultado.getString(3));
-                datosLibrerias.add(objLibreriaMultimedia);
+
+                for (clsLibreriaMultimedia LIB: datosLibrerias
+                     ) {
+
+                    IDDiferente = resultado.getInt(1)!= LIB.getIdLibreria_Multimedia();
+                    if(IDDiferente){
+                        ++diferentes;
+                    }
+
+                }
+                int tamañoArrayList = datosLibrerias.size();
+                if(diferentes == tamañoArrayList) {
+                    datosLibrerias.add(objLibreriaMultimedia);
+                }
+                diferentes = 0;
             }
         } catch (SQLException e) {
             System.out.println("Error SQL");

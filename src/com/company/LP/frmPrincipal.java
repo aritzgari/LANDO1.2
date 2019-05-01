@@ -424,7 +424,9 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
      */
     private void caseInsertPeliculas() {
         //Declaraciones
-        int Libreria_Multimedia_idLibreria_Multimedia;
+        frmInsertPeliculas VentanaInsertPeliculas = new frmInsertPeliculas(objGestorLN);
+        desktop.add(VentanaInsertPeliculas);
+        /*int Libreria_Multimedia_idLibreria_Multimedia;
         String Titulo;
         String Titulo_original;
         int Anno_de_publicacion;
@@ -439,10 +441,10 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         String Saga;
         Double Orden;
         String Sinopsis;
-        String Enlace_a_trailer;
+        String Enlace_a_trailer;*/
 
         //Codigo
-        System.out.println("Datos para crear la Pelicula:");
+        /*System.out.println("Datos para crear la Pelicula:");
         System.out.println("ID de la libreria a la que pertenece:(int)");
         Libreria_Multimedia_idLibreria_Multimedia = UtilidadesLP.leerEntero();
         System.out.println("Titulo: (String)");
@@ -487,6 +489,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         Enlace_a_trailer = UtilidadesLP.leerCadena();
 
         objGestorLN.crearPelicula(Libreria_Multimedia_idLibreria_Multimedia, Titulo, Titulo_original, Anno_de_publicacion, Duracion, Calificacion, Calporedad, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Saga, Orden, Sinopsis, Enlace_a_trailer);
+   */
+
     }
 
     /**
