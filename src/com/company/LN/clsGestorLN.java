@@ -2,6 +2,7 @@ package com.company.LN;
 
 //import com.company.LD.clsCompareLibreriaMultimedia;
 
+import com.company.Comun.itfPropertyV2;
 import com.company.LD.clsLibreria_MultimediaBD;
 import com.company.LD.clsPeliculaBD;
 import com.company.LD.clsLibrosBD;
@@ -45,6 +46,7 @@ public class clsGestorLN {
     /*Los arrays que contienen los datos de los diferentes articulos*/
 
     private static ArrayList<itfProperty> datosItf;
+    private static ArrayList<itfPropertyV2> datosItfV2;
     private static ArrayList<clsPelicula> datosPeliculas;
     private static ArrayList<clsLibro> datosLibros;
     private static ArrayList<clsMusica> datosMusicas;
@@ -61,6 +63,7 @@ public class clsGestorLN {
 
     public clsGestorLN() {
         datosItf = new ArrayList<itfProperty>();
+        datosItfV2 = new ArrayList<itfPropertyV2>();
         datosPeliculas = new ArrayList<clsPelicula>();
         datosLibros = new ArrayList<clsLibro>();
         datosMusicas = new ArrayList<clsMusica>();
@@ -259,7 +262,7 @@ public class clsGestorLN {
         return castclsDirectorToItfProperty(datosDirector);
     }
 
-    public ArrayList<itfProperty> consultarGeneroPeliEnBD() {
+    public ArrayList<itfPropertyV2> consultarGeneroPeliEnBD() {
         ResultSet resultado = null;
         //Declarado mas abajo, ignorar: clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia();
         clsGeneroPeliBD objGeneroPeliBD = new clsGeneroPeliBD();
@@ -285,10 +288,7 @@ public class clsGestorLN {
         return castclsGeneroPeliToItfProperty(datosGeneroPeli);
     }
 
-    private ArrayList<itfProperty> castclsDirectorToItfProperty(ArrayList<clsDirector> datosDirector) {
-    return datosItf;}
-    private ArrayList<itfProperty> castclsGeneroPeliToItfProperty (ArrayList<clsGeneroPeli> datosGeneroPeli) {
-        return datosItf;}
+
 
 
     public ArrayList<itfProperty> consultarLibrosEnBD() {
@@ -366,6 +366,30 @@ public class clsGestorLN {
         objLibreria_MultimediaBD.desconectarBD(objLibreria_MultimediaBD.getObjCon());
         return castclsLibreriaMultimediaToItfProperty(datosLibrerias);
     }
+
+
+    private ArrayList<itfProperty> castclsDirectorToItfProperty(ArrayList<clsDirector> _datosDirector) {
+        //Creamos el objeto en el que vamos a castear las pelicualas
+        itfProperty castObject;
+        //Las casteamos y metemos en datosItf
+        for (clsDirector o : _datosDirector
+        ) {
+            castObject = (itfProperty) o;
+            datosItf.add(castObject);
+        }
+        return datosItf;}
+
+    private ArrayList<itfPropertyV2> castclsGeneroPeliToItfProperty (ArrayList<clsGeneroPeli> _datosGeneroPeli) {
+        //Creamos el objeto en el que vamos a castear los generos
+        itfPropertyV2 castObject;
+        //Las casteamos y metemos en datosItf
+        for (clsGeneroPeli o : _datosGeneroPeli
+        ) {
+            castObject = (itfPropertyV2) o;
+            datosItfV2.add(castObject);
+        }
+        return datosItfV2;}
+
 
     public ArrayList<itfProperty> castclsLibreriaMultimediaToItfProperty(ArrayList</*Aqui me gustaria que fueran objects pero no traga*/clsLibreriaMultimedia> AO) {
         //Ordenamos por Nombre:

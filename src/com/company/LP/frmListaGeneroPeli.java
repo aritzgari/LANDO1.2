@@ -12,18 +12,18 @@ import java.util.LinkedList;
 /**
  * Ventana para mostrar la lista de librerias multimedia que hay en la base de datos.
  * <p>
+ *
  * @author Ruben Domínguez
  * Aritz Garitano
  */
-public class frmListaGeneroPeli extends JInternalFrame implements ListSelectionListener
-{
+public class frmListaGeneroPeli extends JInternalFrame implements ListSelectionListener {
     //Objeto visual
-    private JList<itfProperty> jlista;
+    private JList<itfPropertyV2> jlista;
     //Modelo de la vista
-    protected ModeloLista modelo;
+    protected ModeloListaV2 modelo;
 
     //Lista auxiliar de Objetos
-    private LinkedList<itfProperty> Objetos;
+    private LinkedList<itfPropertyV2> Objetos;
 
 
     /**
@@ -31,17 +31,16 @@ public class frmListaGeneroPeli extends JInternalFrame implements ListSelectionL
      *
      * @see ModeloLista
      */
-    public frmListaGeneroPeli()
-    {
+    public frmListaGeneroPeli() {
         setTitle("Lista de género de peliculas");
 
         setBounds(100, 100, 400, 500);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        Objetos = new LinkedList<itfProperty>();
+        Objetos = new LinkedList<itfPropertyV2>();
 
-        modelo = new ModeloLista (Objetos);
-        jlista = new JList<itfProperty>(modelo);
+        modelo = new ModeloListaV2(Objetos);
+        jlista = new JList<itfPropertyV2>(modelo);
         //jlista.setCellRenderer(new ListRenderer());
         jlista.addListSelectionListener(this);
         JScrollPane scroll = new JScrollPane(jlista);
@@ -55,9 +54,7 @@ public class frmListaGeneroPeli extends JInternalFrame implements ListSelectionL
     }
 
 
-
-    public void setItem(itfProperty Objeto)
-    {
+    public void setItem(itfPropertyV2 Objeto) {
         modelo.addElement(Objeto);
 
 
@@ -67,16 +64,15 @@ public class frmListaGeneroPeli extends JInternalFrame implements ListSelectionL
     }
 
     @Override
-    public void valueChanged(ListSelectionEvent arg0)
-    {
+    public void valueChanged(ListSelectionEvent arg0) {
 
         //Se controla si se est?n realizando cambios todav?a en la lista.
         //Si no se controla esto, los eventos se lanzan varias veces.
-        if (arg0.getValueIsAdjusting()==false)
-        {
+        if (arg0.getValueIsAdjusting() == false) {
             String TextoAMostrar =
                     "clsGeneroPeli{" +
-                            "Nombre='" + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty(("Nombre") + '\'' +
-                            '}');
+                            " Nombre= " + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("Nombre") + "}";
             System.out.println("Atributos: " + TextoAMostrar);
-        }}}
+        }
+    }
+}

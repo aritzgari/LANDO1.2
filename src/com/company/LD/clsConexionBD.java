@@ -30,7 +30,7 @@ public abstract class clsConexionBD {
     public String user = "root";
 
     //Password
-    public String password = "23011604";
+    public String password = "1243";
 
     private Connection objCon;
     private PreparedStatement objSt;

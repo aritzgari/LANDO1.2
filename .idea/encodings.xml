@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
     <file url="file://$PROJECT_DIR$/src/com/company/Comun/clsConstantes.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/Comun/itfPropertyV2.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/Excepciones/clsCampoContenidoVacio.java" charset="ISO-8859-1" />
@@ -33,6 +33,7 @@
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsPremios_Pelicula.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/itfProperty.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/ModeloLista.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LP/ModeloListaV2.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/UtilidadesLP.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/clsMenu.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/clsMenuUsuario.java" charset="ISO-8859-1" />
