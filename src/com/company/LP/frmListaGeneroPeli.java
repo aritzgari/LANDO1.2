@@ -71,7 +71,7 @@ public class frmListaGeneroPeli extends JInternalFrame implements ListSelectionL
         if (arg0.getValueIsAdjusting() == false) {
             String TextoAMostrar =
                     "clsGeneroPeli{" +
-                            " Nombre= " + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("Nombre") + "}";
+                            " Nombre= " + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("Nombre") + " }";
             System.out.println("Atributos: " + TextoAMostrar);
         }
     }

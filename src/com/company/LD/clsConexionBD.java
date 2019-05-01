@@ -112,7 +112,7 @@ public abstract class clsConexionBD {
 
             objCon.close();
             objSt.close();
-            objRs.close();
+            //objRs.close();
 
         } catch (SQLException e) {
             System.out.println("Ha fallado la desconexión");

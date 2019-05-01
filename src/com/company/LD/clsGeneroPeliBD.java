@@ -60,12 +60,22 @@ public class clsGeneroPeliBD extends clsConexionBD{
         //CERRAMOS AQUI LA CONEXION, TAL VEZ MAS TARDE MEJOR
         this.desconectarBD(this.getObjCon());
         return retorno;
-
-
     }
 
     @Override
     public int sendUpdate(String query) {
+        //Conectamos
+        this.conectarBD();
+        //Updateamos
+        try {
+            this.setObjSt(this.getObjCon().prepareStatement(query));
+            this.getObjSt().executeUpdate();
+        } catch (SQLException e) {
+           //Hay que decidir que gestión queremos hacer aquí
+            // e.printStackTrace();
+        }
+        //Desconectamos
+        this.desconectarBD(this.getObjCon());
         return 0;
     }
 }

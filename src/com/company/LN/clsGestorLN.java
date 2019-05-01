@@ -32,8 +32,6 @@ import static com.company.Comun.clsConstantes.queryConsultaGeneroPeli;
 import static com.company.Comun.clsConstantes.queryInsertGeneroPeli;
 
 
-
-
 /**
  * Clase que intercomunica LP con LN
  *
@@ -58,7 +56,6 @@ public class clsGestorLN {
     private static ArrayList<clsPremios> datosPremios;
     private static ArrayList<clsPremios_Pelicula> datosPremiosPeli;
     private static ArrayList<clsDirector> datosDirector;
-
 
 
     public clsGestorLN() {
@@ -169,7 +166,7 @@ public class clsGestorLN {
         objPeliculaBD.sendInsert(queryInsertPelicula);
     }
 
-    public static void crearLibro(int Libreria_Multimedia_idLibreria_Multimedia, String ISBN,  String Titulo, String Titulo_original, int Anno_de_publicacion, String Tipo_DoA, double Precio,  boolean En_propiedad, boolean En_busqueda, String Formato, int Paginas,  String Resumen, boolean Serie_SoN, String Nombre_serie, double Orden_serie, int idGenero, int idAutor) {
+    public static void crearLibro(int Libreria_Multimedia_idLibreria_Multimedia, String ISBN, String Titulo, String Titulo_original, int Anno_de_publicacion, String Tipo_DoA, double Precio, boolean En_propiedad, boolean En_busqueda, String Formato, int Paginas, String Resumen, boolean Serie_SoN, String Nombre_serie, double Orden_serie, int idGenero, int idAutor) {
         /**
          * Metodo para crear Libros en el Gestor con datos que recibamos de LP
          * @author RubenD AritzG
@@ -188,29 +185,33 @@ public class clsGestorLN {
         datosArticulos.add(objMusica);
     }
 
-    public static void crearActor (String Nombre, String Apellido){
-    /**
-    * Metodo para crear actores en el Gestor con datos que recibamos de LP
-    *  @author RubenD AritzG
-    */
+    public static void crearActor(String Nombre, String Apellido) {
+        /**
+         * Metodo para crear actores en el Gestor con datos que recibamos de LP
+         *  @author RubenD AritzG
+         */
         clsActoresBD objActorBD = new clsActoresBD(Nombre, Apellido);
         objActorBD.sendInsert(queryInsertActores);
     }
-    public static void crearDirector (String Nombre, String Apellido){
+
+    public static void crearDirector(String Nombre, String Apellido) {
 
         clsDirectorBD objDirectorBD = new clsDirectorBD(Nombre, Apellido);
         objDirectorBD.sendInsert(queryInsertDirector);
     }
-    public static void crearGeneroPeli (String Nombre){
+
+    public static void crearGeneroPeli(String Nombre) {
 
         clsGeneroPeliBD objGeneroPeliBD = new clsGeneroPeliBD(Nombre);
         objGeneroPeliBD.sendInsert(queryInsertGeneroPeli);
     }
-    public static void crearPremiosPeli (String Nombre, String Categoria, int Anno){
+
+    public static void crearPremiosPeli(String Nombre, String Categoria, int Anno) {
 
         clsPremios_PeliculaBD objPremiosPeliBD = new clsPremios_PeliculaBD(Nombre, Categoria, Anno);
         objPremiosPeliBD.sendInsert(queryInsertDirector);
     }
+
     public ArrayList<itfProperty> consultarActoresEnBD() {
         ResultSet resultado = null;
         //Declarado mas abajo, ignorar: clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia();
@@ -236,6 +237,7 @@ public class clsGestorLN {
 
         return castclsActoresToItfProperty(datosActor);
     }
+
     public ArrayList<itfProperty> consultarDirectorEnBD() {
         ResultSet resultado = null;
         //Declarado mas abajo, ignorar: clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia();
@@ -289,8 +291,6 @@ public class clsGestorLN {
     }
 
 
-
-
     public ArrayList<itfProperty> consultarLibrosEnBD() {
         ResultSet resultado = null;
         //Declarado mas abajo, ignorar: clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia();
@@ -304,7 +304,7 @@ public class clsGestorLN {
         //Meto rs en objeto
         try {
             while (resultado.next()) {
-                clsLibro objLibros = new clsLibro(resultado.getInt(17), resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getInt(4), resultado.getString(5), resultado.getDouble(6), resultado.getBoolean(7), resultado.getBoolean(8), resultado.getString(9), resultado.getInt(10), resultado.getString(11), resultado.getBoolean(12), resultado.getString(13), resultado.getDouble(14), resultado.getInt(15), resultado.getInt(16) );
+                clsLibro objLibros = new clsLibro(resultado.getInt(17), resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getInt(4), resultado.getString(5), resultado.getDouble(6), resultado.getBoolean(7), resultado.getBoolean(8), resultado.getString(9), resultado.getInt(10), resultado.getString(11), resultado.getBoolean(12), resultado.getString(13), resultado.getDouble(14), resultado.getInt(15), resultado.getInt(16));
                 //Esto era para visualizar: System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripción: " + resultado.getString(3));
                 datosLibros.add(objLibros);
             }
@@ -367,6 +367,10 @@ public class clsGestorLN {
         return castclsLibreriaMultimediaToItfProperty(datosLibrerias);
     }
 
+    public void updateGeneroPeliEnBD(String _query) {
+        clsGeneroPeliBD objGeneroPeliBD = new clsGeneroPeliBD();
+        objGeneroPeliBD.sendUpdate(_query);
+    }
 
     private ArrayList<itfProperty> castclsDirectorToItfProperty(ArrayList<clsDirector> _datosDirector) {
         //Creamos el objeto en el que vamos a castear las pelicualas
@@ -377,9 +381,10 @@ public class clsGestorLN {
             castObject = (itfProperty) o;
             datosItf.add(castObject);
         }
-        return datosItf;}
+        return datosItf;
+    }
 
-    private ArrayList<itfPropertyV2> castclsGeneroPeliToItfProperty (ArrayList<clsGeneroPeli> _datosGeneroPeli) {
+    private ArrayList<itfPropertyV2> castclsGeneroPeliToItfProperty(ArrayList<clsGeneroPeli> _datosGeneroPeli) {
         //Creamos el objeto en el que vamos a castear los generos
         itfPropertyV2 castObject;
         //Las casteamos y metemos en datosItf
@@ -388,7 +393,8 @@ public class clsGestorLN {
             castObject = (itfPropertyV2) o;
             datosItfV2.add(castObject);
         }
-        return datosItfV2;}
+        return datosItfV2;
+    }
 
 
     public ArrayList<itfProperty> castclsLibreriaMultimediaToItfProperty(ArrayList</*Aqui me gustaria que fueran objects pero no traga*/clsLibreriaMultimedia> AO) {
@@ -418,6 +424,7 @@ public class clsGestorLN {
         }
         return datosItf;
     }
+
     public ArrayList<itfProperty> castclsLibroToItfProperty(ArrayList<clsLibro> AO) {
         //Ordenamos por Nombre:
         //NO CONFIGURADO PARA LIBROS TAMPOCO Collections.sort(AO, new clsCompareLibreriaMultimedia());
@@ -431,6 +438,7 @@ public class clsGestorLN {
         }
         return datosItf;
     }
+
     public ArrayList<itfProperty> castclsActoresToItfProperty(ArrayList<clsActor> AO) {
         //Ordenamos por Nombre:
         //NO CONFIGURADO PARA Actores Collections.sort(AO, new clsCompareLibreriaMultimedia());

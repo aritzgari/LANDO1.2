@@ -38,10 +38,11 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     static final int desktopWidth = 1000;
     static final int desktopHeight = 600;
 
+    //Constructor
     public frmPrincipal(String title) {
-
+        //Secuencia de arranque del programa
         super(title);
-
+        inicializador();
         //Set up the GUI.
         desktop = new JDesktopPane();
         desktop.setPreferredSize(new Dimension(desktopWidth, desktopHeight));
@@ -51,6 +52,36 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         //desktop.add(displayWindow); //DON'T FORGET THIS!!!
         //Dimension displaySize = displayWindow.getSize();
         //displayWindow.setSize(desktopWidth, displaySize.height);
+    }
+
+    private void inicializador() {
+        //Inserte los géneros si no se han insertado
+        // HAY QUE HACERLO CON UPDATES O SE CREARÁN OTRA VEZ CUANDO SE INICIE EL PROGRAMA
+        //CUANDO NO HAY VALORES EL UPDATE NO LOS CREA, SOCORRO
+
+        //Intento 2
+        objGestorLN.updateGeneroPeliEnBD("insert into lando.género_película values (1, 'Acción');");
+        objGestorLN.updateGeneroPeliEnBD("insert into lando.género_película values (2, 'Animación');");
+        objGestorLN.updateGeneroPeliEnBD("insert into lando.género_película values (3, 'Ciencia Ficción');");
+        objGestorLN.updateGeneroPeliEnBD("insert into lando.género_película values (4, 'Drama');");
+        objGestorLN.updateGeneroPeliEnBD("insert into lando.género_película values (5, 'Fantasía');");
+        objGestorLN.updateGeneroPeliEnBD("insert into lando.género_película values (6, 'Negro');");
+        objGestorLN.updateGeneroPeliEnBD("insert into lando.género_película values (7, 'Misterio');");
+        objGestorLN.updateGeneroPeliEnBD("insert into lando.género_película values (8, 'Musical');");
+        objGestorLN.updateGeneroPeliEnBD("insert into lando.género_película values (9, 'Romántico');");
+        //Intento 1
+        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.género_película SET Nombre = 'Acción' WHERE idGénero = 1;");
+        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.género_película SET Nombre = 'Animación' WHERE idGénero = 2;");
+        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.género_película SET Nombre = 'Ciencia Ficción' WHERE idGénero = 3;");
+        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.género_película SET Nombre = 'Drama' WHERE idGénero = 4;");
+        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.género_película SET Nombre = 'Fantasía' WHERE idGénero = 5;");
+        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.género_película SET Nombre = 'Negro' WHERE idGénero = 6;");
+        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.género_película SET Nombre = 'Misterio' WHERE idGénero = 7;");
+        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.género_película SET Nombre = 'Musical' WHERE idGénero = 8;");
+        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.género_película SET Nombre = 'Romántico' WHERE idGénero = 9;");
+        //Consulta los géneros para meterlos en la RAM
+        //objGestorLN.consultarGeneroPeliEnBD();
+        //Inserte otras cosas que necesiten ser insertadas
     }
 
     //Ventana que muestra la informaci?n de eventos.
