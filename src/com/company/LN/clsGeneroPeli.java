@@ -10,15 +10,15 @@ import com.company.Excepciones.clsPropiedadNonExistantException;
 
 public class clsGeneroPeli implements itfPropertyV2 {
     //Atributos
-    private int idGénero;
+    private int idGenero;
     private String Nombre;
 
-    public int getIdGénero() {
-        return idGénero;
+    public int getIdGenero() {
+        return idGenero;
     }
 
-    public void setIdGénero(int idGénero) {
-        this.idGénero = idGénero;
+    public void setIdGénero(int idGenero) {
+        this.idGenero = idGenero;
     }
 
     public String getNombre() {
@@ -30,9 +30,14 @@ public class clsGeneroPeli implements itfPropertyV2 {
     }
 
     //Constructor sin Parametros
-    public clsGeneroPeli(int _idGénero, String _Nombre) {
-        idGénero = _idGénero;
+    public clsGeneroPeli(int _idGenero, String _Nombre) {
+        idGenero = _idGenero;
         Nombre = _Nombre;
+    }
+
+    @Override
+    public String toString() {
+        return Nombre;
     }
 
     @Override
@@ -41,10 +46,10 @@ public class clsGeneroPeli implements itfPropertyV2 {
 
         switch (propiedad) {
             case "idGénero":
-                retorno = (Object) idGénero;
+                retorno = (Object) this.getIdGenero();
                 break;
             case "Nombre":
-                retorno = (Object) Nombre;
+                retorno = (Object) this.getNombre();
                 break;
             default:
                 throw new clsPropiedadNonExistantException();

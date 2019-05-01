@@ -2,6 +2,7 @@ package com.company.LP;
 
 import com.company.LN.clsGestorLN;
 import com.company.LN.itfProperty;
+import com.company.Comun.itfPropertyV2;
 
 import javax.swing.*;
 import javax.swing.event.InternalFrameEvent;
@@ -646,8 +647,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     }
     private void caseConsGeneroPeli() {
         frmListaGeneroPeli VentanaConsGeneroPeli = new frmListaGeneroPeli();
-        ArrayList<itfProperty> resultado = objGestorLN.consultarGeneroPeliEnBD();
-        for (itfProperty L : resultado
+        ArrayList<itfPropertyV2> resultado = objGestorLN.consultarGeneroPeliEnBD();
+        for (itfPropertyV2 L : resultado
         ) {
             VentanaConsGeneroPeli.setItem(L);
         }

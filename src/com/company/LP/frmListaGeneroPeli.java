@@ -1,6 +1,7 @@
 package com.company.LP;
 
 import com.company.LN.itfProperty;
+import com.company.Comun.itfPropertyV2;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -75,8 +76,7 @@ public class frmListaGeneroPeli extends JInternalFrame implements ListSelectionL
         {
             String TextoAMostrar =
                     "clsGeneroPeli{" +
-                            "idGénero =" + ((itfProperty) jlista.getSelectedValue()).getIntegerProperty("idDirector") +
-                            ", Nombre='" + ((itfProperty) jlista.getSelectedValue()).getStringProperty("Nombre") + '\'' +
-                            '}';
+                            "Nombre='" + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty(("Nombre") + '\'' +
+                            '}');
             System.out.println("Atributos: " + TextoAMostrar);
         }}}

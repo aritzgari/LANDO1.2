@@ -15,6 +15,7 @@ import java.util.ArrayList;
  * @author Ruben Domínguez
  * Aritz Garitano
  * @see clsGestorLN
+ * @deprecated
  */
 
 public class clsMenuUsuario extends JFrame implements ActionListener {
