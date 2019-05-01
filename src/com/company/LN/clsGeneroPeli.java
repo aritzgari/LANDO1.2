@@ -13,8 +13,26 @@ public class clsGeneroPeli implements itfPropertyV2 {
     private int idGénero;
     private String Nombre;
 
+    public int getIdGénero() {
+        return idGénero;
+    }
+
+    public void setIdGénero(int idGénero) {
+        this.idGénero = idGénero;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String nombre) {
+        Nombre = nombre;
+    }
+
     //Constructor sin Parametros
-    public clsGeneroPeli() {
+    public clsGeneroPeli(int _idGénero, String _Nombre) {
+        idGénero = _idGénero;
+        Nombre = _Nombre;
     }
 
     @Override

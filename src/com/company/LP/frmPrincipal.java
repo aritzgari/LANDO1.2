@@ -20,9 +20,9 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     private JMenuBar barraMenu;
     private JMenu menuInsertar, menuConsultar;
     /* items del menu Insertar */
-    private JMenuItem menuItemInsLibrerias_Multimedia, menuItemInsPeliculas, menuItemInsLibros, menuItemInsMusica, menuItemInsActor, menuItemInsDirector;
+    private JMenuItem menuItemInsLibrerias_Multimedia, menuItemInsPeliculas, menuItemInsLibros, menuItemInsMusica, menuItemInsActor, menuItemInsDirector, menuItemInsGeneroPeli;
     /* items del menu Consultar */
-    private JMenuItem menuItemConsLibrerias_Multimedia, menuItemConsPeliculas, menuItemConsLibros, menuItemConsMusica, menuItemConsActor, menuItemConsDirector;
+    private JMenuItem menuItemConsLibrerias_Multimedia, menuItemConsPeliculas, menuItemConsLibros, menuItemConsMusica, menuItemConsActor, menuItemConsDirector, menuItemConsGeneroPeli;
 
 
     //Declaraciones copiadas
@@ -149,6 +149,9 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
             case "ActionInsertDirector":
                 caseInsertarDirector();
                 break;
+            case "ActionInsertGeneroPeli":
+                caseInsertarGeneroPeli();
+                break;
             case "ActionConsLibrerias_Multimedia":
                 caseConsLibrerias();
                 break;
@@ -166,6 +169,9 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
                 break;
             case "ActionConsDirector":
                 caseConsDirector();
+                break;
+            case "ActionConsGeneroPeli":
+                caseConsGeneroPeli();
                 break;
 
         }
@@ -204,6 +210,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         menuItemInsMusica = new JMenuItem();
         menuItemInsActor = new JMenuItem();
         menuItemInsDirector = new JMenuItem();
+        menuItemInsGeneroPeli = new JMenuItem();
 
         menuItemConsLibrerias_Multimedia = new JMenuItem();
         menuItemConsPeliculas = new JMenuItem();
@@ -211,6 +218,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         menuItemConsMusica = new JMenuItem();
         menuItemConsActor = new JMenuItem();
         menuItemConsDirector = new JMenuItem();
+        menuItemConsGeneroPeli = new JMenuItem();
 
 
 
@@ -245,6 +253,11 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         menuInsertar.add(menuItemInsDirector);
         menuInsertar.addSeparator();
 
+        menuItemInsGeneroPeli.setText("Genero Pelicula");
+        menuItemInsGeneroPeli.setActionCommand("ActionInsertGeneroPeli");
+        menuInsertar.add(menuItemInsGeneroPeli);
+        menuInsertar.addSeparator();
+
         /* Crea los items del menu Consultar */
         menuItemConsLibrerias_Multimedia.setText("Librerias Multimedia");
         menuItemConsLibrerias_Multimedia.setActionCommand("ActionConsLibrerias_Multimedia");
@@ -276,6 +289,11 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         menuConsultar.add(menuItemConsDirector);
         menuConsultar.addSeparator();
 
+        menuItemConsGeneroPeli.setText("Genero Pelicula");
+        menuItemConsGeneroPeli.setActionCommand("ActionConsGeneroPeli");
+        menuConsultar.add(menuItemConsGeneroPeli);
+        menuConsultar.addSeparator();
+
 
         /* Agrega los Menus de la barra de Menu */
         menuInsertar.setText("Insertar");
@@ -293,6 +311,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         menuItemInsMusica.addActionListener(this);
         menuItemInsActor.addActionListener(this);
         menuItemInsDirector.addActionListener(this);
+        menuItemInsGeneroPeli.addActionListener(this);
 
         menuItemConsLibrerias_Multimedia.addActionListener(this);
         menuItemConsPeliculas.addActionListener(this);
@@ -300,6 +319,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         menuItemConsMusica.addActionListener(this);
         menuItemConsActor.addActionListener(this);
         menuItemConsDirector.addActionListener(this);
+        menuItemConsGeneroPeli.addActionListener(this);
 
 
        /* //Set up the lone menu.
@@ -557,6 +577,11 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         objGestorLN.crearDirector(Nombre, Apellido);
     }
 
+    private void caseInsertarGeneroPeli() {
+
+        frmInsertGeneroPeli VentanaInsertGeneroPeli = new frmInsertGeneroPeli(objGestorLN);
+        desktop.add(VentanaInsertGeneroPeli);
+    }
     /**
      * Método consultar librerias desde la ventana.
      */
@@ -618,6 +643,15 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
             VentanaConsDirector.setItem(L);
         }
         desktop.add(VentanaConsDirector);
+    }
+    private void caseConsGeneroPeli() {
+        frmListaGeneroPeli VentanaConsGeneroPeli = new frmListaGeneroPeli();
+        ArrayList<itfProperty> resultado = objGestorLN.consultarGeneroPeliEnBD();
+        for (itfProperty L : resultado
+        ) {
+            VentanaConsGeneroPeli.setItem(L);
+        }
+        desktop.add(VentanaConsGeneroPeli);
     }
 
     private void caseConsMusica() {

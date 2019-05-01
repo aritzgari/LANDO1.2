@@ -2,11 +2,20 @@ package com.company.LD;
 
 import java.sql.SQLException;
 
+
+
+/**
+ * @author Ruben Domínguez
+ * Aritz Garitano
+ * @see SQLException
+ */
+
 public class clsGeneroPeliBD extends clsConexionBD{
     private String Nombre;
 
     //Constructor con parametros, pensado para el insert
     public clsGeneroPeliBD(String _Nombre) {
+
         setNombre(_Nombre);
     }
 
@@ -21,6 +30,7 @@ public class clsGeneroPeliBD extends clsConexionBD{
     public void setNombre(String nombre) {
         Nombre = nombre;
     }
+
     public int sendInsert(String query) {
         this.conectarBD();
         int regActualizados = 0;

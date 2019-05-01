@@ -259,8 +259,36 @@ public class clsGestorLN {
         return castclsDirectorToItfProperty(datosDirector);
     }
 
+    public ArrayList<itfProperty> consultarGeneroPeliEnBD() {
+        ResultSet resultado = null;
+        //Declarado mas abajo, ignorar: clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia();
+        clsGeneroPeliBD objGeneroPeliBD = new clsGeneroPeliBD();
+        //En este metodo tendremos que crear librerias y asignarles de alguna manera los valores antes de cerrar la conexuión
+        //Para ello:
+        //...
+        //ABRIR CONEXION:
+        objGeneroPeliBD.conectarBD();
+        resultado = objGeneroPeliBD.sendSelect(queryConsultaGeneroPeli);
+        //Meto rs en objeto
+        try {
+            while (resultado.next()) {
+                clsGeneroPeli objGeneroPeli = new clsGeneroPeli(resultado.getInt(1), resultado.getString(2));
+                datosGeneroPeli.add(objGeneroPeli);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error SQL");
+            System.out.println(e);
+        }
+        //Cierro conexion
+        objGeneroPeliBD.desconectarBD(objGeneroPeliBD.getObjCon());
+
+        return castclsGeneroPeliToItfProperty(datosGeneroPeli);
+    }
+
     private ArrayList<itfProperty> castclsDirectorToItfProperty(ArrayList<clsDirector> datosDirector) {
     return datosItf;}
+    private ArrayList<itfProperty> castclsGeneroPeliToItfProperty (ArrayList<clsGeneroPeli> datosGeneroPeli) {
+        return datosItf;}
 
 
     public ArrayList<itfProperty> consultarLibrosEnBD() {
