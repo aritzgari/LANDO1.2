@@ -46,6 +46,9 @@ public class clsActor implements itfProperty {
             case "idActores":
                 propResultado = idActores;
                 break;
+            case "Clase":
+                propResultado = 3;
+                break;
             default:
                 throw new clsPropiedadNonExistantException();
         }

@@ -23,18 +23,23 @@ public class clsDirector implements itfPropertyV2 {
 
         switch (propiedad) {
             case "idDirector":
-                retorno = (Object) idDirector;
+                retorno = idDirector;
                 break;
             case "Nombre":
-                retorno = (Object) Nombre;
+                retorno = Nombre;
                 break;
             case "Apellido":
-                retorno = (Object) Apellido;
+                retorno = Apellido;
+                break;
+            case "Clase":
+                retorno = 4;
+                break;
             default:
                 throw new clsPropiedadNonExistantException();
         }
         return retorno;
     }
+
     @Override
     public String toString() {
         return Nombre + " " + Apellido;

@@ -105,6 +105,9 @@ public class clsLibro extends clsArticulo implements itfProperty {
             default:
                 System.out.println("Propiedad no encontrada.");
                 break;
+            case "Clase":
+                propResultado = 7;
+                break;
         }
         return propResultado;
     }

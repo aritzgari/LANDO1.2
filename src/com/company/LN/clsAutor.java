@@ -35,6 +35,10 @@ public class clsAutor {
                     break;
                 case "Apellido":
                     retorno = (Object) Apellido;
+                    break;
+                case "Clase":
+                    retorno = 8;
+                    break;
                 default:
                     throw new clsPropiedadNonExistantException();
             }

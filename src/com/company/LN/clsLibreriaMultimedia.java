@@ -98,6 +98,9 @@ public class clsLibreriaMultimedia implements Comparable, itfProperty {
             case "IdLibreria_Multimedia":
                 propResultado = this.getIdLibreria_Multimedia();
                 break;
+            case "Clase":
+                propResultado = 1;
+                break;
             default:
                 throw new clsPropiedadNonExistantException();
         }

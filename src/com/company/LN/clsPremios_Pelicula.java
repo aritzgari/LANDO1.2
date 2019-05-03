@@ -25,22 +25,25 @@ public class clsPremios_Pelicula extends clsPremios {
 
         switch (propiedad) {
             case "idPremios":
-                retorno = (Object) getIdPremios();
+                retorno =  getIdPremios();
                 break;
             case "Nombre_del_Premio":
-                retorno = (Object) getNombre();
+                retorno =  getNombre();
                 break;
             case "Categoria":
-                retorno = (Object) getCategoria();
+                retorno =  getCategoria();
                 break;
             case "Año":
-                retorno = (Object) getAño();
+                retorno =  getAño();
                 break;
             case "Películas_Título":
-                retorno = (Object) Películas_Título;
+                retorno = Películas_Título;
                 break;
             case "Películas_Libreria_Multimedia_idLibreria_Multimedia":
-                retorno = (Object) Películas_Libreria_Multimedia_idLibreria_Multimedia;
+                retorno = Películas_Libreria_Multimedia_idLibreria_Multimedia;
+                break;
+            case "Clase":
+                retorno = 6;
                 break;
             default:
                 throw new clsPropiedadNonExistantException();

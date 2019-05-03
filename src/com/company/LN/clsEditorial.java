@@ -28,13 +28,17 @@ public class clsEditorial {
 
             switch (propiedad) {
                 case "idActores":
-                    retorno = (Object) idActores;
+                    retorno =  idActores;
                     break;
                 case "Nombre":
-                    retorno = (Object) Nombre;
+                    retorno =  Nombre;
                     break;
                 case "Apellido":
-                    retorno = (Object) Apellido;
+                    retorno =  Apellido;
+                    break;
+                case "Clase":
+                    retorno = 9;
+                    break;
                 default:
                     throw new clsPropiedadNonExistantException();
             }

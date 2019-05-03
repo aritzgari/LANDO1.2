@@ -46,10 +46,13 @@ public class clsGeneroPeli implements itfPropertyV2 {
 
         switch (propiedad) {
             case "idGénero":
-                retorno = (Object) this.getIdGenero();
+                retorno = this.getIdGenero();
                 break;
             case "Nombre":
-                retorno = (Object) this.getNombre();
+                retorno =  this.getNombre();
+                break;
+            case "Clase":
+                retorno = 5;
                 break;
             default:
                 throw new clsPropiedadNonExistantException();

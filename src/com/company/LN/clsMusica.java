@@ -69,6 +69,9 @@ public class clsMusica extends clsArticulo implements itfProperty {
             case "Anno_de_publicacion":
                 propResultado = getAnno_de_publicacion();
                 break;
+            case "Clase":
+                propResultado = 12;
+                break;
             default:
                 System.out.println("Propiedad no encontrada.");
                 break;
