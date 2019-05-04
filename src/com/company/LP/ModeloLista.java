@@ -14,6 +14,7 @@ import java.util.LinkedList;
  */
 
 public class ModeloLista extends DefaultListModel<itfProperty> {
+    //Confirmamos que este no es el que duplica
     protected LinkedList<itfProperty> lista;
 
 
@@ -27,6 +28,11 @@ public class ModeloLista extends DefaultListModel<itfProperty> {
 
     public int getSize() {
         return lista.size();
+    }
+    public void clear(){
+        for (int i = 0; i < lista.size(); i++) {
+            lista.remove(i);
+        }
     }
 
     @Override

@@ -50,7 +50,7 @@ public class clsGestorLN {
     private static ArrayList<clsMusica> datosMusicas;
     //Estos tres de arriba, para mi que no los usamos.
     private static ArrayList<clsArticulo> datosArticulos;
-    private  ArrayList<clsLibreriaMultimedia> datosLibrerias;
+    private ArrayList<clsLibreriaMultimedia> datosLibrerias;
     private static ArrayList<clsActor> datosActor;
     private static ArrayList<clsGeneroPeli> datosGeneroPeli;
     private static ArrayList<clsPremios> datosPremios;
@@ -94,7 +94,7 @@ public class clsGestorLN {
         return datosArticulos;
     }
 
-    public  ArrayList<clsLibreriaMultimedia> getDatosLibrerias() {
+    public ArrayList<clsLibreriaMultimedia> getDatosLibrerias() {
         return datosLibrerias;
     }
 
@@ -171,7 +171,7 @@ public class clsGestorLN {
          * Metodo para crear Libros en el Gestor con datos que recibamos de LP
          * @author RubenD AritzG
          */
-        clsLibrosBD objLibroBD = new clsLibrosBD(Libreria_Multimedia_idLibreria_Multimedia,ISBN, Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, Serie_SoN, Nombre_serie, Orden_serie, idGenero, idAutor);
+        clsLibrosBD objLibroBD = new clsLibrosBD(Libreria_Multimedia_idLibreria_Multimedia, ISBN, Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, Serie_SoN, Nombre_serie, Orden_serie, idGenero, idAutor);
         objLibroBD.sendInsert(queryInsertLibro);
     }
 
@@ -351,8 +351,8 @@ public class clsGestorLN {
 
     public ArrayList<itfProperty> consultarLibreriasEnBD() {
         //Declaraciones
-        ResultSet resultado = null;
-        datosLibrerias=new ArrayList<>();
+        ResultSet resultado;
+        //datosLibrerias = new ArrayList<>();
         clsLibreria_MultimediaBD objLibreria_MultimediaBD = new clsLibreria_MultimediaBD();
 
         //Reiniciamos el ArrayList en la RAM para no duplicar entradas en esta (Poco eficiente pero eficaz)
@@ -388,6 +388,8 @@ public class clsGestorLN {
         //Creamos el objeto en el que vamos a castear las pelicualas
         itfProperty castObject;
         //Las casteamos y metemos en datosItf
+        //Limpiamos datosItf para no duplicar
+        datosItf.clear();
         for (clsDirector o : _datosDirector
         ) {
             castObject = (itfProperty) o;
@@ -400,6 +402,8 @@ public class clsGestorLN {
         //Creamos el objeto en el que vamos a castear los generos
         itfPropertyV2 castObject;
         //Las casteamos y metemos en datosItf
+        //Limpiamos datosItf para no duplicar
+        datosItf.clear();
         for (clsGeneroPeli o : _datosGeneroPeli
         ) {
             castObject = (itfPropertyV2) o;
@@ -415,6 +419,8 @@ public class clsGestorLN {
         //Creamos el objeto en el que vamos a castear las librerias
         itfProperty castObject;
         //Las casteamos y metemos en datosItf
+        //Limpiamos datosItf para no duplicar
+        datosItf.clear();
         for (clsLibreriaMultimedia o : AO
         ) {
             castObject = (itfProperty) o;
@@ -429,6 +435,8 @@ public class clsGestorLN {
         //Creamos el objeto en el que vamos a castear las pelicualas
         itfProperty castObject;
         //Las casteamos y metemos en datosItf
+        //Limpiamos datosItf para no duplicar
+        datosItf.clear();
         for (clsPelicula o : AO
         ) {
             castObject = (itfProperty) o;
@@ -443,6 +451,8 @@ public class clsGestorLN {
         //Creamos el objeto en el que vamos a castear los libros
         itfProperty castObject;
         //Las casteamos y metemos en datosItf
+        //Limpiamos datosItf para no duplicar
+        datosItf.clear();
         for (clsLibro o : AO
         ) {
             castObject = (itfProperty) o;
@@ -457,6 +467,8 @@ public class clsGestorLN {
         //Creamos el objeto en el que vamos a castear las pelicualas
         itfProperty castObject;
         //Las casteamos y metemos en datosItf
+        //Limpiamos datosItf para no duplicar
+        datosItf.clear();
         for (clsActor o : AO
         ) {
             castObject = (itfProperty) o;

@@ -20,7 +20,7 @@ public class frmListaLibrerias extends JInternalFrame implements ListSelectionLi
 	private JList<itfProperty> jlista;
 	//Modelo de la vista
 	protected ModeloLista modelo;
-	
+
 	//Lista auxiliar de Objetos
 	private LinkedList<itfProperty> Objetos;
 
@@ -35,12 +35,17 @@ public class frmListaLibrerias extends JInternalFrame implements ListSelectionLi
 		setTitle("Lista de Librerías");
 		
 		setBounds(100, 100, 400, 500);
-		//setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setDefaultCloseOperation(JInternalFrame.HIDE_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		//setDefaultCloseOperation(JInternalFrame.HIDE_ON_CLOSE);
 		Objetos = new LinkedList<itfProperty>();
+		Objetos.clear();
 		
 		modelo = new ModeloLista (Objetos);
+		modelo.clear();
+
+		//Confirmamos que este no es el que duplica
 		jlista = new JList<itfProperty>(modelo);
+		jlista.removeAll();
 		//jlista.setCellRenderer(new ListRenderer());
 		jlista.addListSelectionListener(this);
 		JScrollPane scroll = new JScrollPane(jlista);
