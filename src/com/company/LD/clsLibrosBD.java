@@ -52,7 +52,7 @@ public class clsLibrosBD extends clsConexionBD {
         setIdAutor(_idAutor);
         setIdGenero(_idGenero);
     }
-
+    // Para select sin parametros
     public clsLibrosBD() {
 
     }
@@ -202,7 +202,6 @@ public class clsLibrosBD extends clsConexionBD {
 
         try {
             this.setObjSt(this.getObjCon().prepareStatement(query, this.getObjSt().RETURN_GENERATED_KEYS));
-
             this.getObjSt().setInt(1, getLibreria_Multimedia_idLibreria_Multimedia());
             this.getObjSt().setString(2, getISBN());
             this.getObjSt().setString(3, getTitulo());
@@ -220,6 +219,7 @@ public class clsLibrosBD extends clsConexionBD {
             this.getObjSt().setDouble(15, getOrden_serie());
             this.getObjSt().setInt(16, getIdGenero());
             this.getObjSt().setInt(17, getIdAutor());
+
 
 
 

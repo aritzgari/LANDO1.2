@@ -1,5 +1,8 @@
 package com.company.LN;
 
+import com.company.Comun.itfPropertyV2;
+import com.company.Excepciones.clsPropiedadNonExistantException;
+
 /**
  * Clase para guardar datos de Libros en nuestra Base de Datos
  *
@@ -7,7 +10,7 @@ package com.company.LN;
  * Aritz Garitano
  */
 
-public class clsLibro extends clsArticulo implements itfProperty {
+public class clsLibro extends clsArticulo implements itfPropertyV2 {
 
     /*atributos de la clase libro*/
     //-->private String Autor;
@@ -51,127 +54,74 @@ public class clsLibro extends clsArticulo implements itfProperty {
         idAutor = _idAutor;
     }
 
+
     @Override
-    public String getStringProperty(String propiedad) {
-        String propResultado = "";
+    public String toString() {
+        return ISBN;
+    }
+
+    @Override
+    public Object getObjectProperty(String propiedad) {
+        Object retorno = new Object();
+
         switch (propiedad) {
-            case "Titulo":
-                propResultado = getTitulo();
-                break;
-            case "Titulo_original":
-                propResultado = getTitulo_original();
-                break;
-            case "Tipo_DoA":
-                propResultado = getTipo_DoA();
-                break;
-            case "Formato":
-                propResultado = getFormato();
-                break;
-            case "Genero":
-                propResultado = getGenero();// no usado pero esta
-                break;
-            case "Premios":
-                propResultado = getPremios();// no usado pero esta
+            case "Libreria_Multimedia_idLibreria_Multimedia":
+                retorno = Libreria_Multimedia_idLibreria_Multimedia;
                 break;
             case "ISBN":
-                propResultado = ISBN;
+                retorno = ISBN;
                 break;
-            case "Resumen":
-                propResultado = Resumen;
+            case "Título":
+                retorno =  this.getTitulo();
                 break;
-            case "Nombre_serie":
-                propResultado = Nombre_serie;
+            case "Título_original":
+                retorno =  this.getTitulo_original();
                 break;
-            default:
-                System.out.println("Propiedad no encontrada.");
+            case "Año":
+                retorno =  this.getAnno_de_publicacion();
                 break;
-        }
-        return propResultado;
-    }
-
-    @Override
-    public Integer getIntegerProperty(String propiedad) {
-        int propResultado = 0;
-        switch (propiedad) {
-            case "Anno_de_publicacion":
-                propResultado = getAnno_de_publicacion();
+            case "Tipo_DoA":
+                retorno =  this.getTipo_DoA();
                 break;
-            case "Paginas":
-                propResultado = Paginas;
-                break;
-            case "Libreria_Multimedia_idLibreria_Multimedia":
-                propResultado = Libreria_Multimedia_idLibreria_Multimedia;
-                break;
-            default:
-                System.out.println("Propiedad no encontrada.");
-                break;
-            case "Clase":
-                propResultado = 7;
-                break;
-        }
-        return propResultado;
-    }
-
-    @Override
-    public Float getFloatProperty(String propiedad) {
-        Float propResultado = null;
-        switch (propiedad) {
-            case "":
-                break;
-            default:
-                System.out.println("Propiedad no encontrada.");
-                break;
-        }
-        return propResultado;
-    }
-
-    @Override
-    public Double getDoubleProperty(String propiedad) {
-        Double propResultado = 0.0;
-        switch (propiedad) {
             case "Precio":
-                propResultado = getPrecio();
+                retorno =  this.getPrecio();
                 break;
-            case "Orden_serie":
-                propResultado = Orden_serie;
-                break;
-            default:
-                System.out.println("Propiedad no encontrada.");
-                break;
-        }
-        return propResultado;
-    }
-
-    @Override
-    public char getCharProperty(String propiedad) {
-        char propResultado = ' ';
-        switch (propiedad) {
-            case "":
-                break;
-            default:
-                System.out.println("Propiedad no encontrada.");
-                break;
-        }
-        return propResultado;
-    }
-
-    @Override
-    public boolean getBooleanProperty(String propiedad) {
-        boolean propResultado = false;
-        switch (propiedad) {
             case "En_propiedad":
-                propResultado = getEn_propiedad();
+                retorno =  this.getEn_propiedad();
                 break;
             case "En_busqueda":
-                propResultado = getEn_busqueda();
+                retorno =  this.getEn_busqueda();
+                break;
+            case "Formato":
+                retorno = this.getFormato();
+                break;
+            case "Paginas":
+                retorno = Paginas;
+                break;
+            case "Resumen":
+                retorno = Resumen;
                 break;
             case "Serie_SoN":
-                propResultado = Serie_SoN;
+                retorno = Serie_SoN;
+                break;
+            case "Nombre_serie":
+                retorno = Nombre_serie;
+                break;
+            case "Orden_serie":
+                retorno = Orden_serie;
+                break;
+            case "Género_Libro_idGénero_Libro":
+                retorno = idGenero;
+                break;
+            case "Autor_idAutor":
+                retorno = idAutor;
+                break;
+            case "Clase":
+                retorno = 7;
                 break;
             default:
-                System.out.println("Propiedad no encontrada.");
-                break;
+                throw new clsPropiedadNonExistantException();
         }
-        return propResultado;
+        return retorno;
     }
 }

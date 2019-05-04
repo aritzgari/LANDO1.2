@@ -171,7 +171,7 @@ public class clsGestorLN {
          * Metodo para crear Libros en el Gestor con datos que recibamos de LP
          * @author RubenD AritzG
          */
-        clsLibrosBD objLibroBD = new clsLibrosBD(Libreria_Multimedia_idLibreria_Multimedia, ISBN, Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, Serie_SoN, Nombre_serie, Orden_serie, idGenero, idAutor);
+        clsLibrosBD objLibroBD = new clsLibrosBD(ISBN, Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, Serie_SoN, Nombre_serie, Orden_serie, idGenero, idAutor, Libreria_Multimedia_idLibreria_Multimedia);
         objLibroBD.sendInsert(queryInsertLibro);
     }
 
@@ -214,6 +214,7 @@ public class clsGestorLN {
 
     public ArrayList<itfProperty> consultarActoresEnBD() {
         ResultSet resultado = null;
+
         //Declarado mas abajo, ignorar: clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia();
         clsActoresBD objActoresBD = new clsActoresBD();
         //En este metodo tendremos que crear librerias y asignarles de alguna manera los valores antes de cerrar la conexuión
@@ -293,6 +294,7 @@ public class clsGestorLN {
 
     public ArrayList<itfProperty> consultarLibrosEnBD() {
         ResultSet resultado = null;
+
         //Declarado mas abajo, ignorar: clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia();
         clsLibrosBD objLibrosBD = new clsLibrosBD();
         //En este metodo tendremos que crear librerias y asignarles de alguna manera los valores antes de cerrar la conexuión
@@ -354,6 +356,7 @@ public class clsGestorLN {
         int diferentes = 0;
 
         ResultSet resultado = null;
+        datosLibrerias=new ArrayList<>();
         clsLibreria_MultimediaBD objLibreria_MultimediaBD = new clsLibreria_MultimediaBD();
         //Conexion
         objLibreria_MultimediaBD.conectarBD();
