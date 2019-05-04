@@ -5,8 +5,9 @@ import com.company.LN.clsGestorLN;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class frmInsertLibros {
+public class frmInsertLibros extends JInternalFrame implements ActionListener {
     //Declaraciones
     //Necesitamos un JPanel que es donde se ponen todos los componentes, creo.
     JPanel JPContent;
@@ -66,16 +67,16 @@ public class frmInsertLibros {
     JButton JBFIXED;
 
 
-    private final String TextoJTFISBN = "<Inserte el ISBN aquí>";
-    private final String TextoJTFTitulo = "<Inserte el Título aquí>";
-    private final String TextoJTFTitulo_original = "<Inserte el Título original aquí>";
-    private final String TextoJTFFormato = "<Inserte el Formato aquí. Ej. .mkv, Vinilo, VHS...>";
-    private final String TextoJTFNombre_serie = "<Inserte el nombre de la serie aquí>";
-    private final String TextoJTFResumen = "<Inserte la resumen aquí>";
+    private final String TextoJTFISBN = "<Inserte el ISBN aqu?>";
+    private final String TextoJTFTitulo = "<Inserte el T?tulo aqu?>";
+    private final String TextoJTFTitulo_original = "<Inserte el T?tulo original aquñ>";
+    private final String TextoJTFFormato = "<Inserte el Formato aqu?. Ej. .mkv, Vinilo, VHS...>";
+    private final String TextoJTFNombre_serie = "<Inserte el nombre de la serie aqu?>";
+    private final String TextoJTFResumen = "<Inserte la resumen aqu?>";
 
     private clsGestorLN objGestorLN;
 
-    //Código
+    //C?digo
     //Constructor (?)
     public frmInsertLibros(clsGestorLN _objGestorLN) {
         //Tamaño y componentes
@@ -102,7 +103,7 @@ public class frmInsertLibros {
         ModeloAño.setValue(2019);
         JSAño.setModel(ModeloAño);
 
-        JLPaginas = new JLabel("\nDuración (min):");
+        JLPaginas = new JLabel("\nDuraci?n (min):");
         JSPaginas = new JSpinner();
         ModeloPaginas = new SpinnerNumberModel();
         ModeloPaginas.setMinimum(0);
@@ -110,10 +111,10 @@ public class frmInsertLibros {
         ModeloPaginas.setValue(90);
         JSPaginas.setModel(ModeloPaginas);
 
-        JLTipo_DoA = new JLabel("\nFormato digital o Formato físico:");
+        JLTipo_DoA = new JLabel("\nFormato digital o Formato f?sico:");
         JCBTipo_DoA = new JComboBox();
         JCBTipo_DoA.addItem("Digital");
-        JCBTipo_DoA.addItem("Físico");
+        JCBTipo_DoA.addItem("F?sico");
 
         JLPrecio = new JLabel("\nPrecio (Euros):");
         JSPrecio = new JSpinner();
@@ -266,7 +267,7 @@ public class frmInsertLibros {
                         && (!JTFFormato.getText().equals(TextoJTFFormato))
                         && (!JTFNombre_serie.getText().equals(TextoJTFNombre_serie))
                         && (!JTFResumen.getText().equals(TextoJTFResumen))
-                        && (!JTFISBN.getText().equals(TextoJTFISBN)))
+                        && (!JTFISBN.getText().equals(TextoJTFISBN))
 
                         && (!JTFTitulo.getText().equals(""))
                         && (!JTFTitulo_original.getText().equals(""))
@@ -274,7 +275,7 @@ public class frmInsertLibros {
                         && (!JTFNombre_serie.getText().equals(""))
                         && (!JTFResumen.getText().equals(""))
                         && (!JTFISBN.getText().equals(""))) {
-                    objGestorLN.crearLibro(/*De momento a la libreria 1 tudo*/1, JTFISBN.getText(), JTFTitulo.getText(), JTFTitulo_original.getText(), (int) JSAño.getValue(), (int) JSDuracion.getValue(), (int) JSCalificacion.getValue(), (int) JSCalporedad.getValue(), (String) JCBTipo_DoA.getSelectedItem(), (Double) JSPrecio.getValue(), JCBEn_propiedad.isSelected(), JCBEn_busqueda.isSelected(), JTFFormato.getText(), JTFNombre_serie.getText(), (Double) JSOrden_serie.getValue(), JTFResumen.getText());
+                   // objGestorLN.crearLibro(/*De momento a la libreria 1 tudo*/1, JTFISBN.getText(), JTFTitulo.getText(), JTFTitulo_original.getText(), (int) JSAño.getValue(), (int) JSDuracion.getValue(), (int) JSCalificacion.getValue(), (int) JSCalporedad.getValue(), (String) JCBTipo_DoA.getSelectedItem(), (Double) JSPrecio.getValue(), JCBEn_propiedad.isSelected(), JCBEn_busqueda.isSelected(), JTFFormato.getText(), JTFNombre_serie.getText(), (Double) JSOrden_serie.getValue(), JTFResumen.getText());
                     } else {
                     //ESTO HAY QUE PONERLO EN LA VENTANA O CON UNA EXCEPCION Y UNA VENTANA DE ERROR.
                     System.out.println("Campos vacíos o sin editar");

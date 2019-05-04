@@ -50,7 +50,7 @@ public class clsGestorLN {
     private static ArrayList<clsMusica> datosMusicas;
     //Estos tres de arriba, para mi que no los usamos.
     private static ArrayList<clsArticulo> datosArticulos;
-    private static ArrayList<clsLibreriaMultimedia> datosLibrerias;
+    private  ArrayList<clsLibreriaMultimedia> datosLibrerias;
     private static ArrayList<clsActor> datosActor;
     private static ArrayList<clsGeneroPeli> datosGeneroPeli;
     private static ArrayList<clsPremios> datosPremios;
@@ -94,7 +94,7 @@ public class clsGestorLN {
         return datosArticulos;
     }
 
-    public static ArrayList<clsLibreriaMultimedia> getDatosLibrerias() {
+    public  ArrayList<clsLibreriaMultimedia> getDatosLibrerias() {
         return datosLibrerias;
     }
 
@@ -171,7 +171,7 @@ public class clsGestorLN {
          * Metodo para crear Libros en el Gestor con datos que recibamos de LP
          * @author RubenD AritzG
          */
-        clsLibrosBD objLibroBD = new clsLibrosBD(ISBN, Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, Serie_SoN, Nombre_serie, Orden_serie, idGenero, idAutor, Libreria_Multimedia_idLibreria_Multimedia);
+        clsLibrosBD objLibroBD = new clsLibrosBD(Libreria_Multimedia_idLibreria_Multimedia,ISBN, Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, Serie_SoN, Nombre_serie, Orden_serie, idGenero, idAutor);
         objLibroBD.sendInsert(queryInsertLibro);
     }
 
@@ -349,37 +349,26 @@ public class clsGestorLN {
     }
 
 
-    public /*DevuelvoObjeto:*/ArrayList<itfProperty> consultarLibreriasEnBD() {
+    public ArrayList<itfProperty> consultarLibreriasEnBD() {
         //Declaraciones
-
-        boolean IDDiferente = false;
-        int diferentes = 0;
-
         ResultSet resultado = null;
         datosLibrerias=new ArrayList<>();
         clsLibreria_MultimediaBD objLibreria_MultimediaBD = new clsLibreria_MultimediaBD();
+
+        //Reiniciamos el ArrayList en la RAM para no duplicar entradas en esta (Poco eficiente pero eficaz)
+        datosLibrerias.clear();
+
         //Conexion
         objLibreria_MultimediaBD.conectarBD();
+        //Consulta
         resultado = objLibreria_MultimediaBD.sendSelect(queryConsultaLibreria);
         //Codigo
         try {
             while (resultado.next()) {
+
                 clsLibreriaMultimedia objLibreriaMultimedia = new clsLibreriaMultimedia(resultado.getInt(1), resultado.getString(2), resultado.getString(3));
+                datosLibrerias.add(objLibreriaMultimedia);
 
-                for (clsLibreriaMultimedia LIB: datosLibrerias
-                     ) {
-
-                    IDDiferente = resultado.getInt(1)!= LIB.getIdLibreria_Multimedia();
-                    if(IDDiferente){
-                        ++diferentes;
-                    }
-
-                }
-                int tamañoArrayList = datosLibrerias.size();
-                if(diferentes == tamañoArrayList) {
-                    datosLibrerias.add(objLibreriaMultimedia);
-                }
-                diferentes = 0;
             }
         } catch (SQLException e) {
             System.out.println("Error SQL");
