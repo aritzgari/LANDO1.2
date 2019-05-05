@@ -131,8 +131,8 @@ public class clsGestorLN {
      *
      * @author RubenD AritzG
      */
-    public static void crearLibreria(/*int idLibreria_Multimedia, */String Nombre, String Descripcion) /*Excepcion no tratadathrows SQLException */ {
-
+    public static int crearLibreria(/*int idLibreria_Multimedia, */String Nombre, String Descripcion) /*Excepcion no tratadathrows SQLException */ {
+        int retorno = 0;
         //UPDATE 05/04: Aqui creamos la query con los parametros que nos pasan a este metodo;
         //con esta query llamamos a clsLibreriaMultimediaBD.sendInsert(query)
         //QUE PASA, que el id es AutoIncremental, asique igual conviene mandar la query sin el AutoIncremental,
@@ -141,7 +141,7 @@ public class clsGestorLN {
         //La siguiente linea convendría que fuera una constante:
         clsLibreria_MultimediaBD objLibreria_MultimediaBD = new clsLibreria_MultimediaBD(Nombre, Descripcion);
         //objLibreria_MultimediaBD.sendInsert(queryInsertLibreria);
-        objLibreria_MultimediaBD.sendInsert(queryInsertLibreria);
+        retorno = objLibreria_MultimediaBD.sendInsert(queryInsertLibreria);
         /*try {
 
             objLibreria_MultimediaBD.getObjSt().setString(2, Nombre);
@@ -164,6 +164,7 @@ public class clsGestorLN {
         /* clsDatos objDatos = new clsDatos();
         objDatos.insertarLiberiaBD(idLibreria_Multimedia, Nombre, Descripcion);*/
         //FIN METODO ANTIGUO
+        return retorno;
     }
 
     /**
@@ -171,9 +172,12 @@ public class clsGestorLN {
      *
      * @author RubenD AritzG
      */
-    public static void crearPelicula(int Libreria_Multimedia_idLibreria_Multimedia, String Titulo, String Titulo_original, int Anno_de_publicacion, int Duracion, int Calificacion, int Calporedad, String Tipo_DoA, double Precio, boolean En_propiedad, boolean En_busqueda, String Formato, String Saga, Double Orden, String Sinopsis, String Enlace_a_trailer) {
+    public static int crearPelicula(int Libreria_Multimedia_idLibreria_Multimedia, String Titulo, String Titulo_original, int Anno_de_publicacion, int Duracion, int Calificacion, int Calporedad, String Tipo_DoA, double Precio, boolean En_propiedad, boolean En_busqueda, String Formato, String Saga, Double Orden, String Sinopsis, String Enlace_a_trailer) {
+        int retorno = 0;
         clsPeliculaBD objPeliculaBD = new clsPeliculaBD(Libreria_Multimedia_idLibreria_Multimedia, Titulo, Titulo_original, Anno_de_publicacion, Duracion, Calificacion, Calporedad, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Saga, Orden, Sinopsis, Enlace_a_trailer);
-        objPeliculaBD.sendInsert(queryInsertPelicula);
+        retorno = objPeliculaBD.sendInsert(queryInsertPelicula);
+        System.out.println(retorno);
+        return retorno;
     }
 
     /**

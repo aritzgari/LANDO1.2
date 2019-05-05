@@ -68,6 +68,8 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
     JLabel JLEnlace_a_trailer;
     JTextField JTFEnlace_a_trailer;
 
+    JLabel JLMensaje;
+
     //Botones
     JButton JBAceptar;
     JButton JBCancelar;
@@ -84,7 +86,7 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
     private clsGestorLN objGestorLN;
 
     //Código
-    //Constructor (?)
+    //Constructor
     public frmInsertPeliculas(clsGestorLN _objGestorLN) {
         //Tamaño y componentes
         JPContent = new JPanel();
@@ -173,12 +175,18 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
         JLEnlace_a_trailer = new JLabel("\nEnlace al tráiler:");
         JTFEnlace_a_trailer = new JTextField(TextoJTFEnlace_a_trailer);
 
+        JLMensaje = new JLabel();
+        JLMensaje.setVisible(false);
 
         JBAceptar = new JButton("Aceptar");
         JBCancelar = new JButton("Cancelar");
         JBFIXED = new JButton("Bibidi Babidi Bu");
         objGestorLN = _objGestorLN;
 
+
+        //Colores
+        Color rojo = new Color(255, 140, 135);
+        Color verde = new Color(155,255, 141);
 
         //Propiedades de la ventana
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -220,7 +228,6 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
         JPContent.add(JLEn_busqueda);
         JPContent.add(JCBEn_busqueda);
 
-
         JPContent.add(JLFormato);
         JPContent.add(JTFFormato);
 
@@ -236,6 +243,8 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
         JPContent.add(JLEnlace_a_trailer);
         JPContent.add(JTFEnlace_a_trailer);
 
+        JPContent.add(JLMensaje);
+
         JPContent.add(JBAceptar);
         JPContent.add(JBCancelar);
 
@@ -248,6 +257,11 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
         JBCancelar.setActionCommand("Cancelar");
         JBAceptar.addActionListener(this);
         JBCancelar.addActionListener(this);
+        JBAceptar.setBackground(verde);
+        JBCancelar.setBackground(rojo);
+
+        //Darle valores a los textos que los requieran
+        JLMensaje.setHorizontalAlignment(SwingConstants.CENTER);
 
         //Ubicar las cosas porque sino sale tudu amontonado:
         int altura = 30;
@@ -277,11 +291,11 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
         JTFSaga.setBounds(25, 270, 325, altura);
         JLOrden.setBounds(400, 240, 200, altura);
         JSOrden.setBounds(400, 270, 200, altura);
+        JLMensaje.setBounds(600, 270, 400, altura);
         JLSinopsis.setBounds(25, 300, 450, altura);
         JTFSinopsis.setBounds(25, 330, 450, altura);
         JLEnlace_a_trailer.setBounds(25, 360, 450, altura);
         JTFEnlace_a_trailer.setBounds(25, 390, 450, altura);
-
 
         JBAceptar.setBounds(525, 360, 200, 2*altura);
         JBCancelar.setBounds(775, 360, 200, 2*altura);
@@ -307,10 +321,22 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
                         && (!JTFSaga.getText().equals(""))
                         && (!JTFSinopsis.getText().equals(""))
                         && (!JTFEnlace_a_trailer.getText().equals(""))) {
-                    objGestorLN.crearPelicula(/*De momento a la libreria 1 tudo*/1, JTFTitulo.getText(), JTFTitulo_original.getText(), (int) JSAño.getValue(), (int) JSDuracion.getValue(), (int) JSCalificacion.getValue(), (int) JSCalporedad.getValue(), (String) JCBTipo_DoA.getSelectedItem(), (Double) JSPrecio.getValue(), JCBEn_propiedad.isSelected(), JCBEn_busqueda.isSelected(), JTFFormato.getText(), JTFSaga.getText(), (Double) JSOrden.getValue(), JTFSinopsis.getText(), JTFEnlace_a_trailer.getText());
-                } else {
+                    if(objGestorLN.crearPelicula(/*De momento a la libreria 1 tudo*/1, JTFTitulo.getText(), JTFTitulo_original.getText(), (int) JSAño.getValue(), (int) JSDuracion.getValue(), (int) JSCalificacion.getValue(), (int) JSCalporedad.getValue(), (String) JCBTipo_DoA.getSelectedItem(), (Double) JSPrecio.getValue(), JCBEn_propiedad.isSelected(), JCBEn_busqueda.isSelected(), JTFFormato.getText(), JTFSaga.getText(), (Double) JSOrden.getValue(), JTFSinopsis.getText(), JTFEnlace_a_trailer.getText())!= 0){
+                        //Ha funcionado el insert.
+                        JLMensaje.setText("Insert realizado.");
+                        JLMensaje.setVisible(true);
+
+                    }
+                    else{
+                        //No ha funcionado el insert.
+                        JLMensaje.setText("Insert no realizado, revisar parámetros.");
+                        JLMensaje.setVisible(true);
+
+                    }
+                     } else {
                     //ESTO HAY QUE PONERLO EN LA VENTANA O CON UNA EXCEPCION Y UNA VENTANA DE ERROR.
-                    System.out.println("Campos vacíos o sin editar");
+                    JLMensaje.setText("Campos vacíos o sin editar");
+                    JLMensaje.setVisible(true);
                 }
                 break;
             case "Cancelar":

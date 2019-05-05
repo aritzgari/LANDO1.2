@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Color;
 
 /**
  * @author Ruben Domínguez
@@ -23,6 +24,7 @@ public class frmInsertLibrerias extends JInternalFrame implements ActionListener
     JTextField JTFDescripcion;
     JButton JBAceptar;
     JButton JBCancelar;
+    JLabel JLMensaje;
     JButton JBFIXED;
 
     private final String TextoJLNombre = "<Inserte el nombre aquí>";
@@ -30,22 +32,24 @@ public class frmInsertLibrerias extends JInternalFrame implements ActionListener
 
     private clsGestorLN objGestorLN;
     //Código
-
-
-    //Constructor (?)
+    //Constructor
     public frmInsertLibrerias(clsGestorLN _objGestorLN) {
         //Tamaño y componentes
         JPContent = new JPanel();
-        setBounds(50, 50, 500, 400);
+        setBounds(50, 50, 500, 430);
         JLNombre = new JLabel("\nNombre:");
         JTFNombre = new JTextField(TextoJLNombre);
         JLDescripcion = new JLabel("\nDescripcion:");
         JTFDescripcion = new JTextField(TextoJLDescripcion);
         JBAceptar = new JButton("Aceptar");
         JBCancelar = new JButton("Cancelar");
+        JLMensaje = new JLabel("\n");
         JBFIXED = new JButton("Bibidi Babidi Bu");
         objGestorLN = _objGestorLN;
 
+        //Colores
+        Color rojo = new Color(255, 140, 135);
+        Color verde = new Color(155,255, 141);
 
         //Propiedades de la ventana
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -63,6 +67,7 @@ public class frmInsertLibrerias extends JInternalFrame implements ActionListener
         JPContent.add(JTFDescripcion);
         JPContent.add(JBAceptar);
         JPContent.add(JBCancelar);
+        JPContent.add(JLMensaje);
 
         JPContent.add(JBFIXED);
 
@@ -73,6 +78,13 @@ public class frmInsertLibrerias extends JInternalFrame implements ActionListener
         JBCancelar.setActionCommand("Cancelar");
         JBAceptar.addActionListener(this);
         JBCancelar.addActionListener(this);
+        JBAceptar.setBackground(verde);
+        JBCancelar.setBackground(rojo);
+        //JBAceptar.setForeground(Color.white);
+        //JBCancelar.setForeground(Color.white);
+
+        //Darle valores a los textos que los requieran
+        JLMensaje.setHorizontalAlignment(SwingConstants.CENTER);
 
         //Ubicar las cosas porque sino sale tudu amontonado:
         JLNombre.setBounds(25, 0, 450, 50);
@@ -81,6 +93,8 @@ public class frmInsertLibrerias extends JInternalFrame implements ActionListener
         JTFDescripcion.setBounds(25, 150, 450, 50);
         JBAceptar.setBounds(25, 250, 200, 50);
         JBCancelar.setBounds(250, 250, 200, 50);
+        JLMensaje.setBounds(25,320,450,50);
+        JLMensaje.setVisible(false);
         JBFIXED.setVisible(false);
 
 
@@ -91,10 +105,22 @@ public class frmInsertLibrerias extends JInternalFrame implements ActionListener
         switch (e.getActionCommand()) {
             case "Aceptar":
                 if ((!JTFNombre.getText().equals(TextoJLNombre)) && (!JTFDescripcion.getText().equals(TextoJLDescripcion)) && (!JTFNombre.getText().equals("")) && (!JTFDescripcion.getText().equals(""))) {
-                    objGestorLN.crearLibreria(JTFNombre.getText(), JTFDescripcion.getText());
+                    if(objGestorLN.crearLibreria(JTFNombre.getText(), JTFDescripcion.getText()) != 0){
+                        //Ha funcionado el insert.
+                        JLMensaje.setText("Insert realizado.");
+                        JLMensaje.setVisible(true);
+
+                    }
+                    else{
+                        //No ha funcionado el insert.
+                        JLMensaje.setText("Insert no realizado, revisar parámetros.");
+                        JLMensaje.setVisible(true);
+
+                    }
                 } else {
                     //ESTO HAY QUE PONERLO EN LA VENTANA O CON UNA EXCEPCION Y UNA VENTANA DE ERROR.
-                    System.out.println("Campos vacíos o sin editar");
+                    JLMensaje.setText("Campos vacíos o sin editar.");
+                    JLMensaje.setVisible(true);
                 }
                 break;
             case "Cancelar":
