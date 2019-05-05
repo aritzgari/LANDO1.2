@@ -13,9 +13,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
+import java.awt.Color;
+
 public class frmPrincipal extends JFrame implements InternalFrameListener, ActionListener {
     //Declaraciones funcionales
     private static clsGestorLN objGestorLN = new clsGestorLN();
+    private Color colorAzul = new Color(112, 146, 190);
+    private Color colorGris = new Color(195, 195, 195);
     /*Tudo lo que contiene el menu*/
     private JPanel miPanel;// contenedor de los componentes
     private JMenuBar barraMenu;
@@ -47,6 +51,9 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         desktop = new JDesktopPane();
         desktop.setPreferredSize(new Dimension(desktopWidth, desktopHeight));
         setContentPane(desktop);
+        //Personalización
+        desktop.setBackground(colorGris);
+
 
         //createDisplayWindow();
         //desktop.add(displayWindow); //DON'T FORGET THIS!!!
@@ -252,6 +259,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         menuItemConsDirector = new JMenuItem();
         menuItemConsGeneroPeli = new JMenuItem();
 
+        //Personalización
+        //miPanel.setBackground(colorAzul);
 
 
         /* Crea los items del menu Insertar */
@@ -618,6 +627,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         frmInsertGeneroPeli VentanaInsertGeneroPeli = new frmInsertGeneroPeli(objGestorLN);
         desktop.add(VentanaInsertGeneroPeli);
     }
+
     /**
      * Método consultar librerias desde la ventana.
      */
@@ -685,6 +695,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         }
         desktop.add(VentanaConsDirector);
     }
+
     private void caseConsGeneroPeli() {
         frmListaGeneroPeli VentanaConsGeneroPeli = new frmListaGeneroPeli();
         ArrayList<itfPropertyV2> resultado = objGestorLN.consultarGeneroPeliEnBD();
