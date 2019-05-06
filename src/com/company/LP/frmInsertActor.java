@@ -58,7 +58,7 @@ public class frmInsertActor extends JInternalFrame implements ActionListener {
         this.setVisible(true);
 
         //Agregar los componentes y conformar la ventana
-        setTitle("Insertar Librerías Multimedia");
+        setTitle("Insertar Actor");
         JPContent.setLayout(new BorderLayout());
         JPContent.add(JLNombre);
         JPContent.add(JTFNombre);

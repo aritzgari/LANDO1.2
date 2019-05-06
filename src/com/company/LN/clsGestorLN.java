@@ -220,8 +220,8 @@ public class clsGestorLN {
      */
     public static int crearDirector(String Nombre, String Apellido) {
         int retorno = 0;
-        clsDirectorBD objActorBD = new clsDirectorBD(Nombre, Apellido);
-        retorno = objActorBD.sendInsert(queryInsertDirector);
+        clsDirectorBD objDirectorBD = new clsDirectorBD(Nombre, Apellido);
+        retorno = objDirectorBD.sendInsert(queryInsertDirector);
         System.out.println(retorno);
         return retorno;
     }

@@ -8,13 +8,14 @@ public class clsDirectorBD extends clsConexionBD{
     private String Apellido;
 
     //Constructor con parametros, pensado para el insert
-    public clsDirectorBD(int _idDirector,String _Nombre, String _Apellido) {
+    public clsDirectorBD(String _Nombre, String _Apellido) {
         setNombre(_Nombre);
         setApellido(_Apellido);
     }
 
     //Constructor sin parametros, pensado para el select
     public clsDirectorBD() {
+
     }
 
     public String getNombre() {
