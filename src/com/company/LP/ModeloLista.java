@@ -1,5 +1,6 @@
 package com.company.LP;
 
+import com.company.Comun.itfPropertyV2;
 import com.company.LN.itfProperty;
 
 import javax.swing.*;

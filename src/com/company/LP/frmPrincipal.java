@@ -597,29 +597,13 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
      */
 
     private void caseInsertarActor() {
-        //Declaraciones
-        String Nombre;
-        String Apellido;
-        //Codigo
-        System.out.println("Datos para crear el actor:");
-        System.out.println("Nombre del actor:");
-        Nombre = UtilidadesLP.leerCadena();
-        System.out.println("Apellido del actor:");
-        Apellido = UtilidadesLP.leerCadena();
-        objGestorLN.crearActor(Nombre, Apellido);
+        frmInsertActor VentanaInsertActor = new frmInsertActor(objGestorLN);
+        desktop.add(VentanaInsertActor);
     }
 
     private void caseInsertarDirector() {
-        //Declaraciones
-        String Nombre;
-        String Apellido;
-        //Codigo
-        System.out.println("Datos para crear el director:");
-        System.out.println("Nombre del director:");
-        Nombre = UtilidadesLP.leerCadena();
-        System.out.println("Apellido del director:");
-        Apellido = UtilidadesLP.leerCadena();
-        objGestorLN.crearDirector(Nombre, Apellido);
+        frmInsertDirector VentanaInsertDirector = new frmInsertDirector(objGestorLN);
+        desktop.add(VentanaInsertDirector);
     }
 
     private void caseInsertarGeneroPeli() {

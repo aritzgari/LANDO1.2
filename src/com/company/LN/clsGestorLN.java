@@ -26,8 +26,6 @@ import static com.company.Comun.clsConstantes.queryConsultaActores;
 import static com.company.Comun.clsConstantes.queryInsertActores;
 import static com.company.Comun.clsConstantes.queryConsultaDirector;
 import static com.company.Comun.clsConstantes.queryInsertDirector;
-import static com.company.Comun.clsConstantes.queryConsultaPremiosPeli;
-import static com.company.Comun.clsConstantes.queryInsertPremiosPeli;
 import static com.company.Comun.clsConstantes.queryConsultaGeneroPeli;
 import static com.company.Comun.clsConstantes.queryInsertGeneroPeli;
 
@@ -207,10 +205,12 @@ public class clsGestorLN {
      *
      * @author RubenD AritzG
      */
-    public static void crearActor(String Nombre, String Apellido) {
-
+    public static int crearActor(String Nombre, String Apellido) {
+        int retorno = 0;
         clsActoresBD objActorBD = new clsActoresBD(Nombre, Apellido);
-        objActorBD.sendInsert(queryInsertActores);
+        retorno = objActorBD.sendInsert(queryInsertActores);
+        System.out.println(retorno);
+        return retorno;
     }
 
     /**
@@ -218,10 +218,12 @@ public class clsGestorLN {
      *
      * @author RubenD AritzG
      */
-    public static void crearDirector(String Nombre, String Apellido) {
-
-        clsDirectorBD objDirectorBD = new clsDirectorBD(Nombre, Apellido);
-        objDirectorBD.sendInsert(queryInsertDirector);
+    public static int crearDirector(String Nombre, String Apellido) {
+        int retorno = 0;
+        clsDirectorBD objActorBD = new clsDirectorBD(Nombre, Apellido);
+        retorno = objActorBD.sendInsert(queryInsertDirector);
+        System.out.println(retorno);
+        return retorno;
     }
 
     /**
@@ -285,9 +287,9 @@ public class clsGestorLN {
 
     /**
      * Método para consultar Directores
+     * @return
      */
     public ArrayList<itfProperty> consultarDirectorEnBD() {
-        //Declaraciones
         ResultSet resultado = null;
         clsDirectorBD objDirectorBD = new clsDirectorBD();
 
@@ -300,7 +302,8 @@ public class clsGestorLN {
         //Meto rs en objeto
         try {
             while (resultado.next()) {
-                clsDirector objDirector = new clsDirector(resultado.getInt(1), resultado.getString(2), resultado.getString(3));
+                clsDirector objDirector = new clsDirector(resultado.getInt(1),resultado.getString(1), resultado.getString(2));
+                //Esto era para visualizar: System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripción: " + resultado.getString(3));
                 datosDirector.add(objDirector);
             }
         } catch (SQLException e) {

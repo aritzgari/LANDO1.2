@@ -37,6 +37,8 @@
     <file url="file://$PROJECT_DIR$/src/com/company/LP/UtilidadesLP.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/clsMenu.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/clsMenuUsuario.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LP/frmInsertActor.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LP/frmInsertDirector.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmInsertGeneroPeli.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmInsertLibrerias.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmInsertLibros.java" charset="ISO-8859-1" />

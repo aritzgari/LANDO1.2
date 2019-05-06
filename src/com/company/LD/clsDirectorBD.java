@@ -8,7 +8,7 @@ public class clsDirectorBD extends clsConexionBD{
     private String Apellido;
 
     //Constructor con parametros, pensado para el insert
-    public clsDirectorBD(String _Nombre, String _Apellido) {
+    public clsDirectorBD(int _idDirector,String _Nombre, String _Apellido) {
         setNombre(_Nombre);
         setApellido(_Apellido);
     }
@@ -32,6 +32,8 @@ public class clsDirectorBD extends clsConexionBD{
     public void setApellido(String apellido) {
         Apellido = apellido;
     }
+
+
     public int sendInsert(String query) {
         this.conectarBD();
         int regActualizados = 0;

@@ -1,5 +1,6 @@
 package com.company.LP;
 
+import com.company.Comun.itfPropertyV2;
 import com.company.LN.clsGestorLN;
 import com.company.LN.itfProperty;
 
@@ -214,9 +215,6 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
                 break;
             case "ActionConsActor":
                 caseConsActor();
-                break;
-            case "ActionConsDirector":
-                caseConsDirector();
                 break;
 
         }
@@ -481,14 +479,6 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
         for (itfProperty L : resultado
         ) {
             VentanaConsActor.setItem(L);
-        }
-    }
-    private void caseConsDirector() {
-        frmListaDirector VentanaConsDirector = new frmListaDirector();
-        ArrayList<itfProperty> resultado = objGestorLN.consultarDirectorEnBD();
-        for (itfProperty L : resultado
-        ) {
-            VentanaConsDirector.setItem(L);
         }
     }
 

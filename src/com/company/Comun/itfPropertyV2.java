@@ -1,5 +1,7 @@
 package com.company.Comun;
 
+import com.company.LN.itfProperty;
+
 /**
  * Interfaz para la independencia entre la LN y la LP.
  * En la versión anterior (itfProperty) usábamos un switch por cada tipo de variable.
