@@ -672,8 +672,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
 
     private void caseConsDirector() {
         frmListaDirector VentanaConsDirector = new frmListaDirector();
-        ArrayList<itfProperty> resultado = objGestorLN.consultarDirectorEnBD();
-        for (itfProperty L : resultado
+        ArrayList<itfPropertyV2> resultado = objGestorLN.consultarDirectorEnBD();
+        for (itfPropertyV2 L : resultado
         ) {
             VentanaConsDirector.setItem(L);
         }

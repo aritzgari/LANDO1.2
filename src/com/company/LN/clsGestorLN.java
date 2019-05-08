@@ -289,7 +289,7 @@ public class clsGestorLN {
      * Método para consultar Directores
      * @return
      */
-    public ArrayList<itfProperty> consultarDirectorEnBD() {
+    public ArrayList<itfPropertyV2> consultarDirectorEnBD() {
         ResultSet resultado = null;
         clsDirectorBD objDirectorBD = new clsDirectorBD();
 
@@ -302,7 +302,7 @@ public class clsGestorLN {
         //Meto rs en objeto
         try {
             while (resultado.next()) {
-                clsDirector objDirector = new clsDirector(resultado.getInt(1),resultado.getString(1), resultado.getString(2));
+                clsDirector objDirector = new clsDirector(resultado.getInt(1),resultado.getString(2), resultado.getString(3));
                 //Esto era para visualizar: System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripción: " + resultado.getString(3));
                 datosDirector.add(objDirector);
             }
@@ -465,18 +465,18 @@ public class clsGestorLN {
     /**
      * Método para castear Directores.
      */
-    private ArrayList<itfProperty> castclsDirectorToItfProperty(ArrayList<clsDirector> _datosDirector) {
+    private ArrayList<itfPropertyV2> castclsDirectorToItfProperty(ArrayList<clsDirector> _datosDirector) {
         //Creamos el objeto en el que vamos a castear las pelicualas
-        itfProperty castObject;
+        itfPropertyV2 castObject;
         //Las casteamos y metemos en datosItf
         //Limpiamos datosItf para no duplicar
-        datosItf.clear();
+        datosItfV2.clear();
         for (clsDirector o : _datosDirector
         ) {
-            castObject = (itfProperty) o;
-            datosItf.add(castObject);
+            castObject = (itfPropertyV2) o;
+            datosItfV2.add(castObject);
         }
-        return datosItf;
+        return datosItfV2;
     }
 
     /**

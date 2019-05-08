@@ -1,7 +1,6 @@
 package com.company.LP;
 
 import com.company.Comun.itfPropertyV2;
-import com.company.LN.itfProperty;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -18,12 +17,12 @@ import java.util.LinkedList;
 public class frmListaDirector extends JInternalFrame implements ListSelectionListener
 {
     //Objeto visual
-    private JList<itfProperty> jlista;
+    private JList<itfPropertyV2> jlista;
     //Modelo de la vista
-    protected ModeloLista modelo;
+    protected ModeloListaV2 modelo;
 
     //Lista auxiliar de Objetos
-    private LinkedList<itfProperty> Objetos;
+    private LinkedList<itfPropertyV2> Objetos;
 
 
     /**
@@ -37,10 +36,10 @@ public class frmListaDirector extends JInternalFrame implements ListSelectionLis
 
         setBounds(100, 100, 400, 500);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        Objetos = new LinkedList<itfProperty>();
+        Objetos = new LinkedList<itfPropertyV2>();
 
-        modelo = new ModeloLista (Objetos);
-        jlista = new JList<itfProperty>(modelo);
+        modelo = new ModeloListaV2 (Objetos);
+        jlista = new JList<itfPropertyV2>(modelo);
         //jlista.setCellRenderer(new ListRenderer());
         jlista.addListSelectionListener(this);
         JScrollPane scroll = new JScrollPane(jlista);
@@ -55,7 +54,7 @@ public class frmListaDirector extends JInternalFrame implements ListSelectionLis
 
 
 
-    public void setItem(itfProperty Objeto)
+    public void setItem(itfPropertyV2 Objeto)
     {
         modelo.addElement(Objeto);
 
@@ -75,9 +74,9 @@ public class frmListaDirector extends JInternalFrame implements ListSelectionLis
         {
             String TextoAMostrar =
                     "clsDirector{" +
-                            "idDirector =" + ((itfProperty) jlista.getSelectedValue()).getIntegerProperty("idActores") +
-                            ", Nombre='" + ((itfProperty) jlista.getSelectedValue()).getStringProperty("Nombre") + '\'' +
-                            ", Apellido='" + ((itfProperty) jlista.getSelectedValue()).getStringProperty("Apellido") + '\'' +
-                            '}';
+                            "idDirector =" + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("idDirector") +
+                            ", Nombre=" + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("Nombre")  +
+                            ", Apellido=" + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("Apellido")  +
+                            "}";
             System.out.println("Atributos: " + TextoAMostrar);
         }}}

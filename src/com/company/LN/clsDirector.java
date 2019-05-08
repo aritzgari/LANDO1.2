@@ -13,8 +13,40 @@ public class clsDirector implements itfPropertyV2 {
     private String Nombre;
     private String Apellido;
 
-    //Constructor sin Parámetros
-    public clsDirector(int idDirector, String Nombre, String Apelido) {
+    public int getIdDirector() {
+        return idDirector;
+    }
+
+    public void setIdDirector(int idDirector) {
+        this.idDirector = idDirector;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String nombre) {
+        Nombre = nombre;
+    }
+
+    public String getApellido() {
+        return Apellido;
+    }
+
+    public void setApellido(String apellido) {
+        Apellido = apellido;
+    }
+
+    //Constructor con Parámetros
+    public clsDirector(int _idDirector, String _Nombre, String _Apellido) {
+        idDirector=_idDirector;
+        Nombre= _Nombre;
+        Apellido= _Apellido;
+    }
+
+    @Override
+    public String toString() {
+        return Nombre + " " + Apellido;
     }
 
     @Override
@@ -23,13 +55,13 @@ public class clsDirector implements itfPropertyV2 {
 
         switch (propiedad) {
             case "idDirector":
-                retorno = idDirector;
+                retorno = this.idDirector;
                 break;
             case "Nombre":
-                retorno = Nombre;
+                retorno = this.Nombre;
                 break;
             case "Apellido":
-                retorno = Apellido;
+                retorno = this.Apellido;
                 break;
             case "Clase":
                 retorno = 4;
@@ -38,10 +70,4 @@ public class clsDirector implements itfPropertyV2 {
                 throw new clsPropiedadNonExistantException();
         }
         return retorno;
-    }
-
-    @Override
-    public String toString() {
-        return Nombre + " " + Apellido;
-    }
-}
+    }}
