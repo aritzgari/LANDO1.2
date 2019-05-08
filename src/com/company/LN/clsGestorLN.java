@@ -487,7 +487,7 @@ public class clsGestorLN {
         itfPropertyV2 castObject;
         //Las casteamos y metemos en datosItf
         //Limpiamos datosItf para no duplicar
-        datosItf.clear();
+        datosItfV2.clear();
         for (clsGeneroPeli o : _datosGeneroPeli
         ) {
             castObject = (itfPropertyV2) o;
