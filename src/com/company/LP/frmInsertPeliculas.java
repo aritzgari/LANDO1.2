@@ -337,6 +337,7 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
                     //ESTO HAY QUE PONERLO EN LA VENTANA O CON UNA EXCEPCION Y UNA VENTANA DE ERROR.
                     JLMensaje.setText("Campos vacíos o sin editar");
                     JLMensaje.setVisible(true);
+                    JOptionPane.showInternalMessageDialog(null,"CAMPOS VACIOS O SIN EDITAR");
                 }
                 break;
             case "Cancelar":

@@ -220,14 +220,15 @@ public class clsPeliculaBD extends clsConexionBD {
             this.getObjSt().setString(16, getEnlace_a_trailer());
 
             regActualizados = this.getObjSt().executeUpdate();
+            retorno = regActualizados;
 
-            if (regActualizados == 1) {
+            /*if (regActualizados == 1) {
                 this.setObjRs(this.getObjSt().getGeneratedKeys());
                 if (this.getObjRs().next()) {
                     //En este retorno me da el AutoIncremental con el +1 hecho, es decir, listo para insertarlo.
                     retorno = this.getObjRs().getInt(1);
                 }
-            }
+            }*/
 
 
         } catch (SQLException e) {
