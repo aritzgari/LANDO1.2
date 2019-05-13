@@ -68,7 +68,7 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
     JLabel JLEnlace_a_trailer;
     JTextField JTFEnlace_a_trailer;
 
-    JLabel JLMensaje;
+    //JLabel JLMensaje;
 
     //Botones
     JButton JBAceptar;
@@ -175,8 +175,8 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
         JLEnlace_a_trailer = new JLabel("\nEnlace al tráiler:");
         JTFEnlace_a_trailer = new JTextField(TextoJTFEnlace_a_trailer);
 
-        JLMensaje = new JLabel();
-        JLMensaje.setVisible(false);
+        //JLMensaje = new JLabel();
+        //JLMensaje.setVisible(false);
 
         JBAceptar = new JButton("Aceptar");
         JBCancelar = new JButton("Cancelar");
@@ -243,7 +243,7 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
         JPContent.add(JLEnlace_a_trailer);
         JPContent.add(JTFEnlace_a_trailer);
 
-        JPContent.add(JLMensaje);
+        //JPContent.add(JLMensaje);
 
         JPContent.add(JBAceptar);
         JPContent.add(JBCancelar);
@@ -261,7 +261,7 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
         JBCancelar.setBackground(rojo);
 
         //Darle valores a los textos que los requieran
-        JLMensaje.setHorizontalAlignment(SwingConstants.CENTER);
+        //JLMensaje.setHorizontalAlignment(SwingConstants.CENTER);
 
         //Ubicar las cosas porque sino sale tudu amontonado:
         int altura = 30;
@@ -291,7 +291,7 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
         JTFSaga.setBounds(25, 270, 325, altura);
         JLOrden.setBounds(400, 240, 200, altura);
         JSOrden.setBounds(400, 270, 200, altura);
-        JLMensaje.setBounds(600, 270, 400, altura);
+        //JLMensaje.setBounds(600, 270, 400, altura);
         JLSinopsis.setBounds(25, 300, 450, altura);
         JTFSinopsis.setBounds(25, 330, 450, altura);
         JLEnlace_a_trailer.setBounds(25, 360, 450, altura);
@@ -323,21 +323,23 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
                         && (!JTFEnlace_a_trailer.getText().equals(""))) {
                     if(objGestorLN.crearPelicula(/*De momento a la libreria 1 tudo*/1, JTFTitulo.getText(), JTFTitulo_original.getText(), (int) JSAño.getValue(), (int) JSDuracion.getValue(), (int) JSCalificacion.getValue(), (int) JSCalporedad.getValue(), (String) JCBTipo_DoA.getSelectedItem(), (Double) JSPrecio.getValue(), JCBEn_propiedad.isSelected(), JCBEn_busqueda.isSelected(), JTFFormato.getText(), JTFSaga.getText(), (Double) JSOrden.getValue(), JTFSinopsis.getText(), JTFEnlace_a_trailer.getText())!= 0){
                         //Ha funcionado el insert.
-                        JLMensaje.setText("Insert realizado.");
-                        JLMensaje.setVisible(true);
+                        //JLMensaje.setText("Insert realizado.");
+                        //JLMensaje.setVisible(true);
+                        JOptionPane.showInternalMessageDialog(null,"  Insert realizado.");
 
                     }
                     else{
                         //No ha funcionado el insert.
-                        JLMensaje.setText("Insert no realizado, revisar parámetros.");
-                        JLMensaje.setVisible(true);
+                        //JLMensaje.setText("Insert no realizado, revisar parámetros.");
+                        //JLMensaje.setVisible(true);
+                        JOptionPane.showInternalMessageDialog(null,"Insert no realizado, revisar parámetros.");
 
                     }
                      } else {
-                    //ESTO HAY QUE PONERLO EN LA VENTANA O CON UNA EXCEPCION Y UNA VENTANA DE ERROR.
-                    JLMensaje.setText("Campos vacíos o sin editar");
-                    JLMensaje.setVisible(true);
-                    JOptionPane.showInternalMessageDialog(null,"CAMPOS VACIOS O SIN EDITAR");
+                    //Se comenta porque ahora va con ventana
+                    //JLMensaje.setText("Campos vacíos o sin editar");
+                    //JLMensaje.setVisible(true);
+                    JOptionPane.showInternalMessageDialog(null,"Campos vacíos o sin editar.");
                 }
                 break;
             case "Cancelar":
