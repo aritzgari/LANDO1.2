@@ -9,11 +9,34 @@ import com.company.Excepciones.clsPropiedadNonExistantException;
  * @see itfPropertyV2
  * @see clsPropiedadNonExistantException
  */
-public class clsActor implements itfProperty {
+public class clsActor implements itfPropertyV2 {
     private int idActores;
     private String Nombre;
     private String Apellido;
 
+    public int getIdActores() {
+        return idActores;
+    }
+
+    public void setIdActores(int idActores) {
+        this.idActores = idActores;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String nombre) {
+        Nombre = nombre;
+    }
+
+    public String getApellido() {
+        return Apellido;
+    }
+
+    public void setApellido(String apellido) {
+        Apellido = apellido;
+    }
 
     //Constructor
     public clsActor(int _idActor, String _Nombre, String _Apellido) {
@@ -21,61 +44,32 @@ public class clsActor implements itfProperty {
         Nombre=_Nombre;
         Apellido=_Apellido;
     }
-
-
-    @Override
-    public String getStringProperty(String propiedad) throws clsPropiedadNonExistantException {
-        String propResultado = "";
-        switch (propiedad) {
-            case "Nombre":
-                propResultado = Nombre;
-                break;
-            case "Apellido":
-                propResultado = Apellido;
-                break;
-            default:
-                throw new clsPropiedadNonExistantException();
-        }
-        return propResultado;
-    }
-
-    @Override
-    public Integer getIntegerProperty(String propiedad) throws clsPropiedadNonExistantException {
-        int propResultado = 0;
-        switch (propiedad) {
-            case "idActores":
-                propResultado = idActores;
-                break;
-            case "Clase":
-                propResultado = 3;
-                break;
-            default:
-                throw new clsPropiedadNonExistantException();
-        }
-        return propResultado;
-    }
     @Override
     public String toString() {
-        return Nombre + " " + Apellido;
+        return Nombre;
     }
 
     @Override
-    public Float getFloatProperty(String propiedad) {
-        return null;
+    public Object getObjectProperty(String propiedad) {
+        Object retorno = new Object();
+
+        switch (propiedad) {
+            case "idActores":
+                retorno = this.getIdActores();
+                break;
+            case "Nombre":
+                retorno =  this.getNombre();
+                break;
+            case "Apellido":
+                retorno =  this.getApellido();
+                break;
+            case "Clase":
+                retorno = 3;
+                break;
+            default:
+                throw new clsPropiedadNonExistantException();
+        }
+        return retorno;
     }
 
-    @Override
-    public Double getDoubleProperty(String propiedad) {
-        return null;
-    }
-
-    @Override
-    public char getCharProperty(String propiedad) {
-        return 0;
-    }
-
-    @Override
-    public boolean getBooleanProperty(String propiedad) {
-        return false;
-    }
-}
+   }

@@ -1,5 +1,6 @@
 package com.company.LP;
 
+import com.company.Comun.itfPropertyV2;
 import com.company.LD.clsConsultar;
 import com.company.LN.clsGestorLN;
 import com.company.LN.itfProperty;
@@ -171,11 +172,11 @@ public class clsMenu {
                     //objConsultor.consultarLibreriasEnBD();
 
                     //Codigo provisional, intento 2:
-                    ArrayList<itfProperty> resultado = objGestorLN.consultarLibreriasEnBD();
+                    ArrayList<itfPropertyV2> resultado = objGestorLN.consultarLibreriasEnBD();
                     System.out.println("----------------------------\n" +
                             "\t\tLibrerias\n" +
                             "----------------------------");
-                    for (itfProperty L : resultado
+                    for (itfPropertyV2 L : resultado
                     ) {
                         System.out.println(L.toString());
                     }

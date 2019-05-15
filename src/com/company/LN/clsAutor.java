@@ -3,26 +3,46 @@ package com.company.LN;
 import com.company.Comun.itfPropertyV2;
 import com.company.Excepciones.clsPropiedadNonExistantException;
 
-public class clsAutor {
+public class clsAutor implements itfPropertyV2{
     /**
      * @author Ruben Domínguez
      * Aritz Garitano
      * @see itfPropertyV2
      * @see clsPropiedadNonExistantException
      */
-    public class clsActor implements itfPropertyV2 {
         //Atributos
         private int idAutor;
         private String Nombre;
         private String Apellido;
 
-        //Constructor con Parametros: Aun no
+    public int getIdAutor() {
+        return idAutor;
+    }
+
+    public void setIdAutor(int idAutor) {
+        this.idAutor = idAutor;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String nombre) {
+        Nombre = nombre;
+    }
+
+    public String getApellido() {
+        return Apellido;
+    }
+
+    public void setApellido(String apellido) {
+        Apellido = apellido;
+    }
+    //Constructor con Parametros: Aun no
 
         //Constructor sin Parametros
-        public clsActor() {
-        }
 
-        @Override
+    @Override
         public Object getObjectProperty(String propiedad) {
             Object retorno = new Object();
 
@@ -46,4 +66,4 @@ public class clsAutor {
         }
     }
 
-}
+

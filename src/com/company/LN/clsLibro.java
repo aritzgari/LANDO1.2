@@ -27,7 +27,78 @@ public class clsLibro extends clsArticulo implements itfPropertyV2 {
     private int idGenero;
     private int idAutor;
 
-    //--> creados las clases editorial y autor.
+    public int getLibreria_Multimedia_idLibreria_Multimedia() {
+        return Libreria_Multimedia_idLibreria_Multimedia;
+    }
+
+    public void setLibreria_Multimedia_idLibreria_Multimedia(int libreria_Multimedia_idLibreria_Multimedia) {
+        Libreria_Multimedia_idLibreria_Multimedia = libreria_Multimedia_idLibreria_Multimedia;
+    }
+
+    public String getResumen() {
+        return Resumen;
+    }
+
+    public void setResumen(String resumen) {
+        Resumen = resumen;
+    }
+
+    public boolean isSerie_SoN() {
+        return Serie_SoN;
+    }
+
+    public void setSerie_SoN(boolean serie_SoN) {
+        Serie_SoN = serie_SoN;
+    }
+
+    public String getNombre_serie() {
+        return Nombre_serie;
+    }
+
+    public void setNombre_serie(String nombre_serie) {
+        Nombre_serie = nombre_serie;
+    }
+
+    public double getOrden_serie() {
+        return Orden_serie;
+    }
+
+    public void setOrden_serie(double orden_serie) {
+        Orden_serie = orden_serie;
+    }
+
+    public String getISBN() {
+        return ISBN;
+    }
+
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
+    }
+
+    public int getPaginas() {
+        return Paginas;
+    }
+
+    public void setPaginas(int paginas) {
+        Paginas = paginas;
+    }
+
+    public int getIdGenero() {
+        return idGenero;
+    }
+
+    public void setIdGenero(int idGenero) {
+        this.idGenero = idGenero;
+    }
+
+    public int getIdAutor() {
+        return idAutor;
+    }
+
+    public void setIdAutor(int idAutor) {
+        this.idAutor = idAutor;
+    }
+//--> creados las clases editorial y autor.
 
     //FALTAN AUTOR Y GENERO @importante #Urgente
 

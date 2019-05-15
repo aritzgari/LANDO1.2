@@ -618,10 +618,10 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
 
     private void caseConsLibrerias() {
         frmListaLibrerias VentanaConsLibrerias = new frmListaLibrerias();
-        ArrayList<itfProperty> resultado = new ArrayList<itfProperty>();
+        ArrayList<itfPropertyV2> resultado = new ArrayList<itfPropertyV2>();
         resultado.clear();
         resultado = objGestorLN.consultarLibreriasEnBD();
-        for (itfProperty L : resultado
+        for (itfPropertyV2 L : resultado
         ) {
             VentanaConsLibrerias.setItem(L);
             //Aqui podemos poner un sout para ver lo que está añadiendo y asi sabemos si es que añade uno cada vez o cada vez añade uno mas.
@@ -662,8 +662,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
      */
     private void caseConsActor() {
         frmListaActor VentanaConsActor = new frmListaActor();
-        ArrayList<itfProperty> resultado = objGestorLN.consultarActoresEnBD();
-        for (itfProperty L : resultado
+        ArrayList<itfPropertyV2> resultado = objGestorLN.consultarActoresEnBD();
+        for (itfPropertyV2 L : resultado
         ) {
             VentanaConsActor.setItem(L);
         }

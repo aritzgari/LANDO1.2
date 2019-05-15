@@ -1,12 +1,13 @@
 package com.company.LN;
 
 
+import com.company.Comun.itfPropertyV2;
 import com.company.Excepciones.clsPropiedadNonExistantException;
 
 
-public class clsLibreriaMultimedia implements Comparable, itfProperty {
+public class clsLibreriaMultimedia implements Comparable, itfPropertyV2 {
     /**
-     * @author Ruben DomÃ­nguez
+     * @author Ruben Domínguez
      * Aritz Garitano
      * <p>
      * Clase para crear y almacenar Liberrias de objetos multimedia.
@@ -49,7 +50,7 @@ public class clsLibreriaMultimedia implements Comparable, itfProperty {
     public int compareTo(Object o) {
         /**
          *
-         * MÃ©todo compareTo que ordena por Nombre, en orden ascendente (?)
+         * Método compareTo que ordena por Nombre, en orden ascendente (?)
          *
          *
          */
@@ -76,54 +77,25 @@ public class clsLibreriaMultimedia implements Comparable, itfProperty {
     }
 
     @Override
-    public String getStringProperty(String propiedad) {
-        String propResultado = "";
-        switch (propiedad) {
-            case "Nombre":
-                propResultado = this.getNombre();
-                break;
-            case "Descripcion":
-                propResultado = this.getDescripcion();
-                break;
-            default:
-                throw new clsPropiedadNonExistantException();
-        }
-        return propResultado;
-    }
+    public Object getObjectProperty(String propiedad) {
+        Object retorno = new Object();
 
-    @Override
-    public Integer getIntegerProperty(String propiedad) {
-        Integer propResultado = 0;
         switch (propiedad) {
-            case "IdLibreria_Multimedia":
-                propResultado = this.getIdLibreria_Multimedia();
+            case "idLibreria_Multimedia":
+                retorno = this.getIdLibreria_Multimedia();
+                break;
+            case "Nombre":
+                retorno =  this.getNombre();
+                break;
+            case "Descripción":
+                retorno =  this.getDescripcion();
                 break;
             case "Clase":
-                propResultado = 1;
+                retorno = 1;
                 break;
             default:
                 throw new clsPropiedadNonExistantException();
         }
-        return propResultado;
-    }
-
-    @Override
-    public Float getFloatProperty(String propiedad) {
-        throw new clsPropiedadNonExistantException();
-    }
-
-    @Override
-    public Double getDoubleProperty(String propiedad) {
-        throw new clsPropiedadNonExistantException();
-    }
-
-    @Override
-    public char getCharProperty(String propiedad) {
-        throw new clsPropiedadNonExistantException();
-    }
-
-    @Override
-    public boolean getBooleanProperty(String propiedad) {
-        throw new clsPropiedadNonExistantException();
+        return retorno;
     }
 }

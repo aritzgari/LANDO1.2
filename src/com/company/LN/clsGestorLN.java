@@ -258,7 +258,7 @@ public class clsGestorLN {
     /**
      * Método para consultar Actores
      */
-    public ArrayList<itfProperty> consultarActoresEnBD() {
+    public ArrayList<itfPropertyV2> consultarActoresEnBD() {
         //Declaraciones
         ResultSet resultado = null;
         clsActoresBD objActoresBD = new clsActoresBD();
@@ -411,7 +411,7 @@ public class clsGestorLN {
     /**
      * Método para consultar Librerías
      */
-    public ArrayList<itfProperty> consultarLibreriasEnBD() {
+    public ArrayList<itfPropertyV2> consultarLibreriasEnBD() {
         //Declaraciones
         ResultSet resultado;
         clsLibreria_MultimediaBD objLibreria_MultimediaBD = new clsLibreria_MultimediaBD();
@@ -499,20 +499,20 @@ public class clsGestorLN {
     /**
      * Método para castear Librerías multimedia.
      */
-    public ArrayList<itfProperty> castclsLibreriaMultimediaToItfProperty(ArrayList</*Aqui me gustaria que fueran objects pero no traga*/clsLibreriaMultimedia> AO) {
+    public ArrayList<itfPropertyV2> castclsLibreriaMultimediaToItfProperty(ArrayList</*Aqui me gustaria que fueran objects pero no traga*/clsLibreriaMultimedia> AO) {
         //Ordenamos por Nombre:
         Collections.sort(AO, new clsCompareLibreriaMultimedia());
         //Creamos el objeto en el que vamos a castear las librerias
-        itfProperty castObject;
+        itfPropertyV2 castObject;
         //Las casteamos y metemos en datosItf
         //Limpiamos datosItf para no duplicar
         datosItf.clear();
         for (clsLibreriaMultimedia o : AO
         ) {
-            castObject = (itfProperty) o;
-            datosItf.add(castObject);
+            castObject = (itfPropertyV2) o;
+            datosItfV2.add(castObject);
         }
-        return datosItf;
+        return datosItfV2;
     }
 
     /**
@@ -556,19 +556,19 @@ public class clsGestorLN {
     /**
      * Método para castear Actores.
      */
-    public ArrayList<itfProperty> castclsActoresToItfProperty(ArrayList<clsActor> AO) {
+    public ArrayList<itfPropertyV2> castclsActoresToItfProperty(ArrayList<clsActor> AO) {
         //Ordenamos por Nombre:
         //NO CONFIGURADO PARA Actores Collections.sort(AO, new clsCompareLibreriaMultimedia());
         //Creamos el objeto en el que vamos a castear las pelicualas
-        itfProperty castObject;
+        itfPropertyV2 castObject;
         //Las casteamos y metemos en datosItf
         //Limpiamos datosItf para no duplicar
-        datosItf.clear();
+        datosItfV2.clear();
         for (clsActor o : AO
         ) {
-            castObject = (itfProperty) o;
-            datosItf.add(castObject);
+            castObject = (itfPropertyV2) o;
+            datosItfV2.add(castObject);
         }
-        return datosItf;
+        return datosItfV2;
     }
 }

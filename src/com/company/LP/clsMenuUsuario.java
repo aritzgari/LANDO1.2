@@ -440,8 +440,8 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
 
     private void caseConsLibrerias() {
         frmListaLibrerias VentanaConsLibrerias = new frmListaLibrerias();
-        ArrayList<itfProperty> resultado = objGestorLN.consultarLibreriasEnBD();
-        for (itfProperty L : resultado
+        ArrayList<itfPropertyV2> resultado = objGestorLN.consultarLibreriasEnBD();
+        for (itfPropertyV2 L : resultado
         ) {
             VentanaConsLibrerias.setItem(L);
         }
@@ -475,8 +475,8 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
      */
     private void caseConsActor() {
         frmListaActor VentanaConsActor = new frmListaActor();
-        ArrayList<itfProperty> resultado = objGestorLN.consultarActoresEnBD();
-        for (itfProperty L : resultado
+        ArrayList<itfPropertyV2> resultado = objGestorLN.consultarActoresEnBD();
+        for (itfPropertyV2 L : resultado
         ) {
             VentanaConsActor.setItem(L);
         }
