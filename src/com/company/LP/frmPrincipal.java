@@ -46,11 +46,13 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     public frmPrincipal(String title) {
         //Secuencia de arranque del programa
         super(title);
-        inicializador();
         //Set up the GUI.
         desktop = new JDesktopPane();
         desktop.setPreferredSize(new Dimension(desktopWidth, desktopHeight));
         setContentPane(desktop);
+        //Inicializacion
+        inicializador();
+
         //Personalización
         desktop.setBackground(colorGris);
 
@@ -63,7 +65,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
 
     private void inicializador() {
         //Inserte los géneros si no se han insertado
-        // HAY QUE HACERLO CON UPDATES O SE CREARÁN OTRA VEZ CUANDO SE INICIE EL PROGRAMA
+        //HAY QUE HACERLO CON UPDATES O SE CREARÁN OTRA VEZ CUANDO SE INICIE EL PROGRAMA
         //CUANDO NO HAY VALORES EL UPDATE NO LOS CREA, SOCORRO
 
         //Intento 2
@@ -89,6 +91,17 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         //Consulta los géneros para meterlos en la RAM
         //objGestorLN.consultarGeneroPeliEnBD();
         //Inserte otras cosas que necesiten ser insertadas
+        frmMenuLibrerias VentanaMenuLibrerias = new frmMenuLibrerias();
+        ArrayList<itfPropertyV2> resultado = objGestorLN.consultarLibreriasEnBD();
+        for (itfPropertyV2 L : resultado
+        ) {
+            VentanaMenuLibrerias.setItem(L);
+        }
+        desktop.add(VentanaMenuLibrerias);
+
+        Jlist2 PruebaScrollPane = new Jlist2();
+
+        desktop.add(PruebaScrollPane);
     }
 
     //Ventana que muestra la informaci?n de eventos.

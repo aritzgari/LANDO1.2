@@ -506,7 +506,7 @@ public class clsGestorLN {
         itfPropertyV2 castObject;
         //Las casteamos y metemos en datosItf
         //Limpiamos datosItf para no duplicar
-        datosItf.clear();
+        datosItfV2.clear();
         for (clsLibreriaMultimedia o : AO
         ) {
             castObject = (itfPropertyV2) o;
