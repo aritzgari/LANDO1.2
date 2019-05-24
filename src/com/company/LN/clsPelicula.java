@@ -1,6 +1,7 @@
 package com.company.LN;
 
 import com.company.Excepciones.clsPropiedadNonExistantException;
+import com.company.Comun.itfPropertyV2;
 
 /**
  * Clase para guardar datos de Peliculas en nuestra Base de Datos
@@ -9,7 +10,7 @@ import com.company.Excepciones.clsPropiedadNonExistantException;
  * Aritz Garitano
  */
 
-public class clsPelicula extends clsArticulo implements itfProperty {
+public class clsPelicula extends clsArticulo implements itfPropertyV2 {
 
     /*atributos de la clase pelicula*/
     private int Libreria_Multimedia_idLibreria_Multimedia;
@@ -28,6 +29,8 @@ public class clsPelicula extends clsArticulo implements itfProperty {
     private double Orden;
     private String Sinopsis;
     private String Enlace_a_trailer;
+
+    private String annodepublicacion = String.valueOf(getAnno_de_publicacion());
 
 
     //Constructor
@@ -63,8 +66,8 @@ public class clsPelicula extends clsArticulo implements itfProperty {
 
 
     @Override
-    public String getStringProperty(String propiedad) throws clsPropiedadNonExistantException {
-        String propResultado = "";
+    public Object getObjectProperty(String propiedad) throws clsPropiedadNonExistantException {
+        Object propResultado = "";
         switch (propiedad) {
             case "Titulo":
                 propResultado = getTitulo();
@@ -93,16 +96,6 @@ public class clsPelicula extends clsArticulo implements itfProperty {
             case "Saga":
                 propResultado = Saga;
                 break;
-            default:
-                throw new clsPropiedadNonExistantException();
-        }
-        return propResultado;
-    }
-
-    @Override
-    public Integer getIntegerProperty(String propiedad) throws clsPropiedadNonExistantException {
-        int propResultado = 0;
-        switch (propiedad) {
             case "Duracion":
                 propResultado = Duracion;
                 break;
@@ -121,50 +114,12 @@ public class clsPelicula extends clsArticulo implements itfProperty {
             case "Clase":
                 propResultado = 2;
                 break;
-            default:
-                throw new clsPropiedadNonExistantException();
-        }
-        return propResultado;
-    }
-
-    @Override
-    public Float getFloatProperty(String propiedad) throws clsPropiedadNonExistantException {
-        Float propResultado = null;
-        switch (propiedad) {
-            case "":
-                break;
-            default:
-                throw new clsPropiedadNonExistantException();
-        }
-        return propResultado;
-    }
-
-    @Override
-    public Double getDoubleProperty(String propiedad) throws clsPropiedadNonExistantException {
-        Double propResultado = 0.0;
-        switch (propiedad) {
             case "Precio":
                 propResultado = getPrecio();
                 break;
             case "Orden":
                 propResultado = Orden;
                 break;
-            default:
-                throw new clsPropiedadNonExistantException();
-        }
-        return propResultado;
-    }
-
-    @Override
-    public char getCharProperty(String propiedad) throws clsPropiedadNonExistantException {
-        //char propResultado = ' ';
-        throw new clsPropiedadNonExistantException();
-    }
-
-    @Override
-    public boolean getBooleanProperty(String propiedad) throws clsPropiedadNonExistantException {
-        boolean propResultado = false;
-        switch (propiedad) {
             case "En_propiedad":
                 propResultado = getEn_propiedad();
                 break;
@@ -177,8 +132,52 @@ public class clsPelicula extends clsArticulo implements itfProperty {
         return propResultado;
     }
 
-    @Override
+
+
+
+   @Override
     public String toString() {
         return getTitulo();
     }
-}
+    @Override
+    public int hashCode()
+    {
+
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((getTitulo() == null) ? 0 : getTitulo().hashCode());
+        result = prime * result
+                + ((annodepublicacion == null) ? 0 : annodepublicacion.hashCode());
+        return result;
+    }
+
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this == obj) return true;
+
+        if (obj == null) return false;
+
+        if (getClass() != obj.getClass())
+            return false;
+
+        clsPelicula other = (clsPelicula) obj;
+        if (getTitulo() == null)
+        {
+            if (other.getTitulo() != null)
+                return false;
+        }
+        else if (!getTitulo().equals(other.getTitulo()))
+            return false;
+
+        if (annodepublicacion == null)
+        {
+            if (other.annodepublicacion != null)
+                return false;
+        }
+        else if (!annodepublicacion.equals(other.annodepublicacion))
+            return false;
+
+        return true;
+    }}

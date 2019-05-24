@@ -1,6 +1,6 @@
 package com.company.LP;
 
-import com.company.LN.itfProperty;
+import com.company.Comun.itfPropertyV2;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -19,12 +19,12 @@ import java.util.LinkedList;
 
 public class frmListaPeliculas extends JInternalFrame implements ListSelectionListener {
     //Objeto visual
-    private JList<itfProperty> jlista;
+    private JList<itfPropertyV2> jlista;
     //Modelo de la vista
-    protected ModeloLista modelo;
+    protected ModeloListaV2 modelo;
 
     //Lista auxiliar de Objetos
-    private LinkedList<itfProperty> Objetos;
+    private LinkedList<itfPropertyV2> Objetos;
 
 
     /**
@@ -38,10 +38,10 @@ public class frmListaPeliculas extends JInternalFrame implements ListSelectionLi
         setBounds(100, 100, 400, 500);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        Objetos = new LinkedList<itfProperty>();
+        Objetos = new LinkedList<itfPropertyV2>();
 
-        modelo = new ModeloLista(Objetos);
-        jlista = new JList<itfProperty>(modelo);
+        modelo = new ModeloListaV2(Objetos);
+        jlista = new JList<itfPropertyV2>(modelo);
         //jlista.setCellRenderer(new ListRenderer());
         jlista.addListSelectionListener(this);
         JScrollPane scroll = new JScrollPane(jlista);
@@ -55,7 +55,7 @@ public class frmListaPeliculas extends JInternalFrame implements ListSelectionLi
     }
 
 
-    public void setItem(itfProperty Objeto) {
+    public void setItem(itfPropertyV2 Objeto) {
         modelo.addElement(Objeto);
 
 
@@ -72,22 +72,22 @@ public class frmListaPeliculas extends JInternalFrame implements ListSelectionLi
         if (arg0.getValueIsAdjusting() == false) {
             //String TextoAMostrar = ((itfProperty) jlista.getSelectedValue()).getStringProperty("Descripcion");
             String TextoAMostrar = "clsPelicula{" +
-                    "Libreria_Multimedia_idLibreria_Multimedia=" + ((itfProperty) jlista.getSelectedValue()).getIntegerProperty("Libreria_Multimedia_idLibreria_Multimedia") +
-                    ", Titulo='" + ((itfProperty) jlista.getSelectedValue()).getStringProperty("Titulo") + '\'' +
-                    ", Titulo_original='" + ((itfProperty) jlista.getSelectedValue()).getStringProperty("Titulo_original") + '\'' +
-                    ", Anno_de_publicacion=" + ((itfProperty) jlista.getSelectedValue()).getIntegerProperty("Anno_de_publicacion") +
-                    ", Duracion=" + ((itfProperty) jlista.getSelectedValue()).getIntegerProperty("Duracion") +
-                    ", Calificacion=" + ((itfProperty) jlista.getSelectedValue()).getIntegerProperty("Calificacion") +
-                    ", Calporedad=" + ((itfProperty) jlista.getSelectedValue()).getIntegerProperty("Calporedad") +
-                    ", Tipo_DoA='" + ((itfProperty) jlista.getSelectedValue()).getStringProperty("Tipo_DoA") + '\'' +
-                    ", Precio=" + ((itfProperty) jlista.getSelectedValue()).getDoubleProperty("Precio") +
-                    ", En_propiedad=" + ((itfProperty) jlista.getSelectedValue()).getBooleanProperty("En_propiedad") +
-                    ", En_busqueda=" + ((itfProperty) jlista.getSelectedValue()).getBooleanProperty("En_busqueda") +
-                    ", Formato='" + ((itfProperty) jlista.getSelectedValue()).getStringProperty("Formato") + '\'' +
-                    ", Saga='" + ((itfProperty) jlista.getSelectedValue()).getStringProperty("Saga") + '\'' +
-                    ", Orden=" + ((itfProperty) jlista.getSelectedValue()).getDoubleProperty("Orden") +
-                    ", Sinopsis='" + ((itfProperty) jlista.getSelectedValue()).getStringProperty("Sinopsis") + '\'' +
-                    ", Enlace_a_trailer='" + ((itfProperty) jlista.getSelectedValue()).getStringProperty("Enlace_a_trailer") + '\'' +
+                    "Libreria_Multimedia_idLibreria_Multimedia=" + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("Libreria_Multimedia_idLibreria_Multimedia") +
+                    ", Titulo='" + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("Titulo") + '\'' +
+                    ", Titulo_original='" + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("Titulo_original") + '\'' +
+                    ", Anno_de_publicacion=" + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("Anno_de_publicacion") +
+                    ", Duracion=" + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("Duracion") +
+                    ", Calificacion=" + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("Calificacion") +
+                    ", Calporedad=" + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("Calporedad") +
+                    ", Tipo_DoA='" + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("Tipo_DoA") + '\'' +
+                    ", Precio=" + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("Precio") +
+                    ", En_propiedad=" + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("En_propiedad") +
+                    ", En_busqueda=" + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("En_busqueda") +
+                    ", Formato='" + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("Formato") + '\'' +
+                    ", Saga='" + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("Saga") + '\'' +
+                    ", Orden=" + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("Orden") +
+                    ", Sinopsis='" + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("Sinopsis") + '\'' +
+                    ", Enlace_a_trailer='" + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("Enlace_a_trailer") + '\'' +
                     '}';
             System.out.println("Atributos: " + TextoAMostrar);
         }

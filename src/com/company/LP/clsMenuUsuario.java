@@ -451,8 +451,8 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
      */
     private void caseConsPeliculas() {
         frmListaPeliculas VentanaConsPeliculas = new frmListaPeliculas();
-        ArrayList<itfProperty> resultado = objGestorLN.consultarPeliculaEnBD();
-        for (itfProperty L : resultado
+        ArrayList<itfPropertyV2> resultado = objGestorLN.consultarPeliculaEnBD();
+        for (itfPropertyV2 L : resultado
         ) {
             VentanaConsPeliculas.setItem(L);
         }

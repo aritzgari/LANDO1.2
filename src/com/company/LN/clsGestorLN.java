@@ -380,7 +380,7 @@ public class clsGestorLN {
     /**
      * Método para consultar Películas
      */
-    public ArrayList<itfProperty> consultarPeliculaEnBD() {
+    public ArrayList<itfPropertyV2> consultarPeliculaEnBD() {
         //Declaraciones
         ResultSet resultado = null;
         clsPeliculaBD objPeliculaBD = new clsPeliculaBD();
@@ -518,20 +518,20 @@ public class clsGestorLN {
     /**
      * Método para castear Películas.
      */
-    public ArrayList<itfProperty> castclsPeliculaToItfProperty(ArrayList</*Aqui me gustaria que fueran objects pero no traga*/clsPelicula> AO) {
+    public ArrayList<itfPropertyV2> castclsPeliculaToItfProperty(ArrayList</*Aqui me gustaria que fueran objects pero no traga*/clsPelicula> AO) {
         //Ordenamos por Nombre:
         //NO CONFIGURADO PARA PELICULAS Collections.sort(AO, new clsCompareLibreriaMultimedia());
         //Creamos el objeto en el que vamos a castear las pelicualas
-        itfProperty castObject;
+        itfPropertyV2 castObject;
         //Las casteamos y metemos en datosItf
         //Limpiamos datosItf para no duplicar
-        datosItf.clear();
+        datosItfV2.clear();
         for (clsPelicula o : AO
         ) {
-            castObject = (itfProperty) o;
-            datosItf.add(castObject);
+            castObject = (itfPropertyV2) o;
+            datosItfV2.add(castObject);
         }
-        return datosItf;
+        return datosItfV2;
     }
 
     /**
