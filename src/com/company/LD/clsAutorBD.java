@@ -2,18 +2,18 @@ package com.company.LD;
 
 import java.sql.SQLException;
 
-public class clsActoresBD extends clsConexionBD{
+public class clsAutorBD extends clsConexionBD {
     private String Nombre;
     private String Apellido;
 
     //Constructor con parametros, pensado para el insert
-    public clsActoresBD(String _Nombre, String _Apellido) {
+    public clsAutorBD(String _Nombre, String _Apellido) {
         setNombre(_Nombre);
         setApellido(_Apellido);
     }
 
     //Constructor sin parametros, pensado para el select
-    public clsActoresBD() {
+    public clsAutorBD() {
     }
 
     public String getNombre() {

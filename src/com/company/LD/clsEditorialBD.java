@@ -2,18 +2,19 @@ package com.company.LD;
 
 import java.sql.SQLException;
 
-public class clsActoresBD extends clsConexionBD{
+public class clsEditorialBD extends clsConexionBD {
+
     private String Nombre;
-    private String Apellido;
+    private String ISBNLibro;
 
     //Constructor con parametros, pensado para el insert
-    public clsActoresBD(String _Nombre, String _Apellido) {
+    public clsEditorialBD(String _Nombre, String _ISBNLibro) {
         setNombre(_Nombre);
-        setApellido(_Apellido);
+        setISBNLibro(_ISBNLibro);
     }
 
     //Constructor sin parametros, pensado para el select
-    public clsActoresBD() {
+    public clsEditorialBD() {
     }
 
     public String getNombre() {
@@ -24,12 +25,12 @@ public class clsActoresBD extends clsConexionBD{
         Nombre = nombre;
     }
 
-    public String getApellido() {
-        return Apellido;
+    public String getISBNLibro() {
+        return ISBNLibro;
     }
 
-    public void setApellido(String apellido) {
-        Apellido = apellido;
+    public void setISBNLibro(String ISBNLibro) {
+        this.ISBNLibro = ISBNLibro;
     }
 
     public int sendInsert(String query) {
@@ -42,7 +43,7 @@ public class clsActoresBD extends clsConexionBD{
             //Con la siguiente linea me hace la prepareStatement con mi query y el AI. Se supone que lo hace solo.
             this.setObjSt(this.getObjCon().prepareStatement(query, this.getObjSt().RETURN_GENERATED_KEYS));
             this.getObjSt().setString(1, getNombre());
-            this.getObjSt().setString(2, getApellido());
+            this.getObjSt().setString(2, getISBNLibro());
 
             regActualizados = this.getObjSt().executeUpdate();
 
