@@ -13,6 +13,8 @@ import java.util.LinkedList;
  * <p>
  * @author Ruben Domínguez
  * Aritz Garitano
+ * <p>
+ * @see ModeloListaV2
  */
 public class frmListaActor extends JInternalFrame implements ListSelectionListener
 {
@@ -28,7 +30,7 @@ public class frmListaActor extends JInternalFrame implements ListSelectionListen
     /**
      * Creación de lista de  librerias.
      *
-     * @see ModeloLista
+     * @see ModeloListaV2
      */
     public frmListaActor()
     {

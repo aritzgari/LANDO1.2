@@ -30,6 +30,7 @@
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsActor.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsArticulo.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsAutor.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LN/clsCancion.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsCompareLibreriaMultimedia.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsDirector.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsEditorial.java" charset="ISO-8859-1" />
@@ -37,7 +38,6 @@
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsGestorLN.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsLibreriaMultimedia.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsLibro.java" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/src/com/company/LN/clsMusica.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsPelicula.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsPremios.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsPremios_Pelicula.java" charset="ISO-8859-1" />

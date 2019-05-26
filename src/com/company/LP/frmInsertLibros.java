@@ -67,12 +67,14 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
     JButton JBFIXED;
 
 
-    private final String TextoJTFISBN = "<Inserte el ISBN aqu?>";
-    private final String TextoJTFTitulo = "<Inserte el T?tulo aqu?>";
-    private final String TextoJTFTitulo_original = "<Inserte el T?tulo original aquñ>";
-    private final String TextoJTFFormato = "<Inserte el Formato aqu?. Ej. .mkv, Vinilo, VHS...>";
-    private final String TextoJTFNombre_serie = "<Inserte el nombre de la serie aqu?>";
-    private final String TextoJTFResumen = "<Inserte la resumen aqu?>";
+    private final String TextoJTFISBN = "<Inserte el ISBN aqui>";
+    private final String TextoJTFTitulo = "<Inserte el Titulo aqui>";
+    private final String TextoJTFTitulo_original = "<Inserte el Titulo original aqui>";
+    private final String TextoJTFFormato = "<Inserte el Formato aqui. Ej. .mkv, Vinilo, VHS...>";
+    private final String TextoJTFResumen = "<Inserte el resumen aqui>";
+    private final String TextoJTFNombre_serie = "<Inserte el nombre de la serie aqui>";
+
+
 
     private clsGestorLN objGestorLN;
 
@@ -82,8 +84,6 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
         //Tamaño y componentes
         JPContent = new JPanel();
         setBounds(0, 0, 1000, 475);
-        //setLayout(null);
-        //setPreferredSize(new Dimension(400, 400));
 
         JLISBN = new JLabel("\nISBN:");
         JTFISBN = new JTextField(TextoJTFISBN);
@@ -103,7 +103,7 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
         ModeloAño.setValue(2019);
         JSAño.setModel(ModeloAño);
 
-        JLPaginas = new JLabel("\nDuraci?n (min):");
+        JLPaginas = new JLabel("\nPaginas:");
         JSPaginas = new JSpinner();
         ModeloPaginas = new SpinnerNumberModel();
         ModeloPaginas.setMinimum(0);
@@ -111,10 +111,10 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
         ModeloPaginas.setValue(90);
         JSPaginas.setModel(ModeloPaginas);
 
-        JLTipo_DoA = new JLabel("\nFormato digital o Formato f?sico:");
+        JLTipo_DoA = new JLabel("\nFormato digital o Formato fisico:");
         JCBTipo_DoA = new JComboBox();
         JCBTipo_DoA.addItem("Digital");
-        JCBTipo_DoA.addItem("F?sico");
+        JCBTipo_DoA.addItem("Fisico");
 
         JLPrecio = new JLabel("\nPrecio (Euros):");
         JSPrecio = new JSpinner();
@@ -133,6 +133,8 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
         JLEn_busqueda = new JLabel("\nLo quiero:");
         JCBEn_busqueda = new JCheckBox("Sí");
 
+        JLResumen = new JLabel("\nResumen:");
+        JTFResumen = new JTextField(TextoJTFResumen);
 
         JLFormato = new JLabel("\nFormato:");
         JTFFormato = new JTextField(TextoJTFFormato);
@@ -148,14 +150,16 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
         ModeloOrden_serie.setValue(1.00);
         JSOrden_serie.setModel(ModeloOrden_serie);
 
-        JLResumen = new JLabel("\nResumen:");
-        JTFResumen = new JTextField(TextoJTFResumen);
 
 
         JBAceptar = new JButton("Aceptar");
         JBCancelar = new JButton("Cancelar");
         JBFIXED = new JButton("Bibidi Babidi Bu");
         objGestorLN = _objGestorLN;
+
+        //Colores
+        Color rojo = new Color(255, 140, 135);
+        Color verde = new Color(155,255, 141);
 
 
         //Propiedades de la ventana
@@ -225,6 +229,8 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
         JBCancelar.setActionCommand("Cancelar");
         JBAceptar.addActionListener(this);
         JBCancelar.addActionListener(this);
+        JBAceptar.setBackground(verde);
+        JBCancelar.setBackground(rojo);
 
         //Ubicar las cosas porque sino sale tudu amontonado:
         int altura = 30;
@@ -233,22 +239,44 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
 
         JLTitulo.setBounds(500, 0, 450, altura);
         JTFTitulo.setBounds(500, 30, 450, altura);
-        JLTitulo_original.setBounds(25, 60, 450, altura);
-        JTFTitulo_original.setBounds(25, 90, 450, altura);
+
+        JLTitulo_original.setBounds(500, 60, 450, altura);
+        JTFTitulo_original.setBounds(500, 90, 450, altura);
+
         JLAño.setBounds(25, 60, 100, altura);
         JSAño.setBounds(25, 90, 100, altura);
 
+        JLPaginas.setBounds(250, 60, 100, altura);
+        JSPaginas.setBounds(250, 90, 100, altura);
+
         JLTipo_DoA.setBounds(25, 120, 300, altura);
         JCBTipo_DoA.setBounds(25, 150, 300, altura);
+
         JLPrecio.setBounds(25, 180, 100, altura);
         JSPrecio.setBounds(25, 210, 100, altura);
+
+        JLSerie_SoN.setBounds(25, 240, 150, altura);
+        JCBSerie_SoN.setBounds(25, 270, 150, altura);
+
+        JLOrden_serie.setBounds(175, 240, 300, altura);
+        JSOrden_serie.setBounds(175, 270, 300, altura);
+
+        JLNombre_serie.setBounds(25, 300, 300, altura);
+        JTFNombre_serie.setBounds(25, 330, 300, altura);
+
         JLEn_propiedad.setBounds(200, 180, 75, altura);
         JCBEn_propiedad.setBounds(200, 210, 75, altura);
+
+
         JLEn_busqueda.setBounds(300, 180, 75, altura);
         JCBEn_busqueda.setBounds(300, 210, 75, altura);
+
         JLFormato.setBounds(375, 120, 300, altura);
         JTFFormato.setBounds(375, 150, 300, altura);
 
+
+        JLResumen.setBounds(375, 180, 550, altura);
+        JTFResumen.setBounds(375, 210, 550, altura);
 
 
         JBAceptar.setBounds(525, 360, 200, 2*altura);

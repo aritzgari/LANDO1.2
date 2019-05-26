@@ -49,9 +49,7 @@ public class clsLibreriaMultimedia implements Comparable, itfPropertyV2 {
     @Override
     public int compareTo(Object o) {
         /**
-         *
          * Método compareTo que ordena por Nombre, en orden ascendente (?)
-         *
          *
          */
 
@@ -77,7 +75,7 @@ public class clsLibreriaMultimedia implements Comparable, itfPropertyV2 {
     }
 
     @Override
-    public Object getObjectProperty(String propiedad) {
+    public Object getObjectProperty(String propiedad) throws clsPropiedadNonExistantException {
         Object retorno = new Object();
 
         switch (propiedad) {

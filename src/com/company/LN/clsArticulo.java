@@ -7,7 +7,7 @@ package com.company.LN;
  * Aritz Garitano
  */
 
-public class clsArticulo {
+public abstract class clsArticulo {
     /*atributos de la clase articulo*/
     private String Titulo;
     private String Titulo_original;
@@ -105,4 +105,6 @@ public class clsArticulo {
     public void setPremios(String premios) {
         Premios = premios;
     }
+
+    public abstract Object getObjectProperty(String propiedad);
 }

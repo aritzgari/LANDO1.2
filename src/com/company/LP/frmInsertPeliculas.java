@@ -269,31 +269,42 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
         JTFTitulo.setBounds(25, 30, 450, altura);
         JLTitulo_original.setBounds(500, 0, 450, altura);
         JTFTitulo_original.setBounds(500, 30, 450, altura);
+
         JLAño.setBounds(25, 60, 100, altura);
         JSAño.setBounds(25, 90, 100, altura);
+
         JLDuracion.setBounds(175, 60, 100, altura);
         JSDuracion.setBounds(175, 90, 100, altura);
+
         JLCalificacion.setBounds(325, 60, 150, altura);
         JSCalificacion.setBounds(325, 90, 150, altura);
         JLCalporedad.setBounds(525, 60, 300, altura);
         JSCalporedad.setBounds(525, 90, 300, altura);
+
         JLTipo_DoA.setBounds(25, 120, 300, altura);
         JCBTipo_DoA.setBounds(25, 150, 300, altura);
+
         JLPrecio.setBounds(25, 180, 100, altura);
         JSPrecio.setBounds(25, 210, 100, altura);
+
         JLEn_propiedad.setBounds(200, 180, 75, altura);
         JCBEn_propiedad.setBounds(200, 210, 75, altura);
+
         JLEn_busqueda.setBounds(300, 180, 75, altura);
         JCBEn_busqueda.setBounds(300, 210, 75, altura);
+
         JLFormato.setBounds(375, 120, 300, altura);
         JTFFormato.setBounds(375, 150, 300, altura);
+
         JLSaga.setBounds(25, 240, 325, altura);
         JTFSaga.setBounds(25, 270, 325, altura);
+
         JLOrden.setBounds(400, 240, 200, altura);
         JSOrden.setBounds(400, 270, 200, altura);
         //JLMensaje.setBounds(600, 270, 400, altura);
         JLSinopsis.setBounds(25, 300, 450, altura);
         JTFSinopsis.setBounds(25, 330, 450, altura);
+
         JLEnlace_a_trailer.setBounds(25, 360, 450, altura);
         JTFEnlace_a_trailer.setBounds(25, 390, 450, altura);
 

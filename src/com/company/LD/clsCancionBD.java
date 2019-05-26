@@ -179,7 +179,7 @@ public class clsCancionBD extends clsConexionBD {
             this.getObjSt().setInt(15, getGénero_Canción_idGénero_Canción());
             this.getObjSt().setInt(16, getAlbum_idAlbum());
             this.getObjSt().setInt(17, getAlbum_Cantante_idCantante());
-            
+
 
             regActualizados = this.getObjSt().executeUpdate();
             retorno = regActualizados;

@@ -463,8 +463,8 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
      */
     private void caseConsLibros() {
         frmListaLibros VentanaConsLibros = new frmListaLibros();
-        ArrayList<itfProperty> resultado = objGestorLN.consultarLibrosEnBD();
-        for (itfProperty L : resultado
+        ArrayList<itfPropertyV2> resultado = objGestorLN.consultarLibrosEnBD();
+        for (itfPropertyV2 L : resultado
         ) {
             VentanaConsLibros.setItem(L);
         }

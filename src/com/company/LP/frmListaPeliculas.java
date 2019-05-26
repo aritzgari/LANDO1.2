@@ -14,7 +14,7 @@ import java.util.LinkedList;
  *
  * @author Ruben Domínguez
  * Aritz Garitano
- * @see ModeloLista
+ * @see ModeloListaV2
  */
 
 public class frmListaPeliculas extends JInternalFrame implements ListSelectionListener {
@@ -30,7 +30,7 @@ public class frmListaPeliculas extends JInternalFrame implements ListSelectionLi
     /**
      * Creación de lista de  librerias.
      *
-     * @see ModeloLista
+     * @see ModeloListaV2
      */
     public frmListaPeliculas() {
         setTitle("Lista de Peliculas");

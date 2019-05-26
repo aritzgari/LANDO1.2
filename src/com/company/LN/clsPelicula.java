@@ -5,7 +5,8 @@ import com.company.Comun.itfPropertyV2;
 
 /**
  * Clase para guardar datos de Peliculas en nuestra Base de Datos
- *<p>
+ * <p>
+ *
  * @author Ruben Domínguez
  * Aritz Garitano
  */
@@ -14,36 +15,24 @@ public class clsPelicula extends clsArticulo implements itfPropertyV2 {
 
     /*atributos de la clase pelicula*/
     private int Libreria_Multimedia_idLibreria_Multimedia;
-    //private String Titulo;
-    //  private String Titulo_original;
-    //  private int Anno_de_publicacion;
     private int Duracion;
     private int Calificacion;
     private int Calporedad;
-    //  private String Tipo_DoA;
-   // private double Precio;
-    //   private boolean En_propiedad;
-    //  private boolean En_busqueda;
-    //  private String Formato;
     private String Saga;
     private double Orden;
     private String Sinopsis;
     private String Enlace_a_trailer;
-
     private String annodepublicacion = String.valueOf(getAnno_de_publicacion());
 
 
     //Constructor
     public clsPelicula(int _libreria_Multimedia_idLibreria_Multimedia, String _titulo, String _titulo_original, int _anno_de_publicacion, int _duracion, int _calificacion, int _calporedad, String _tipo_DoA, double _precio, boolean _en_propiedad, boolean _en_busqueda, String _formato, String _saga, Double _orden, String _sinopsis, String _enlace_a_trailer) {
-        //Variables "Heredadas":
 
-        //Variables de la clase:
         Libreria_Multimedia_idLibreria_Multimedia = _libreria_Multimedia_idLibreria_Multimedia;
-        //Titulo = _titulo;
         setTitulo(_titulo);
-        //  Titulo_original = _titulo_original;
+
         setTitulo_original(_titulo_original);
-        //  Anno_de_publicacion = _anno_de_publicacion;
+
         setAnno_de_publicacion(_anno_de_publicacion);
         Duracion = _duracion;
         Calificacion = _calificacion;
@@ -67,7 +56,7 @@ public class clsPelicula extends clsArticulo implements itfPropertyV2 {
 
     @Override
     public Object getObjectProperty(String propiedad) throws clsPropiedadNonExistantException {
-        Object propResultado = "";
+        Object propResultado = new Object();
         switch (propiedad) {
             case "Titulo":
                 propResultado = getTitulo();
@@ -133,15 +122,13 @@ public class clsPelicula extends clsArticulo implements itfPropertyV2 {
     }
 
 
-
-
-   @Override
+    @Override
     public String toString() {
         return getTitulo();
     }
+
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
 
         final int prime = 31;
         int result = 1;
@@ -153,8 +140,7 @@ public class clsPelicula extends clsArticulo implements itfPropertyV2 {
 
 
     @Override
-    public boolean equals(Object obj)
-    {
+    public boolean equals(Object obj) {
         if (this == obj) return true;
 
         if (obj == null) return false;
@@ -163,21 +149,18 @@ public class clsPelicula extends clsArticulo implements itfPropertyV2 {
             return false;
 
         clsPelicula other = (clsPelicula) obj;
-        if (getTitulo() == null)
-        {
+        if (getTitulo() == null) {
             if (other.getTitulo() != null)
                 return false;
-        }
-        else if (!getTitulo().equals(other.getTitulo()))
+        } else if (!getTitulo().equals(other.getTitulo()))
             return false;
 
-        if (annodepublicacion == null)
-        {
+        if (annodepublicacion == null) {
             if (other.annodepublicacion != null)
                 return false;
-        }
-        else if (!annodepublicacion.equals(other.annodepublicacion))
+        } else if (!annodepublicacion.equals(other.annodepublicacion))
             return false;
 
         return true;
-    }}
+    }
+}

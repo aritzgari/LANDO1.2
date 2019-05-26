@@ -47,7 +47,7 @@ public class clsGestorLN {
     private static ArrayList<itfPropertyV2> datosItfV2;
     private static ArrayList<clsPelicula> datosPeliculas;
     private static ArrayList<clsLibro> datosLibros;
-    private static ArrayList<clsMusica> datosMusicas;
+    private static ArrayList<clsCancion> datosCancion;
     //Estos tres de arriba, para mi que no los usamos.
     private static ArrayList<clsArticulo> datosArticulos;
     private ArrayList<clsLibreriaMultimedia> datosLibrerias;
@@ -63,7 +63,7 @@ public class clsGestorLN {
         datosItfV2 = new ArrayList<itfPropertyV2>();
         datosPeliculas = new ArrayList<clsPelicula>();
         datosLibros = new ArrayList<clsLibro>();
-        datosMusicas = new ArrayList<clsMusica>();
+        datosCancion = new ArrayList<clsCancion>();
         datosArticulos = new ArrayList<clsArticulo>();
         datosLibrerias = new ArrayList<clsLibreriaMultimedia>();
         datosActor = new ArrayList<clsActor>();
@@ -86,8 +86,8 @@ public class clsGestorLN {
         return datosLibros;
     }
 
-    public static ArrayList<clsMusica> getDatosMusicas() {
-        return datosMusicas;
+    public static ArrayList<clsCancion> getDatosMusicas() {
+        return datosCancion;
     }
 
     public static ArrayList<clsArticulo> getDatosArticulos() {
@@ -195,9 +195,9 @@ public class clsGestorLN {
      */
     public static void crearMusica(String Titulo, String Titulo_original, String Anno_de_publicacion, String Tipo_DoA, String Formato, boolean En_propiedad, boolean En_busqueda, double Precio, String Genero, String Premiosint, int Cantidad_musicos, String Musico1, String Musico2, String Musico3, String Musico4, String Musico5, String Album, String Enlace_a_youtube, boolean Videoclip) {
 
-        clsMusica objMusica;
-        objMusica = new clsMusica(/*Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Formato,En_propiedad, En_busqueda, Precio, Genero, Premiosint,*/ Cantidad_musicos, Musico1, Musico2, Musico3, Musico4, Musico5, Album, Enlace_a_youtube, Videoclip);
-        datosArticulos.add(objMusica);
+        clsCancion objCancion;
+        objCancion = new clsCancion(/*Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Formato,En_propiedad, En_busqueda, Precio, Genero, Premiosint,*/ Cantidad_musicos, Musico1, Musico2, Musico3, Musico4, Musico5, Album, Enlace_a_youtube, Videoclip);
+        datosArticulos.add(objCancion);
     }
 
     /**
@@ -287,6 +287,7 @@ public class clsGestorLN {
 
     /**
      * Método para consultar Directores
+     *
      * @return
      */
     public ArrayList<itfPropertyV2> consultarDirectorEnBD() {
@@ -302,7 +303,7 @@ public class clsGestorLN {
         //Meto rs en objeto
         try {
             while (resultado.next()) {
-                clsDirector objDirector = new clsDirector(resultado.getInt(1),resultado.getString(2), resultado.getString(3));
+                clsDirector objDirector = new clsDirector(resultado.getInt(1), resultado.getString(2), resultado.getString(3));
                 //Esto era para visualizar: System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripción: " + resultado.getString(3));
                 datosDirector.add(objDirector);
             }
@@ -349,7 +350,7 @@ public class clsGestorLN {
     /**
      * Método para consultar Libros.
      */
-    public ArrayList<itfProperty> consultarLibrosEnBD() {
+    public ArrayList<itfPropertyV2> consultarLibrosEnBD() {
         //Declaraciones
         ResultSet resultado = null;
         clsLibrosBD objLibrosBD = new clsLibrosBD();
@@ -536,21 +537,20 @@ public class clsGestorLN {
 
     /**
      * Método para castear Libros.
+     *
+     * @return
      */
-    public ArrayList<itfProperty> castclsLibroToItfProperty(ArrayList<clsLibro> AO) {
-        //Ordenamos por Nombre:
-        //NO CONFIGURADO PARA LIBROS TAMPOCO Collections.sort(AO, new clsCompareLibreriaMultimedia());
-        //Creamos el objeto en el que vamos a castear los libros
-        itfProperty castObject;
-        //Las casteamos y metemos en datosItf
-        //Limpiamos datosItf para no duplicar
-        datosItf.clear();
+    public ArrayList<itfPropertyV2> castclsLibroToItfProperty(ArrayList<clsLibro> AO) {
+
+        itfPropertyV2 castObject;
+
+        datosItfV2.clear();
         for (clsLibro o : AO
         ) {
-            castObject = (itfProperty) o;
-            datosItf.add(castObject);
+            castObject = (itfPropertyV2) o;
+            datosItfV2.add(castObject);
         }
-        return datosItf;
+        return datosItfV2;
     }
 
     /**
