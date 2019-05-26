@@ -39,7 +39,7 @@ public class clsCancionBD extends clsConexionBD {
     }
 
     //Constructor sin parametros, pensado para el select
-    public clsCancionBD() {
+    public clsCancionBD(String titulo, String titulo_original, String anno_de_publicacion, String tipo_DoA, String formato, boolean en_propiedad, boolean en_busqueda, double precio, String genero, String premiosint, int cantidad_musicos, String musico1, String musico2, String musico3, String musico4, String musico5, String album, String enlace_a_youtube, boolean videoclip) {
 
     }
 

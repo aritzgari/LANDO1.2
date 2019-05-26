@@ -332,6 +332,7 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
                         && (!JTFSaga.getText().equals(""))
                         && (!JTFSinopsis.getText().equals(""))
                         && (!JTFEnlace_a_trailer.getText().equals(""))) {
+
                     if(objGestorLN.crearPelicula(/*De momento a la libreria 1 tudo*/1, JTFTitulo.getText(), JTFTitulo_original.getText(), (int) JSAño.getValue(), (int) JSDuracion.getValue(), (int) JSCalificacion.getValue(), (int) JSCalporedad.getValue(), (String) JCBTipo_DoA.getSelectedItem(), (Double) JSPrecio.getValue(), JCBEn_propiedad.isSelected(), JCBEn_busqueda.isSelected(), JTFFormato.getText(), JTFSaga.getText(), (Double) JSOrden.getValue(), JTFSinopsis.getText(), JTFEnlace_a_trailer.getText())!= 0){
                         //Ha funcionado el insert.
                         //JLMensaje.setText("Insert realizado.");

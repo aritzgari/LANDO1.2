@@ -10,24 +10,15 @@ import com.company.LD.clsDirectorBD;
 import com.company.LD.clsActoresBD;
 import com.company.LD.clsPremios_PeliculaBD;
 import com.company.LD.clsGeneroPeliBD;
+import com.company.LD.clsCancionBD;
+import com.company.LD.clsAutorBD;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import static com.company.Comun.clsConstantes.queryConsultaLibreria;
-import static com.company.Comun.clsConstantes.queryInsertLibreria;
-import static com.company.Comun.clsConstantes.queryConsultaPelicula;
-import static com.company.Comun.clsConstantes.queryInsertPelicula;
-import static com.company.Comun.clsConstantes.queryConsultaLibro;
-import static com.company.Comun.clsConstantes.queryInsertLibro;
-import static com.company.Comun.clsConstantes.queryConsultaActores;
-import static com.company.Comun.clsConstantes.queryInsertActores;
-import static com.company.Comun.clsConstantes.queryConsultaDirector;
-import static com.company.Comun.clsConstantes.queryInsertDirector;
-import static com.company.Comun.clsConstantes.queryConsultaGeneroPeli;
-import static com.company.Comun.clsConstantes.queryInsertGeneroPeli;
+import static com.company.Comun.clsConstantes.*;
 
 
 /**
@@ -56,6 +47,7 @@ public class clsGestorLN {
     private static ArrayList<clsPremios> datosPremios;
     private static ArrayList<clsPremios_Pelicula> datosPremiosPeli;
     private static ArrayList<clsDirector> datosDirector;
+    private static ArrayList<clsAutor> datosAutor;
 
 
     public clsGestorLN() {
@@ -71,6 +63,7 @@ public class clsGestorLN {
         datosPremios = new ArrayList<clsPremios>();
         datosPremiosPeli = new ArrayList<clsPremios_Pelicula>();
         datosDirector = new ArrayList<clsDirector>();
+        datosAutor = new ArrayList<clsAutor>();
     }
 
 
@@ -116,6 +109,10 @@ public class clsGestorLN {
 
     public static ArrayList<clsDirector> getDatosDirector() {
         return datosDirector;
+    }
+
+    public static ArrayList<clsAutor> getDatosAutor() {
+        return datosAutor;
     }
 
     /**
@@ -183,9 +180,12 @@ public class clsGestorLN {
      *
      * @author RubenD AritzG
      */
-    public static void crearLibro(int Libreria_Multimedia_idLibreria_Multimedia, String ISBN, String Titulo, String Titulo_original, int Anno_de_publicacion, String Tipo_DoA, double Precio, boolean En_propiedad, boolean En_busqueda, String Formato, int Paginas, String Resumen, boolean Serie_SoN, String Nombre_serie, double Orden_serie, int idGenero, int idAutor) {
+    public static int crearLibro(int Libreria_Multimedia_idLibreria_Multimedia, String ISBN, String Titulo, String Titulo_original, int Anno_de_publicacion, String Tipo_DoA, double Precio, boolean En_propiedad, boolean En_busqueda, String Formato, int Paginas, String Resumen, boolean Serie_SoN, String Nombre_serie, double Orden_serie, int idGenero, int idAutor) {
+        int retorno=0;
         clsLibrosBD objLibroBD = new clsLibrosBD(Libreria_Multimedia_idLibreria_Multimedia, ISBN, Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, Serie_SoN, Nombre_serie, Orden_serie, idGenero, idAutor);
         objLibroBD.sendInsert(queryInsertLibro);
+        System.out.println(retorno);
+        return retorno;
     }
 
     /**
@@ -193,11 +193,13 @@ public class clsGestorLN {
      *
      * @author RubenD AritzG
      */
-    public static void crearMusica(String Titulo, String Titulo_original, String Anno_de_publicacion, String Tipo_DoA, String Formato, boolean En_propiedad, boolean En_busqueda, double Precio, String Genero, String Premiosint, int Cantidad_musicos, String Musico1, String Musico2, String Musico3, String Musico4, String Musico5, String Album, String Enlace_a_youtube, boolean Videoclip) {
-
-        clsCancion objCancion;
-        objCancion = new clsCancion(/*Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Formato,En_propiedad, En_busqueda, Precio, Genero, Premiosint,*/ Cantidad_musicos, Musico1, Musico2, Musico3, Musico4, Musico5, Album, Enlace_a_youtube, Videoclip);
-        datosArticulos.add(objCancion);
+    public static int crearMusica(String Titulo, String Titulo_original, String Anno_de_publicacion, String Tipo_DoA, String Formato, boolean En_propiedad, boolean En_busqueda, double Precio, String Genero, String Premiosint, int Cantidad_musicos, String Musico1, String Musico2, String Musico3, String Musico4, String Musico5, String Album, String Enlace_a_youtube, boolean Videoclip) {
+        int retorno = 0;
+        clsCancionBD objCancionBD;
+        objCancionBD = new clsCancionBD(Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Formato,En_propiedad, En_busqueda, Precio, Genero, Premiosint, Cantidad_musicos, Musico1, Musico2, Musico3, Musico4, Musico5, Album, Enlace_a_youtube, Videoclip);
+        retorno = objCancionBD.sendInsert(queryInsertCancion);
+        System.out.println(retorno);
+        return retorno;
     }
 
     /**
@@ -209,6 +211,20 @@ public class clsGestorLN {
         int retorno = 0;
         clsActoresBD objActorBD = new clsActoresBD(Nombre, Apellido);
         retorno = objActorBD.sendInsert(queryInsertActores);
+        System.out.println(retorno);
+        return retorno;
+    }
+
+    /**
+     * Metodo para crear autores en el Gestor con datos que recibamos de LP
+     *
+     * @author RubenD AritzG
+     */
+
+    public static int crearAutor(String Nombre, String Apellido) {
+        int retorno = 0;
+        clsAutorBD objAutorBD = new clsAutorBD(Nombre, Apellido);
+        retorno = objAutorBD.sendInsert(queryInsertAutores);
         System.out.println(retorno);
         return retorno;
     }
@@ -251,7 +267,7 @@ public class clsGestorLN {
     /**
      * A partir de aquí van las consultas.
      *
-     * @return ArrayList<itfProperty>
+     * @return ArrayList<itfPropertyV2>
      * @author RubenD AritzG
      */
 
@@ -285,6 +301,36 @@ public class clsGestorLN {
         return castclsActoresToItfProperty(datosActor);
     }
 
+
+    /**
+     * Método para consultar Autores
+     */
+    public ArrayList<itfPropertyV2> consultarAutoresEnBD() {
+        //Declaraciones
+        ResultSet resultado = null;
+        clsAutorBD objAutorBD = new clsAutorBD();
+
+        //Código
+        //Abrir conexión:
+        objAutorBD.conectarBD();
+        resultado = objAutorBD.sendSelect(queryConsultaAutores);
+        //Reiniciamos el ArrayList en la RAM para no duplicar entradas en esta (Poco eficiente pero eficaz)
+        datosAutor.clear();
+        //Meto rs en objeto
+        try {
+            while (resultado.next()) {
+                clsAutor objAutor = new clsAutor(resultado.getInt(1), resultado.getString(2), resultado.getString(3));
+                datosAutor.add(objAutor);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error SQL");
+            System.out.println(e);
+        }
+        //Cierro conexion
+        objAutorBD.desconectarBD(objAutorBD.getObjCon());
+
+        return castclsAutoresToItfProperty(datosAutor);
+    }
     /**
      * Método para consultar Directores
      *
@@ -500,7 +546,7 @@ public class clsGestorLN {
     /**
      * Método para castear Librerías multimedia.
      */
-    public ArrayList<itfPropertyV2> castclsLibreriaMultimediaToItfProperty(ArrayList</*Aqui me gustaria que fueran objects pero no traga*/clsLibreriaMultimedia> AO) {
+    public ArrayList<itfPropertyV2> castclsLibreriaMultimediaToItfProperty(ArrayList<clsLibreriaMultimedia> AO) {
         //Ordenamos por Nombre:
         Collections.sort(AO, new clsCompareLibreriaMultimedia());
         //Creamos el objeto en el que vamos a castear las librerias
@@ -519,7 +565,7 @@ public class clsGestorLN {
     /**
      * Método para castear Películas.
      */
-    public ArrayList<itfPropertyV2> castclsPeliculaToItfProperty(ArrayList</*Aqui me gustaria que fueran objects pero no traga*/clsPelicula> AO) {
+    public ArrayList<itfPropertyV2> castclsPeliculaToItfProperty(ArrayList<clsPelicula> AO) {
         //Ordenamos por Nombre:
         //NO CONFIGURADO PARA PELICULAS Collections.sort(AO, new clsCompareLibreriaMultimedia());
         //Creamos el objeto en el que vamos a castear las pelicualas
@@ -565,6 +611,25 @@ public class clsGestorLN {
         //Limpiamos datosItf para no duplicar
         datosItfV2.clear();
         for (clsActor o : AO
+        ) {
+            castObject = (itfPropertyV2) o;
+            datosItfV2.add(castObject);
+        }
+        return datosItfV2;
+    }
+
+    /**
+     * Método para castear Autores.
+     */
+    public ArrayList<itfPropertyV2> castclsAutoresToItfProperty(ArrayList<clsAutor> AO) {
+        //Ordenamos por Nombre:
+        //NO CONFIGURADO PARA Actores Collections.sort(AO, new clsCompareLibreriaMultimedia());
+        //Creamos el objeto en el que vamos a castear las pelicualas
+        itfPropertyV2 castObject;
+        //Las casteamos y metemos en datosItf
+        //Limpiamos datosItf para no duplicar
+        datosItfV2.clear();
+        for (clsAutor o : AO
         ) {
             castObject = (itfPropertyV2) o;
             datosItfV2.add(castObject);

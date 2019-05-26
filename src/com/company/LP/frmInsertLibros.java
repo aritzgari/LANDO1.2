@@ -47,6 +47,14 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
     SpinnerNumberModel ModeloPaginas;
     JSpinner JSPaginas;
 
+    JLabel JLidGenero;
+    SpinnerNumberModel ModeloidGenero;
+    JSpinner JSidGenero;
+
+    JLabel JLidAutor;
+    SpinnerNumberModel ModeloidAutor;
+    JSpinner JSidAutor;
+
     JLabel JLResumen;
     JTextField JTFResumen;
 
@@ -73,7 +81,6 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
     private final String TextoJTFFormato = "<Inserte el Formato aqui. Ej. .mkv, Vinilo, VHS...>";
     private final String TextoJTFResumen = "<Inserte el resumen aqui>";
     private final String TextoJTFNombre_serie = "<Inserte el nombre de la serie aqui>";
-
 
 
     private clsGestorLN objGestorLN;
@@ -110,6 +117,22 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
         ModeloPaginas.setStepSize(1);
         ModeloPaginas.setValue(90);
         JSPaginas.setModel(ModeloPaginas);
+
+        JLidGenero = new JLabel("\nidGenero:");
+        JSidGenero = new JSpinner();
+        ModeloidGenero = new SpinnerNumberModel();
+        ModeloidGenero.setMinimum(1);
+        ModeloidGenero.setStepSize(1);
+        ModeloidGenero.setValue(1);
+        JSidGenero.setModel(ModeloidGenero);
+
+        JLidAutor = new JLabel("\nidAutor:");
+        JSidAutor = new JSpinner();
+        ModeloidAutor = new SpinnerNumberModel();
+        ModeloidAutor.setMinimum(1);
+        ModeloidAutor.setStepSize(1);
+        ModeloidAutor.setValue(1);
+        JSidAutor.setModel(ModeloidAutor);
 
         JLTipo_DoA = new JLabel("\nFormato digital o Formato fisico:");
         JCBTipo_DoA = new JComboBox();
@@ -151,7 +174,6 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
         JSOrden_serie.setModel(ModeloOrden_serie);
 
 
-
         JBAceptar = new JButton("Aceptar");
         JBCancelar = new JButton("Cancelar");
         JBFIXED = new JButton("Bibidi Babidi Bu");
@@ -159,7 +181,7 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
 
         //Colores
         Color rojo = new Color(255, 140, 135);
-        Color verde = new Color(155,255, 141);
+        Color verde = new Color(155, 255, 141);
 
 
         //Propiedades de la ventana
@@ -188,6 +210,12 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
         JPContent.add(JLPaginas);
         JPContent.add(JSPaginas);
 
+        JPContent.add(JLidGenero);
+        JPContent.add(JSidGenero);
+
+        JPContent.add(JLidAutor);
+        JPContent.add(JSidAutor);
+
         JPContent.add(JLTipo_DoA);
         JPContent.add(JCBTipo_DoA);
 
@@ -214,7 +242,6 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
 
         JPContent.add(JLResumen);
         JPContent.add(JTFResumen);
-
 
 
         JPContent.add(JBAceptar);
@@ -261,6 +288,12 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
         JLOrden_serie.setBounds(175, 240, 300, altura);
         JSOrden_serie.setBounds(175, 270, 300, altura);
 
+        JLidGenero.setBounds(500, 240, 100, altura);
+        JSidGenero.setBounds(500, 270, 100, altura);
+
+        JLidAutor.setBounds(650, 240, 100, altura);
+        JSidAutor.setBounds(650, 270, 100, altura);
+
         JLNombre_serie.setBounds(25, 300, 300, altura);
         JTFNombre_serie.setBounds(25, 330, 300, altura);
 
@@ -279,8 +312,8 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
         JTFResumen.setBounds(375, 210, 550, altura);
 
 
-        JBAceptar.setBounds(525, 360, 200, 2*altura);
-        JBCancelar.setBounds(775, 360, 200, 2*altura);
+        JBAceptar.setBounds(525, 360, 200, 2 * altura);
+        JBCancelar.setBounds(775, 360, 200, 2 * altura);
         JBFIXED.setVisible(false);
 
 
@@ -303,10 +336,23 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
                         && (!JTFNombre_serie.getText().equals(""))
                         && (!JTFResumen.getText().equals(""))
                         && (!JTFISBN.getText().equals(""))) {
-                   // objGestorLN.crearLibro(/*De momento a la libreria 1 tudo*/1, JTFISBN.getText(), JTFTitulo.getText(), JTFTitulo_original.getText(), (int) JSAño.getValue(), (int) JSDuracion.getValue(), (int) JSCalificacion.getValue(), (int) JSCalporedad.getValue(), (String) JCBTipo_DoA.getSelectedItem(), (Double) JSPrecio.getValue(), JCBEn_propiedad.isSelected(), JCBEn_busqueda.isSelected(), JTFFormato.getText(), JTFNombre_serie.getText(), (Double) JSOrden_serie.getValue(), JTFResumen.getText());
+
+                    if (objGestorLN.crearLibro(1,JTFISBN.getText(), JTFTitulo.getText(), JTFTitulo_original.getText(), (int) JSAño.getValue(), (String) JCBTipo_DoA.getSelectedItem(), (Double) JSPrecio.getValue(), JCBEn_propiedad.isSelected(), JCBEn_busqueda.isSelected(), JTFFormato.getText(), (int) JSPaginas.getValue(), JTFResumen.getText(), JCBSerie_SoN.isSelected(),  JTFNombre_serie.getText(),(Double) JSOrden_serie.getValue(), (int) JSidGenero.getValue(), (int) JSidAutor.getValue()) != 0) {
+                        //Ha funcionado el insert.
+                        //JLMensaje.setText("Insert realizado.");
+                        //JLMensaje.setVisible(true);
+                        JOptionPane.showInternalMessageDialog(null, "  Insert realizado.");
+
                     } else {
-                    //ESTO HAY QUE PONERLO EN LA VENTANA O CON UNA EXCEPCION Y UNA VENTANA DE ERROR.
-                    System.out.println("Campos vacíos o sin editar");
+                        //No ha funcionado el insert.
+                        //JLMensaje.setText("Insert no realizado, revisar parámetros.");
+                        //JLMensaje.setVisible(true);
+                        JOptionPane.showInternalMessageDialog(null, "Insert no realizado, revisar parámetros.");
+
+                    }
+                } else {
+
+                    JOptionPane.showInternalMessageDialog(null, "Campos vacíos o sin editar.");
                 }
                 break;
             case "Cancelar":
