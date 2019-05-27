@@ -29,11 +29,12 @@ public class clsLibrosBD extends clsConexionBD {
     //Prueba
     private int idAutor;
     private int idGenero;
+    private int idEditorial;
     //no utilizados pero deberian id_genero, id_autor, id_editorial y id_premios.
 
 
     //Constructor con parametros, pensado para el insert
-    public clsLibrosBD(int _libreria_Multimedia_idLibreria_Multimedia, String _ISBN, String _titulo, String _titulo_original, int _anno_de_publicacion, String _tipo_DoA, double _precio, boolean _en_propiedad, boolean _en_busqueda, String _formato, int _Paginas, String _Resumen, boolean _Serie_SoN, String _Nombre_serie, double _Orden_serie, int _idAutor, int _idGenero) {
+    public clsLibrosBD(int _libreria_Multimedia_idLibreria_Multimedia, String _ISBN, String _titulo, String _titulo_original, int _anno_de_publicacion, String _tipo_DoA, double _precio, boolean _en_propiedad, boolean _en_busqueda, String _formato, int _Paginas, String _Resumen, boolean _Serie_SoN, String _Nombre_serie, double _Orden_serie, int _idAutor, int _idGenero, int _idEditorial) {
         setLibreria_Multimedia_idLibreria_Multimedia(_libreria_Multimedia_idLibreria_Multimedia);
         setISBN(_ISBN);
         setTitulo(_titulo);
@@ -51,7 +52,9 @@ public class clsLibrosBD extends clsConexionBD {
         setOrden_serie(_Orden_serie);
         setIdAutor(_idAutor);
         setIdGenero(_idGenero);
+        setIdEditorial(_idEditorial);
     }
+
     // Para select sin parametros
     public clsLibrosBD() {
 
@@ -193,6 +196,14 @@ public class clsLibrosBD extends clsConexionBD {
         this.idGenero = idGenero;
     }
 
+    public int getIdEditorial() {
+        return idEditorial;
+    }
+
+    public void setIdEditorial(int idEditorial) {
+        this.idEditorial = idEditorial;
+    }
+
     @Override
     public int sendInsert(String query) {
         this.conectarBD();
@@ -219,8 +230,7 @@ public class clsLibrosBD extends clsConexionBD {
             this.getObjSt().setDouble(15, getOrden_serie());
             this.getObjSt().setInt(16, getIdGenero());
             this.getObjSt().setInt(17, getIdAutor());
-
-
+            this.getObjSt().setInt(18, getIdEditorial());
 
 
             regActualizados = this.getObjSt().executeUpdate();

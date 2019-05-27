@@ -21,7 +21,7 @@ public class clsConstantes {
     /**
      * Constantes para querys de Libros.
      */
-    public static final String queryInsertLibro = "insert into Libros (Libreria_Multimedia_idLibreria_Multimedia, ISBN, Título, Título_original, Año, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, Serie_SoN, Nombre_serie, Orden_serie, Género_Libro_idGénero_Libro, Autor_idAutor)  values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+    public static final String queryInsertLibro = "insert into Libros (Libreria_Multimedia_idLibreria_Multimedia, ISBN, Título, Título_original, Año, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, Serie_SoN, Nombre_serie, Orden_serie, Género_Libro_idGénero_Libro, Autor_idAutor, Editorial_idEditorial)  values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
     public static final String queryConsultaLibro = "SELECT * FROM lando.libros";
 
     /**
@@ -68,7 +68,7 @@ public class clsConstantes {
      * Constantes para querys de editorial de libro.
      */
 
-    public static final String queryInsertEditorial = "insert into Editorial (Nombre, Libros_ISBN) values (?, ?)";
+    public static final String queryInsertEditorial = "insert into Editorial (Nombre) values (?)";
     public static final String queryConsultaEditorial = "SELECT * FROM lando.editorial;";
 
     /**

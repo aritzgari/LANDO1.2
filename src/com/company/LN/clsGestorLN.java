@@ -13,6 +13,7 @@ import com.company.LD.clsGeneroPeliBD;
 import com.company.LD.clsCancionBD;
 import com.company.LD.clsAutorBD;
 import com.company.LD.clsGeneroLibroBD;
+import com.company.LD.clsEditorialBD;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -50,6 +51,7 @@ public class clsGestorLN {
     private static ArrayList<clsDirector> datosDirector;
     private static ArrayList<clsAutor> datosAutor;
     private static ArrayList<clsGeneroLibro> datosGeneroLibro;
+    private static ArrayList<clsEditorial> datosEditorial;
 
 
     public clsGestorLN() {
@@ -67,6 +69,7 @@ public class clsGestorLN {
         datosDirector = new ArrayList<clsDirector>();
         datosAutor = new ArrayList<clsAutor>();
         datosGeneroLibro = new ArrayList<clsGeneroLibro>();
+        datosEditorial = new ArrayList<clsEditorial>();
     }
 
 
@@ -120,6 +123,10 @@ public class clsGestorLN {
 
     public static ArrayList<clsGeneroLibro> getDatosGeneroLibro() {
         return datosGeneroLibro;
+    }
+
+    public static ArrayList<clsEditorial> getDatosEditorial() {
+        return datosEditorial;
     }
 
     /**
@@ -187,9 +194,9 @@ public class clsGestorLN {
      *
      * @author RubenD AritzG
      */
-    public static int crearLibro(int Libreria_Multimedia_idLibreria_Multimedia, String ISBN, String Titulo, String Titulo_original, int Anno_de_publicacion, String Tipo_DoA, double Precio, boolean En_propiedad, boolean En_busqueda, String Formato, int Paginas, String Resumen, boolean Serie_SoN, String Nombre_serie, double Orden_serie, int idGenero, int idAutor) {
+    public static int crearLibro(int Libreria_Multimedia_idLibreria_Multimedia, String ISBN, String Titulo, String Titulo_original, int Anno_de_publicacion, String Tipo_DoA, double Precio, boolean En_propiedad, boolean En_busqueda, String Formato, int Paginas, String Resumen, boolean Serie_SoN, String Nombre_serie, double Orden_serie, int idGenero, int idAutor, int idEditorial) {
         int retorno=0;
-        clsLibrosBD objLibroBD = new clsLibrosBD(Libreria_Multimedia_idLibreria_Multimedia, ISBN, Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, Serie_SoN, Nombre_serie, Orden_serie, idGenero, idAutor);
+        clsLibrosBD objLibroBD = new clsLibrosBD(Libreria_Multimedia_idLibreria_Multimedia, ISBN, Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, Serie_SoN, Nombre_serie, Orden_serie, idGenero, idAutor, idEditorial);
         objLibroBD.sendInsert(queryInsertLibro);
         System.out.println(retorno);
         return retorno;
@@ -245,6 +252,20 @@ public class clsGestorLN {
         int retorno = 0;
         clsDirectorBD objDirectorBD = new clsDirectorBD(Nombre, Apellido);
         retorno = objDirectorBD.sendInsert(queryInsertDirector);
+        System.out.println(retorno);
+        return retorno;
+    }
+
+    /**
+     * Metodo para crear autores en el Gestor con datos que recibamos de LP
+     *
+     * @author RubenD AritzG
+     */
+
+    public static int crearEditorial(String Nombre) {
+        int retorno = 0;
+        clsEditorialBD objEditorialBD = new clsEditorialBD(Nombre);
+        retorno = objEditorialBD.sendInsert(queryInsertEditorial);
         System.out.println(retorno);
         return retorno;
     }
@@ -384,6 +405,37 @@ public class clsGestorLN {
     }
 
     /**
+     * Método para consultar editorial
+     *
+     * @return
+     */
+    public ArrayList<itfPropertyV2> consultarEditorialEnBD() {
+        //Declaraciones
+        ResultSet resultado = null;
+        clsEditorialBD objEditorialBD = new clsEditorialBD();
+
+        //Código
+        //Abrir conexión:
+        objEditorialBD.conectarBD();
+        resultado = objEditorialBD.sendSelect(queryConsultaEditorial);
+        //Reiniciamos el ArrayList en la RAM para no duplicar entradas en esta (Poco eficiente pero eficaz)
+        datosEditorial.clear();
+        //Meto rs en objeto
+        try {
+            while (resultado.next()) {
+                clsEditorial objEditorial = new clsEditorial(resultado.getInt(1), resultado.getString(2));
+                datosEditorial.add(objEditorial);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error SQL");
+            System.out.println(e);
+        }
+        //Cierro conexion
+        objEditorialBD.desconectarBD(objEditorialBD.getObjCon());
+
+        return castclsEditorialToItfProperty(datosEditorial);
+    }
+    /**
      * Método para consultar Géneros de películas.
      */
     public ArrayList<itfPropertyV2> consultarGeneroPeliEnBD() {
@@ -460,7 +512,7 @@ public class clsGestorLN {
         //Meto rs en objeto
         try {
             while (resultado.next()) {
-                clsLibro objLibros = new clsLibro(resultado.getInt(17), resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getInt(4), resultado.getString(5), resultado.getDouble(6), resultado.getBoolean(7), resultado.getBoolean(8), resultado.getString(9), resultado.getInt(10), resultado.getString(11), resultado.getBoolean(12), resultado.getString(13), resultado.getDouble(14), resultado.getInt(15), resultado.getInt(16));
+                clsLibro objLibros = new clsLibro(resultado.getInt(17), resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getInt(4), resultado.getString(5), resultado.getDouble(6), resultado.getBoolean(7), resultado.getBoolean(8), resultado.getString(9), resultado.getInt(10), resultado.getString(11), resultado.getBoolean(12), resultado.getString(13), resultado.getDouble(14), resultado.getInt(15), resultado.getInt(16), resultado.getInt(17));
                 //Esto era para visualizar: System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripción: " + resultado.getString(3));
                 datosLibros.add(objLibros);
             }
@@ -569,6 +621,23 @@ public class clsGestorLN {
         //Limpiamos datosItf para no duplicar
         datosItfV2.clear();
         for (clsDirector o : _datosDirector
+        ) {
+            castObject = (itfPropertyV2) o;
+            datosItfV2.add(castObject);
+        }
+        return datosItfV2;
+    }
+
+    /**
+     * Método para castear Directores.
+     */
+    private ArrayList<itfPropertyV2> castclsEditorialToItfProperty(ArrayList<clsEditorial> _datosEditorial) {
+        //Creamos el objeto en el que vamos a castear las pelicualas
+        itfPropertyV2 castObject;
+        //Las casteamos y metemos en datosItf
+        //Limpiamos datosItf para no duplicar
+        datosItfV2.clear();
+        for (clsEditorial o : _datosEditorial
         ) {
             castObject = (itfPropertyV2) o;
             datosItfV2.add(castObject);

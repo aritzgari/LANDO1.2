@@ -25,9 +25,9 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     private JMenuBar barraMenu;
     private JMenu menuInsertar, menuConsultar;
     /* items del menu Insertar */
-    private JMenuItem menuItemInsLibrerias_Multimedia, menuItemInsPeliculas, menuItemInsLibros, menuItemInsMusica, menuItemInsActor, menuItemInsDirector, menuItemInsGeneroPeli, menuItemInsAutor, menuItemInsGeneroLibro;
+    private JMenuItem menuItemInsLibrerias_Multimedia, menuItemInsPeliculas, menuItemInsLibros, menuItemInsMusica, menuItemInsActor, menuItemInsDirector, menuItemInsGeneroPeli, menuItemInsAutor, menuItemInsGeneroLibro, menuItemInsEditorial;
     /* items del menu Consultar */
-    private JMenuItem menuItemConsLibrerias_Multimedia, menuItemConsPeliculas, menuItemConsLibros, menuItemConsMusica, menuItemConsActor, menuItemConsDirector, menuItemConsGeneroPeli, menuItemConsAutor, menuItemConsGeneroLibro;
+    private JMenuItem menuItemConsLibrerias_Multimedia, menuItemConsPeliculas, menuItemConsLibros, menuItemConsMusica, menuItemConsActor, menuItemConsDirector, menuItemConsGeneroPeli, menuItemConsAutor, menuItemConsGeneroLibro, menuItemConsEditorial;
 
 
     //Declaraciones copiadas
@@ -210,6 +210,9 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
             case "ActionInsertGeneroLibro":
                 caseInsertarGeneroLibro();
                 break;
+            case "ActionInsertEditorial":
+                caseInsertarEditorial();
+                break;
             case "ActionConsLibrerias_Multimedia":
                 caseConsLibrerias();
                 break;
@@ -236,6 +239,9 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
                 break;
             case "ActionConsGeneroLibro":
                 caseConsGeneroLibro();
+                break;
+            case "ActionConsEditorial":
+                caseConsEditorial();
                 break;
 
         }
@@ -277,6 +283,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         menuItemInsGeneroPeli = new JMenuItem();
         menuItemInsAutor = new JMenuItem();
         menuItemInsGeneroLibro = new JMenuItem();
+        menuItemInsEditorial = new JMenuItem();
 
         menuItemConsLibrerias_Multimedia = new JMenuItem();
         menuItemConsPeliculas = new JMenuItem();
@@ -287,6 +294,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         menuItemConsGeneroPeli = new JMenuItem();
         menuItemConsAutor = new JMenuItem();
         menuItemConsGeneroLibro = new JMenuItem();
+        menuItemConsEditorial = new JMenuItem();
 
         //Personalización
         //miPanel.setBackground(colorAzul);
@@ -338,6 +346,11 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         menuInsertar.add(menuItemInsGeneroLibro);
         menuInsertar.addSeparator();
 
+        menuItemInsEditorial.setText("Editorial");
+        menuItemInsEditorial.setActionCommand("ActionInsertEditorial");
+        menuInsertar.add(menuItemInsEditorial);
+        menuInsertar.addSeparator();
+
         /* Crea los items del menu Consultar */
         menuItemConsLibrerias_Multimedia.setText("Librerias Multimedia");
         menuItemConsLibrerias_Multimedia.setActionCommand("ActionConsLibrerias_Multimedia");
@@ -384,6 +397,11 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         menuConsultar.add(menuItemConsGeneroLibro);
         menuConsultar.addSeparator();
 
+        menuItemConsEditorial.setText("Editorial");
+        menuItemConsEditorial.setActionCommand("ActionConsEditorial");
+        menuConsultar.add(menuItemConsEditorial);
+        menuConsultar.addSeparator();
+
 
         /* Agrega los Menus de la barra de Menu */
         menuInsertar.setText("Insertar");
@@ -404,6 +422,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         menuItemInsGeneroPeli.addActionListener(this);
         menuItemInsAutor.addActionListener(this);
         menuItemInsGeneroLibro.addActionListener(this);
+        menuItemInsEditorial.addActionListener(this);
 
         menuItemConsLibrerias_Multimedia.addActionListener(this);
         menuItemConsPeliculas.addActionListener(this);
@@ -414,6 +433,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         menuItemConsGeneroPeli.addActionListener(this);
         menuItemConsAutor.addActionListener(this);
         menuItemConsGeneroLibro.addActionListener(this);
+        menuItemConsEditorial.addActionListener(this);
 
 
        /* //Set up the lone menu.
@@ -602,6 +622,17 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         frmInsertDirector VentanaInsertDirector = new frmInsertDirector(objGestorLN);
         desktop.add(VentanaInsertDirector);
     }
+
+    /**
+     * Clase insertar directores desde la ventana.
+     *
+     * @see clsGestorLN
+     */
+
+    private void caseInsertarEditorial() {
+        frmInsertEditorial VentanaInsertEditorial = new frmInsertEditorial(objGestorLN);
+        desktop.add(VentanaInsertEditorial);
+    }
     /**
      * Clase insertar generos de pelicula desde la ventana.
      *
@@ -707,6 +738,20 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
             VentanaConsDirector.setItem(L);
         }
         desktop.add(VentanaConsDirector);
+    }
+
+    /**
+     * Método consultar eitoriales desde la ventana.
+     */
+
+    private void caseConsEditorial() {
+        frmListaEditorial VentanaConsEditorial = new frmListaEditorial();
+        ArrayList<itfPropertyV2> resultado = objGestorLN.consultarEditorialEnBD();
+        for (itfPropertyV2 L : resultado
+        ) {
+            VentanaConsEditorial.setItem(L);
+        }
+        desktop.add(VentanaConsEditorial);
     }
     /**
      * Método consultar generos de pelicula desde la ventana.

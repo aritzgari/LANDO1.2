@@ -55,6 +55,10 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
     SpinnerNumberModel ModeloidAutor;
     JSpinner JSidAutor;
 
+    JLabel JLidEditorial;
+    SpinnerNumberModel ModeloidEditorial;
+    JSpinner JSidEditorial;
+
     JLabel JLResumen;
     JTextField JTFResumen;
 
@@ -110,7 +114,7 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
         ModeloAño.setValue(2019);
         JSAño.setModel(ModeloAño);
 
-        JLPaginas = new JLabel("\nPaginas:");
+        JLPaginas = new JLabel("\nPáginas:");
         JSPaginas = new JSpinner();
         ModeloPaginas = new SpinnerNumberModel();
         ModeloPaginas.setMinimum(0);
@@ -118,7 +122,7 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
         ModeloPaginas.setValue(90);
         JSPaginas.setModel(ModeloPaginas);
 
-        JLidGenero = new JLabel("\nidGenero:");
+        JLidGenero = new JLabel("\nidGénero:");
         JSidGenero = new JSpinner();
         ModeloidGenero = new SpinnerNumberModel();
         ModeloidGenero.setMinimum(1);
@@ -134,7 +138,15 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
         ModeloidAutor.setValue(1);
         JSidAutor.setModel(ModeloidAutor);
 
-        JLTipo_DoA = new JLabel("\nFormato digital o Formato fisico:");
+        JLidEditorial = new JLabel("\nidEditorial:");
+        JSidEditorial = new JSpinner();
+        ModeloidEditorial = new SpinnerNumberModel();
+        ModeloidEditorial.setMinimum(1);
+        ModeloidEditorial.setStepSize(1);
+        ModeloidEditorial.setValue(1);
+        JSidEditorial.setModel(ModeloidEditorial);
+
+        JLTipo_DoA = new JLabel("\nFormato digital o Formato físico:");
         JCBTipo_DoA = new JComboBox();
         JCBTipo_DoA.addItem("Digital");
         JCBTipo_DoA.addItem("Fisico");
@@ -216,6 +228,9 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
         JPContent.add(JLidAutor);
         JPContent.add(JSidAutor);
 
+        JPContent.add(JLidEditorial);
+        JPContent.add(JSidEditorial);
+
         JPContent.add(JLTipo_DoA);
         JPContent.add(JCBTipo_DoA);
 
@@ -294,6 +309,9 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
         JLidAutor.setBounds(650, 240, 100, altura);
         JSidAutor.setBounds(650, 270, 100, altura);
 
+        JLidEditorial.setBounds(800, 240, 100, altura);
+        JSidEditorial.setBounds(800, 270, 100, altura);
+
         JLNombre_serie.setBounds(25, 300, 300, altura);
         JTFNombre_serie.setBounds(25, 330, 300, altura);
 
@@ -337,7 +355,7 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
                         && (!JTFResumen.getText().equals(""))
                         && (!JTFISBN.getText().equals(""))) {
 
-                    if (objGestorLN.crearLibro(1,JTFISBN.getText(), JTFTitulo.getText(), JTFTitulo_original.getText(), (int) JSAño.getValue(), (String) JCBTipo_DoA.getSelectedItem(), (Double) JSPrecio.getValue(), JCBEn_propiedad.isSelected(), JCBEn_busqueda.isSelected(), JTFFormato.getText(), (int) JSPaginas.getValue(), JTFResumen.getText(), JCBSerie_SoN.isSelected(),  JTFNombre_serie.getText(),(Double) JSOrden_serie.getValue(), (int) JSidGenero.getValue(), (int) JSidAutor.getValue()) != 0) {
+                    if (objGestorLN.crearLibro(1,JTFISBN.getText(), JTFTitulo.getText(), JTFTitulo_original.getText(), (int) JSAño.getValue(), (String) JCBTipo_DoA.getSelectedItem(), (Double) JSPrecio.getValue(), JCBEn_propiedad.isSelected(), JCBEn_busqueda.isSelected(), JTFFormato.getText(), (int) JSPaginas.getValue(), JTFResumen.getText(), JCBSerie_SoN.isSelected(),  JTFNombre_serie.getText(),(Double) JSOrden_serie.getValue(), (int) JSidGenero.getValue(), (int) JSidAutor.getValue(), (int) JSidEditorial.getValue()) != 0) {
                         //Ha funcionado el insert.
                         //JLMensaje.setText("Insert realizado.");
                         //JLMensaje.setVisible(true);

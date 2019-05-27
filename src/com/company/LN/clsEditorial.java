@@ -3,16 +3,22 @@ package com.company.LN;
 import com.company.Comun.itfPropertyV2;
 import com.company.Excepciones.clsPropiedadNonExistantException;
 
-public class clsEditorial implements itfPropertyV2  {
+public class clsEditorial implements itfPropertyV2 {
     /**
      * @author Ruben Domínguez
      * Aritz Garitano
      * @see itfPropertyV2
      * @see clsPropiedadNonExistantException
      */
-        //Atributos
-        private int idEditorial;
-        private String Nombre;
+    //Atributos
+    private int idEditorial;
+    private String Nombre;
+
+
+    public clsEditorial(int _idEditorial, String _Nombre) {
+        idEditorial = _idEditorial;
+        Nombre = _Nombre;
+    }
 
     public int getIdEditorial() {
         return idEditorial;
@@ -29,28 +35,30 @@ public class clsEditorial implements itfPropertyV2  {
     public void setNombre(String nombre) {
         Nombre = nombre;
     }
-    //Constructor con Parametros: Aun no
 
-        //Constructor sin Parametros
-
-        @Override
-        public Object getObjectProperty(String propiedad) {
-            Object retorno = new Object();
-
-            switch (propiedad) {
-                case "idEditorial":
-                    retorno =  idEditorial;
-                    break;
-                case "Nombre":
-                    retorno =  Nombre;
-                    break;
-                case "Clase":
-                    retorno = 9;
-                    break;
-                default:
-                    throw new clsPropiedadNonExistantException();
-            }
-            return retorno;
-        }
+    @Override
+    public String toString() {
+        return Nombre;
     }
+
+    @Override
+    public Object getObjectProperty(String propiedad) {
+        Object retorno = new Object();
+
+        switch (propiedad) {
+            case "idEditorial":
+                retorno = idEditorial;
+                break;
+            case "Nombre":
+                retorno = Nombre;
+                break;
+            case "Clase":
+                retorno = 9;
+                break;
+            default:
+                throw new clsPropiedadNonExistantException();
+        }
+        return retorno;
+    }
+}
 

@@ -26,6 +26,7 @@ public class clsLibro extends clsArticulo implements itfPropertyV2 {
     private int Paginas;
     private int idGenero;
     private int idAutor;
+    private int idEditorial;
 
     public int getLibreria_Multimedia_idLibreria_Multimedia() {
         return Libreria_Multimedia_idLibreria_Multimedia;
@@ -98,11 +99,20 @@ public class clsLibro extends clsArticulo implements itfPropertyV2 {
     public void setIdAutor(int idAutor) {
         this.idAutor = idAutor;
     }
-//--> creados las clases editorial y autor.
+
+    public int getIdEditorial() {
+        return idEditorial;
+    }
+
+    public void setIdEditorial(int idEditorial) {
+        this.idEditorial = idEditorial;
+    }
+
+    //--> creados las clases editorial y autor.
 
     //FALTAN AUTOR Y GENERO @importante #Urgente
 
-    public clsLibro(int _libreria_Multimedia_idLibreria_Multimedia, String _ISBN, String _titulo, String _titulo_original, int _anno_de_publicacion, String _tipo_DoA, double _precio, boolean _en_propiedad, boolean _en_busqueda, String _formato, int _Paginas, String _Resumen, boolean _Serie_SoN, String _Nombre_serie, double _Orden_serie, int _idGenero, int _idAutor) {
+    public clsLibro(int _libreria_Multimedia_idLibreria_Multimedia, String _ISBN, String _titulo, String _titulo_original, int _anno_de_publicacion, String _tipo_DoA, double _precio, boolean _en_propiedad, boolean _en_busqueda, String _formato, int _Paginas, String _Resumen, boolean _Serie_SoN, String _Nombre_serie, double _Orden_serie, int _idGenero, int _idAutor, int _idEditorial) {
         //Tal ves haya que usar setters aqui.
         //-->Autor = _Autor;
         //-->Editorial = _Editorial;
@@ -123,6 +133,7 @@ public class clsLibro extends clsArticulo implements itfPropertyV2 {
         Orden_serie = _Orden_serie;
         idGenero = _idGenero;
         idAutor = _idAutor;
+        idEditorial=_idEditorial;
     }
 
 
@@ -186,6 +197,9 @@ public class clsLibro extends clsArticulo implements itfPropertyV2 {
                 break;
             case "Autor_idAutor":
                 retorno = idAutor;
+                break;
+            case "Editorial_idEditorial":
+                retorno = idEditorial;
                 break;
             case "Clase":
                 retorno = 7;

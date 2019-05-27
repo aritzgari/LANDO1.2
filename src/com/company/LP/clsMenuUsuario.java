@@ -394,7 +394,7 @@ public class clsMenuUsuario extends JFrame implements ActionListener {
 
 
 
-            objGestorLN.crearLibro(Libreria_Multimedia_idLibreria_Multimedia,ISBN, Titulo, Titulo_original, Anno_de_publicacion,  Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, SerieSoN, Nombre_serie, Orden_serie, idGenero, idAutor);
+            //objGestorLN.crearLibro(Libreria_Multimedia_idLibreria_Multimedia,ISBN, Titulo, Titulo_original, Anno_de_publicacion,  Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, SerieSoN, Nombre_serie, Orden_serie, idGenero, idAutor);
         }
 
 
