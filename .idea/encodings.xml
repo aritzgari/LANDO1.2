@@ -34,6 +34,7 @@
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsCompareLibreriaMultimedia.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsDirector.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsEditorial.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LN/clsGeneroLibro.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsGeneroPeli.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsGestorLN.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsLibreriaMultimedia.java" charset="ISO-8859-1" />
@@ -50,10 +51,12 @@
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmInsertActor.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmInsertAutor.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmInsertDirector.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LP/frmInsertGeneroLibro.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmInsertGeneroPeli.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmInsertLibrerias.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmInsertLibros.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmInsertPeliculas.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LP/frmListaGeneroLibro.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmListaGeneroPeli.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmListaLibrerias.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmListaLibros.java" charset="ISO-8859-1" />

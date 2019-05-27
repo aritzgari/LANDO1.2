@@ -5,14 +5,19 @@ import java.sql.SQLException;
 public class clsGeneroLibroBD extends clsConexionBD {
     private String Nombre;
 
+
     //Constructor con parametros, pensado para el insert
-    public clsGeneroLibroBD(String _Nombre, String _ISBNLibro) {
-        setNombre(_Nombre);
+    public clsGeneroLibroBD(String _nombre) {
+       setNombre(_nombre);
     }
 
+
     //Constructor sin parametros, pensado para el select
+
+
     public clsGeneroLibroBD() {
     }
+
 
     public String getNombre() {
         return Nombre;

@@ -12,6 +12,7 @@ import com.company.LD.clsPremios_PeliculaBD;
 import com.company.LD.clsGeneroPeliBD;
 import com.company.LD.clsCancionBD;
 import com.company.LD.clsAutorBD;
+import com.company.LD.clsGeneroLibroBD;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -48,6 +49,7 @@ public class clsGestorLN {
     private static ArrayList<clsPremios_Pelicula> datosPremiosPeli;
     private static ArrayList<clsDirector> datosDirector;
     private static ArrayList<clsAutor> datosAutor;
+    private static ArrayList<clsGeneroLibro> datosGeneroLibro;
 
 
     public clsGestorLN() {
@@ -64,6 +66,7 @@ public class clsGestorLN {
         datosPremiosPeli = new ArrayList<clsPremios_Pelicula>();
         datosDirector = new ArrayList<clsDirector>();
         datosAutor = new ArrayList<clsAutor>();
+        datosGeneroLibro = new ArrayList<clsGeneroLibro>();
     }
 
 
@@ -113,6 +116,10 @@ public class clsGestorLN {
 
     public static ArrayList<clsAutor> getDatosAutor() {
         return datosAutor;
+    }
+
+    public static ArrayList<clsGeneroLibro> getDatosGeneroLibro() {
+        return datosGeneroLibro;
     }
 
     /**
@@ -193,7 +200,7 @@ public class clsGestorLN {
      *
      * @author RubenD AritzG
      */
-    public static int crearMusica(String Titulo, String Titulo_original, String Anno_de_publicacion, String Tipo_DoA, String Formato, boolean En_propiedad, boolean En_busqueda, double Precio, String Genero, String Premiosint, int Cantidad_musicos, String Musico1, String Musico2, String Musico3, String Musico4, String Musico5, String Album, String Enlace_a_youtube, boolean Videoclip) {
+    public static int crearCancion(String Titulo, String Titulo_original, String Anno_de_publicacion, String Tipo_DoA, String Formato, boolean En_propiedad, boolean En_busqueda, double Precio, String Genero, String Premiosint, int Cantidad_musicos, String Musico1, String Musico2, String Musico3, String Musico4, String Musico5, String Album, String Enlace_a_youtube, boolean Videoclip) {
         int retorno = 0;
         clsCancionBD objCancionBD;
         objCancionBD = new clsCancionBD(Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Formato,En_propiedad, En_busqueda, Precio, Genero, Premiosint, Cantidad_musicos, Musico1, Musico2, Musico3, Musico4, Musico5, Album, Enlace_a_youtube, Videoclip);
@@ -247,10 +254,23 @@ public class clsGestorLN {
      *
      * @author RubenD AritzG
      */
-    public static void crearGeneroPeli(String Nombre) {
-
+    public static int crearGeneroPeli(String Nombre) {
+        int retorno = 0;
         clsGeneroPeliBD objGeneroPeliBD = new clsGeneroPeliBD(Nombre);
-        objGeneroPeliBD.sendInsert(queryInsertGeneroPeli);
+        retorno =objGeneroPeliBD.sendInsert(queryInsertGeneroPeli);
+        return retorno;
+    }
+
+    /**
+     * Metodo para crear Generos de libros en el Gestor con datos que recibamos de LP
+     *
+     * @author RubenD AritzG
+     */
+    public static int crearGeneroLibro(String Nombre) {
+        int retorno = 0;
+        clsGeneroLibroBD objGeneroLibroBD = new clsGeneroLibroBD(Nombre);
+        retorno=objGeneroLibroBD.sendInsert(queryInsertGeneroLibro);
+        return retorno;
     }
 
     /**
@@ -393,6 +413,36 @@ public class clsGestorLN {
         return castclsGeneroPeliToItfProperty(datosGeneroPeli);
     }
 
+
+    /**
+     * Método para consultar Géneros de libros.
+     */
+    public ArrayList<itfPropertyV2> consultarGeneroLibrosEnBD() {
+        //Declaraciones
+        ResultSet resultado = null;
+        clsGeneroLibroBD objGeneroLibroBD = new clsGeneroLibroBD();
+
+        //Código
+        //Abrir conexión
+        objGeneroLibroBD.conectarBD();
+        resultado = objGeneroLibroBD.sendSelect(queryConsultaGeneroLibro);
+        //Reiniciamos el ArrayList en la RAM para no duplicar entradas en esta (Poco eficiente pero eficaz)
+        datosGeneroLibro.clear();
+        //Meto rs en objeto
+        try {
+            while (resultado.next()) {
+                clsGeneroLibro objGeneroLibro = new clsGeneroLibro(resultado.getInt(1), resultado.getString(2));
+                datosGeneroLibro.add(objGeneroLibro);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error SQL");
+            System.out.println(e);
+        }
+        //Cierro conexion
+        objGeneroLibroBD.desconectarBD(objGeneroLibroBD.getObjCon());
+
+        return castclsGeneroLibroToItfProperty(datosGeneroLibro);
+    }
     /**
      * Método para consultar Libros.
      */
@@ -536,6 +586,20 @@ public class clsGestorLN {
         //Limpiamos datosItf para no duplicar
         datosItfV2.clear();
         for (clsGeneroPeli o : _datosGeneroPeli
+        ) {
+            castObject = (itfPropertyV2) o;
+            datosItfV2.add(castObject);
+        }
+        return datosItfV2;
+    }
+
+    /**
+     * Método para castear Géneros de películas.
+     */
+    private ArrayList<itfPropertyV2> castclsGeneroLibroToItfProperty(ArrayList<clsGeneroLibro> _datosGeneroLibro) {
+        itfPropertyV2 castObject;
+        datosItfV2.clear();
+        for (clsGeneroLibro o : _datosGeneroLibro
         ) {
             castObject = (itfPropertyV2) o;
             datosItfV2.add(castObject);

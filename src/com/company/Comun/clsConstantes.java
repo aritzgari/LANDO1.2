@@ -75,7 +75,7 @@ public class clsConstantes {
      * Constantes para querys de genero de libros.
      */
 
-    public static final String queryInsertGeneroLibro = "insert into Género_Película (Nombre) values (?)";
+    public static final String queryInsertGeneroLibro = "insert into Género_Libro (Nombre) values (?)";
     public static final String queryConsultaGeneroLibro = "SELECT * FROM lando.género_libro;";
     /**
      * Constantes para querys de premios de libros.

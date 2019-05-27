@@ -1,22 +1,13 @@
 package com.company.LP;
-
-import com.company.LN.itfProperty;
 import com.company.Comun.itfPropertyV2;
-
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.util.LinkedList;
 
-/**
- * Ventana para mostrar la lista de librerias multimedia que hay en la base de datos.
- * <p>
- *
- * @author Ruben Domínguez
- * Aritz Garitano
- */
-public class frmListaGeneroPeli extends JInternalFrame implements ListSelectionListener {
+public class frmListaGeneroLibro extends JInternalFrame implements ListSelectionListener {
+
     //Objeto visual
     private JList<itfPropertyV2> jlista;
     //Modelo de la vista
@@ -31,8 +22,8 @@ public class frmListaGeneroPeli extends JInternalFrame implements ListSelectionL
      *
      * @see ModeloLista
      */
-    public frmListaGeneroPeli() {
-        setTitle("Lista de género de peliculas");
+    public frmListaGeneroLibro() {
+        setTitle("Lista de género de libros");
 
         setBounds(100, 100, 400, 500);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -71,8 +62,7 @@ public class frmListaGeneroPeli extends JInternalFrame implements ListSelectionL
         if (arg0.getValueIsAdjusting() == false) {
             String TextoAMostrar =
                     "clsGeneroPeli{" +
-                            "idGeneroPeli= " + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("idGénero") +
-                            "Nombre= " + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("Nombre") + " }";
+                            "Nombre= " + ((itfPropertyV2) jlista.getSelectedValue()).getObjectProperty("Nombre") + "}";
             System.out.println("Atributos: " + TextoAMostrar);
         }
     }
