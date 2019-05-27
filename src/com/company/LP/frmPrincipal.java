@@ -1,5 +1,6 @@
 package com.company.LP;
 
+import com.company.Excepciones.clsPropiedadNonExistantException;
 import com.company.LN.clsGestorLN;
 import com.company.LN.itfProperty;
 import com.company.Comun.itfPropertyV2;
@@ -98,10 +99,6 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
             VentanaMenuLibrerias.setItem(L);
         }
         desktop.add(VentanaMenuLibrerias);
-
-        Jlist2 PruebaScrollPane = new Jlist2();
-
-        desktop.add(PruebaScrollPane);
     }
 
     //Ventana que muestra la informaci?n de eventos.
@@ -225,6 +222,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
             case "ActionConsGeneroPeli":
                 caseConsGeneroPeli();
                 break;
+                default:
+                    throw new clsPropiedadNonExistantException();
 
         }
 
