@@ -2,6 +2,7 @@ package com.company.LP;
 
 import com.company.Comun.itfPropertyV2;
 import com.company.Excepciones.clsPropiedadNonExistantException;
+import com.company.LN.clsGestorLN;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -17,6 +18,11 @@ import java.util.LinkedList;
  */
 public class frmMenuLibrerias extends JInternalFrame implements ActionListener, ListSelectionListener {
     //Declaraciones
+    //El gestor
+    private clsGestorLN objGestorLN;
+    //La pantalla principal
+    private frmPrincipal ventanaPrincipal;
+    private JDesktopPane desktop;
     //JPanels
     private JPanel JPContent;
     private JPanel JPLista;
@@ -31,6 +37,9 @@ public class frmMenuLibrerias extends JInternalFrame implements ActionListener, 
 
     //JLabels
     private JLabel JLSeleccion;
+    private JLabel JLLista;
+    private JLabel JLAcción;
+
 
     //Botones
     private JButton JBAceptar;
@@ -46,9 +55,14 @@ public class frmMenuLibrerias extends JInternalFrame implements ActionListener, 
      *
      * @see ModeloLista
      */
-    public frmMenuLibrerias() {
+    //Constructor
+    public frmMenuLibrerias(clsGestorLN _objGestorLN, JDesktopPane _desktop, frmPrincipal _ventanaPrincipal) {
+        //Definir el gestor dentro de este ámbito para poder acceder a él
+        objGestorLN = _objGestorLN;
+        ventanaPrincipal = _ventanaPrincipal;
+        desktop = _desktop;
         //Propiedades de la ventana
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         this.setResizable(false);
         this.setClosable(true);
         this.setIconifiable(true);
@@ -63,7 +77,8 @@ public class frmMenuLibrerias extends JInternalFrame implements ActionListener, 
         JPLista = new JPanel();
 
         //JLabels
-        JLSeleccion = new JLabel("Escoja la librería en la que quiere añadir objetos:");
+        JLSeleccion = new JLabel("Escoja la librería en la que quiere añadir objetos, o cree una nueva:");
+        JLLista = new JLabel("Lista de librerías disponibles:");
 
         //News de los componentes de la lista
         Objetos = new LinkedList<itfPropertyV2>();
@@ -75,7 +90,7 @@ public class frmMenuLibrerias extends JInternalFrame implements ActionListener, 
 
         //News de Botones
         JBAceptar = new JButton("Aceptar");
-        JBCancelar = new JButton("Cancelar");
+        JBCancelar = new JButton("Cerrar");
         JBCrear = new JButton("Crear Librería");
         JBFIXED = new JButton("Bibidi Babidi Bu");
 
@@ -84,6 +99,7 @@ public class frmMenuLibrerias extends JInternalFrame implements ActionListener, 
         JPLista.add(scroll);                                    //El scroll va dentro del panel que existe solo para a la lista
         JPLista.add(JLista);                                    //La lista va en el panel que existe solo para la lista
         JPContent.add(JLSeleccion);
+        JPContent.add(JLLista);
         JPContent.add(JPLista);                                 //El panel de la lista añadido en el JPanel de contenido, el principal
         JPContent.add(JBAceptar);                               //El boton de aceptar añadido en el JPanel de contenido, el principal
         JPContent.add(JBCancelar);                              //El boton de cancelar añadido en el JPanel de contenido, el principal
@@ -110,7 +126,11 @@ public class frmMenuLibrerias extends JInternalFrame implements ActionListener, 
 
         //Dar valores a cosas
         JPContent.setLayout(null);
+        JLista.setFixedCellWidth(350);
+        JBCancelar.setVisible(objGestorLN.getLibreriaDefinida()>0);
 
+
+        //Cambios en tipos de letra
         Font tipoLetra = JLSeleccion.getFont();
         tipoLetra.deriveFont(Font.BOLD);
         tipoLetra.deriveFont(40.0f);
@@ -120,13 +140,14 @@ public class frmMenuLibrerias extends JInternalFrame implements ActionListener, 
         //scroll.setBounds(0,0,500,500);
         //JPLista.setLocation(0,100);
         scroll.setViewportView(JLista);
-        JPLista.setBounds(20,75,400,500);
-        JLSeleccion.setBounds(25, 15, 300, 50);
+        JPLista.setBounds(10, 75, 400, 500);
+        JLSeleccion.setBounds(25, 10, 500, 30);
+        JLLista.setBounds(25, 45, 300, 30);
         JBAceptar.setBounds(450, 80, 150, 60);
-        JBCrear.setBounds(450, 180, 150, 60);
+        JBCrear.setBounds(450, 185, 150, 60);
         JBCancelar.setBounds(450, 290, 150, 60);
         JBAceptar.setVisible(true);
-        JBCancelar.setVisible(true);
+        //JBCancelar.setVisible(true);
         JBFIXED.setVisible(false);
 
     }
@@ -139,8 +160,26 @@ public class frmMenuLibrerias extends JInternalFrame implements ActionListener, 
      * Metodo para guardar las acciones pensadas para el boton de Aceptar
      */
     private void caseAceptar() {
-        JLSeleccion.setText("" + JLista.getSelectedValue().getObjectProperty("Descripción")); //Aquí da NPE si no hay nada seleciionado
-        //JLista.getSelectedValue().getObjectProperty("Descripción");
+       // JLSeleccion.setText("ID lista seleccionado: " + JLista.getSelectedValue().getObjectProperty("idLibreria_Multimedia")); //Aquí da NPE si no hay nada seleccionado
+        objGestorLN.setLibreriaDefinida((Integer) JLista.getSelectedValue().getObjectProperty("idLibreria_Multimedia"));
+
+        //INTENTO MUY LOCO DE MOSTRARLO EN LA P.PRINCIPAL
+        //Actualizar el valor en el gestor y en la pantalla principal
+        objGestorLN.setNombreLibreriaDefinida((String) JLista.getSelectedValue().getObjectProperty("Nombre"));
+        //INTENTO MUY LOCO DE MOSTRARLO EN LA P.PRINCIPAL
+
+        JBCancelar.setVisible(objGestorLN.getLibreriaDefinida()>0);   //Si se descomenta se actualizará nada mas cargar un valor, sino, cuando se vuelva a llamar a esta ventana
+
+
+
+   }
+    /**
+     * Metodo para guardar las acciones pensadas para el boton de Crear Libreria
+     */
+    private void caseCrear() {
+        frmInsertLibrerias VentanaInsertLibrerias = new frmInsertLibrerias(objGestorLN,desktop, ventanaPrincipal);
+        desktop.add(VentanaInsertLibrerias);
+        dispose();
     }
 
 
@@ -152,9 +191,19 @@ public class frmMenuLibrerias extends JInternalFrame implements ActionListener, 
                 caseAceptar();
                 break;
 
+            case "Crear":
+                caseCrear();
+                break;
+
+            case "Cancelar":
+                dispose();
+                break;
+
             default:
                 throw new clsPropiedadNonExistantException();
         }
+
+        ventanaPrincipal.actualizarNombreLibreriaSeleccionada();
     }
 
     @Override

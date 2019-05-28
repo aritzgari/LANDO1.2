@@ -56,6 +56,8 @@ public class clsGestorLN {
     private static ArrayList<clsPremios> datosPremios;
     private static ArrayList<clsPremios_Pelicula> datosPremiosPeli;
     private static ArrayList<clsDirector> datosDirector;
+    private int LibreriaDefinida = -1;
+    private String NombreLibreriaDefinida = "<No seleccionada>";
 
 
     public clsGestorLN() {
@@ -571,4 +573,26 @@ public class clsGestorLN {
         }
         return datosItfV2;
     }
+
+    /**
+     * Getters y setters
+     * @return LibreriaDefinida
+     */
+    public int getLibreriaDefinida() {
+        return LibreriaDefinida;
+    }
+
+    public void setLibreriaDefinida(int libreriaDefinida) {
+        LibreriaDefinida = libreriaDefinida;
+    }
+
+    public String getNombreLibreriaDefinida() {
+        return NombreLibreriaDefinida;
+    }
+
+    public void setNombreLibreriaDefinida(String nombreLibreriaDefinida) {
+        NombreLibreriaDefinida = nombreLibreriaDefinida;
+    }
+
+
 }

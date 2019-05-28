@@ -1,5 +1,6 @@
 package com.company.LP;
 
+import com.company.Comun.itfPropertyV2;
 import com.company.LN.clsGestorLN;
 
 import javax.swing.*;
@@ -7,6 +8,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Color;
+import java.util.ArrayList;
 
 /**
  * @author Ruben Domínguez
@@ -31,9 +33,12 @@ public class frmInsertLibrerias extends JInternalFrame implements ActionListener
     private final String TextoJLDescripcion = "<Inserte la descripción aquí>";
 
     private clsGestorLN objGestorLN;
+    private JDesktopPane desktop;
+    private frmPrincipal ventanaPrincipal;
+
     //Código
     //Constructor
-    public frmInsertLibrerias(clsGestorLN _objGestorLN) {
+    public frmInsertLibrerias(clsGestorLN _objGestorLN, JDesktopPane _desktop, frmPrincipal _ventanaPrincipal) {
         //Tamaño y componentes
         JPContent = new JPanel();
         setBounds(50, 50, 500, 430);
@@ -46,10 +51,12 @@ public class frmInsertLibrerias extends JInternalFrame implements ActionListener
         JLMensaje = new JLabel("\n");
         JBFIXED = new JButton("Bibidi Babidi Bu");
         objGestorLN = _objGestorLN;
+        desktop = _desktop;
+        ventanaPrincipal = _ventanaPrincipal;
 
         //Colores
         Color rojo = new Color(255, 140, 135);
-        Color verde = new Color(155,255, 141);
+        Color verde = new Color(155, 255, 141);
 
         //Propiedades de la ventana
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -93,7 +100,7 @@ public class frmInsertLibrerias extends JInternalFrame implements ActionListener
         JTFDescripcion.setBounds(25, 150, 450, 50);
         JBAceptar.setBounds(25, 250, 200, 50);
         JBCancelar.setBounds(250, 250, 200, 50);
-        JLMensaje.setBounds(25,320,450,50);
+        JLMensaje.setBounds(25, 320, 450, 50);
         JLMensaje.setVisible(false);
         JBFIXED.setVisible(false);
 
@@ -105,13 +112,12 @@ public class frmInsertLibrerias extends JInternalFrame implements ActionListener
         switch (e.getActionCommand()) {
             case "Aceptar":
                 if ((!JTFNombre.getText().equals(TextoJLNombre)) && (!JTFDescripcion.getText().equals(TextoJLDescripcion)) && (!JTFNombre.getText().equals("")) && (!JTFDescripcion.getText().equals(""))) {
-                    if(objGestorLN.crearLibreria(JTFNombre.getText(), JTFDescripcion.getText()) != 0){
+                    if (objGestorLN.crearLibreria(JTFNombre.getText(), JTFDescripcion.getText()) != 0) {
                         //Ha funcionado el insert.
                         JLMensaje.setText("Insert realizado.");
                         JLMensaje.setVisible(true);
 
-                    }
-                    else{
+                    } else {
                         //No ha funcionado el insert.
                         JLMensaje.setText("Insert no realizado, revisar parámetros.");
                         JLMensaje.setVisible(true);
@@ -121,6 +127,16 @@ public class frmInsertLibrerias extends JInternalFrame implements ActionListener
                     //ESTO HAY QUE PONERLO EN LA VENTANA O CON UNA EXCEPCION Y UNA VENTANA DE ERROR.
                     JLMensaje.setText("Campos vacíos o sin editar.");
                     JLMensaje.setVisible(true);
+                }
+                if (objGestorLN.getLibreriaDefinida() < 0) {
+                    frmMenuLibrerias VentanaMenuLibrerias = new frmMenuLibrerias(objGestorLN, desktop, ventanaPrincipal);
+                    ArrayList<itfPropertyV2> resultado = objGestorLN.consultarLibreriasEnBD();
+                    for (itfPropertyV2 L : resultado
+                    ) {
+                        VentanaMenuLibrerias.setItem(L);
+                    }
+                    desktop.add(VentanaMenuLibrerias);
+                    dispose();
                 }
                 break;
             case "Cancelar":
