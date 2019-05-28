@@ -14,6 +14,7 @@ import com.company.LD.clsCancionBD;
 import com.company.LD.clsAutorBD;
 import com.company.LD.clsGeneroLibroBD;
 import com.company.LD.clsEditorialBD;
+import com.company.LD.clsPremios_PeliculaBD;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -244,6 +245,20 @@ public class clsGestorLN {
     }
 
     /**
+     * Metodo para crear premios de peliculas en el Gestor con datos que recibamos de LP
+     *
+     * @author RubenD AritzG
+     */
+
+    public static int crearPremiosPelicula(String Nombre, String Categoria, int Año, String Películas_Título) {
+        int retorno = 0;
+        clsPremios_PeliculaBD objPremiosPeliculaBD = new clsPremios_PeliculaBD(Nombre, Categoria, Año, Películas_Título);
+        retorno = objPremiosPeliculaBD.sendInsert(queryInsertPremiosPeli);
+        System.out.println(retorno);
+        return retorno;
+    }
+
+    /**
      * Metodo para crear Directores en el Gestor con datos que recibamos de LP
      *
      * @author RubenD AritzG
@@ -278,7 +293,7 @@ public class clsGestorLN {
     public static int crearGeneroPeli(String Nombre) {
         int retorno = 0;
         clsGeneroPeliBD objGeneroPeliBD = new clsGeneroPeliBD(Nombre);
-        retorno =objGeneroPeliBD.sendInsert(queryInsertGeneroPeli);
+        retorno = objGeneroPeliBD.sendInsert(queryInsertGeneroPeli);
         return retorno;
     }
 
@@ -292,17 +307,6 @@ public class clsGestorLN {
         clsGeneroLibroBD objGeneroLibroBD = new clsGeneroLibroBD(Nombre);
         retorno=objGeneroLibroBD.sendInsert(queryInsertGeneroLibro);
         return retorno;
-    }
-
-    /**
-     * Metodo para crear Premios de Peliculas en el Gestor con datos que recibamos de LP
-     *
-     * @author RubenD AritzG
-     */
-    public static void crearPremiosPeli(String Nombre, String Categoria, int Anno) {
-
-        clsPremios_PeliculaBD objPremiosPeliBD = new clsPremios_PeliculaBD(Nombre, Categoria, Anno);
-        objPremiosPeliBD.sendInsert(queryInsertDirector);
     }
 
     /**
@@ -588,6 +592,36 @@ public class clsGestorLN {
         objLibreria_MultimediaBD.desconectarBD(objLibreria_MultimediaBD.getObjCon());
         return castclsLibreriaMultimediaToItfProperty(datosLibrerias);
     }
+
+    /**
+     * Método para consultar Géneros de libros.
+     */
+    public ArrayList<itfPropertyV2> consultarPremiosPeliculaEnBD() {
+        //Declaraciones
+        ResultSet resultado = null;
+        clsPremios_PeliculaBD objPremiosPeliculaBD = new clsPremios_PeliculaBD();
+
+        //Código
+        //Abrir conexión
+        objPremiosPeliculaBD.conectarBD();
+        resultado = objPremiosPeliculaBD.sendSelect(queryConsultaPremiosPeli);
+        //Reiniciamos el ArrayList en la RAM para no duplicar entradas en esta (Poco eficiente pero eficaz)
+        datosPremiosPeli.clear();
+        //Meto rs en objeto
+        try {
+            while (resultado.next()) {
+                clsPremios_Pelicula objPremiosPelicula = new clsPremios_Pelicula(resultado.getString(1), resultado.getString(2), resultado.getInt(3), resultado.getString(4));
+                datosPremiosPeli.add(objPremiosPelicula);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error SQL");
+            System.out.println(e);
+        }
+        //Cierro conexion
+        objPremiosPeliculaBD.desconectarBD(objPremiosPeliculaBD.getObjCon());
+
+        return castclsPremiosPeliToItfProperty(datosPremiosPeli);
+    }
     /**
      * A partir de aquí van las Updates - son querys para actualizar valores.
      *
@@ -621,6 +655,23 @@ public class clsGestorLN {
         //Limpiamos datosItf para no duplicar
         datosItfV2.clear();
         for (clsDirector o : _datosDirector
+        ) {
+            castObject = (itfPropertyV2) o;
+            datosItfV2.add(castObject);
+        }
+        return datosItfV2;
+    }
+
+    /**
+     * Método para castear Premios Pelicula.
+     */
+    private ArrayList<itfPropertyV2> castclsPremiosPeliToItfProperty(ArrayList<clsPremios_Pelicula> _datosPremiosPeli) {
+        //Creamos el objeto en el que vamos a castear las pelicualas
+        itfPropertyV2 castObject;
+        //Las casteamos y metemos en datosItf
+        //Limpiamos datosItf para no duplicar
+        datosItfV2.clear();
+        for (clsPremios_Pelicula o : _datosPremiosPeli
         ) {
             castObject = (itfPropertyV2) o;
             datosItfV2.add(castObject);

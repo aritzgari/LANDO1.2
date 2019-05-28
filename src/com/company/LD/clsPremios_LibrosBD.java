@@ -7,13 +7,13 @@ public class clsPremios_LibrosBD extends clsConexionBD {
     private String Nombre;
     private String Categoria;
     private int Anno;
-    private String ISBNLibro;
+    private String Libros_ISBN;
 
     //Constructor con parametros, pensado para el insert
-    public clsPremios_LibrosBD(String _Nombre, String _ISBNLibro, String _Categoria, int _Anno) {
+    public clsPremios_LibrosBD(String _Nombre, String _Libros_ISBN, String _Categoria, int _Anno) {
         setAnno(_Anno);
         setCategoria(_Categoria);
-        setISBNLibro(_ISBNLibro);
+        setLibros_ISBN(_Libros_ISBN);
         setNombre(_Nombre);
 
     }
@@ -47,12 +47,12 @@ public class clsPremios_LibrosBD extends clsConexionBD {
         Anno = anno;
     }
 
-    public String getISBNLibro() {
-        return ISBNLibro;
+    public String getLibros_ISBN() {
+        return Libros_ISBN;
     }
 
-    public void setISBNLibro(String ISBNLibro) {
-        this.ISBNLibro = ISBNLibro;
+    public void setLibros_ISBN(String titulodelibro) {
+        Libros_ISBN = titulodelibro;
     }
 
     public int sendInsert(String query) {
@@ -67,7 +67,7 @@ public class clsPremios_LibrosBD extends clsConexionBD {
             this.getObjSt().setString(1, getNombre());
             this.getObjSt().setString(2, getCategoria());
             this.getObjSt().setInt(3, getAnno());
-            this.getObjSt().setString(4, getISBNLibro());
+            this.getObjSt().setString(4, getLibros_ISBN());
 
             regActualizados = this.getObjSt().executeUpdate();
 

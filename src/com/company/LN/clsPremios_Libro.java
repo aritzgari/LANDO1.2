@@ -3,21 +3,15 @@ package com.company.LN;
 import com.company.Comun.itfPropertyV2;
 import com.company.Excepciones.clsPropiedadNonExistantException;
 
-/**
- * @author Ruben Domínguez
- * Aritz Garitano
- * <p>
- * @version 2.0 En la versión 1.0 esta clase no necesitaba implementar getObjectProperty porque lo heredaba.
- */
-public class clsPremios_Pelicula extends clsPremios implements itfPropertyV2 {
-    //Atributos concretos (Tener en cuenta los heredados)
-    private String Titulodepeliculas;
+public class clsPremios_Libro extends clsPremios implements itfPropertyV2 {
+
+    private String Libros_ISBN;
 
 
     //Constructor con Parametros: Aun no.
 
     //Constructor sin Parametros
-    public clsPremios_Pelicula(String _Nombre, String _Categoria, int _Año, String string) {
+    public clsPremios_Libro(String _Nombre, String _Categoria, int _Año) {
         setNombre(_Nombre);
         setCategoria(_Categoria);
         setAño(_Año);
@@ -46,8 +40,8 @@ public class clsPremios_Pelicula extends clsPremios implements itfPropertyV2 {
             case "Año":
                 retorno =  getAño();
                 break;
-            case "Películas_Título":
-                retorno = Titulodepeliculas;
+            case "Libros_ISBN":
+                retorno = Libros_ISBN;
                 break;
             case "Clase":
                 retorno = 6;

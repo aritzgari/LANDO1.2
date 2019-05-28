@@ -48,7 +48,7 @@ public class clsConstantes {
      * Constantes para querys de premios de peliculas.
      */
 
-    public static final String queryInsertPremiosPeli = "insert into Premios_Película (Nombre, Categoria, Año) values (?, ?, ?)";
+    public static final String queryInsertPremiosPeli = "insert into Premios_Película (Nombre, Categoria, Año, Películas_Título) values (?, ?, ?, ?)";
     public static final String queryConsultaPremiosPeli = "SELECT * FROM lando.premios_película;";
     /**
      * Constantes para querys de genero de peliculas.

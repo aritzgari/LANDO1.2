@@ -6,12 +6,14 @@ public class clsPremios_PeliculaBD extends clsConexionBD{
     private String Nombre;
     private String Categoria;
     private int Anno;
+    private String Películas_Título;
 
     //Constructor con parametros, pensado para el insert
-    public clsPremios_PeliculaBD(String _Nombre, String _Categoria, int _Anno) {
+    public clsPremios_PeliculaBD(String _Nombre, String _Categoria, int _Anno, String _Películas_Título) {
         setNombre(_Nombre);
         setCategoria(_Categoria);
         setAño(_Anno);
+        setPelículas_Título(_Películas_Título);
     }
 
     //Constructor sin parametros, pensado para el select
@@ -42,6 +44,14 @@ public class clsPremios_PeliculaBD extends clsConexionBD{
         Anno = anno;
     }
 
+    public String getPelículas_Título() {
+        return Películas_Título;
+    }
+
+    public void setPelículas_Título(String titulodepeliculas) {
+        this.Películas_Título = titulodepeliculas;
+    }
+
     public int sendInsert(String query) {
         this.conectarBD();
         int regActualizados = 0;
@@ -54,6 +64,7 @@ public class clsPremios_PeliculaBD extends clsConexionBD{
             this.getObjSt().setString(1, getNombre());
             this.getObjSt().setString(2, getCategoria());
             this.getObjSt().setInt(3, getAnno());
+            this.getObjSt().setString(4,getPelículas_Título());
 
             regActualizados = this.getObjSt().executeUpdate();
 
