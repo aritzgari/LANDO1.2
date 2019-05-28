@@ -1,6 +1,10 @@
 package com.company.LP;
 
+
+import com.company.Comun.itfPropertyV2;
 import com.company.LN.clsGestorLN;
+
+import java.util.ArrayList;
 
 import javax.swing.*;
 import java.awt.*;
@@ -30,9 +34,12 @@ public class frmInsertLibrerias extends JInternalFrame implements ActionListener
     private final String TextoJLDescripcion = "<Inserte la descripción aquí>";
 
     private clsGestorLN objGestorLN;
+    private JDesktopPane desktop;
+    private frmPrincipal ventanaPrincipal;
+
     //Código
     //Constructor
-    public frmInsertLibrerias(clsGestorLN _objGestorLN) {
+    public frmInsertLibrerias(clsGestorLN _objGestorLN, JDesktopPane _desktop, frmPrincipal _ventanaPrincipal) {
         //Tamaño y componentes
         JPContent = new JPanel();
         setBounds(50, 50, 500, 430);
@@ -44,10 +51,12 @@ public class frmInsertLibrerias extends JInternalFrame implements ActionListener
         JBCancelar = new JButton("Cancelar");
         JBFIXED = new JButton("Bibidi Babidi Bu");
         objGestorLN = _objGestorLN;
+        desktop = _desktop;
+        ventanaPrincipal = _ventanaPrincipal;
 
         //Colores
         Color rojo = new Color(255, 140, 135);
-        Color verde = new Color(155,255, 141);
+        Color verde = new Color(155, 255, 141);
 
         //Propiedades de la ventana
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -95,19 +104,28 @@ public class frmInsertLibrerias extends JInternalFrame implements ActionListener
         switch (e.getActionCommand()) {
             case "Aceptar":
                 if ((!JTFNombre.getText().equals(TextoJLNombre)) && (!JTFDescripcion.getText().equals(TextoJLDescripcion)) && (!JTFNombre.getText().equals("")) && (!JTFDescripcion.getText().equals(""))) {
-                    if(objGestorLN.crearLibreria(JTFNombre.getText(), JTFDescripcion.getText()) != 0){
+                    if (objGestorLN.crearLibreria(JTFNombre.getText(), JTFDescripcion.getText()) != 0) {
                         //Ha funcionado el insert.
-                        JOptionPane.showInternalMessageDialog(null,"  Insert realizado.");
+                        JOptionPane.showInternalMessageDialog(null, "  Insert realizado.");
 
-                    }
-                    else{
+                    } else {
                         //No ha funcionado el insert.
-                        JOptionPane.showInternalMessageDialog(null,"Insert no realizado, revisar parámetros.");
+                        JOptionPane.showInternalMessageDialog(null, "Insert no realizado, revisar parámetros.");
 
                     }
                 } else {
                     //ESTO HAY QUE PONERLO EN LA VENTANA O CON UNA EXCEPCION Y UNA VENTANA DE ERROR.
-                    JOptionPane.showInternalMessageDialog(null,"Campos vacíos o sin editar.");
+                    JOptionPane.showInternalMessageDialog(null, "Campos vacíos o sin editar.");
+                }
+                if (objGestorLN.getLibreriaDefinida() < 0) {
+                    frmMenuLibrerias VentanaMenuLibrerias = new frmMenuLibrerias(objGestorLN, desktop, ventanaPrincipal);
+                    ArrayList<itfPropertyV2> resultado = objGestorLN.consultarLibreriasEnBD();
+                    for (itfPropertyV2 L : resultado
+                    ) {
+                        VentanaMenuLibrerias.setItem(L);
+                    }
+                    desktop.add(VentanaMenuLibrerias);
+                    dispose();
                 }
                 break;
             case "Cancelar":

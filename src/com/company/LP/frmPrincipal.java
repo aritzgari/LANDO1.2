@@ -1,6 +1,7 @@
 package com.company.LP;
 
 import com.company.LN.clsGestorLN;
+import com.company.Excepciones.clsPropiedadNonExistantException;
 import com.company.LN.itfProperty;
 import com.company.Comun.itfPropertyV2;
 
@@ -20,7 +21,13 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     private static clsGestorLN objGestorLN = new clsGestorLN();
     private Color colorAzul = new Color(112, 146, 190);
     private Color colorGris = new Color(195, 195, 195);
-    /*Tudo lo que contiene el menu*/
+    //Componentes para el menu de las librerias
+    private JButton JBCambiar;
+    private JLabel JLNombreLibreria;
+    private JLabel JLNombreLibreria2;
+    private JPanel JPInterfazMenuLibreria;
+
+    //Tudu lo que contiene el menu
     private JPanel miPanel;// contenedor de los componentes
     private JMenuBar barraMenu;
     private JMenu menuInsertar, menuConsultar;
@@ -49,6 +56,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         //Set up the GUI.
         desktop = new JDesktopPane();
         desktop.setPreferredSize(new Dimension(desktopWidth, desktopHeight));
+        this.setExtendedState(MAXIMIZED_BOTH);
         setContentPane(desktop);
         //Inicializacion
         inicializador();
@@ -91,20 +99,13 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         //Consulta los géneros para meterlos en la RAM
         //objGestorLN.consultarGeneroPeliEnBD();
         //Inserte otras cosas que necesiten ser insertadas
-        frmMenuLibrerias VentanaMenuLibrerias = new frmMenuLibrerias();
-        ArrayList<itfPropertyV2> resultado = objGestorLN.consultarLibreriasEnBD();
-        for (itfPropertyV2 L : resultado
-        ) {
-            VentanaMenuLibrerias.setItem(L);
-        }
-        desktop.add(VentanaMenuLibrerias);
 
-        Jlist2 PruebaScrollPane = new Jlist2();
-
-        desktop.add(PruebaScrollPane);
+        //Pantalla para gestionar las librerias desde el principio
+        generarMenuLibrerias();
     }
 
-    //Ventana que muestra la informaci?n de eventos.
+
+    //Ventana que muestra la información de eventos.
     protected void createDisplayWindow() {
         JButton b1 = new JButton("Show internal frame");
         b1.setActionCommand(SHOW);
@@ -246,6 +247,11 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
             case "ActionConsPremiosPelicula":
                 caseConsPremiosPelicula();
                 break;
+            case "Cambiar":
+                caseCambiar();
+                break;
+            default:
+                throw new clsPropiedadNonExistantException();
 
         }
 
@@ -265,6 +271,30 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
             frame.setSelected(true);
         } catch (java.beans.PropertyVetoException e) {}
     }*/
+    private void crearMenuLibrerias() {
+        JBCambiar = new JButton("Cambiar");
+        JLNombreLibreria = new JLabel("Libreria Seleccionada: ");
+        JLNombreLibreria2 = new JLabel(objGestorLN.getNombreLibreriaDefinida());
+        JPInterfazMenuLibreria = new JPanel();
+
+        JPInterfazMenuLibreria.setBackground(Color.white);
+        JPInterfazMenuLibreria.setLayout(null);
+        JLNombreLibreria2.setForeground(Color.gray);
+        //JPInterfazMenuLibreria.setBorder();
+
+        JBCambiar.setActionCommand("Cambiar");
+        JBCambiar.addActionListener(this);
+
+        desktop.add(JPInterfazMenuLibreria);
+        JPInterfazMenuLibreria.add(JBCambiar);
+        JPInterfazMenuLibreria.add(JLNombreLibreria);
+        JPInterfazMenuLibreria.add(JLNombreLibreria2);
+
+        JPInterfazMenuLibreria.setBounds(875, 0, 490, 30);
+        JBCambiar.setBounds(395, 2, 88, 26);
+        JLNombreLibreria.setBounds(4, 0, 130, 30);
+        JLNombreLibreria2.setBounds(138, 0, 260, 30);
+    }
 
     protected JMenuBar createMenuBar() {
         //JMenuBar menuBar = new JMenuBar();
@@ -486,6 +516,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setJMenuBar(createMenuBar());
+        this.crearMenuLibrerias();
         //Display the window.
         this.pack();
         this.setVisible(true);
@@ -498,21 +529,10 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
      * @see clsGestorLN
      */
     private void caseInsertarLibrerias() {
-
-        frmInsertLibrerias VentanaInsertLibrerias = new frmInsertLibrerias(objGestorLN);
-        desktop.add(VentanaInsertLibrerias);
-        /*
         //Declaraciones
-        String Nombre;
-        String Descripcion;
         //Codigo
-        System.out.println("Datos para crear la Librería:");
-        System.out.println("Un Nombre para saber que libreria es. (String)\n" +
-                "ej. 'Casa' ó 'Oficina'.");
-        Nombre = UtilidadesLP.leerCadena();
-        System.out.println("Añade una descripción para saber que es lo que va a contener esta librería");
-        Descripcion = UtilidadesLP.leerCadena();
-        objGestorLN.crearLibreria(*//*idLibreria_Multimedia,*//* Nombre, Descripcion);*/
+        frmInsertLibrerias VentanaInsertLibrerias = new frmInsertLibrerias(objGestorLN, desktop, this);
+        desktop.add(VentanaInsertLibrerias);
     }
 
     /**
@@ -524,71 +544,6 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         //Declaraciones
         frmInsertPeliculas VentanaInsertPeliculas = new frmInsertPeliculas(objGestorLN);
         desktop.add(VentanaInsertPeliculas);
-        /*int Libreria_Multimedia_idLibreria_Multimedia;
-        String Titulo;
-        String Titulo_original;
-        int Anno_de_publicacion;
-        int Duracion;
-        int Calificacion;
-        int Calporedad;
-        String Tipo_DoA;
-        double Precio;
-        boolean En_propiedad = false;
-        boolean En_busqueda = false;
-        String Formato;
-        String Saga;
-        Double Orden;
-        String Sinopsis;
-        String Enlace_a_trailer;*/
-
-        //Codigo
-        /*System.out.println("Datos para crear la Pelicula:");
-        System.out.println("ID de la libreria a la que pertenece:(int)");
-        Libreria_Multimedia_idLibreria_Multimedia = UtilidadesLP.leerEntero();
-        System.out.println("Titulo: (String)");
-        Titulo = UtilidadesLP.leerCadena();
-        System.out.println("Titulo original: (String)");
-        Titulo_original = UtilidadesLP.leerCadena();
-        System.out.println("Año de publicación: (int)");
-        Anno_de_publicacion = UtilidadesLP.leerEntero();
-        System.out.println("Duracion: (int)");
-        Duracion = UtilidadesLP.leerEntero();
-        System.out.println("Calificacion: (int)");
-        Calificacion = UtilidadesLP.leerEntero();
-        System.out.println("Calificación por edad: (int)");
-        Calporedad = UtilidadesLP.leerEntero();
-        System.out.println("Tipo de formato: (String Digital ó Analógico)");
-        Tipo_DoA = UtilidadesLP.leerCadena();
-        System.out.println("Precio: (Double)");
-        Precio = UtilidadesLP.leerReal();
-        System.out.println("Lo tengo: (boolean 0 o 1)");
-        int valor = UtilidadesLP.leerEntero();
-        if (valor == 0) {
-            En_propiedad = false;
-        } else if (valor == 1) {
-            En_propiedad = true;
-        }
-        System.out.println("Lo quiero: (boolean 0 o 1)");
-        valor = UtilidadesLP.leerEntero();
-        if (valor == 0) {
-            En_busqueda = false;
-        } else if (valor == 1) {
-            En_busqueda = true;
-        }
-        System.out.println("Formato: (String) - Ej: .mp3 o Vinilo o BluRay");
-        Formato = UtilidadesLP.leerCadena();
-        System.out.println("Nombre de la saga a la que pertenece (String)");
-        Saga = UtilidadesLP.leerCadena();
-        System.out.println("En esa saga, que numero es: (Double)");
-        Orden = UtilidadesLP.leerReal();
-        System.out.println("Sinopsis: (String)");
-        Sinopsis = UtilidadesLP.leerCadena();
-        System.out.println("Puedes añadir el enlace al trailer: (String)");
-        Enlace_a_trailer = UtilidadesLP.leerCadena();
-
-        objGestorLN.crearPelicula(Libreria_Multimedia_idLibreria_Multimedia, Titulo, Titulo_original, Anno_de_publicacion, Duracion, Calificacion, Calporedad, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Saga, Orden, Sinopsis, Enlace_a_trailer);
-   */
-
     }
 
     /**
@@ -817,5 +772,23 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         }
         desktop.add(VentanaConsPremiosPelicula);
     }
+    private void caseCambiar() {
+        generarMenuLibrerias();
+    }
+
+    public void generarMenuLibrerias() {
+        frmMenuLibrerias VentanaMenuLibrerias = new frmMenuLibrerias(objGestorLN, desktop, this);
+        ArrayList<itfPropertyV2> resultado = objGestorLN.consultarLibreriasEnBD();
+        for (itfPropertyV2 L : resultado
+        ) {
+            VentanaMenuLibrerias.setItem(L);
+        }
+        desktop.add(VentanaMenuLibrerias);
+    }
+
+    public void actualizarNombreLibreriaSeleccionada() {
+        JLNombreLibreria2.setText(objGestorLN.getNombreLibreriaDefinida());
+    }
+
 
 }

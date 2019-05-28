@@ -53,6 +53,8 @@ public class clsGestorLN {
     private static ArrayList<clsAutor> datosAutor;
     private static ArrayList<clsGeneroLibro> datosGeneroLibro;
     private static ArrayList<clsEditorial> datosEditorial;
+    private int LibreriaDefinida = -1;
+    private String NombreLibreriaDefinida = "<No seleccionada>";
 
 
     public clsGestorLN() {
@@ -820,4 +822,26 @@ public class clsGestorLN {
         }
         return datosItfV2;
     }
+
+    /**
+     * Getters y setters
+     * @return Datos de LibreriaDefinida
+     */
+    public int getLibreriaDefinida() {
+        return LibreriaDefinida;
+    }
+
+    public void setLibreriaDefinida(int libreriaDefinida) {
+        LibreriaDefinida = libreriaDefinida;
+    }
+
+    public String getNombreLibreriaDefinida() {
+        return NombreLibreriaDefinida;
+    }
+
+    public void setNombreLibreriaDefinida(String nombreLibreriaDefinida) {
+        NombreLibreriaDefinida = nombreLibreriaDefinida;
+    }
+
+
 }

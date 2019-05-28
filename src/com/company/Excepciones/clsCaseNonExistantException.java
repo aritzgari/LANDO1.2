@@ -1,0 +1,16 @@
+package com.company.Excepciones;
+
+/**
+ * Exception en caso de pedir una propiedad que no existe.
+ *<p>
+ * @author Ruben Domínguez
+ * Aritz Garitano
+ * @return Devuelve un mensaje de error para cuando programamos mal la petición de una propiedad, y para la ejecución.
+ */
+public class clsCaseNonExistantException extends RuntimeException {
+
+    @Override
+    public String getMessage() {
+        return "Error 404: Case not found";
+    }
+}
