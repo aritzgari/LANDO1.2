@@ -271,7 +271,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         JPInterfazMenuLibreria.add(JLNombreLibreria);
         JPInterfazMenuLibreria.add(JLNombreLibreria2);
 
-        JPInterfazMenuLibreria.setBounds(875, 0, 550, 30);
+        JPInterfazMenuLibreria.setBounds(875, 0, 490, 30);
         JBCambiar.setBounds(395, 2, 88, 26);
         JLNombreLibreria.setBounds(4, 0, 130, 30);
         JLNombreLibreria2.setBounds(138, 0, 260, 30);
