@@ -92,20 +92,17 @@ public class frmInsertGeneroLibro extends JInternalFrame implements ActionListen
                 if ((!JTFNombre.getText().equals(TextoJLNombre)) && (!JTFNombre.getText().equals(""))) {
                     if(objGestorLN.crearGeneroLibro(JTFNombre.getText()) != 0){
                         //Ha funcionado el insert.
-                        JLMensaje.setText("Insert realizado.");
-                        JLMensaje.setVisible(true);
+                        JOptionPane.showInternalMessageDialog(null,"  Insert realizado.");
 
                     }
                     else{
                         //No ha funcionado el insert.
-                        JLMensaje.setText("Insert no realizado, revisar parámetros.");
-                        JLMensaje.setVisible(true);
+                        JOptionPane.showInternalMessageDialog(null,"Insert no realizado, revisar parámetros.");
 
                     }
                 } else {
                     //ESTO HAY QUE PONERLO EN LA VENTANA O CON UNA EXCEPCION Y UNA VENTANA DE ERROR.
-                    JLMensaje.setText("Campos vacíos o sin editar.");
-                    JLMensaje.setVisible(true);
+                    JOptionPane.showInternalMessageDialog(null,"Campos vacíos o sin editar.");
                 }
                 break;
             case "Cancelar":

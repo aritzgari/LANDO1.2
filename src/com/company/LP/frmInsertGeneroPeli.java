@@ -20,8 +20,6 @@ public class frmInsertGeneroPeli extends JInternalFrame implements ActionListene
     //Los TextAreas no se pueden modificar por el usuario, los TextFields, si. Existen tambien los JLabel.
     JLabel JLNombre;
     JTextField JTFNombre;
-    JLabel JLDescripcion;
-    JTextField JTFDescripcion;
     JButton JBAceptar;
     JButton JBCancelar;
     JButton JBFIXED;
@@ -43,6 +41,9 @@ public class frmInsertGeneroPeli extends JInternalFrame implements ActionListene
         JBFIXED = new JButton("Bibidi Babidi Bu");
         objGestorLN = _objGestorLN;
 
+        //Colores
+        Color rojo = new Color(255, 140, 135);
+        Color verde = new Color(155,255, 141);
 
         //Propiedades de la ventana
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -68,6 +69,8 @@ public class frmInsertGeneroPeli extends JInternalFrame implements ActionListene
         JBCancelar.setActionCommand("Cancelar");
         JBAceptar.addActionListener(this);
         JBCancelar.addActionListener(this);
+        JBAceptar.setBackground(verde);
+        JBCancelar.setBackground(rojo);
 
         //Ubicar las cosas porque sino sale tudu amontonado:
         JLNombre.setBounds(25, 50, 450, 50);
@@ -84,10 +87,19 @@ public class frmInsertGeneroPeli extends JInternalFrame implements ActionListene
         switch (e.getActionCommand()) {
             case "Aceptar":
                 if ((!JTFNombre.getText().equals(TextoJLNombre)) && (!JTFNombre.getText().equals(""))) {
-                    objGestorLN.crearGeneroPeli(JTFNombre.getText());
+                    if (objGestorLN.crearGeneroPeli(JTFNombre.getText()) !=0) {
+                        //Ha funcionado el insert.
+                        JOptionPane.showInternalMessageDialog(null,"  Insert realizado.");
+
+                    }
+                    else{
+                        //No ha funcionado el insert.
+                        JOptionPane.showInternalMessageDialog(null,"Insert no realizado, revisar parámetros.");
+
+                    }
                 } else {
                     //ESTO HAY QUE PONERLO EN LA VENTANA O CON UNA EXCEPCION Y UNA VENTANA DE ERROR.
-                    System.out.println("Campos vacíos o sin editar");
+                    JOptionPane.showInternalMessageDialog(null,"Campos vacíos o sin editar.");
                 }
                 break;
             case "Cancelar":
