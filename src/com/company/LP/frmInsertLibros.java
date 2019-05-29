@@ -94,7 +94,7 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
     public frmInsertLibros(clsGestorLN _objGestorLN) {
         //Tamaño y componentes
         JPContent = new JPanel();
-        setBounds(0, 0, 1000, 475);
+        setBounds(0, 40, 1000, 475);
 
         JLISBN = new JLabel("\nISBN:");
         JTFISBN = new JTextField(TextoJTFISBN);

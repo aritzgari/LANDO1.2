@@ -47,8 +47,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     static final String SHOW = "show";
     static final String CLEAR = "clear";
     String newline = "\n";
-    static final int desktopWidth = 1000;
-    static final int desktopHeight = 600;
+    static final int desktopWidth = 1365;
+    static final int desktopHeight = 700;
 
     //Constructor
     public frmPrincipal(String title) {
@@ -57,7 +57,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         //Set up the GUI.
         desktop = new JDesktopPane();
         desktop.setPreferredSize(new Dimension(desktopWidth, desktopHeight));
-        this.setExtendedState(MAXIMIZED_BOTH);
+        //this.setExtendedState(MAXIMIZED_BOTH);                                //Para que salga directamente maximizado
+        this.setResizable(false);
         setContentPane(desktop);
         //Inicializacion
         inicializador();
@@ -287,7 +288,11 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
 
         JPInterfazMenuLibreria.setBackground(Color.white);
         JPInterfazMenuLibreria.setLayout(null);
-        JLNombreLibreria2.setForeground(Color.gray);
+        if(objGestorLN.getNombreLibreriaDefinida() == "<No seleccionada>") {
+            JLNombreLibreria2.setForeground(Color.RED);
+        } else {
+            JLNombreLibreria2.setForeground(Color.gray);
+        }
         //JPInterfazMenuLibreria.setBorder();
 
         JBCambiar.setActionCommand("Cambiar");
@@ -671,10 +676,11 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     }
 
     /**
-     * M?todo consultar librerias desde la ventana.
+     * Método consultar librerias desde la ventana.
      */
 
     private void caseConsLibrerias() {
+        /*
         frmListaLibrerias VentanaConsLibrerias = new frmListaLibrerias();
         ArrayList<itfPropertyV2> resultado = new ArrayList<itfPropertyV2>();
         resultado.clear();
@@ -687,6 +693,10 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
             System.out.println(resultado.size());
         }
         desktop.add(VentanaConsLibrerias);
+        */
+        //Ahora con JTables:
+        frmTablaLibrerias VentanaTablaLibrerias = new frmTablaLibrerias(objGestorLN, desktop, this);
+        desktop.add(VentanaTablaLibrerias);
     }
 
     /**
@@ -839,6 +849,11 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
 
     public void actualizarNombreLibreriaSeleccionada() {
         JLNombreLibreria2.setText(objGestorLN.getNombreLibreriaDefinida());
+        if(objGestorLN.getNombreLibreriaDefinida() == "<No seleccionada>") {
+            JLNombreLibreria2.setForeground(Color.RED);
+        } else {
+            JLNombreLibreria2.setForeground(Color.gray);
+        }
     }
 
 
