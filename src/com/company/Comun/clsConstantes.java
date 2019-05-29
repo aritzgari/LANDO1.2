@@ -81,8 +81,8 @@ public class clsConstantes {
      * Constantes para querys de premios de libros.
      */
 
-    public static final String queryInsertPremiosLibros = "insert into Premios_Libro (Nombre_Del_Premio, Categoria, Año, Libros_ISBN) values (?, ?, ?, ?)";
-    public static final String queryConsultaPremiosLibros = "SELECT * FROM lando.premios_libro;";
+    public static final String queryInsertPremiosLibro = "insert into Premios_Libro (Nombre, Categoria, Año, Libros_ISBN) values (?, ?, ?, ?)";
+    public static final String queryConsultaPremiosLibro = "SELECT * FROM lando.premios_libro;";
 
     /**
      * Constantes para querys de genero de canciones.

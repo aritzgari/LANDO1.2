@@ -6,21 +6,24 @@ public class clsPremios_LibrosBD extends clsConexionBD {
 
     private String Nombre;
     private String Categoria;
-    private int Anno;
+    private int Año;
     private String Libros_ISBN;
 
     //Constructor con parametros, pensado para el insert
-    public clsPremios_LibrosBD(String _Nombre, String _Libros_ISBN, String _Categoria, int _Anno) {
-        setAnno(_Anno);
-        setCategoria(_Categoria);
-        setLibros_ISBN(_Libros_ISBN);
+    public clsPremios_LibrosBD(String _Nombre, String _Categoria, int _Año,String _Libros_ISBN) {
         setNombre(_Nombre);
+        setCategoria(_Categoria);
+        setAño(_Año);
+        setLibros_ISBN(_Libros_ISBN);
+
 
     }
 
     //Constructor sin parametros, pensado para el select
     public clsPremios_LibrosBD() {
+
     }
+
 
     public String getNombre() {
         return Nombre;
@@ -39,12 +42,12 @@ public class clsPremios_LibrosBD extends clsConexionBD {
         Categoria = categoria;
     }
 
-    public int getAnno() {
-        return Anno;
+    public int getAño() {
+        return Año;
     }
 
-    public void setAnno(int anno) {
-        Anno = anno;
+    public void setAño(int año) {
+        Año = año;
     }
 
     public String getLibros_ISBN() {
@@ -55,6 +58,10 @@ public class clsPremios_LibrosBD extends clsConexionBD {
         Libros_ISBN = titulodelibro;
     }
 
+
+
+
+    @Override
     public int sendInsert(String query) {
         this.conectarBD();
         int regActualizados = 0;
@@ -66,7 +73,7 @@ public class clsPremios_LibrosBD extends clsConexionBD {
             this.setObjSt(this.getObjCon().prepareStatement(query, this.getObjSt().RETURN_GENERATED_KEYS));
             this.getObjSt().setString(1, getNombre());
             this.getObjSt().setString(2, getCategoria());
-            this.getObjSt().setInt(3, getAnno());
+            this.getObjSt().setInt(3, getAño());
             this.getObjSt().setString(4, getLibros_ISBN());
 
             regActualizados = this.getObjSt().executeUpdate();
