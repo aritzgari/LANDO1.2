@@ -236,11 +236,13 @@ public class clsLibrosBD extends clsConexionBD {
             regActualizados = this.getObjSt().executeUpdate();
 
             if (regActualizados == 1) {
+                retorno = 1;
+                /*
                 this.setObjRs(this.getObjSt().getGeneratedKeys());
                 if (this.getObjRs().next()) {
                     //En este retorno me da el AutoIncremental con el +1 hecho, es decir, listo para insertarlo.
                     retorno = this.getObjRs().getInt(1);
-                }
+                }*/
             }
 
 

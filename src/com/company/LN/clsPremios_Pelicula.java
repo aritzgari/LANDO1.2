@@ -14,14 +14,15 @@ public class clsPremios_Pelicula extends clsPremios implements itfPropertyV2 {
     private String Titulodepeliculas;
 
 
-    //Constructor con Parametros: Aun no.
-
-    //Constructor sin Parametros
-    public clsPremios_Pelicula(String _Nombre, String _Categoria, int _Año, String string) {
+    //Constructor con Parametros:
+    public clsPremios_Pelicula(String _Nombre, String _Categoria, int _Año, String _Titulodepeliculas) {
         setNombre(_Nombre);
         setCategoria(_Categoria);
         setAño(_Año);
+        Titulodepeliculas = _Titulodepeliculas;
     }
+    //Constructor sin Parametros
+
 
     @Override
     public String toString() {

@@ -169,7 +169,7 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
         ModeloOrden.setValue(1.00);
         JSOrden.setModel(ModeloOrden);
 
-        JLSinopsis = new JLabel("\nSin?psis:");
+        JLSinopsis = new JLabel("\nSinópsis:");
         JTFSinopsis = new JTextField(TextoJTFSinopsis);
 
         JLEnlace_a_trailer = new JLabel("\nEnlace al tráiler:");
@@ -196,7 +196,7 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
         this.setVisible(true);
 
         //Agregar los componentes y conformar la ventana
-        setTitle("Insertar Pel?culas");
+        setTitle("Insertar Películas");
         JPContent.setLayout(new BorderLayout());
         JPContent.add(JLTitulo);
         JPContent.add(JTFTitulo);

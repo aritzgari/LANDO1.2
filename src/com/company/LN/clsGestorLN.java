@@ -200,7 +200,7 @@ public class clsGestorLN {
     public static int crearLibro(int Libreria_Multimedia_idLibreria_Multimedia, String ISBN, String Titulo, String Titulo_original, int Anno_de_publicacion, String Tipo_DoA, double Precio, boolean En_propiedad, boolean En_busqueda, String Formato, int Paginas, String Resumen, boolean Serie_SoN, String Nombre_serie, double Orden_serie, int idGenero, int idAutor, int idEditorial) {
         int retorno=0;
         clsLibrosBD objLibroBD = new clsLibrosBD(Libreria_Multimedia_idLibreria_Multimedia, ISBN, Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Paginas, Resumen, Serie_SoN, Nombre_serie, Orden_serie, idGenero, idAutor, idEditorial);
-        objLibroBD.sendInsert(queryInsertLibro);
+        retorno = objLibroBD.sendInsert(queryInsertLibro);
         System.out.println(retorno);
         return retorno;
     }

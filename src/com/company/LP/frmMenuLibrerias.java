@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 import java.util.LinkedList;
 
 /**
- * @author Ruben Dom?nguez
+ * @author Ruben Domínguez
  * Aritz Garitano
  */
 public class frmMenuLibrerias extends JInternalFrame implements ActionListener, ListSelectionListener {
@@ -51,13 +51,13 @@ public class frmMenuLibrerias extends JInternalFrame implements ActionListener, 
     private String Descripcion;
 
     /**
-     * Creaci?n de lista de librerias dentro del JPanel.
+     * Creación de lista de librerias dentro del JPanel.
      *
      * @see ModeloLista
      */
     //Constructor
     public frmMenuLibrerias(clsGestorLN _objGestorLN, JDesktopPane _desktop, frmPrincipal _ventanaPrincipal) {
-        //Definir el gestor dentro de este ?mbito para poder acceder a ?l
+        //Definir el gestor dentro de este ámbito para poder acceder a él
         objGestorLN = _objGestorLN;
         ventanaPrincipal = _ventanaPrincipal;
         desktop = _desktop;
@@ -68,7 +68,7 @@ public class frmMenuLibrerias extends JInternalFrame implements ActionListener, 
         this.setIconifiable(true);
         this.setVisible(true);
         setBounds(0, 0, 650, 500);
-        setTitle("Menu de Librer?as");
+        setTitle("Menu de Librerías");
 
 
         //News y Valores de inicializaci?n
@@ -77,8 +77,8 @@ public class frmMenuLibrerias extends JInternalFrame implements ActionListener, 
         JPLista = new JPanel();
 
         //JLabels
-        JLSeleccion = new JLabel("Escoja la librer?a en la que quiere a?adir objetos, o cree una nueva:");
-        JLLista = new JLabel("Lista de librer?as disponibles:");
+        JLSeleccion = new JLabel("Escoja la librería en la que quiere añadir objetos, o cree una nueva:");
+        JLLista = new JLabel("Lista de librerías disponibles:");
 
         //News de los componentes de la lista
         Objetos = new LinkedList<itfPropertyV2>();
@@ -91,7 +91,7 @@ public class frmMenuLibrerias extends JInternalFrame implements ActionListener, 
         //News de Botones
         JBAceptar = new JButton("Aceptar");
         JBCancelar = new JButton("Cerrar");
-        JBCrear = new JButton("Crear Librer?a");
+        JBCrear = new JButton("Crear Librería");
         JBFIXED = new JButton("Bibidi Babidi Bu");
 
 
@@ -211,7 +211,7 @@ public class frmMenuLibrerias extends JInternalFrame implements ActionListener, 
         if (arg0.getValueIsAdjusting() == false) {
             String TextoAMostrar =
                     "clsLibreriaMultimedia{" +
-                            " Descripci?n= " + ((itfPropertyV2) JLista.getSelectedValue()).getObjectProperty("Descripci?n") + " }";
+                            " Descripción= " + ((itfPropertyV2) JLista.getSelectedValue()).getObjectProperty("Descripción") + " }";
             System.out.println("Atributos: " + TextoAMostrar);
 
         }

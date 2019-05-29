@@ -355,7 +355,7 @@ public class frmInsertLibros extends JInternalFrame implements ActionListener {
                         && (!JTFResumen.getText().equals(""))
                         && (!JTFISBN.getText().equals(""))) {
 
-                    if (objGestorLN.crearLibro(1,JTFISBN.getText(), JTFTitulo.getText(), JTFTitulo_original.getText(), (int) JSAño.getValue(), (String) JCBTipo_DoA.getSelectedItem(), (Double) JSPrecio.getValue(), JCBEn_propiedad.isSelected(), JCBEn_busqueda.isSelected(), JTFFormato.getText(), (int) JSPaginas.getValue(), JTFResumen.getText(), JCBSerie_SoN.isSelected(),  JTFNombre_serie.getText(),(Double) JSOrden_serie.getValue(), (int) JSidGenero.getValue(), (int) JSidAutor.getValue(), (int) JSidEditorial.getValue()) != 0) {
+                    if (objGestorLN.crearLibro(objGestorLN.getLibreriaDefinida(),JTFISBN.getText(), JTFTitulo.getText(), JTFTitulo_original.getText(), (int) JSAño.getValue(), (String) JCBTipo_DoA.getSelectedItem(), (Double) JSPrecio.getValue(), JCBEn_propiedad.isSelected(), JCBEn_busqueda.isSelected(), JTFFormato.getText(), (int) JSPaginas.getValue(), JTFResumen.getText(), JCBSerie_SoN.isSelected(),  JTFNombre_serie.getText(),(Double) JSOrden_serie.getValue(), (int) JSidGenero.getValue(), (int) JSidAutor.getValue(), (int) JSidEditorial.getValue()) != 0) {
                         //Ha funcionado el insert.
                         //JLMensaje.setText("Insert realizado.");
                         //JLMensaje.setVisible(true);

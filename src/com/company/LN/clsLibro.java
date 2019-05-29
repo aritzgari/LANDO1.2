@@ -139,7 +139,7 @@ public class clsLibro extends clsArticulo implements itfPropertyV2 {
 
     @Override
     public String toString() {
-        return ISBN;
+        return super.getTitulo();
     }
 
     @Override
