@@ -20,7 +20,7 @@ public class frmListaAutor extends JInternalFrame implements ListSelectionListen
 
 
     /**
-     * CreaciÃ³n de lista de  librerias.
+     * Creación de lista de  librerias.
      *
      * @see ModeloListaV2
      */

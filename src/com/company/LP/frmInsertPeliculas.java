@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * @author Ruben Domï¿½nguez
+ * @author Ruben Domínguez
  * Aritz Garitano
  */
 public class frmInsertPeliculas extends JInternalFrame implements ActionListener {
@@ -23,9 +23,9 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
     JLabel JLTitulo_original;
     JTextField JTFTitulo_original;
 
-    JLabel JLAï¿½o;
-    SpinnerNumberModel ModeloAï¿½o;
-    JSpinner JSAï¿½o;
+    JLabel JLAño;
+    SpinnerNumberModel ModeloAño;
+    JSpinner JSAño;
 
     JLabel JLDuracion;
     SpinnerNumberModel ModeloDuracion;
@@ -76,40 +76,40 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
     JButton JBFIXED;
 
 
-    private final String TextoJTFTitulo = "<Inserte el Tï¿½tulo aquï¿½>";
-    private final String TextoJTFTitulo_original = "<Inserte el Tï¿½tulo original aquï¿½>";
-    private final String TextoJTFFormato = "<Inserte el Formato aquï¿½. Ej. .mkv, Vinilo, VHS...>";
-    private final String TextoJTFSaga = "<Inserte el nombre de la Saga aquï¿½>";
-    private final String TextoJTFSinopsis = "<Inserte la sinï¿½psis aquï¿½>";
-    private final String TextoJTFEnlace_a_trailer = "<Inserte el enlace al trï¿½iler aquï¿½>";
+    private final String TextoJTFTitulo = "<Inserte el Título aquí>";
+    private final String TextoJTFTitulo_original = "<Inserte el Título original aquí>";
+    private final String TextoJTFFormato = "<Inserte el Formato aquí. Ej. .mkv, Vinilo, VHS...>";
+    private final String TextoJTFSaga = "<Inserte el nombre de la Saga aquí>";
+    private final String TextoJTFSinopsis = "<Inserte la sinópsis aquí>";
+    private final String TextoJTFEnlace_a_trailer = "<Inserte el enlace al tráiler aquí>";
 
     private clsGestorLN objGestorLN;
 
-    //Cï¿½digo
+    //C?digo
     //Constructor
     public frmInsertPeliculas(clsGestorLN _objGestorLN) {
-        //Tamaï¿½o y componentes
+        //Tama?o y componentes
         JPContent = new JPanel();
         setBounds(0, 0, 1000, 475);
         //setLayout(null);
         //setPreferredSize(new Dimension(400, 400));
 
-        JLTitulo = new JLabel("\nTï¿½tulo:");
+        JLTitulo = new JLabel("\nTítulo:");
         JTFTitulo = new JTextField(TextoJTFTitulo);
 
-        JLTitulo_original = new JLabel("\nTï¿½tulo Original:");
+        JLTitulo_original = new JLabel("\nTítulo Original:");
         JTFTitulo_original = new JTextField(TextoJTFTitulo_original);
 
-        JLAï¿½o = new JLabel("\nAï¿½o:");
-        JSAï¿½o = new JSpinner();
-        ModeloAï¿½o = new SpinnerNumberModel();
-        ModeloAï¿½o.setMinimum(1885);
-        ModeloAï¿½o.setMaximum(2085);
-        ModeloAï¿½o.setStepSize(1);
-        ModeloAï¿½o.setValue(2019);
-        JSAï¿½o.setModel(ModeloAï¿½o);
+        JLAño = new JLabel("\nAño:");
+        JSAño = new JSpinner();
+        ModeloAño = new SpinnerNumberModel();
+        ModeloAño.setMinimum(1885);
+        ModeloAño.setMaximum(2085);
+        ModeloAño.setStepSize(1);
+        ModeloAño.setValue(2019);
+        JSAño.setModel(ModeloAño);
 
-        JLDuracion = new JLabel("\nDuraciï¿½n (min):");
+        JLDuracion = new JLabel("\nDuración (min):");
         JSDuracion = new JSpinner();
         ModeloDuracion = new SpinnerNumberModel();
         ModeloDuracion.setMinimum(0);
@@ -117,7 +117,7 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
         ModeloDuracion.setValue(90);
         JSDuracion.setModel(ModeloDuracion);
 
-        JLCalificacion = new JLabel("\nPuntuaciï¿½n (sobre 100):");
+        JLCalificacion = new JLabel("\nPuntuación (sobre 100):");
         JSCalificacion = new JSpinner();
         ModeloCalificacion = new SpinnerNumberModel();
         ModeloCalificacion.setMinimum(0);
@@ -126,7 +126,7 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
         ModeloCalificacion.setValue(50);
         JSCalificacion.setModel(ModeloCalificacion);
 
-        JLCalporedad = new JLabel("\nCalificaciï¿½n por edad (No apta para menores de):");
+        JLCalporedad = new JLabel("\nCalificación por edad (No apta para menores de):");
         JSCalporedad = new JSpinner();
         ModeloCalporedad = new SpinnerNumberModel();
         ModeloCalporedad.setMinimum(0);
@@ -135,10 +135,10 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
         ModeloCalporedad.setValue(0);
         JSCalporedad.setModel(ModeloCalporedad);
 
-        JLTipo_DoA = new JLabel("\nFormato digital o Formato fï¿½sico:");
+        JLTipo_DoA = new JLabel("\nFormato digital o Formato físico:");
         JCBTipo_DoA = new JComboBox();
         JCBTipo_DoA.addItem("Digital");
-        JCBTipo_DoA.addItem("Fï¿½sico");
+        JCBTipo_DoA.addItem("Físico");
 
         JLPrecio = new JLabel("\nPrecio (Euros):");
         JSPrecio = new JSpinner();
@@ -149,10 +149,10 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
         JSPrecio.setModel(ModeloPrecio);
 
         JLEn_propiedad = new JLabel("\nLo tengo:");
-        JCBEn_propiedad = new JCheckBox("Sï¿½");
+        JCBEn_propiedad = new JCheckBox("Sí");
 
         JLEn_busqueda = new JLabel("\nLo quiero:");
-        JCBEn_busqueda = new JCheckBox("Sï¿½");
+        JCBEn_busqueda = new JCheckBox("Sí");
 
 
         JLFormato = new JLabel("\nFormato:");
@@ -169,10 +169,10 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
         ModeloOrden.setValue(1.00);
         JSOrden.setModel(ModeloOrden);
 
-        JLSinopsis = new JLabel("\nSinï¿½psis:");
+        JLSinopsis = new JLabel("\nSin?psis:");
         JTFSinopsis = new JTextField(TextoJTFSinopsis);
 
-        JLEnlace_a_trailer = new JLabel("\nEnlace al trï¿½iler:");
+        JLEnlace_a_trailer = new JLabel("\nEnlace al tráiler:");
         JTFEnlace_a_trailer = new JTextField(TextoJTFEnlace_a_trailer);
 
         //JLMensaje = new JLabel();
@@ -196,7 +196,7 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
         this.setVisible(true);
 
         //Agregar los componentes y conformar la ventana
-        setTitle("Insertar Pelï¿½culas");
+        setTitle("Insertar Pel?culas");
         JPContent.setLayout(new BorderLayout());
         JPContent.add(JLTitulo);
         JPContent.add(JTFTitulo);
@@ -204,8 +204,8 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
         JPContent.add(JLTitulo_original);
         JPContent.add(JTFTitulo_original);
 
-        JPContent.add(JLAï¿½o);
-        JPContent.add(JSAï¿½o);
+        JPContent.add(JLAño);
+        JPContent.add(JSAño);
 
         JPContent.add(JLDuracion);
         JPContent.add(JSDuracion);
@@ -252,7 +252,7 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
 
         this.setContentPane(JPContent);
 
-        //Darle valores de acciï¿½n a los botones
+        //Darle valores de acci?n a los botones
         JBAceptar.setActionCommand("Aceptar");
         JBCancelar.setActionCommand("Cancelar");
         JBAceptar.addActionListener(this);
@@ -270,8 +270,8 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
         JLTitulo_original.setBounds(500, 0, 450, altura);
         JTFTitulo_original.setBounds(500, 30, 450, altura);
 
-        JLAï¿½o.setBounds(25, 60, 100, altura);
-        JSAï¿½o.setBounds(25, 90, 100, altura);
+        JLAño.setBounds(25, 60, 100, altura);
+        JSAño.setBounds(25, 90, 100, altura);
 
         JLDuracion.setBounds(175, 60, 100, altura);
         JSDuracion.setBounds(175, 90, 100, altura);
@@ -333,7 +333,7 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
                         && (!JTFSinopsis.getText().equals(""))
                         && (!JTFEnlace_a_trailer.getText().equals(""))) {
 
-                    if(objGestorLN.crearPelicula(/*De momento a la libreria 1 tudo*/objGestorLN.getLibreriaDefinida(), JTFTitulo.getText(), JTFTitulo_original.getText(), (int) JSAï¿½o.getValue(), (int) JSDuracion.getValue(), (int) JSCalificacion.getValue(), (int) JSCalporedad.getValue(), (String) JCBTipo_DoA.getSelectedItem(), (Double) JSPrecio.getValue(), JCBEn_propiedad.isSelected(), JCBEn_busqueda.isSelected(), JTFFormato.getText(), JTFSaga.getText(), (Double) JSOrden.getValue(), JTFSinopsis.getText(), JTFEnlace_a_trailer.getText())!= 0){
+                    if(objGestorLN.crearPelicula(/*De momento a la libreria 1 tudo*/objGestorLN.getLibreriaDefinida(), JTFTitulo.getText(), JTFTitulo_original.getText(), (int) JSAño.getValue(), (int) JSDuracion.getValue(), (int) JSCalificacion.getValue(), (int) JSCalporedad.getValue(), (String) JCBTipo_DoA.getSelectedItem(), (Double) JSPrecio.getValue(), JCBEn_propiedad.isSelected(), JCBEn_busqueda.isSelected(), JTFFormato.getText(), JTFSaga.getText(), (Double) JSOrden.getValue(), JTFSinopsis.getText(), JTFEnlace_a_trailer.getText())!= 0){
                         //Ha funcionado el insert.
                         //JLMensaje.setText("Insert realizado.");
                         //JLMensaje.setVisible(true);
@@ -342,16 +342,16 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
                     }
                     else{
                         //No ha funcionado el insert.
-                        //JLMensaje.setText("Insert no realizado, revisar parï¿½metros.");
+                        //JLMensaje.setText("Insert no realizado, revisar par?metros.");
                         //JLMensaje.setVisible(true);
-                        JOptionPane.showInternalMessageDialog(null,"Insert no realizado, revisar parï¿½metros.");
+                        JOptionPane.showInternalMessageDialog(null,"Insert no realizado, revisar parámetros.");
 
                     }
                      } else {
                     //Se comenta porque ahora va con ventana
-                    //JLMensaje.setText("Campos vacï¿½os o sin editar");
+                    //JLMensaje.setText("Campos vac?os o sin editar");
                     //JLMensaje.setVisible(true);
-                    JOptionPane.showInternalMessageDialog(null,"Campos vacï¿½os o sin editar.");
+                    JOptionPane.showInternalMessageDialog(null,"Campos vacíos o sin editar.");
                 }
                 break;
             case "Cancelar":
@@ -365,7 +365,7 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
                 break;
             default:
                 //Igual una excepcion de Runtime?
-                System.out.println("Acciï¿½n no definida.");
+                System.out.println("Acción no definida.");
                 break;
         }
 

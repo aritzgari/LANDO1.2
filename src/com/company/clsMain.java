@@ -8,7 +8,7 @@ import com.company.LP.frmPrincipal;
 /**
  * Donde empieza el programa, llamada al menu del programa.
  * <p>
- * @author Ruben DomÃ­nguez
+ * @author Ruben Domínguez
  * Aritz Garitano
  * @see clsMenuUsuario
  */

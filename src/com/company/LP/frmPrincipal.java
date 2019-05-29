@@ -62,7 +62,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         //Inicializacion
         inicializador();
 
-        //Personalizaciï¿½n
+        //Personalizaci?n
         desktop.setBackground(colorGris);
 
 
@@ -73,31 +73,31 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     }
 
     private void inicializador() {
-        //Inserte los gï¿½neros si no se han insertado
-        //HAY QUE HACERLO CON UPDATES O SE CREARï¿½N OTRA VEZ CUANDO SE INICIE EL PROGRAMA
+        //Inserte los g?neros si no se han insertado
+        //HAY QUE HACERLO CON UPDATES O SE CREAR?N OTRA VEZ CUANDO SE INICIE EL PROGRAMA
         //CUANDO NO HAY VALORES EL UPDATE NO LOS CREA, SOCORRO
 
         //Intento 2
-        objGestorLN.updateGeneroPeliEnBD("insert into lando.gï¿½nero_pelï¿½cula values (1, 'Acciï¿½n');");
-        objGestorLN.updateGeneroPeliEnBD("insert into lando.gï¿½nero_pelï¿½cula values (2, 'Animaciï¿½n');");
-        objGestorLN.updateGeneroPeliEnBD("insert into lando.gï¿½nero_pelï¿½cula values (3, 'Ciencia Ficciï¿½n');");
-        objGestorLN.updateGeneroPeliEnBD("insert into lando.gï¿½nero_pelï¿½cula values (4, 'Drama');");
-        objGestorLN.updateGeneroPeliEnBD("insert into lando.gï¿½nero_pelï¿½cula values (5, 'Fantasï¿½a');");
-        objGestorLN.updateGeneroPeliEnBD("insert into lando.gï¿½nero_pelï¿½cula values (6, 'Negro');");
-        objGestorLN.updateGeneroPeliEnBD("insert into lando.gï¿½nero_pelï¿½cula values (7, 'Misterio');");
-        objGestorLN.updateGeneroPeliEnBD("insert into lando.gï¿½nero_pelï¿½cula values (8, 'Musical');");
-        objGestorLN.updateGeneroPeliEnBD("insert into lando.gï¿½nero_pelï¿½cula values (9, 'Romï¿½ntico');");
+        objGestorLN.updateGeneroPeliEnBD("insert into lando.género_película values (1, 'Acción');");
+        objGestorLN.updateGeneroPeliEnBD("insert into lando.género_película values (2, 'Animación');");
+        objGestorLN.updateGeneroPeliEnBD("insert into lando.género_película values (3, 'Ciencia Ficción');");
+        objGestorLN.updateGeneroPeliEnBD("insert into lando.género_película values (4, 'Drama');");
+        objGestorLN.updateGeneroPeliEnBD("insert into lando.género_película values (5, 'Fantasía');");
+        objGestorLN.updateGeneroPeliEnBD("insert into lando.género_película values (6, 'Negro');");
+        objGestorLN.updateGeneroPeliEnBD("insert into lando.género_película values (7, 'Misterio');");
+        objGestorLN.updateGeneroPeliEnBD("insert into lando.género_película values (8, 'Musical');");
+        objGestorLN.updateGeneroPeliEnBD("insert into lando.género_película values (9, 'Romántico');");
         //Intento 1
-        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.gï¿½nero_pelï¿½cula SET Nombre = 'Acciï¿½n' WHERE idGï¿½nero = 1;");
-        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.gï¿½nero_pelï¿½cula SET Nombre = 'Animaciï¿½n' WHERE idGï¿½nero = 2;");
-        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.gï¿½nero_pelï¿½cula SET Nombre = 'Ciencia Ficciï¿½n' WHERE idGï¿½nero = 3;");
-        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.gï¿½nero_pelï¿½cula SET Nombre = 'Drama' WHERE idGï¿½nero = 4;");
-        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.gï¿½nero_pelï¿½cula SET Nombre = 'Fantasï¿½a' WHERE idGï¿½nero = 5;");
-        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.gï¿½nero_pelï¿½cula SET Nombre = 'Negro' WHERE idGï¿½nero = 6;");
-        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.gï¿½nero_pelï¿½cula SET Nombre = 'Misterio' WHERE idGï¿½nero = 7;");
-        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.gï¿½nero_pelï¿½cula SET Nombre = 'Musical' WHERE idGï¿½nero = 8;");
-        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.gï¿½nero_pelï¿½cula SET Nombre = 'Romï¿½ntico' WHERE idGï¿½nero = 9;");
-        //Consulta los gï¿½neros para meterlos en la RAM
+        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.género_película SET Nombre = 'Acción' WHERE idGénero = 1;");
+        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.género_película SET Nombre = 'Animación' WHERE idGénero = 2;");
+        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.género_película SET Nombre = 'Ciencia Ficción' WHERE idGénero = 3;");
+        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.género_película SET Nombre = 'Drama' WHERE idGénero = 4;");
+        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.género_película SET Nombre = 'Fantasía' WHERE idGénero = 5;");
+        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.género_película SET Nombre = 'Negro' WHERE idGénero = 6;");
+        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.género_película SET Nombre = 'Misterio' WHERE idGénero = 7;");
+        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.género_película SET Nombre = 'Musical' WHERE idGénero = 8;");
+        objGestorLN.updateGeneroPeliEnBD("UPDATE lando.género_película SET Nombre = 'Romántico' WHERE idGénero = 9;");
+        //Consulta los g?neros para meterlos en la RAM
         //objGestorLN.consultarGeneroPeliEnBD();
         //Inserte otras cosas que necesiten ser insertadas
 
@@ -106,7 +106,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     }
 
 
-    //Ventana que muestra la informaciï¿½n de eventos.
+    //Ventana que muestra la informaci?n de eventos.
     protected void createDisplayWindow() {
         JButton b1 = new JButton("Show internal frame");
         b1.setActionCommand(SHOW);
@@ -333,7 +333,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         menuItemConsEditorial = new JMenuItem();
         menuItemConsPremiosPelicula = new JMenuItem();
 
-        //Personalizaciï¿½n
+        //Personalizaci?n
         //miPanel.setBackground(colorAzul);
 
 
@@ -638,7 +638,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     }
 
     /**
-     * Mï¿½todo consultar librerias desde la ventana.
+     * M?todo consultar librerias desde la ventana.
      */
 
     private void caseConsLibrerias() {
@@ -649,7 +649,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         for (itfPropertyV2 L : resultado
         ) {
             VentanaConsLibrerias.setItem(L);
-            //Aqui podemos poner un sout para ver lo que estï¿½ aï¿½adiendo y asi sabemos si es que aï¿½ade uno cada vez o cada vez aï¿½ade uno mas.
+            //Aqui podemos poner un sout para ver lo que est? a?adiendo y asi sabemos si es que a?ade uno cada vez o cada vez a?ade uno mas.
             System.out.println(L.toString());
             System.out.println(resultado.size());
         }
@@ -657,7 +657,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     }
 
     /**
-     * Mï¿½todo consultar peliculas desde la ventana.
+     * M?todo consultar peliculas desde la ventana.
      */
     private void caseConsPeliculas() {
         frmListaPeliculas VentanaConsPeliculas = new frmListaPeliculas();
@@ -670,7 +670,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     }
 
     /**
-     * Mï¿½todo consultar Libros desde la ventana.
+     * M?todo consultar Libros desde la ventana.
      */
     private void caseConsLibros() {
         frmListaLibros VentanaConsLibros = new frmListaLibros();
@@ -683,7 +683,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     }
 
     /**
-     * Mï¿½todo consultar Actores desde la ventana.
+     * M?todo consultar Actores desde la ventana.
      */
     private void caseConsActor() {
         frmListaActor VentanaConsActor = new frmListaActor();
@@ -696,7 +696,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     }
 
     /**
-     * Mï¿½todo consultar Autores desde la ventana.
+     * M?todo consultar Autores desde la ventana.
      */
     private void caseConsAutor() {
         frmListaAutor VentanaConsAutor = new frmListaAutor();
@@ -709,7 +709,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     }
 
     /**
-     * Mï¿½todo consultar directores desde la ventana.
+     * M?todo consultar directores desde la ventana.
      */
 
     private void caseConsDirector() {
@@ -723,7 +723,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     }
 
     /**
-     * Mï¿½todo consultar eitoriales desde la ventana.
+     * M?todo consultar eitoriales desde la ventana.
      */
 
     private void caseConsEditorial() {
@@ -736,7 +736,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         desktop.add(VentanaConsEditorial);
     }
     /**
-     * Mï¿½todo consultar generos de pelicula desde la ventana.
+     * M?todo consultar generos de pelicula desde la ventana.
      */
 
     private void caseConsGeneroPeli() {
@@ -750,7 +750,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     }
 
     /**
-     * Mï¿½todo consultar generos de pelicula desde la ventana.
+     * M?todo consultar generos de pelicula desde la ventana.
      */
 
     private void caseConsGeneroLibro() {

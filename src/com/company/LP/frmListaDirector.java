@@ -11,7 +11,7 @@ import java.util.LinkedList;
 /**
  * Ventana para mostrar la lista de librerias multimedia que hay en la base de datos.
  * <p>
- * @author Ruben DomÃ­nguez
+ * @author Ruben Domínguez
  * Aritz Garitano
  */
 public class frmListaDirector extends JInternalFrame implements ListSelectionListener
@@ -26,7 +26,7 @@ public class frmListaDirector extends JInternalFrame implements ListSelectionLis
 
 
     /**
-     * CreaciÃ³n de lista de  librerias.
+     * Creación de lista de  librerias.
      *
      * @see ModeloLista
      */

@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 import java.util.LinkedList;
 
 /**
- * @author Ruben Domï¿½nguez
+ * @author Ruben Dom?nguez
  * Aritz Garitano
  */
 public class frmMenuLibrerias extends JInternalFrame implements ActionListener, ListSelectionListener {
@@ -37,7 +37,7 @@ public class frmMenuLibrerias extends JInternalFrame implements ActionListener, 
     //JLabels
     private JLabel JLSeleccion;
     private JLabel JLLista;
-    private JLabel JLAcciï¿½n;
+    private JLabel JLAcción;
 
 
 
@@ -51,7 +51,7 @@ public class frmMenuLibrerias extends JInternalFrame implements ActionListener, 
     private String Descripcion;
 
     /**
-     * Creaciï¿½n de lista de librerias dentro del JPanel.
+     * Creaci?n de lista de librerias dentro del JPanel.
      *
      * @see ModeloLista
      */
@@ -68,17 +68,17 @@ public class frmMenuLibrerias extends JInternalFrame implements ActionListener, 
         this.setIconifiable(true);
         this.setVisible(true);
         setBounds(0, 0, 650, 500);
-        setTitle("Menu de Librerï¿½as");
+        setTitle("Menu de Librer?as");
 
 
-        //News y Valores de inicializaciï¿½n
+        //News y Valores de inicializaci?n
         //JPanels
         JPContent = new JPanel();
         JPLista = new JPanel();
 
         //JLabels
-        JLSeleccion = new JLabel("Escoja la librerï¿½a en la que quiere aï¿½adir objetos, o cree una nueva:");
-        JLLista = new JLabel("Lista de librerï¿½as disponibles:");
+        JLSeleccion = new JLabel("Escoja la librer?a en la que quiere a?adir objetos, o cree una nueva:");
+        JLLista = new JLabel("Lista de librer?as disponibles:");
 
         //News de los componentes de la lista
         Objetos = new LinkedList<itfPropertyV2>();
@@ -91,11 +91,11 @@ public class frmMenuLibrerias extends JInternalFrame implements ActionListener, 
         //News de Botones
         JBAceptar = new JButton("Aceptar");
         JBCancelar = new JButton("Cerrar");
-        JBCrear = new JButton("Crear Librerï¿½a");
+        JBCrear = new JButton("Crear Librer?a");
         JBFIXED = new JButton("Bibidi Babidi Bu");
 
 
-        //Aï¿½adimos las cosas a sus continentes
+        //A?adimos las cosas a sus continentes
         JPLista.add(scroll);                                    //El scroll va dentro del panel que existe solo para a la lista
         JPLista.add(JLista);                                    //La lista va en el panel que existe solo para la lista
         JPContent.add(JLSeleccion);
@@ -113,7 +113,7 @@ public class frmMenuLibrerias extends JInternalFrame implements ActionListener, 
         Color verde = new Color(155, 255, 141);
         Color azul = new Color(116, 255, 235);
 
-        //Darle valores de acciï¿½n a los botones
+        //Darle valores de acci?n a los botones
         JBAceptar.setActionCommand("Aceptar");
         JBCancelar.setActionCommand("Cancelar");
         JBCrear.setActionCommand("Crear");

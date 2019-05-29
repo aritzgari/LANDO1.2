@@ -56,10 +56,10 @@ public class Jlist2 extends JFrame {
          * vincular modelo con la lista
          */
 
-        JButton btnNewButton = new JButton("AÃ±adir");
+        JButton btnNewButton = new JButton("Añadir");
         btnNewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
-            {	//AÃ±ade a la lista
+            {	//Añade a la lista
                 String texto = textField.getText();
                 modelo.addElement(texto);
             }
