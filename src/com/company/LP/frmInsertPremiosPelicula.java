@@ -124,7 +124,7 @@ public class frmInsertPremiosPelicula extends JInternalFrame implements ActionLi
         switch (e.getActionCommand()) {
             case "Aceptar":
                 if ((!JTFNombre.getText().equals(TextoJLNombre)) && (!JTFCategoria.getText().equals(TextoJLCategoria)) && (!JTFNombre.getText().equals("")) && (!JTFCategoria.getText().equals(""))) {
-                    if (objGestorLN.crearPremiosPelicula(JTFNombre.getText(), JTFCategoria.getText(), (int) JSAño.getValue(), JLTituloPelicula.getText()) != 0) {
+                    if (objGestorLN.crearPremiosPelicula(JTFNombre.getText(), JTFCategoria.getText(), (int) JSAño.getValue(), JTFTitulopelicula.getText()) != 0) {
                         //Ha funcionado el insert.
                         JOptionPane.showInternalMessageDialog(null, "  Insert realizado.");
 

@@ -638,7 +638,7 @@ public class clsGestorLN {
         //Meto rs en objeto
         try {
             while (resultado.next()) {
-                clsPremios_Pelicula objPremiosPelicula = new clsPremios_Pelicula(resultado.getString(1), resultado.getString(2), resultado.getInt(3), resultado.getString(4));
+                clsPremios_Pelicula objPremiosPelicula = new clsPremios_Pelicula(resultado.getString(2), resultado.getString(3), resultado.getInt(4), resultado.getString(5));
                 datosPremiosPeli.add(objPremiosPelicula);
             }
         } catch (SQLException e) {
