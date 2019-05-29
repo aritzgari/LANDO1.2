@@ -8,7 +8,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Jlist2 extends JInternalFrame {
+public class Jlist2 extends JFrame {
 
     private JPanel contentPane;
     private JTextField textField;
@@ -56,7 +56,7 @@ public class Jlist2 extends JInternalFrame {
          * vincular modelo con la lista
          */
 
-        JButton btnNewButton = new JButton("A\u00F1adir");
+        JButton btnNewButton = new JButton("Añadir");
         btnNewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
             {	//Añade a la lista

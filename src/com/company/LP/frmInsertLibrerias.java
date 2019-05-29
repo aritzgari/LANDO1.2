@@ -11,9 +11,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Color;
+import java.util.ArrayList;
 
 /**
- * @author Ruben Domínguez
+ * @author Ruben Domï¿½nguez
  * Aritz Garitano
  */
 
@@ -30,17 +31,17 @@ public class frmInsertLibrerias extends JInternalFrame implements ActionListener
     JButton JBCancelar;
     JButton JBFIXED;
 
-    private final String TextoJLNombre = "<Inserte el nombre aquí>";
-    private final String TextoJLDescripcion = "<Inserte la descripción aquí>";
+    private final String TextoJLNombre = "<Inserte el nombre aquï¿½>";
+    private final String TextoJLDescripcion = "<Inserte la descripciï¿½n aquï¿½>";
 
     private clsGestorLN objGestorLN;
     private JDesktopPane desktop;
     private frmPrincipal ventanaPrincipal;
 
-    //Código
+    //Cï¿½digo
     //Constructor
     public frmInsertLibrerias(clsGestorLN _objGestorLN, JDesktopPane _desktop, frmPrincipal _ventanaPrincipal) {
-        //Tamaño y componentes
+        //Tamaï¿½o y componentes
         JPContent = new JPanel();
         setBounds(50, 50, 500, 430);
         JLNombre = new JLabel("\nNombre:");
@@ -66,7 +67,7 @@ public class frmInsertLibrerias extends JInternalFrame implements ActionListener
         this.setVisible(true);
 
         //Agregar los componentes y conformar la ventana
-        setTitle("Insertar Librerías Multimedia");
+        setTitle("Insertar Librerï¿½as Multimedia");
         JPContent.setLayout(new BorderLayout());
         JPContent.add(JLNombre);
         JPContent.add(JTFNombre);
@@ -79,7 +80,7 @@ public class frmInsertLibrerias extends JInternalFrame implements ActionListener
 
         this.setContentPane(JPContent);
 
-        //Darle valores de acción a los botones
+        //Darle valores de acciï¿½n a los botones
         JBAceptar.setActionCommand("Aceptar");
         JBCancelar.setActionCommand("Cancelar");
         JBAceptar.addActionListener(this);
@@ -110,12 +111,12 @@ public class frmInsertLibrerias extends JInternalFrame implements ActionListener
 
                     } else {
                         //No ha funcionado el insert.
-                        JOptionPane.showInternalMessageDialog(null, "Insert no realizado, revisar parámetros.");
+                        JOptionPane.showInternalMessageDialog(null, "Insert no realizado, revisar parï¿½metros.");
 
                     }
                 } else {
                     //ESTO HAY QUE PONERLO EN LA VENTANA O CON UNA EXCEPCION Y UNA VENTANA DE ERROR.
-                    JOptionPane.showInternalMessageDialog(null, "Campos vacíos o sin editar.");
+                    JOptionPane.showInternalMessageDialog(null, "Campos vacï¿½os o sin editar.");
                 }
                 if (objGestorLN.getLibreriaDefinida() < 0) {
                     frmMenuLibrerias VentanaMenuLibrerias = new frmMenuLibrerias(objGestorLN, desktop, ventanaPrincipal);
@@ -135,7 +136,7 @@ public class frmInsertLibrerias extends JInternalFrame implements ActionListener
                 break;
             default:
                 //Igual una excepcion de Runtime?
-                System.out.println("Acción no definida.");
+                System.out.println("Acciï¿½n no definida.");
                 break;
         }
 

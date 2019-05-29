@@ -27,14 +27,14 @@ import static com.company.Comun.clsConstantes.*;
 /**
  * Clase que intercomunica LP con LN
  *
- * @author Ruben Domínguez
+ * @author Ruben Domï¿½nguez
  * Aritz Garitano
  */
 
 public class clsGestorLN {
 
     /**
-     * Los arrays que contienen los datos de los diferentes artículos. Creados como Private y Static.
+     * Los arrays que contienen los datos de los diferentes artï¿½culos. Creados como Private y Static.
      */
 
     private static ArrayList<itfProperty> datosItf;
@@ -133,7 +133,7 @@ public class clsGestorLN {
     }
 
     /**
-     * A partir de aquí van las creaciones en base de datos.
+     * A partir de aquï¿½ van las creaciones en base de datos.
      * @author RubenD AritzG
      * @return void
      */
@@ -148,9 +148,9 @@ public class clsGestorLN {
         //UPDATE 05/04: Aqui creamos la query con los parametros que nos pasan a este metodo;
         //con esta query llamamos a clsLibreriaMultimediaBD.sendInsert(query)
         //QUE PASA, que el id es AutoIncremental, asique igual conviene mandar la query sin el AutoIncremental,
-        // y este añadirlo con el retorno (L39) del metodo de clsLibreriaMultimediaBD.sendInsert.
-        // (mas bien se añadirá solo)
-        //La siguiente linea convendría que fuera una constante:
+        // y este aï¿½adirlo con el retorno (L39) del metodo de clsLibreriaMultimediaBD.sendInsert.
+        // (mas bien se aï¿½adirï¿½ solo)
+        //La siguiente linea convendrï¿½a que fuera una constante:
         clsLibreria_MultimediaBD objLibreria_MultimediaBD = new clsLibreria_MultimediaBD(Nombre, Descripcion);
         //objLibreria_MultimediaBD.sendInsert(queryInsertLibreria);
         retorno = objLibreria_MultimediaBD.sendInsert(queryInsertLibreria);
@@ -165,12 +165,12 @@ public class clsGestorLN {
 
         //10/04/2019: Quito esto siguiente porque lo haremos con el nuevo metodo: (4 lineas)
         /*clsLibreriaMultimedia objLibreria;
-        //Esto habrá que cambiarlo porque no podemos crear las librerias en la RAM con el id proporcionado.
+        //Esto habrï¿½ que cambiarlo porque no podemos crear las librerias en la RAM con el id proporcionado.
         objLibreria = new clsLibreriaMultimedia(idLibreria_Multimedia, Nombre, Descripcion);
         datosLibrerias.add(objLibreria);*/
 
-        //Vale, aquí, que esto es LN, voy a crear un objGestorLD, creo que esto se puede hacer,
-        // y con este obj voy a intentar añadir las librerias directamente a la BBDD. Ni yo me creo lo que digo, pero en teoría esto está bien.
+        //Vale, aquï¿½, que esto es LN, voy a crear un objGestorLD, creo que esto se puede hacer,
+        // y con este obj voy a intentar aï¿½adir las librerias directamente a la BBDD. Ni yo me creo lo que digo, pero en teorï¿½a esto estï¿½ bien.
 
         //METODO ANTIGUO:
         /* clsDatos objDatos = new clsDatos();
@@ -252,9 +252,9 @@ public class clsGestorLN {
      * @author RubenD AritzG
      */
 
-    public static int crearPremiosPelicula(String Nombre, String Categoria, int Año, String Películas_Título) {
+    public static int crearPremiosPelicula(String Nombre, String Categoria, int Aï¿½o, String Pelï¿½culas_Tï¿½tulo) {
         int retorno = 0;
-        clsPremios_PeliculaBD objPremiosPeliculaBD = new clsPremios_PeliculaBD(Nombre, Categoria, Año, Películas_Título);
+        clsPremios_PeliculaBD objPremiosPeliculaBD = new clsPremios_PeliculaBD(Nombre, Categoria, Aï¿½o, Pelï¿½culas_Tï¿½tulo);
         retorno = objPremiosPeliculaBD.sendInsert(queryInsertPremiosPeli);
         System.out.println(retorno);
         return retorno;
@@ -312,22 +312,22 @@ public class clsGestorLN {
     }
 
     /**
-     * A partir de aquí van las consultas.
+     * A partir de aquï¿½ van las consultas.
      *
      * @return ArrayList<itfPropertyV2>
      * @author RubenD AritzG
      */
 
     /**
-     * Método para consultar Actores
+     * Mï¿½todo para consultar Actores
      */
     public ArrayList<itfPropertyV2> consultarActoresEnBD() {
         //Declaraciones
         ResultSet resultado = null;
         clsActoresBD objActoresBD = new clsActoresBD();
 
-        //Código
-        //Abrir conexión:
+        //Cï¿½digo
+        //Abrir conexiï¿½n:
         objActoresBD.conectarBD();
         resultado = objActoresBD.sendSelect(queryConsultaActores);
         //Reiniciamos el ArrayList en la RAM para no duplicar entradas en esta (Poco eficiente pero eficaz)
@@ -350,15 +350,15 @@ public class clsGestorLN {
 
 
     /**
-     * Método para consultar Autores
+     * Mï¿½todo para consultar Autores
      */
     public ArrayList<itfPropertyV2> consultarAutoresEnBD() {
         //Declaraciones
         ResultSet resultado = null;
         clsAutorBD objAutorBD = new clsAutorBD();
 
-        //Código
-        //Abrir conexión:
+        //Cï¿½digo
+        //Abrir conexiï¿½n:
         objAutorBD.conectarBD();
         resultado = objAutorBD.sendSelect(queryConsultaAutores);
         //Reiniciamos el ArrayList en la RAM para no duplicar entradas en esta (Poco eficiente pero eficaz)
@@ -379,7 +379,7 @@ public class clsGestorLN {
         return castclsAutoresToItfProperty(datosAutor);
     }
     /**
-     * Método para consultar Directores
+     * Mï¿½todo para consultar Directores
      *
      * @return
      */
@@ -387,8 +387,8 @@ public class clsGestorLN {
         ResultSet resultado = null;
         clsDirectorBD objDirectorBD = new clsDirectorBD();
 
-        //Código
-        //Abrir conexión
+        //Cï¿½digo
+        //Abrir conexiï¿½n
         objDirectorBD.conectarBD();
         resultado = objDirectorBD.sendSelect(queryConsultaDirector);
         //Reiniciamos el ArrayList en la RAM para no duplicar entradas en esta (Poco eficiente pero eficaz)
@@ -397,7 +397,7 @@ public class clsGestorLN {
         try {
             while (resultado.next()) {
                 clsDirector objDirector = new clsDirector(resultado.getInt(1), resultado.getString(2), resultado.getString(3));
-                //Esto era para visualizar: System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripción: " + resultado.getString(3));
+                //Esto era para visualizar: System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripciï¿½n: " + resultado.getString(3));
                 datosDirector.add(objDirector);
             }
         } catch (SQLException e) {
@@ -411,7 +411,7 @@ public class clsGestorLN {
     }
 
     /**
-     * Método para consultar editorial
+     * Mï¿½todo para consultar editorial
      *
      * @return
      */
@@ -420,8 +420,8 @@ public class clsGestorLN {
         ResultSet resultado = null;
         clsEditorialBD objEditorialBD = new clsEditorialBD();
 
-        //Código
-        //Abrir conexión:
+        //Cï¿½digo
+        //Abrir conexiï¿½n:
         objEditorialBD.conectarBD();
         resultado = objEditorialBD.sendSelect(queryConsultaEditorial);
         //Reiniciamos el ArrayList en la RAM para no duplicar entradas en esta (Poco eficiente pero eficaz)
@@ -442,15 +442,15 @@ public class clsGestorLN {
         return castclsEditorialToItfProperty(datosEditorial);
     }
     /**
-     * Método para consultar Géneros de películas.
+     * Mï¿½todo para consultar Gï¿½neros de pelï¿½culas.
      */
     public ArrayList<itfPropertyV2> consultarGeneroPeliEnBD() {
         //Declaraciones
         ResultSet resultado = null;
         clsGeneroPeliBD objGeneroPeliBD = new clsGeneroPeliBD();
 
-        //Código
-        //Abrir conexión
+        //Cï¿½digo
+        //Abrir conexiï¿½n
         objGeneroPeliBD.conectarBD();
         resultado = objGeneroPeliBD.sendSelect(queryConsultaGeneroPeli);
         //Reiniciamos el ArrayList en la RAM para no duplicar entradas en esta (Poco eficiente pero eficaz)
@@ -473,15 +473,15 @@ public class clsGestorLN {
 
 
     /**
-     * Método para consultar Géneros de libros.
+     * Mï¿½todo para consultar Gï¿½neros de libros.
      */
     public ArrayList<itfPropertyV2> consultarGeneroLibrosEnBD() {
         //Declaraciones
         ResultSet resultado = null;
         clsGeneroLibroBD objGeneroLibroBD = new clsGeneroLibroBD();
 
-        //Código
-        //Abrir conexión
+        //Cï¿½digo
+        //Abrir conexiï¿½n
         objGeneroLibroBD.conectarBD();
         resultado = objGeneroLibroBD.sendSelect(queryConsultaGeneroLibro);
         //Reiniciamos el ArrayList en la RAM para no duplicar entradas en esta (Poco eficiente pero eficaz)
@@ -502,15 +502,15 @@ public class clsGestorLN {
         return castclsGeneroLibroToItfProperty(datosGeneroLibro);
     }
     /**
-     * Método para consultar Libros.
+     * Mï¿½todo para consultar Libros.
      */
     public ArrayList<itfPropertyV2> consultarLibrosEnBD() {
         //Declaraciones
         ResultSet resultado = null;
         clsLibrosBD objLibrosBD = new clsLibrosBD();
 
-        //Código
-        //Abrir conexión
+        //Cï¿½digo
+        //Abrir conexiï¿½n
         objLibrosBD.conectarBD();
         resultado = objLibrosBD.sendSelect(queryConsultaLibro);
         //Reiniciamos el ArrayList en la RAM para no duplicar entradas en esta (Poco eficiente pero eficaz)
@@ -519,7 +519,7 @@ public class clsGestorLN {
         try {
             while (resultado.next()) {
                 clsLibro objLibros = new clsLibro(resultado.getInt(17), resultado.getString(1), resultado.getString(2), resultado.getString(3), resultado.getInt(4), resultado.getString(5), resultado.getDouble(6), resultado.getBoolean(7), resultado.getBoolean(8), resultado.getString(9), resultado.getInt(10), resultado.getString(11), resultado.getBoolean(12), resultado.getString(13), resultado.getDouble(14), resultado.getInt(15), resultado.getInt(16), resultado.getInt(17));
-                //Esto era para visualizar: System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripción: " + resultado.getString(3));
+                //Esto era para visualizar: System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripciï¿½n: " + resultado.getString(3));
                 datosLibros.add(objLibros);
             }
         } catch (SQLException e) {
@@ -533,15 +533,15 @@ public class clsGestorLN {
     }
 
     /**
-     * Método para consultar Películas
+     * Mï¿½todo para consultar Pelï¿½culas
      */
     public ArrayList<itfPropertyV2> consultarPeliculaEnBD() {
         //Declaraciones
         ResultSet resultado = null;
         clsPeliculaBD objPeliculaBD = new clsPeliculaBD();
 
-        //Código
-        //Abrir conexión
+        //Cï¿½digo
+        //Abrir conexiï¿½n
         objPeliculaBD.conectarBD();
         resultado = objPeliculaBD.sendSelect(queryConsultaPelicula);
         //Reiniciamos el ArrayList en la RAM para no duplicar entradas en esta (Poco eficiente pero eficaz)
@@ -550,7 +550,7 @@ public class clsGestorLN {
         try {
             while (resultado.next()) {
                 clsPelicula objPelicula = new clsPelicula(resultado.getInt(16), resultado.getString(1), resultado.getString(2), resultado.getInt(3), resultado.getInt(4), resultado.getInt(5), resultado.getInt(6), resultado.getString(7), resultado.getDouble(8), resultado.getBoolean(9), resultado.getBoolean(10), resultado.getString(11), resultado.getString(12), resultado.getDouble(13), resultado.getString(14), resultado.getString(15));
-                //Esto era para visualizar: System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripción: " + resultado.getString(3));
+                //Esto era para visualizar: System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripciï¿½n: " + resultado.getString(3));
                 datosPeliculas.add(objPelicula);
             }
         } catch (SQLException e) {
@@ -564,14 +564,14 @@ public class clsGestorLN {
     }
 
     /**
-     * Método para consultar Librerías
+     * Mï¿½todo para consultar Librerï¿½as
      */
     public ArrayList<itfPropertyV2> consultarLibreriasEnBD() {
         //Declaraciones
         ResultSet resultado;
         clsLibreria_MultimediaBD objLibreria_MultimediaBD = new clsLibreria_MultimediaBD();
 
-        //Código
+        //Cï¿½digo
         //Conexion
         objLibreria_MultimediaBD.conectarBD();
         //Consulta
@@ -596,15 +596,15 @@ public class clsGestorLN {
     }
 
     /**
-     * Método para consultar Géneros de libros.
+     * Mï¿½todo para consultar Gï¿½neros de libros.
      */
     public ArrayList<itfPropertyV2> consultarPremiosPeliculaEnBD() {
         //Declaraciones
         ResultSet resultado = null;
         clsPremios_PeliculaBD objPremiosPeliculaBD = new clsPremios_PeliculaBD();
 
-        //Código
-        //Abrir conexión
+        //Cï¿½digo
+        //Abrir conexiï¿½n
         objPremiosPeliculaBD.conectarBD();
         resultado = objPremiosPeliculaBD.sendSelect(queryConsultaPremiosPeli);
         //Reiniciamos el ArrayList en la RAM para no duplicar entradas en esta (Poco eficiente pero eficaz)
@@ -625,14 +625,14 @@ public class clsGestorLN {
         return castclsPremiosPeliToItfProperty(datosPremiosPeli);
     }
     /**
-     * A partir de aquí van las Updates - son querys para actualizar valores.
+     * A partir de aquï¿½ van las Updates - son querys para actualizar valores.
      *
      * @return ArrayList<itfProperty>
      * @author RubenD AritzG
      */
 
     /**
-     * Método para actualizar Géneros de películas
+     * Mï¿½todo para actualizar Gï¿½neros de pelï¿½culas
      */
     public void updateGeneroPeliEnBD(String _query) {
         clsGeneroPeliBD objGeneroPeliBD = new clsGeneroPeliBD();
@@ -640,15 +640,15 @@ public class clsGestorLN {
     }
 
     /**
-     * A partir de aquí van lo que hemos llamado casteos.
-     * Son métodos para meter los datos de diferentes ArrayList en iffDatos, que es un ArrayList de itfProperty.
+     * A partir de aquï¿½ van lo que hemos llamado casteos.
+     * Son mï¿½todos para meter los datos de diferentes ArrayList en iffDatos, que es un ArrayList de itfProperty.
      *
      * @return ArrayList<itfProperty>
      * @author RubenD AritzG
      */
 
     /**
-     * Método para castear Directores.
+     * Mï¿½todo para castear Directores.
      */
     private ArrayList<itfPropertyV2> castclsDirectorToItfProperty(ArrayList<clsDirector> _datosDirector) {
         //Creamos el objeto en el que vamos a castear las pelicualas
@@ -665,7 +665,7 @@ public class clsGestorLN {
     }
 
     /**
-     * Método para castear Premios Pelicula.
+     * Mï¿½todo para castear Premios Pelicula.
      */
     private ArrayList<itfPropertyV2> castclsPremiosPeliToItfProperty(ArrayList<clsPremios_Pelicula> _datosPremiosPeli) {
         //Creamos el objeto en el que vamos a castear las pelicualas
@@ -682,7 +682,7 @@ public class clsGestorLN {
     }
 
     /**
-     * Método para castear Directores.
+     * Mï¿½todo para castear Directores.
      */
     private ArrayList<itfPropertyV2> castclsEditorialToItfProperty(ArrayList<clsEditorial> _datosEditorial) {
         //Creamos el objeto en el que vamos a castear las pelicualas
@@ -699,7 +699,7 @@ public class clsGestorLN {
     }
 
     /**
-     * Método para castear Géneros de películas.
+     * Mï¿½todo para castear Gï¿½neros de pelï¿½culas.
      */
     private ArrayList<itfPropertyV2> castclsGeneroPeliToItfProperty(ArrayList<clsGeneroPeli> _datosGeneroPeli) {
         //Creamos el objeto en el que vamos a castear los generos
@@ -716,7 +716,7 @@ public class clsGestorLN {
     }
 
     /**
-     * Método para castear Géneros de películas.
+     * Mï¿½todo para castear Gï¿½neros de pelï¿½culas.
      */
     private ArrayList<itfPropertyV2> castclsGeneroLibroToItfProperty(ArrayList<clsGeneroLibro> _datosGeneroLibro) {
         itfPropertyV2 castObject;
@@ -730,7 +730,7 @@ public class clsGestorLN {
     }
 
     /**
-     * Método para castear Librerías multimedia.
+     * Mï¿½todo para castear Librerï¿½as multimedia.
      */
     public ArrayList<itfPropertyV2> castclsLibreriaMultimediaToItfProperty(ArrayList<clsLibreriaMultimedia> AO) {
         //Ordenamos por Nombre:
@@ -749,7 +749,7 @@ public class clsGestorLN {
     }
 
     /**
-     * Método para castear Películas.
+     * Mï¿½todo para castear Pelï¿½culas.
      */
     public ArrayList<itfPropertyV2> castclsPeliculaToItfProperty(ArrayList<clsPelicula> AO) {
         //Ordenamos por Nombre:
@@ -768,7 +768,7 @@ public class clsGestorLN {
     }
 
     /**
-     * Método para castear Libros.
+     * Mï¿½todo para castear Libros.
      *
      * @return
      */
@@ -786,7 +786,7 @@ public class clsGestorLN {
     }
 
     /**
-     * Método para castear Actores.
+     * Mï¿½todo para castear Actores.
      */
     public ArrayList<itfPropertyV2> castclsActoresToItfProperty(ArrayList<clsActor> AO) {
         //Ordenamos por Nombre:
@@ -805,7 +805,7 @@ public class clsGestorLN {
     }
 
     /**
-     * Método para castear Autores.
+     * Mï¿½todo para castear Autores.
      */
     public ArrayList<itfPropertyV2> castclsAutoresToItfProperty(ArrayList<clsAutor> AO) {
         //Ordenamos por Nombre:
