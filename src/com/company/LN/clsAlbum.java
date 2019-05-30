@@ -14,6 +14,10 @@ public class clsAlbum implements itfPropertyV2 {
     private int Cantante_idCantante = 0;
     private String Nombre = "";
 
+    public clsAlbum(int cantante_idCantante, String nombre) {
+        Cantante_idCantante = cantante_idCantante;
+        Nombre = nombre;
+    }
 
     public int getCantante_idCantante() {
         return Cantante_idCantante;

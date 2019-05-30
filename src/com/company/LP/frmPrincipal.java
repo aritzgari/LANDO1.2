@@ -35,7 +35,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     /* items del menu Insertar */
     private JMenuItem menuItemInsLibrerias_Multimedia, menuItemInsPeliculas, menuItemInsLibros, menuItemInsCancion, menuItemInsActor, menuItemInsDirector, menuItemInsGeneroPeli, menuItemInsAutor, menuItemInsGeneroLibro, menuItemInsEditorial, menuItemInsPremiosPelicula, menuItemInsPremiosLibro, menuItemInsGeneroCancion, menuItemInsCantante, menuItemInsAlbum, menuItemInsPremiosCancion;
     /* items del menu Consultar */
-    private JMenuItem menuItemConsLibrerias_Multimedia, menuItemConsPeliculas, menuItemConsLibros, menuItemConsMusica, menuItemConsActor, menuItemConsDirector, menuItemConsGeneroPeli, menuItemConsAutor, menuItemConsGeneroLibro, menuItemConsEditorial, menuItemConsPremiosPelicula, menuItemConsPremiosLibro;
+    private JMenuItem menuItemConsLibrerias_Multimedia, menuItemConsPeliculas, menuItemConsLibros, menuItemConsActor, menuItemConsDirector, menuItemConsGeneroPeli, menuItemConsAutor, menuItemConsGeneroLibro, menuItemConsEditorial, menuItemConsPremiosPelicula, menuItemConsPremiosLibro, menuItemConsLibro, menuItemConsGeneroCancion, menuItemConsPremiosCancion, menuItemConsCancion, menuItemConsAlbum, menuItemConsCantante;
 
 
     //Declaraciones copiadas
@@ -267,6 +267,24 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
             case "ActionConsPremiosLibro":
                 caseConsPremiosLibro();
                 break;
+            case "ActionConsLibro":
+                caseConsLibro();
+                break;
+            case "ActionConsCanciones":
+                caseConsCanciones();
+                break;
+            case "ActionConsPremiosCancion":
+                caseConsPremiosCancion();
+                break;
+            case "ActionConsGeneroCancion":
+                caseConsGeneroCancion();
+                break;
+            case "ActionConsAlbumes":
+                caseConsAlbumes();
+                break;
+            case "ActionConsCantante":
+                caseConsCantante();
+                break;
             case "Cambiar":
                 caseCambiar();
                 break;
@@ -300,7 +318,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
 
         JPInterfazMenuLibreria.setBackground(Color.white);
         JPInterfazMenuLibreria.setLayout(null);
-        if(objGestorLN.getNombreLibreriaDefinida() == "<No seleccionada>") {
+        if (objGestorLN.getNombreLibreriaDefinida() == "<No seleccionada>") {
             JLNombreLibreria2.setForeground(Color.RED);
         } else {
             JLNombreLibreria2.setForeground(Color.gray);
@@ -352,7 +370,6 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         menuItemConsLibrerias_Multimedia = new JMenuItem();
         menuItemConsPeliculas = new JMenuItem();
         menuItemConsLibros = new JMenuItem();
-        menuItemConsMusica = new JMenuItem();
         menuItemConsActor = new JMenuItem();
         menuItemConsDirector = new JMenuItem();
         menuItemConsGeneroPeli = new JMenuItem();
@@ -361,6 +378,12 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         menuItemConsEditorial = new JMenuItem();
         menuItemConsPremiosPelicula = new JMenuItem();
         menuItemConsPremiosLibro = new JMenuItem();
+        menuItemConsLibro = new JMenuItem();
+        menuItemConsCancion = new JMenuItem();
+        menuItemConsPremiosCancion = new JMenuItem();
+        menuItemConsGeneroCancion = new JMenuItem();
+        menuItemConsAlbum = new JMenuItem();
+        menuItemConsCantante = new JMenuItem();
 
         //Personalizaci?n
         //miPanel.setBackground(colorAzul);
@@ -462,11 +485,6 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         menuConsultar.add(menuItemConsLibros);
         menuConsultar.addSeparator();
 
-        menuItemConsMusica.setText("Musica");
-        menuItemConsMusica.setActionCommand("ActionConsMusica");
-        menuConsultar.add(menuItemConsMusica);
-        menuConsultar.addSeparator();
-
         menuItemConsActor.setText("Actor");
         menuItemConsActor.setActionCommand("ActionConsActor");
         menuConsultar.add(menuItemConsActor);
@@ -507,6 +525,35 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         menuConsultar.add(menuItemConsPremiosLibro);
         menuConsultar.addSeparator();
 
+        menuItemConsLibro.setText("Libros");
+        menuItemConsLibro.setActionCommand("ActionConsLibro");
+        menuConsultar.add(menuItemConsLibro);
+        menuConsultar.addSeparator();
+
+        menuItemConsCancion.setText("Canciones");
+        menuItemConsCancion.setActionCommand("ActionConsCanciones");
+        menuConsultar.add(menuItemConsCancion);
+        menuConsultar.addSeparator();
+
+        menuItemConsPremiosCancion.setText("Premios Cancion");
+        menuItemConsPremiosCancion.setActionCommand("ActionConsPremiosCancion");
+        menuConsultar.add(menuItemConsPremiosCancion);
+        menuConsultar.addSeparator();
+
+        menuItemConsGeneroCancion.setText("Generos Cancion");
+        menuItemConsGeneroCancion.setActionCommand("ActionConsGeneroCancion");
+        menuConsultar.add(menuItemConsGeneroCancion);
+        menuConsultar.addSeparator();
+
+        menuItemConsAlbum.setText("Albumes");
+        menuItemConsAlbum.setActionCommand("ActionConsAlbumes");
+        menuConsultar.add(menuItemConsAlbum);
+        menuConsultar.addSeparator();
+
+        menuItemConsCantante.setText("Cantantes");
+        menuItemConsCantante.setActionCommand("ActionConsCantante");
+        menuConsultar.add(menuItemConsCantante);
+
 
 
         /* Agrega los Menus de la barra de Menu */
@@ -539,7 +586,6 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         menuItemConsLibrerias_Multimedia.addActionListener(this);
         menuItemConsPeliculas.addActionListener(this);
         menuItemConsLibros.addActionListener(this);
-        menuItemConsMusica.addActionListener(this);
         menuItemConsActor.addActionListener(this);
         menuItemConsDirector.addActionListener(this);
         menuItemConsGeneroPeli.addActionListener(this);
@@ -548,33 +594,12 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         menuItemConsEditorial.addActionListener(this);
         menuItemConsPremiosPelicula.addActionListener(this);
         menuItemConsPremiosLibro.addActionListener(this);
-
-
-       /* //Set up the lone menu.
-        JMenu menu = new JMenu("Document");
-        menu.setMnemonic(KeyEvent.VK_D);
-        menuBar.add(menu);*/
-
-        /*//Set up the first menu item.
-        JMenuItem menuItem = new JMenuItem("New");
-        menuItem.setMnemonic(KeyEvent.VK_N);
-        menuItem.setAccelerator(KeyStroke.getKeyStroke(
-                KeyEvent.VK_N, ActionEvent.ALT_MASK));
-        menuItem.setActionCommand("new");
-        menuItem.addActionListener(this);
-        menu.add(menuItem);
-        menu.addSeparator();*/
-
-       /* //Set up the second menu item.
-        menuItem = new JMenuItem("Quit");
-        menuItem.setMnemonic(KeyEvent.VK_Q);
-        menuItem.setAccelerator(KeyStroke.getKeyStroke(
-                KeyEvent.VK_Q, ActionEvent.ALT_MASK));
-        menuItem.setActionCommand("quit");
-        menuItem.addActionListener(this);
-        menu.add(menuItem);
-        menu.addSeparator();*/
-
+        menuItemConsLibro.addActionListener(this);
+        menuItemConsCancion.addActionListener(this);
+        menuItemConsPremiosCancion.addActionListener(this);
+        menuItemConsGeneroCancion.addActionListener(this);
+        menuItemConsAlbum.addActionListener(this);
+        menuItemConsCantante.addActionListener(this);
 
         return barraMenu;
     }
@@ -767,6 +792,66 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     }
 
     /**
+     * Método consultar Libro desde la ventana.
+     */
+
+    private void caseConsLibro() {
+        //Ahora con JTables:
+        frmTablaLibro VentanaTablaLibro = new frmTablaLibro(objGestorLN, desktop, this);
+        desktop.add(VentanaTablaLibro);
+    }
+
+    /**
+     * Método consultar Cancion desde la ventana.
+     */
+
+    private void caseConsCanciones() {
+        //Ahora con JTables:
+        frmTablaCancion VentanaTablaCancion = new frmTablaCancion(objGestorLN, desktop, this);
+        desktop.add(VentanaTablaCancion);
+    }
+
+    /**
+     * Método consultar PremiosCancion desde la ventana.
+     */
+
+    private void caseConsPremiosCancion() {
+        //Ahora con JTables:
+        frmTablaPremiosCancion VentanaTablaPremiosCancion = new frmTablaPremiosCancion(objGestorLN, desktop, this);
+        desktop.add(VentanaTablaPremiosCancion);
+    }
+
+    /**
+     * Método consultar GeneroCancion desde la ventana.
+     */
+
+    private void caseConsGeneroCancion() {
+        //Ahora con JTables:
+        frmTablaGeneroCancion VentanaTablaGeneroCancion = new frmTablaGeneroCancion(objGestorLN, desktop, this);
+        desktop.add(VentanaTablaGeneroCancion);
+    }
+
+    /**
+     * Método consultar Album desde la ventana.
+     */
+
+    private void caseConsAlbumes() {
+        //Ahora con JTables:
+        frmTablaAlbum VentanaTablaAlbum = new frmTablaAlbum(objGestorLN, desktop, this);
+        desktop.add(VentanaTablaAlbum);
+    }
+
+    /**
+     * Método consultar Cantante desde la ventana.
+     */
+
+    private void caseConsCantante() {
+        //Ahora con JTables:
+        frmTablaCantante VentanaTablaCantante = new frmTablaCantante(objGestorLN, desktop, this);
+        desktop.add(VentanaTablaCantante);
+    }
+
+    /**
      * Método consultar librerias desde la ventana.
      */
 
@@ -788,13 +873,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
      * Método consultar Libros desde la ventana.
      */
     private void caseConsLibros() {
-        frmListaLibros VentanaConsLibros = new frmListaLibros();
-        ArrayList<itfPropertyV2> resultado = objGestorLN.consultarLibrosEnBD();
-        for (itfPropertyV2 L : resultado
-        ) {
-            VentanaConsLibros.setItem(L);
-        }
-        desktop.add(VentanaConsLibros);
+        frmTablaLibro VentanaTablaLibro = new frmTablaLibro(objGestorLN, desktop, this);
+        desktop.add(VentanaTablaLibro);
     }
 
     /**
@@ -881,7 +961,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
 
     public void actualizarNombreLibreriaSeleccionada() {
         JLNombreLibreria2.setText(objGestorLN.getNombreLibreriaDefinida());
-        if(objGestorLN.getNombreLibreriaDefinida() == "<No seleccionada>") {
+        if (objGestorLN.getNombreLibreriaDefinida() == "<No seleccionada>") {
             JLNombreLibreria2.setForeground(Color.RED);
         } else {
             JLNombreLibreria2.setForeground(Color.gray);

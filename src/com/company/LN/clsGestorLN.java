@@ -156,11 +156,17 @@ public class clsGestorLN {
         return datosPremiosLibro;
     }
 
-    public static ArrayList<clsGeneroCancion> getDatosGeneroCancion() { return datosGeneroCancion; }
+    public static ArrayList<clsGeneroCancion> getDatosGeneroCancion() {
+        return datosGeneroCancion;
+    }
 
-    public static ArrayList<clsAlbum> getDatosAlbum() { return datosAlbum; }
+    public static ArrayList<clsAlbum> getDatosAlbum() {
+        return datosAlbum;
+    }
 
-    public static ArrayList<clsPremios_Cancion> getDatosPremiosCancion() { return datosPremiosCancion; }
+    public static ArrayList<clsPremios_Cancion> getDatosPremiosCancion() {
+        return datosPremiosCancion;
+    }
 
     /**
      * A partir de aqu? van las creaciones en base de datos.
@@ -173,39 +179,10 @@ public class clsGestorLN {
      *
      * @author RubenD AritzG
      */
-    public static int crearLibreria(/*int idLibreria_Multimedia, */String Nombre, String Descripcion) /*Excepcion no tratadathrows SQLException */ {
+    public int crearLibreria(String Nombre, String Descripcion) {
         int retorno = 0;
-        //UPDATE 05/04: Aqui creamos la query con los parametros que nos pasan a este metodo;
-        //con esta query llamamos a clsLibreriaMultimediaBD.sendInsert(query)
-        //QUE PASA, que el id es AutoIncremental, asique igual conviene mandar la query sin el AutoIncremental,
-        // y este a?adirlo con el retorno (L39) del metodo de clsLibreriaMultimediaBD.sendInsert.
-        // (mas bien se a?adir? solo)
-        //La siguiente linea convendr?a que fuera una constante:
         clsLibreria_MultimediaBD objLibreria_MultimediaBD = new clsLibreria_MultimediaBD(Nombre, Descripcion);
-        //objLibreria_MultimediaBD.sendInsert(queryInsertLibreria);
         retorno = objLibreria_MultimediaBD.sendInsert(queryInsertLibreria);
-        /*try {
-
-            objLibreria_MultimediaBD.getObjSt().setString(2, Nombre);
-            objLibreria_MultimediaBD.getObjSt().setString(3, Descripcion);
-            objLibreria_MultimediaBD.sendInsert(query);
-        } catch (SQLException e) {
-            System.out.println("ERROR FATAL DE SQL");
-        }*/
-
-        //10/04/2019: Quito esto siguiente porque lo haremos con el nuevo metodo: (4 lineas)
-        /*clsLibreriaMultimedia objLibreria;
-        //Esto habr? que cambiarlo porque no podemos crear las librerias en la RAM con el id proporcionado.
-        objLibreria = new clsLibreriaMultimedia(idLibreria_Multimedia, Nombre, Descripcion);
-        datosLibrerias.add(objLibreria);*/
-
-        //Vale, aqu?, que esto es LN, voy a crear un objGestorLD, creo que esto se puede hacer,
-        // y con este obj voy a intentar a?adir las librerias directamente a la BBDD. Ni yo me creo lo que digo, pero en teor?a esto est? bien.
-
-        //METODO ANTIGUO:
-        /* clsDatos objDatos = new clsDatos();
-        objDatos.insertarLiberiaBD(idLibreria_Multimedia, Nombre, Descripcion);*/
-        //FIN METODO ANTIGUO
         return retorno;
     }
 
@@ -243,11 +220,12 @@ public class clsGestorLN {
     public static int crearCancion(int Libreria_Multimedia_idLibreria_Multimedia, String titulo, String titulo_original, int anno_de_publicacion, int idGenero, int idAlbum, int idCantante, String tipo_DoA, double precio, boolean en_propiedad, boolean en_busqueda, String formato, String Enlace_a_YT) {
         int retorno = 0;
         clsCancionBD objCancionBD;
-        objCancionBD = new clsCancionBD(Libreria_Multimedia_idLibreria_Multimedia, titulo, titulo_original, anno_de_publicacion, tipo_DoA, precio, en_propiedad, en_busqueda, formato, Enlace_a_YT, idGenero,  idAlbum, idCantante);
+        objCancionBD = new clsCancionBD(Libreria_Multimedia_idLibreria_Multimedia, titulo, titulo_original, anno_de_publicacion, tipo_DoA, precio, en_propiedad, en_busqueda, formato, Enlace_a_YT, idGenero, idAlbum, idCantante);
         retorno = objCancionBD.sendInsert(queryInsertCancion);
         System.out.println(retorno);
         return retorno;
     }
+
     /**
      * Metodo para crear genero de cancion en el Gestor con datos que recibamos de LP
      *
@@ -261,6 +239,7 @@ public class clsGestorLN {
         System.out.println(retorno);
         return retorno;
     }
+
     /**
      * Metodo para crear cantante en el Gestor con datos que recibamos de LP
      *
@@ -293,7 +272,7 @@ public class clsGestorLN {
      *
      * @author RubenD AritzG
      */
-    public static int crearAlbum (String Nombre, int Cantante_idCantante) {
+    public static int crearAlbum(String Nombre, int Cantante_idCantante) {
         int retorno = 0;
         clsAlbumBD objAlbumBD = new clsAlbumBD(Nombre, Cantante_idCantante);
         retorno = objAlbumBD.sendInsert(queryInsertAlbum);
@@ -350,7 +329,7 @@ public class clsGestorLN {
      * @author RubenD AritzG
      */
 
-    public static int crearPremiosCancion(String Nombre, String Categoria, int Año, int Canciones_idCanciones, int Canciones_Género_Canción_idGénero_Canción,  int Canciones_Album_idAlbum, int Canciones_Album_Cantante_idCantante,int Canciones_Libreria_Multimedia_idLibreria_Multimedia) {
+    public static int crearPremiosCancion(String Nombre, String Categoria, int Año, int Canciones_idCanciones, int Canciones_Género_Canción_idGénero_Canción, int Canciones_Album_idAlbum, int Canciones_Album_Cantante_idCantante, int Canciones_Libreria_Multimedia_idLibreria_Multimedia) {
         int retorno = 0;
         clsPremios_CancionBD objPremiosCancionBD = new clsPremios_CancionBD(Nombre, Categoria, Año, Canciones_idCanciones, Canciones_Género_Canción_idGénero_Canción, Canciones_Album_idAlbum, Canciones_Album_Cantante_idCantante, Canciones_Libreria_Multimedia_idLibreria_Multimedia);
         retorno = objPremiosCancionBD.sendInsert(queryInsertPremiosCancion);
@@ -446,9 +425,39 @@ public class clsGestorLN {
         return castclsActoresToItfProperty(datosActor);
     }
 
+    /**
+     * Método para consultar Canciones
+     */
+    public ArrayList<itfPropertyV2> consultarCancionesEnBD() {
+        //Declaraciones
+        ResultSet resultado = null;
+        clsCancionBD objCancionBD = new clsCancionBD();
+
+        //C?digo
+        //Abrir conexi?n:
+        objCancionBD.conectarBD();
+        resultado = objCancionBD.sendSelect(queryConsultaCancion);
+        //Reiniciamos el ArrayList en la RAM para no duplicar entradas en esta (Poco eficiente pero eficaz)
+        datosCancion.clear();
+        //Meto rs en objeto
+        try {
+            while (resultado.next()) {
+                clsCancion objCancion = new clsCancion(resultado.getInt(1), resultado.getString(2), resultado.getString(3), resultado.getInt(4),resultado.getInt(5),resultado.getInt(1),resultado.getInt(6), resultado.getString(7),resultado.getDouble(8),resultado.getBoolean(9),resultado.getBoolean(10),resultado.getString(11),resultado.getString(12));
+                datosCancion.add(objCancion);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error SQL");
+            System.out.println(e);
+        }
+        //Cierro conexion
+        objCancionBD.desconectarBD(objCancionBD.getObjCon());
+
+        return castclsCancionesToItfProperty(datosCancion);
+    }
+
 
     /**
-     * M?todo para consultar Autores
+     * Método para consultar Autores
      */
     public ArrayList<itfPropertyV2> consultarAutoresEnBD() {
         //Declaraciones
@@ -475,6 +484,37 @@ public class clsGestorLN {
         objAutorBD.desconectarBD(objAutorBD.getObjCon());
 
         return castclsAutoresToItfProperty(datosAutor);
+    }
+
+
+    /**
+     * Método para consultar Albumes
+     */
+    public ArrayList<itfPropertyV2> consultarAlbumEnBD() {
+        //Declaraciones
+        ResultSet resultado = null;
+        clsAlbumBD objAlbumBD = new clsAlbumBD();
+
+        //C?digo
+        //Abrir conexi?n:
+        objAlbumBD.conectarBD();
+        resultado = objAlbumBD.sendSelect(queryConsultaAlbum);
+        //Reiniciamos el ArrayList en la RAM para no duplicar entradas en esta (Poco eficiente pero eficaz)
+        datosAlbum.clear();
+        //Meto rs en objeto
+        try {
+            while (resultado.next()) {
+                clsAlbum objAlbum = new clsAlbum(resultado.getInt(1), resultado.getString(2));
+                datosAlbum.add(objAlbum);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error SQL");
+            System.out.println(e);
+        }
+        //Cierro conexion
+        objAlbumBD.desconectarBD(objAlbumBD.getObjCon());
+
+        return castclsAlbumToItfProperty(datosAlbum);
     }
 
     /**
@@ -507,6 +547,70 @@ public class clsGestorLN {
         objDirectorBD.desconectarBD(objDirectorBD.getObjCon());
 
         return castclsDirectorToItfProperty(datosDirector);
+    }
+
+    /**
+     * Método para consultar Cancion
+     *
+     * @return
+     */
+    public ArrayList<itfPropertyV2> consultarGeneroCancionEnBD() {
+        ResultSet resultado = null;
+        clsGeneroCancionBD objGeneroCancionBD = new clsGeneroCancionBD();
+
+        //C?digo
+        //Abrir conexi?n
+        objGeneroCancionBD.conectarBD();
+        resultado = objGeneroCancionBD.sendSelect(queryConsultaGeneroCancion);
+        //Reiniciamos el ArrayList en la RAM para no duplicar entradas en esta (Poco eficiente pero eficaz)
+        datosGeneroCancion.clear();
+        //Meto rs en objeto
+        try {
+            while (resultado.next()) {
+                clsGeneroCancion objGeneroCancion = new clsGeneroCancion(resultado.getInt(1), resultado.getString(2));
+                //Esto era para visualizar: System.out.println("id: " + resultado.getInt(1) + " Nombre: " + resultado.getString(2) + " Descripci?n: " + resultado.getString(3));
+                datosGeneroCancion.add(objGeneroCancion);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error SQL");
+            System.out.println(e);
+        }
+        //Cierro conexion
+        objGeneroCancionBD.desconectarBD(objGeneroCancionBD.getObjCon());
+
+        return castclsGeneroCancionToItfProperty(datosGeneroCancion);
+    }
+
+
+    /**
+     * Método para consultar Cantantes
+     *
+     * @return
+     */
+    public ArrayList<itfPropertyV2> consultarCantantesEnBD() {
+        ResultSet resultado = null;
+        clsCantanteBD objCantanteBD = new clsCantanteBD();
+
+        //C?digo
+        //Abrir conexi?n
+        objCantanteBD.conectarBD();
+        resultado = objCantanteBD.sendSelect(queryConsultaDirector);
+        //Reiniciamos el ArrayList en la RAM para no duplicar entradas en esta (Poco eficiente pero eficaz)
+        datosDirector.clear();
+        //Meto rs en objeto
+        try {
+            while (resultado.next()) {
+                clsCantante objCantante = new clsCantante(resultado.getInt(1), resultado.getString(2), resultado.getString(3));
+                datosCantante.add(objCantante);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error SQL");
+            System.out.println(e);
+        }
+        //Cierro conexion
+        objCantanteBD.desconectarBD(objCantanteBD.getObjCon());
+
+        return castclsCantanteToItfProperty(datosCantante);
     }
 
     /**
@@ -755,6 +859,40 @@ public class clsGestorLN {
 
         return castclsPremiosLibrosToItfProperty(datosPremiosLibro);
     }
+
+
+
+    /**
+     * Método para consultar premios de libros.
+     */
+    public ArrayList<itfPropertyV2> consultarPremiosCancionesBD() {
+        //Declaraciones
+        ResultSet resultado = null;
+        clsPremios_CancionBD objPremiosCancionBD = new clsPremios_CancionBD();
+
+        //C?digo
+        //Abrir conexi?n
+        objPremiosCancionBD.conectarBD();
+        resultado = objPremiosCancionBD.sendSelect(queryConsultaPremiosCancion);
+        //Reiniciamos el ArrayList en la RAM para no duplicar entradas en esta (Poco eficiente pero eficaz)
+        datosPremiosLibro.clear();
+        //Meto rs en objeto
+        try {
+            while (resultado.next()) {
+                clsPremios_Cancion objPremiosCancion = new clsPremios_Cancion(resultado.getInt(1), resultado.getString(2), resultado.getString(3), resultado.getInt(4), resultado.getInt(5), resultado.getInt(6),resultado.getInt(7),resultado.getInt(8),resultado.getInt(9));
+                datosPremiosCancion.add(objPremiosCancion);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error SQL");
+            System.out.println(e);
+        }
+        //Cierro conexion
+        objPremiosCancionBD.desconectarBD(objPremiosCancionBD.getObjCon());
+
+        return castclsPremiosCancionToItfProperty(datosPremiosCancion);
+    }
+
+
     /**
      * A partir de aqu? van las Updates - son querys para actualizar valores.
      *
@@ -768,6 +906,22 @@ public class clsGestorLN {
     public void updateGeneroPeliEnBD(String _query) {
         clsGeneroPeliBD objGeneroPeliBD = new clsGeneroPeliBD();
         objGeneroPeliBD.sendUpdate(_query);
+    }
+
+    /**
+     * Método para actualizar Canciones
+     */
+    public void updateCancionEnBD(String _query) {
+        clsCancionBD objCancionBD = new clsCancionBD();
+        objCancionBD.sendUpdate(_query);
+    }
+
+    /**
+     * Método para actualizar Géneros de películas
+     */
+    public void updateGeneroCancionEnBD(String _query) {
+        clsGeneroCancionBD objGeneroCancionBD = new clsGeneroCancionBD();
+        objGeneroCancionBD.sendUpdate(_query);
     }
 
     /**
@@ -785,6 +939,23 @@ public class clsGestorLN {
         clsActoresBD objActoresBD = new clsActoresBD();
         objActoresBD.sendUpdate(_query);
     }
+
+    /**
+     * Método para actualizar Albumes
+     */
+    public void updateAlbumEnBD(String _query) {
+        clsAlbumBD objAlbumBD = new clsAlbumBD();
+        objAlbumBD.sendUpdate(_query);
+    }
+
+    /**
+     * Método para actualizar Actores
+     */
+    public void updateCantanteEnBD(String _query) {
+        clsCantanteBD objCantanteBD = new clsCantanteBD();
+        objCantanteBD.sendUpdate(_query);
+    }
+
     /**
      * Método para actualizar autores
      */
@@ -800,6 +971,7 @@ public class clsGestorLN {
         clsDirectorBD objDirectoresBD = new clsDirectorBD();
         objDirectoresBD.sendUpdate(_query);
     }
+
     /**
      * Método para actualizar premios pelicula.
      */
@@ -807,6 +979,7 @@ public class clsGestorLN {
         clsPremios_PeliculaBD objPremiosPeliculaBD = new clsPremios_PeliculaBD();
         objPremiosPeliculaBD.sendUpdate(_query);
     }
+
     /**
      * Método para actualizar premios libro.
      */
@@ -814,6 +987,15 @@ public class clsGestorLN {
         clsPremios_LibrosBD objPremiosLibroBD = new clsPremios_LibrosBD();
         objPremiosLibroBD.sendUpdate(_query);
     }
+
+    /**
+     * Método para actualizar premios libro.
+     */
+    public void updatePremiosCancionEnBD(String _query) {
+        clsPremios_CancionBD objPremiosCancionBD = new clsPremios_CancionBD();
+        objPremiosCancionBD.sendUpdate(_query);
+    }
+
     /**
      * Método para actualizar peliculas
      */
@@ -821,6 +1003,7 @@ public class clsGestorLN {
         clsPeliculaBD objPeliculaBD = new clsPeliculaBD();
         objPeliculaBD.sendUpdate(_query);
     }
+
     /**
      * Método para actualizar generos de peliculas
      */
@@ -828,6 +1011,7 @@ public class clsGestorLN {
         clsGeneroPeliBD objGeneroPeliBD = new clsGeneroPeliBD();
         objGeneroPeliBD.sendUpdate(_query);
     }
+
     /**
      * Método para actualizar generos de libros
      */
@@ -835,6 +1019,15 @@ public class clsGestorLN {
         clsGeneroLibroBD objGeneroLibroBD = new clsGeneroLibroBD();
         objGeneroLibroBD.sendUpdate(_query);
     }
+
+    /**
+     * Método para actualizar libros
+     */
+    public void updateLibroEnBD(String _query) {
+        clsLibrosBD objLibrosBD = new clsLibrosBD();
+        objLibrosBD.sendUpdate(_query);
+    }
+
     /**
      * Método para actualizar editorial
      */
@@ -857,6 +1050,15 @@ public class clsGestorLN {
         clsLibreria_MultimediaBD objLibreriaMultimediaBD = new clsLibreria_MultimediaBD();
         objLibreriaMultimediaBD.sendDelete(_query);
     }
+
+    /**
+     * Método para eliminar Canciones
+     */
+    public void deleteCancionEnBD(String _query) {
+        clsCancionBD objCancionBD = new clsCancionBD();
+        objCancionBD.sendDelete(_query);
+    }
+
     /**
      * Método para eliminar actores
      */
@@ -864,6 +1066,23 @@ public class clsGestorLN {
         clsActoresBD objActoresBD = new clsActoresBD();
         objActoresBD.sendDelete(_query);
     }
+
+    /**
+     * Método para eliminar Albumes
+     */
+    public void deleteAlbumEnBD(String _query) {
+        clsAlbumBD objAlbumBD = new clsAlbumBD();
+        objAlbumBD.sendDelete(_query);
+    }
+
+    /**
+     * Método para eliminar Cantantes
+     */
+    public void deleteCantanteEnBD(String _query) {
+        clsCantanteBD objCantanteBD = new clsCantanteBD();
+        objCantanteBD.sendDelete(_query);
+    }
+
     /**
      * Método para eliminar director
      */
@@ -871,6 +1090,7 @@ public class clsGestorLN {
         clsDirectorBD objDirectorBD = new clsDirectorBD();
         objDirectorBD.sendDelete(_query);
     }
+
     /**
      * Método para eliminar autor
      */
@@ -878,6 +1098,7 @@ public class clsGestorLN {
         clsAutorBD objAutorBD = new clsAutorBD();
         objAutorBD.sendDelete(_query);
     }
+
     /**
      * Método para eliminar premios pelicula
      */
@@ -885,6 +1106,7 @@ public class clsGestorLN {
         clsPremios_PeliculaBD objPremiosPeliculaBD = new clsPremios_PeliculaBD();
         objPremiosPeliculaBD.sendDelete(_query);
     }
+
     /**
      * Método para eliminar premios libro
      */
@@ -892,6 +1114,23 @@ public class clsGestorLN {
         clsPremios_LibrosBD objPremiosLibrosBD = new clsPremios_LibrosBD();
         objPremiosLibrosBD.sendDelete(_query);
     }
+
+    /**
+     * Método para eliminar premios cancion
+     */
+    public void deletePremiosCancionEnBD(String _query) {
+        clsPremios_CancionBD objPremiosCancionBD = new clsPremios_CancionBD();
+        objPremiosCancionBD.sendDelete(_query);
+    }
+
+    /**
+     * Método para eliminar libros
+     */
+    public void deleteLibroEnBD(String _query) {
+        clsLibrosBD objLibrosBD = new clsLibrosBD();
+        objLibrosBD.sendDelete(_query);
+    }
+
     /**
      * Método para eliminar  pelicula
      */
@@ -899,6 +1138,7 @@ public class clsGestorLN {
         clsPeliculaBD objPeliculaBD = new clsPeliculaBD();
         objPeliculaBD.sendDelete(_query);
     }
+
     /**
      * Método para eliminar genero pelicula
      */
@@ -906,6 +1146,7 @@ public class clsGestorLN {
         clsGeneroPeliBD objGeneroPeliBD = new clsGeneroPeliBD();
         objGeneroPeliBD.sendDelete(_query);
     }
+
     /**
      * Método para eliminar genero libro
      */
@@ -913,6 +1154,15 @@ public class clsGestorLN {
         clsGeneroLibroBD objGeneroLibroBD = new clsGeneroLibroBD();
         objGeneroLibroBD.sendDelete(_query);
     }
+
+    /**
+     * Método para eliminar genero Cancion
+     */
+    public void deleteGeneroCancionEnBD(String _query) {
+        clsGeneroCancionBD objGeneroCancionBD = new clsGeneroCancionBD();
+        objGeneroCancionBD.sendDelete(_query);
+    }
+
     /**
      * Método para eliminar editorial
      */
@@ -947,6 +1197,40 @@ public class clsGestorLN {
     }
 
     /**
+     * Método para castear Albumes.
+     */
+    private ArrayList<itfPropertyV2> castclsAlbumToItfProperty(ArrayList<clsAlbum> _datosAlbum) {
+        //Creamos el objeto en el que vamos a castear las pelicualas
+        itfPropertyV2 castObject;
+        //Las casteamos y metemos en datosItf
+        //Limpiamos datosItf para no duplicar
+        datosItfV2.clear();
+        for (clsAlbum o : _datosAlbum
+        ) {
+            castObject = (itfPropertyV2) o;
+            datosItfV2.add(castObject);
+        }
+        return datosItfV2;
+    }
+
+    /**
+     * Método para castear Canciones.
+     */
+    private ArrayList<itfPropertyV2> castclsCancionesToItfProperty(ArrayList<clsCancion> _datosCancion) {
+        //Creamos el objeto en el que vamos a castear las pelicualas
+        itfPropertyV2 castObject;
+        //Las casteamos y metemos en datosItf
+        //Limpiamos datosItf para no duplicar
+        datosItfV2.clear();
+        for (clsCancion o : _datosCancion
+        ) {
+            castObject = (itfPropertyV2) o;
+            datosItfV2.add(castObject);
+        }
+        return datosItfV2;
+    }
+
+    /**
      * Método para castear Premios Pelicula.
      */
     private ArrayList<itfPropertyV2> castclsPremiosPeliToItfProperty(ArrayList<clsPremios_Pelicula> _datosPremiosPeli) {
@@ -956,6 +1240,23 @@ public class clsGestorLN {
         //Limpiamos datosItf para no duplicar
         datosItfV2.clear();
         for (clsPremios_Pelicula o : _datosPremiosPeli
+        ) {
+            castObject = (itfPropertyV2) o;
+            datosItfV2.add(castObject);
+        }
+        return datosItfV2;
+    }
+
+    /**
+     * Método para castear Premios Pelicula.
+     */
+    private ArrayList<itfPropertyV2> castclsPremiosCancionToItfProperty(ArrayList<clsPremios_Cancion> _datosPremiosCancion) {
+        //Creamos el objeto en el que vamos a castear las pelicualas
+        itfPropertyV2 castObject;
+        //Las casteamos y metemos en datosItf
+        //Limpiamos datosItf para no duplicar
+        datosItfV2.clear();
+        for (clsPremios_Cancion o : _datosPremiosCancion
         ) {
             castObject = (itfPropertyV2) o;
             datosItfV2.add(castObject);
@@ -981,7 +1282,7 @@ public class clsGestorLN {
     }
 
     /**
-     * M?todo para castear Directores.
+     * Método para castear Directores.
      */
     private ArrayList<itfPropertyV2> castclsEditorialToItfProperty(ArrayList<clsEditorial> _datosEditorial) {
         //Creamos el objeto en el que vamos a castear las pelicualas
@@ -998,7 +1299,7 @@ public class clsGestorLN {
     }
 
     /**
-     * M?todo para castear G?neros de pel?culas.
+     * Método para castear Géneros de pel?culas.
      */
     private ArrayList<itfPropertyV2> castclsGeneroPeliToItfProperty(ArrayList<clsGeneroPeli> _datosGeneroPeli) {
         //Creamos el objeto en el que vamos a castear los generos
@@ -1015,7 +1316,7 @@ public class clsGestorLN {
     }
 
     /**
-     * M?todo para castear G?neros de pel?culas.
+     * Método para castear Géneros de pel?culas.
      */
     private ArrayList<itfPropertyV2> castclsGeneroLibroToItfProperty(ArrayList<clsGeneroLibro> _datosGeneroLibro) {
         itfPropertyV2 castObject;
@@ -1029,7 +1330,7 @@ public class clsGestorLN {
     }
 
     /**
-     * M?todo para castear Librer?as multimedia.
+     * Método para castear Librer?as multimedia.
      */
     public ArrayList<itfPropertyV2> castclsLibreriaMultimediaToItfProperty(ArrayList<clsLibreriaMultimedia> AO) {
         //Ordenamos por Nombre:
@@ -1048,7 +1349,7 @@ public class clsGestorLN {
     }
 
     /**
-     * M?todo para castear Pel?culas.
+     * Método para castear Pel?culas.
      */
     public ArrayList<itfPropertyV2> castclsPeliculaToItfProperty(ArrayList<clsPelicula> AO) {
         //Ordenamos por Nombre:
@@ -1067,7 +1368,7 @@ public class clsGestorLN {
     }
 
     /**
-     * M?todo para castear Libros.
+     * Método para castear Libros.
      *
      * @return
      */
@@ -1085,7 +1386,7 @@ public class clsGestorLN {
     }
 
     /**
-     * M?todo para castear Actores.
+     * Método para castear Actores.
      */
     public ArrayList<itfPropertyV2> castclsActoresToItfProperty(ArrayList<clsActor> AO) {
         //Ordenamos por Nombre:
@@ -1104,7 +1405,45 @@ public class clsGestorLN {
     }
 
     /**
-     * M?todo para castear Autores.
+     * Método para castear Cantantes.
+     */
+    public ArrayList<itfPropertyV2> castclsCantanteToItfProperty(ArrayList<clsCantante> AO) {
+        //Ordenamos por Nombre:
+        //NO CONFIGURADO PARA Actores Collections.sort(AO, new clsCompareLibreriaMultimedia());
+        //Creamos el objeto en el que vamos a castear las pelicualas
+        itfPropertyV2 castObject;
+        //Las casteamos y metemos en datosItf
+        //Limpiamos datosItf para no duplicar
+        datosItfV2.clear();
+        for (clsCantante o : AO
+        ) {
+            castObject = (itfPropertyV2) o;
+            datosItfV2.add(castObject);
+        }
+        return datosItfV2;
+    }
+
+    /**
+     * Método para castear GeneroCancion.
+     */
+    public ArrayList<itfPropertyV2> castclsGeneroCancionToItfProperty(ArrayList<clsGeneroCancion> AO) {
+        //Ordenamos por Nombre:
+        //NO CONFIGURADO PARA Actores Collections.sort(AO, new clsCompareLibreriaMultimedia());
+        //Creamos el objeto en el que vamos a castear las pelicualas
+        itfPropertyV2 castObject;
+        //Las casteamos y metemos en datosItf
+        //Limpiamos datosItf para no duplicar
+        datosItfV2.clear();
+        for (clsGeneroCancion o : AO
+        ) {
+            castObject = (itfPropertyV2) o;
+            datosItfV2.add(castObject);
+        }
+        return datosItfV2;
+    }
+
+    /**
+     * Método para castear Autores.
      */
     public ArrayList<itfPropertyV2> castclsAutoresToItfProperty(ArrayList<clsAutor> AO) {
         //Ordenamos por Nombre:
@@ -1142,6 +1481,109 @@ public class clsGestorLN {
     public void setNombreLibreriaDefinida(String nombreLibreriaDefinida) {
         NombreLibreriaDefinida = nombreLibreriaDefinida;
     }
+    /**
+     * Los métodos "Existe" que comprueban si hay un objeto dado en un Arraylist, también dado.
+     *
+     * @return true/false en función de si el objeto está en el Arraylist
+     */
 
+    /**
+     * Para las itfPropertyV2
+     *
+     * @param obj
+     * @param array
+     * @return
+     */
+    public static boolean Existe(itfPropertyV2 obj, ArrayList<itfPropertyV2> array) {
+
+        boolean retorno = false;
+
+        for (itfPropertyV2 o : array) {
+            if (o.equals(obj)) return true;
+
+        }
+
+        return retorno;
+
+    }
+/**
+     * Para las Librerias Multimedia
+     *
+     * @param obj
+     * @param array
+     * @return
+     */
+    public static boolean ExisteLibreria(clsLibreriaMultimedia obj, ArrayList<clsLibreriaMultimedia> array) {
+
+        boolean retorno = false;
+
+        for (clsLibreriaMultimedia o : array) {
+            if (o.equals(obj)) return true;
+
+        }
+
+        return retorno;
+
+    }
+
+    /**
+     * Para las Peliculas
+     *
+     * @param obj
+     * @param array
+     * @return
+     */
+    public static boolean ExistePelicula(clsPelicula obj, ArrayList<clsPelicula> array) {
+
+        boolean retorno = false;
+
+        for (clsPelicula o : array) {
+            if (o.equals(obj)) return true;
+
+        }
+
+        return retorno;
+
+    }
+
+    /**
+     * Para los Libros
+     *
+     * @param obj
+     * @param array
+     * @return
+     */
+    public static boolean ExisteLibro(clsLibro obj, ArrayList<clsLibro> array) {
+
+        boolean retorno = false;
+
+        for (clsLibro o : array) {
+            if (o.equals(obj)) return true;
+
+        }
+
+        return retorno;
+
+    }
+
+    /**
+     * Para las Canciones
+     *
+     * @param obj
+     * @param array
+     * @return
+     */
+    public static boolean ExisteCancion(clsCancion obj, ArrayList<clsCancion> array) {
+
+        boolean retorno = false;
+
+        for (clsCancion o : array) {
+            if (o.equals(obj)) return true;
+
+        }
+
+        return retorno;
+
+    }
 
 }

@@ -6,7 +6,7 @@ import com.company.Excepciones.clsPropiedadNonExistantException;
  * @author Ruben Domínguez
  * Aritz Garitano
  * <p>
- * Clase para crear y almacenar generos de canciones.
+ * Clase para crear y almacenar Cantantes de canciones.
  */
 
 public class clsCantante implements itfPropertyV2 {
@@ -14,7 +14,11 @@ public class clsCantante implements itfPropertyV2 {
     private String Nombre = "";
     private String Apellido= "";
 
-
+public clsCantante(int _idCantante, String _Nombre, String _Apellido){
+    idCantante = _idCantante;
+    Nombre = _Nombre;
+    Apellido = _Apellido;
+}
     public int getIdCantante() {
         return idCantante;
     }

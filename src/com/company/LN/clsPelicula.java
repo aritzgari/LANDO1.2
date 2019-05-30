@@ -126,8 +126,7 @@ public class clsPelicula extends clsArticulo implements itfPropertyV2 {
 
     @Override
     public int hashCode() {
-
-        final int prime = 31;
+        final int prime = 42;
         int result = 1;
         result = prime * result + ((getTitulo() == null) ? 0 : getTitulo().hashCode());
         result = prime * result
@@ -160,4 +159,6 @@ public class clsPelicula extends clsArticulo implements itfPropertyV2 {
 
         return true;
     }
+
+
 }

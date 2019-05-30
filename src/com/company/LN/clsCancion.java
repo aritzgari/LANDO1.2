@@ -1,6 +1,9 @@
 package com.company.LN;
 import com.company.Excepciones.clsPropiedadNonExistantException;
 import com.company.Comun.itfPropertyV2;
+
+import java.util.Objects;
+
 /**
  * Clase para guardar datos de Música en nuestra Base de Datos
  * <p>
@@ -104,4 +107,24 @@ public class clsCancion extends clsArticulo implements itfPropertyV2 {
     }
 
 
+    @Override
+    public boolean equals(Object o) {
+        //Si la ubicación de memoria es la misma, son el mismo objeto.
+        if (this == o) return true;
+        //Si el Objeto o no es clsCancion, no son el mismo.
+        if (!(o instanceof clsCancion)) return false;
+        clsCancion that = (clsCancion) o;
+        //Aquí compara el id, el Album y el Cantante, si coinciden, son el mismo.
+        return Libreria_Multimedia_idLibreria_Multimedia == that.Libreria_Multimedia_idLibreria_Multimedia &&
+                idAlbum == that.idAlbum &&
+                idCantante == that.idCantante;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 42;
+        int result = 1;
+        result = prime * result + idAlbum * prime + idCantante * prime;
+        return result;
+    }
 }

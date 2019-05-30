@@ -105,11 +105,15 @@ public class frmInsertLibrerias extends JInternalFrame implements ActionListener
         switch (e.getActionCommand()) {
             case "Aceptar":
                 if ((!JTFNombre.getText().equals(TextoJLNombre)) && (!JTFDescripcion.getText().equals(TextoJLDescripcion)) && (!JTFNombre.getText().equals("")) && (!JTFDescripcion.getText().equals(""))) {
-                    if (objGestorLN.crearLibreria(JTFNombre.getText(), JTFDescripcion.getText()) != 0) {
+                 int resultado = objGestorLN.crearLibreria(JTFNombre.getText(), JTFDescripcion.getText());
+                    if (resultado > 0) {
                         //Ha funcionado el insert.
                         JOptionPane.showInternalMessageDialog(null, "  Insert realizado.");
 
-                    } else {
+                    } else if(resultado == -18){
+                        //El insert estaba repetido.
+                        JOptionPane.showInternalMessageDialog(null, "Objeto repetido.");
+                    }else {
                         //No ha funcionado el insert.
                         JOptionPane.showInternalMessageDialog(null, "Insert no realizado, revisar parámetros.");
 

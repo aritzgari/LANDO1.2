@@ -13,6 +13,10 @@ public class clsGeneroCancion implements itfPropertyV2 {
     private int idGénero_Canción = 0;
     private String Nombre= "";
 
+    public clsGeneroCancion(int idGénero_Canción, String nombre) {
+        this.idGénero_Canción = idGénero_Canción;
+        Nombre = nombre;
+    }
 
     public int getIdGénero_Canción() {
         return idGénero_Canción;

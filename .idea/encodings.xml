@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
     <file url="file://$PROJECT_DIR$/src/com/company/Comun/clsConstantes.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/Comun/itfPropertyV2.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/Excepciones/clsCampoContenidoVacio.java" charset="ISO-8859-1" />
@@ -48,7 +48,6 @@
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsPremios_Libro.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/clsPremios_Pelicula.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LN/itfProperty.java" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/src/com/company/LP/Jlist2.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/ModeloLista.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/ModeloListaV2.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/UtilidadesLP.java" charset="ISO-8859-1" />
@@ -84,14 +83,21 @@
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmMenuLibrerias.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmPrincipal.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmTablaActor.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LP/frmTablaAlbum.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmTablaAutor.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LP/frmTablaCancion.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LP/frmTablaCantante.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmTablaDirector.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmTablaEditorial.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LP/frmTablaGeneroCancion.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmTablaGeneroLibro.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmTablaGeneroPelicula.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmTablaLibrerias.java" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/src/com/company/LP/frmTablaMultimedia.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LP/frmTablaLibro.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LP/frmTablaLibro.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmTablaPeliculas.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LP/frmTablaPremiosCancion.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LP/frmTablaPremiosCancion.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmTablaPremiosLibro.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmTablaPremiosPelicula.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/clsMain.java" charset="ISO-8859-1" />

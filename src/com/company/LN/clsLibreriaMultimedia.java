@@ -4,6 +4,8 @@ package com.company.LN;
 import com.company.Comun.itfPropertyV2;
 import com.company.Excepciones.clsPropiedadNonExistantException;
 
+import java.util.Objects;
+
 
 public class clsLibreriaMultimedia implements Comparable, itfPropertyV2 {
     /**
@@ -95,5 +97,26 @@ public class clsLibreriaMultimedia implements Comparable, itfPropertyV2 {
                 throw new clsPropiedadNonExistantException();
         }
         return retorno;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        //Si la ubicación de memoria es la misma, son el mismo objeto.
+        if (this == o) return true;
+        //Si el Objeto o no es clsLibreriaMultimedia, no son el mismo.
+        if (!(o instanceof clsLibreriaMultimedia)) return false;
+        clsLibreriaMultimedia that = (clsLibreriaMultimedia) o;
+        //Aquí compara el getNombre y el getDescripcion, si coinciden, son el mismo.
+        return getNombre().equals(that.getNombre()) &&
+                getDescripcion().equals(that.getDescripcion());
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 42;
+        int result = 1;
+        result = prime * result + ((getNombre() == null) ? 0 : getNombre().hashCode());
+        result = prime * result + ((getDescripcion() == null) ? 0 : getDescripcion().hashCode());
+        return result;
     }
 }

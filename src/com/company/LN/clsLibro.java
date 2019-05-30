@@ -3,6 +3,8 @@ package com.company.LN;
 import com.company.Comun.itfPropertyV2;
 import com.company.Excepciones.clsPropiedadNonExistantException;
 
+import java.util.Objects;
+
 /**
  * Clase para guardar datos de Libros en nuestra Base de Datos
  *
@@ -208,5 +210,21 @@ public class clsLibro extends clsArticulo implements itfPropertyV2 {
                 throw new clsPropiedadNonExistantException();
         }
         return retorno;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof clsLibro)) return false;
+        clsLibro clsLibro = (clsLibro) o;
+        return getISBN().equals(clsLibro.getISBN());
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 42;
+        int result = 1;
+        result = prime * result + ((getISBN() == null) ? 0 : getISBN().hashCode());
+        return result;
     }
 }
