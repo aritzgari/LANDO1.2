@@ -777,6 +777,14 @@ public class clsGestorLN {
         clsLibreria_MultimediaBD objLibreriaMultimediaBD = new clsLibreria_MultimediaBD();
         objLibreriaMultimediaBD.sendUpdate(_query);
     }
+
+    /**
+     * Método para actualizar Actores
+     */
+    public void updateActorEnBD(String _query) {
+        clsActoresBD objActoresBD = new clsActoresBD();
+        objActoresBD.sendUpdate(_query);
+    }
     /**
      * A partir de aquí van las Deletes - son querys para borrar lineas enteras.
      *
@@ -785,11 +793,18 @@ public class clsGestorLN {
      */
 
     /**
-     * Método para actualizar Géneros de películas
+     * Método para eliminar librerias multimedia
      */
     public void deleteLibrerias_multimediaEnBD(String _query) {
         clsLibreria_MultimediaBD objLibreriaMultimediaBD = new clsLibreria_MultimediaBD();
         objLibreriaMultimediaBD.sendDelete(_query);
+    }
+    /**
+     * Método para eliminar actores
+     */
+    public void deleteActorEnBD(String _query) {
+        clsActoresBD objActoresBD = new clsActoresBD();
+        objActoresBD.sendDelete(_query);
     }
 
     /**
@@ -801,7 +816,7 @@ public class clsGestorLN {
      */
 
     /**
-     * M?todo para castear Directores.
+     * Método para castear Directores.
      */
     private ArrayList<itfPropertyV2> castclsDirectorToItfProperty(ArrayList<clsDirector> _datosDirector) {
         //Creamos el objeto en el que vamos a castear las pelicualas

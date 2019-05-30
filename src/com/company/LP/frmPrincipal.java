@@ -807,13 +807,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
      * Método consultar Actores desde la ventana.
      */
     private void caseConsActor() {
-        frmListaActor VentanaConsActor = new frmListaActor();
-        ArrayList<itfPropertyV2> resultado = objGestorLN.consultarActoresEnBD();
-        for (itfPropertyV2 L : resultado
-        ) {
-            VentanaConsActor.setItem(L);
-        }
-        desktop.add(VentanaConsActor);
+        frmTablaActor VentanaTablaActor = new frmTablaActor(objGestorLN, desktop, this);
+        desktop.add(VentanaTablaActor);
     }
 
     /**
