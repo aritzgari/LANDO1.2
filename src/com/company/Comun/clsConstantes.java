@@ -27,7 +27,7 @@ public class clsConstantes {
     /**
      * Constantes para querys de Música.
      */
-    public static final String queryInsertCancion = "insert into Canciones (Libreria_Multimedia_idLibreria_Multimedia, Título, Título_original, Año, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Videoclip, Enlace_a_YT, Género_Canción_idGénero_Canción, Album_idAlbum, Album_Cantante_idCantante)  values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+    public static final String queryInsertCancion = "insert into Canciones (Libreria_Multimedia_idLibreria_Multimedia, Título, Título_original, Año, Tipo_DoA, Precio, En_propiedad, En_busqueda, Formato, Enlace_a_YT, Género_Canción_idGénero_Canción, Album_idAlbum, Album_Cantante_idCantante)  values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
     public static final String queryConsultaCancion = "SELECT * FROM lando.canciones";
 
     /**
@@ -95,7 +95,7 @@ public class clsConstantes {
      * Constantes para querys de premios de canciones.
      */
 
-    public static final String queryInsertPremiosCancion = "insert into Premios_Canción (Nombre_Del_Premio, Categoria, Año, Canciones_idCanciones, Canciones_Género_Canción_idGénero_Canción, Canciones_Album_idAlbum, Canciones_Album_Cantante_idCantante, Canciones_Libreria_Multimedia_idLibreria_Multimedia) values (?, ?, ?, ?, ?, ?, ?, ?)";
+    public static final String queryInsertPremiosCancion = "insert into Premios_Canción (Nombre, Categoria, Año, Canciones_idCanciones, Canciones_Género_Canción_idGénero_Canción, Canciones_Album_idAlbum, Canciones_Album_Cantante_idCantante, Canciones_Libreria_Multimedia_idLibreria_Multimedia) values (?, ?, ?, ?, ?, ?, ?, ?)";
     public static final String queryConsultaPremiosCancion = "SELECT * FROM lando.premios_canción;";
 
     /**
@@ -107,6 +107,6 @@ public class clsConstantes {
     /**
      * Constantes para querys de cantante.
      */
-    public static final String queryInsertCantante = "insert into Cantante (Nombre) values (?)";
+    public static final String queryInsertCantante = "insert into Cantante (Nombre, Apellido) values (?, ?)";
     public static final String queryConsultaCantante = "SELECT * FROM lando.cantante;";
 }

@@ -16,14 +16,13 @@ public class clsCancion extends clsArticulo implements itfPropertyV2 {
     private int idAlbum;
     private int idCantante; //esto igual si hay varios hay jaleo
     private String Enlace_a_youtube;
-    private boolean Videoclip;
 
     private int Cantidad_musicos; //hay que replantear esto hermano
 
 
 
 
-    public clsCancion(int _libreria_Multimedia_idLibreria_Multimedia, String _titulo, String _titulo_original, int _anno_de_publicacion, int _idGenero, int _idAlbum, int _idCantante, String _tipo_DoA, double _precio, boolean _en_propiedad, boolean _en_busqueda, String _formato, boolean _Videoclip, String _Enlace_a_YT) {
+    public clsCancion(int _libreria_Multimedia_idLibreria_Multimedia, String _titulo, String _titulo_original, int _anno_de_publicacion, int _idGenero, int _idAlbum, int _idCantante, String _tipo_DoA, double _precio, boolean _en_propiedad, boolean _en_busqueda, String _formato, String _Enlace_a_YT) {
         Libreria_Multimedia_idLibreria_Multimedia=_libreria_Multimedia_idLibreria_Multimedia;
         setTitulo(_titulo);
         setTitulo_original(_titulo_original);
@@ -33,12 +32,16 @@ public class clsCancion extends clsArticulo implements itfPropertyV2 {
         setEn_propiedad(_en_propiedad);
         setEn_busqueda(_en_busqueda);
         setFormato(_formato);
-        Videoclip=_Videoclip;
         Enlace_a_youtube=_Enlace_a_YT;
         idGenero= _idGenero;
         idAlbum= _idAlbum;
         idCantante=_idCantante;
 
+    }
+
+    @Override
+    public String toString() {
+        return getTitulo();
     }
 
     @Override
@@ -81,9 +84,6 @@ public class clsCancion extends clsArticulo implements itfPropertyV2 {
             case "En_busqueda":
                 propResultado = getEn_busqueda();
                 break;
-            case "Videoclip":
-                propResultado = Videoclip;
-                break;
             case "Enlace_a_YT":
                 propResultado = Enlace_a_youtube;
                 break;
@@ -103,8 +103,5 @@ public class clsCancion extends clsArticulo implements itfPropertyV2 {
         return propResultado;
     }
 
-    @Override
-    public String toString() {
-        return getTitulo();
-    }
+
 }

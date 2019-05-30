@@ -6,7 +6,7 @@ public class clsPremios_CancionBD extends clsConexionBD  {
 
     private String Nombre;
     private String Categoria;
-    private int Anno;
+    private int Año;
     private int Canciones_idCanciones;
     private int Canciones_Género_Canción_idGénero_Canción;
     private int Canciones_Album_idAlbum;
@@ -14,10 +14,10 @@ public class clsPremios_CancionBD extends clsConexionBD  {
     private int Canciones_Libreria_Multimedia_idLibreria_Multimedia;
 
     //Constructor con parametros, pensado para el insert
-    public clsPremios_CancionBD(String _Nombre, String _Categoria, int _Anno, int _Canciones_idCanciones, int _Canciones_Género_Canción_idGénero_Canción,  int _Canciones_Album_idAlbum, int _Canciones_Album_Cantante_idCantante,int _Canciones_Libreria_Multimedia_idLibreria_Multimedia ) {
+    public clsPremios_CancionBD(String _Nombre, String _Categoria, int _Año, int _Canciones_idCanciones, int _Canciones_Género_Canción_idGénero_Canción,  int _Canciones_Album_idAlbum, int _Canciones_Album_Cantante_idCantante,int _Canciones_Libreria_Multimedia_idLibreria_Multimedia ) {
         setNombre(_Nombre);
         setCategoria(_Categoria);
-        setAnno(_Anno);
+        setAño(_Año);
         setCanciones_idCanciones(_Canciones_idCanciones);
         setCanciones_Género_Canción_idGénero_Canción(_Canciones_Género_Canción_idGénero_Canción);
         setCanciones_Album_idAlbum(_Canciones_Album_idAlbum);
@@ -46,12 +46,12 @@ public class clsPremios_CancionBD extends clsConexionBD  {
         Categoria = categoria;
     }
 
-    public int getAnno() {
-        return Anno;
+    public int getAño() {
+        return Año;
     }
 
-    public void setAnno(int anno) {
-        Anno = anno;
+    public void setAño(int año) {
+        Año = año;
     }
 
     public int getCanciones_idCanciones() {
@@ -105,7 +105,7 @@ public class clsPremios_CancionBD extends clsConexionBD  {
             this.setObjSt(this.getObjCon().prepareStatement(query, this.getObjSt().RETURN_GENERATED_KEYS));
             this.getObjSt().setString(1, getNombre());
             this.getObjSt().setString(2, getCategoria());
-            this.getObjSt().setInt(3, getAnno());
+            this.getObjSt().setInt(3, getAño());
             this.getObjSt().setInt(4, getCanciones_idCanciones());
             this.getObjSt().setInt(5, getCanciones_Género_Canción_idGénero_Canción());
             this.getObjSt().setInt(6, getCanciones_Album_idAlbum());

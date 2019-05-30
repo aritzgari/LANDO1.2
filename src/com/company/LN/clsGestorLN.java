@@ -15,6 +15,10 @@ import com.company.LD.clsAutorBD;
 import com.company.LD.clsGeneroLibroBD;
 import com.company.LD.clsEditorialBD;
 import com.company.LD.clsPremios_LibrosBD;
+import com.company.LD.clsGeneroCancionBD;
+import com.company.LD.clsCantanteBD;
+import com.company.LD.clsAlbumBD;
+import com.company.LD.clsPremios_CancionBD;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -46,16 +50,19 @@ public class clsGestorLN {
 
     private static ArrayList<clsArticulo> datosArticulos;
     private ArrayList<clsLibreriaMultimedia> datosLibrerias;
-
+    private static ArrayList<clsGeneroCancion> datosGeneroCancion;
     private static ArrayList<clsActor> datosActor;
     private static ArrayList<clsGeneroPeli> datosGeneroPeli;
     private static ArrayList<clsPremios> datosPremios;
     private static ArrayList<clsPremios_Pelicula> datosPremiosPeli;
     private static ArrayList<clsDirector> datosDirector;
     private static ArrayList<clsAutor> datosAutor;
+    private static ArrayList<clsCantante> datosCantante;
     private static ArrayList<clsGeneroLibro> datosGeneroLibro;
     private static ArrayList<clsEditorial> datosEditorial;
     private static ArrayList<clsPremios_Libro> datosPremiosLibro;
+    private static ArrayList<clsAlbum> datosAlbum;
+    private static ArrayList<clsPremios_Cancion> datosPremiosCancion;
 
     private int LibreriaDefinida = -1;
     private String NombreLibreriaDefinida = "<No seleccionada>";
@@ -78,6 +85,10 @@ public class clsGestorLN {
         datosGeneroLibro = new ArrayList<clsGeneroLibro>();
         datosEditorial = new ArrayList<clsEditorial>();
         datosPremiosLibro = new ArrayList<clsPremios_Libro>();
+        datosGeneroCancion = new ArrayList<clsGeneroCancion>();
+        datosCantante = new ArrayList<clsCantante>();
+        datosAlbum = new ArrayList<clsAlbum>();
+        datosPremiosCancion = new ArrayList<clsPremios_Cancion>();
     }
 
 
@@ -129,6 +140,10 @@ public class clsGestorLN {
         return datosAutor;
     }
 
+    public static ArrayList<clsCantante> getDatosCantante() {
+        return datosCantante;
+    }
+
     public static ArrayList<clsGeneroLibro> getDatosGeneroLibro() {
         return datosGeneroLibro;
     }
@@ -140,6 +155,12 @@ public class clsGestorLN {
     public static ArrayList<clsPremios_Libro> getDatosPremiosLibro() {
         return datosPremiosLibro;
     }
+
+    public static ArrayList<clsGeneroCancion> getDatosGeneroCancion() { return datosGeneroCancion; }
+
+    public static ArrayList<clsAlbum> getDatosAlbum() { return datosAlbum; }
+
+    public static ArrayList<clsPremios_Cancion> getDatosPremiosCancion() { return datosPremiosCancion; }
 
     /**
      * A partir de aqu? van las creaciones en base de datos.
@@ -219,11 +240,37 @@ public class clsGestorLN {
      *
      * @author RubenD AritzG
      */
-    public static int crearCancion(String Titulo, String Titulo_original, String Anno_de_publicacion, String Tipo_DoA, String Formato, boolean En_propiedad, boolean En_busqueda, double Precio, String Genero, String Premiosint, int Cantidad_musicos, String Musico1, String Musico2, String Musico3, String Musico4, String Musico5, String Album, String Enlace_a_youtube, boolean Videoclip) {
+    public static int crearCancion(int Libreria_Multimedia_idLibreria_Multimedia, String titulo, String titulo_original, int anno_de_publicacion, int idGenero, int idAlbum, int idCantante, String tipo_DoA, double precio, boolean en_propiedad, boolean en_busqueda, String formato, String Enlace_a_YT) {
         int retorno = 0;
         clsCancionBD objCancionBD;
-        objCancionBD = new clsCancionBD(Titulo, Titulo_original, Anno_de_publicacion, Tipo_DoA, Formato, En_propiedad, En_busqueda, Precio, Genero, Premiosint, Cantidad_musicos, Musico1, Musico2, Musico3, Musico4, Musico5, Album, Enlace_a_youtube, Videoclip);
+        objCancionBD = new clsCancionBD(Libreria_Multimedia_idLibreria_Multimedia, titulo, titulo_original, anno_de_publicacion, tipo_DoA, precio, en_propiedad, en_busqueda, formato, Enlace_a_YT, idGenero,  idAlbum, idCantante);
         retorno = objCancionBD.sendInsert(queryInsertCancion);
+        System.out.println(retorno);
+        return retorno;
+    }
+    /**
+     * Metodo para crear genero de cancion en el Gestor con datos que recibamos de LP
+     *
+     * @author RubenD AritzG
+     */
+    public static int crearGeneroCancion(String Nombre) {
+        int retorno = 0;
+        clsGeneroCancionBD objGeneroCancionBD;
+        objGeneroCancionBD = new clsGeneroCancionBD(Nombre);
+        retorno = objGeneroCancionBD.sendInsert(queryInsertGeneroCancion);
+        System.out.println(retorno);
+        return retorno;
+    }
+    /**
+     * Metodo para crear cantante en el Gestor con datos que recibamos de LP
+     *
+     * @author RubenD AritzG
+     */
+    public static int crearCantante(String Nombre, String Apellido) {
+        int retorno = 0;
+        clsCantanteBD objCantanteBD;
+        objCantanteBD = new clsCantanteBD(Nombre, Apellido);
+        retorno = objCantanteBD.sendInsert(queryInsertCantante);
         System.out.println(retorno);
         return retorno;
     }
@@ -240,6 +287,20 @@ public class clsGestorLN {
         System.out.println(retorno);
         return retorno;
     }
+
+    /**
+     * Metodo para crear actores en el Gestor con datos que recibamos de LP
+     *
+     * @author RubenD AritzG
+     */
+    public static int crearAlbum (String Nombre, int Cantante_idCantante) {
+        int retorno = 0;
+        clsAlbumBD objAlbumBD = new clsAlbumBD(Nombre, Cantante_idCantante);
+        retorno = objAlbumBD.sendInsert(queryInsertAlbum);
+        System.out.println(retorno);
+        return retorno;
+    }
+
 
     /**
      * Metodo para crear autores en el Gestor con datos que recibamos de LP
@@ -279,6 +340,20 @@ public class clsGestorLN {
         int retorno = 0;
         clsPremios_LibrosBD objPremiosLibroBD = new clsPremios_LibrosBD(Nombre, Categoria, Año, Libros_ISBN);
         retorno = objPremiosLibroBD.sendInsert(queryInsertPremiosLibro);
+        System.out.println(retorno);
+        return retorno;
+    }
+
+    /**
+     * Metodo para crear premios de canciones en el Gestor con datos que recibamos de LP
+     *
+     * @author RubenD AritzG
+     */
+
+    public static int crearPremiosCancion(String Nombre, String Categoria, int Año, int Canciones_idCanciones, int Canciones_Género_Canción_idGénero_Canción,  int Canciones_Album_idAlbum, int Canciones_Album_Cantante_idCantante,int Canciones_Libreria_Multimedia_idLibreria_Multimedia) {
+        int retorno = 0;
+        clsPremios_CancionBD objPremiosCancionBD = new clsPremios_CancionBD(Nombre, Categoria, Año, Canciones_idCanciones, Canciones_Género_Canción_idGénero_Canción, Canciones_Album_idAlbum, Canciones_Album_Cantante_idCantante, Canciones_Libreria_Multimedia_idLibreria_Multimedia);
+        retorno = objPremiosCancionBD.sendInsert(queryInsertPremiosCancion);
         System.out.println(retorno);
         return retorno;
     }
@@ -342,7 +417,7 @@ public class clsGestorLN {
      */
 
     /**
-     * M?todo para consultar Actores
+     * Método para consultar Actores
      */
     public ArrayList<itfPropertyV2> consultarActoresEnBD() {
         //Declaraciones

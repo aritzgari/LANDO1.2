@@ -2,11 +2,20 @@ package com.company.LD;
 
 import java.sql.SQLException;
 
+/**
+ * @author Ruben Domínguez
+ * Aritz Garitano
+ * <p>
+ * Clase para crear y almacenar peliculas.
+ * @see SQLException
+ */
+
 public class clsGeneroCancionBD extends clsConexionBD {
     private String Nombre;
 
+
     //Constructor con parametros, pensado para el insert
-    public clsGeneroCancionBD(String _Nombre, String _ISBNLibro) {
+    public clsGeneroCancionBD(String _Nombre) {
         setNombre(_Nombre);
     }
 

@@ -2,6 +2,14 @@ package com.company.LD;
 
 import java.sql.SQLException;
 
+/**
+ * @author Ruben Domínguez
+ * Aritz Garitano
+ * <p>
+ * Clase para crear y almacenar canciones.
+ * @see SQLException
+ */
+
 public class clsCancionBD extends clsConexionBD {
     private int Libreria_Multimedia_idLibreria_Multimedia;
     private String Titulo;
@@ -12,7 +20,6 @@ public class clsCancionBD extends clsConexionBD {
     private boolean En_propiedad;
     private boolean En_busqueda;
     private String Formato;
-    private String Videoclip;
     private String Enlace_a_YT;
     private int Género_Canción_idGénero_Canción;
     private int Album_idAlbum;
@@ -21,7 +28,7 @@ public class clsCancionBD extends clsConexionBD {
 
 
     //Constructor con parametros, pensado para el insert
-    public clsCancionBD(int _libreria_Multimedia_idLibreria_Multimedia, String _titulo, String _titulo_original, int _anno_de_publicacion,  String _tipo_DoA, double _precio, boolean _en_propiedad, boolean _en_busqueda, String _formato, String _Videoclip, String _Enlace_a_YT, int _Género_Canción_idGénero_Canción, int _Album_idAlbum, int _Album_Cantante_idCantante) {
+    public clsCancionBD(int _libreria_Multimedia_idLibreria_Multimedia, String _titulo, String _titulo_original, int _anno_de_publicacion,  String _tipo_DoA, double _precio, boolean _en_propiedad, boolean _en_busqueda, String _formato, String _Enlace_a_YT, int _Género_Canción_idGénero_Canción, int _Album_idAlbum, int _Album_Cantante_idCantante) {
         setLibreria_Multimedia_idLibreria_Multimedia(_libreria_Multimedia_idLibreria_Multimedia);
         setTitulo(_titulo);
         setTitulo_original(_titulo_original);
@@ -31,7 +38,6 @@ public class clsCancionBD extends clsConexionBD {
         setEn_propiedad(_en_propiedad);
         setEn_busqueda(_en_busqueda);
         setFormato(_formato);
-        setVideoclip(_Videoclip);
         setEnlace_a_YT(_Enlace_a_YT);
         setGénero_Canción_idGénero_Canción(_Género_Canción_idGénero_Canción);
         setAlbum_idAlbum(_Album_idAlbum);
@@ -39,7 +45,7 @@ public class clsCancionBD extends clsConexionBD {
     }
 
     //Constructor sin parametros, pensado para el select
-    public clsCancionBD(String titulo, String titulo_original, String anno_de_publicacion, String tipo_DoA, String formato, boolean en_propiedad, boolean en_busqueda, double precio, String genero, String premiosint, int cantidad_musicos, String musico1, String musico2, String musico3, String musico4, String musico5, String album, String enlace_a_youtube, boolean videoclip) {
+    public clsCancionBD() {
 
     }
 
@@ -115,14 +121,6 @@ public class clsCancionBD extends clsConexionBD {
         Formato = formato;
     }
 
-    public String getVideoclip() {
-        return Videoclip;
-    }
-
-    public void setVideoclip(String videoclip) {
-        Videoclip = videoclip;
-    }
-
     public String getEnlace_a_YT() {
         return Enlace_a_YT;
     }
@@ -169,16 +167,15 @@ public class clsCancionBD extends clsConexionBD {
             this.getObjSt().setString(2, getTitulo());
             this.getObjSt().setString(3, getTitulo_original());
             this.getObjSt().setInt(4, getAnno_de_publicacion());
-            this.getObjSt().setString(8, getTipo_DoA());
-            this.getObjSt().setDouble(9, getPrecio());
-            this.getObjSt().setBoolean(10, getEn_propiedad());
-            this.getObjSt().setBoolean(11, getEn_busqueda());
-            this.getObjSt().setString(12, getFormato());
-            this.getObjSt().setString(13, getVideoclip());
-            this.getObjSt().setString(14, getEnlace_a_YT());
-            this.getObjSt().setInt(15, getGénero_Canción_idGénero_Canción());
-            this.getObjSt().setInt(16, getAlbum_idAlbum());
-            this.getObjSt().setInt(17, getAlbum_Cantante_idCantante());
+            this.getObjSt().setString(5, getTipo_DoA());
+            this.getObjSt().setDouble(6, getPrecio());
+            this.getObjSt().setBoolean(7, getEn_propiedad());
+            this.getObjSt().setBoolean(8, getEn_busqueda());
+            this.getObjSt().setString(9, getFormato());
+            this.getObjSt().setString(10, getEnlace_a_YT());
+            this.getObjSt().setInt(11, getGénero_Canción_idGénero_Canción());
+            this.getObjSt().setInt(12, getAlbum_idAlbum());
+            this.getObjSt().setInt(13, getAlbum_Cantante_idCantante());
 
 
             regActualizados = this.getObjSt().executeUpdate();
