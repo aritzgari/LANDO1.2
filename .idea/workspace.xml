@@ -4,60 +4,18 @@
     <option name="SCOPE_TYPE" value="8" />
     <option name="CUSTOM_SCOPE_NAME" value="Project Files" />
   </component>
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="LANDO1.2:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f28a05cc-8887-48c4-8678-c8f41d95bdcd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/LP/frmTablaAutor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/LP/frmTablaDirector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/LP/frmTablaEditorial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/LP/frmTablaGeneroLibro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/LP/frmTablaGeneroPelicula.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/LP/frmTablaPeliculas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/LP/frmTablaPremiosLibro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/LP/frmTablaPremiosPelicula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/LANDO1_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/LANDO1_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/unnamed.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LANDO_BBDD/Modelo_LANDO.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/LANDO_BBDD/Modelo_LANDO.mwb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LANDO_BBDD/Modelo_LANDO.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/LANDO_BBDD/Modelo_LANDO.mwb.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LD/clsAutorBD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LD/clsAutorBD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LD/clsDirectorBD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LD/clsDirectorBD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LD/clsEditorialBD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LD/clsEditorialBD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LD/clsGeneroLibroBD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LD/clsGeneroLibroBD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LD/clsPeliculaBD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LD/clsPeliculaBD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LD/clsPremios_PeliculaBD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LD/clsPremios_PeliculaBD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsDirector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsDirector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsGeneroLibro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsGeneroLibro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsGestorLN.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsGestorLN.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsPelicula.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsPelicula.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsPremios_Pelicula.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LN/clsPremios_Pelicula.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/frmInsertGeneroPeli.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/frmInsertGeneroPeli.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/frmListaActor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/frmListaActor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/frmListaDirector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/frmListaDirector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/frmListaGeneroLibro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/frmListaGeneroLibro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/frmListaGeneroPeli.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/frmListaGeneroPeli.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/frmListaPeliculas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/frmListaPeliculas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/frmListaPremiosPelicula.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/frmListaPremiosPelicula.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/frmPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LANDO1.2/com/company/LP/frmPrincipal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LD/clsAutorBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LD/clsAutorBD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LD/clsDirectorBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LD/clsDirectorBD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LD/clsEditorialBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LD/clsEditorialBD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LD/clsGeneroLibroBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LD/clsGeneroLibroBD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LD/clsPeliculaBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LD/clsPeliculaBD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LD/clsPremios_LibrosBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LD/clsPremios_LibrosBD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LD/clsPremios_PeliculaBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LD/clsPremios_PeliculaBD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LN/clsDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LN/clsDirector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LN/clsGeneroLibro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LN/clsGeneroLibro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LN/clsGestorLN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LN/clsGestorLN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LN/clsPelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LN/clsPelicula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LN/clsPremios_Libro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LN/clsPremios_Libro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LN/clsPremios_Pelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LN/clsPremios_Pelicula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LP/frmInsertGeneroPeli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LP/frmInsertGeneroPeli.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LP/frmListaActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LP/frmListaActor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LP/frmListaDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LP/frmListaDirector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LP/frmListaGeneroLibro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LP/frmListaGeneroLibro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LP/frmListaGeneroPeli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LP/frmListaGeneroPeli.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LP/frmListaPeliculas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LP/frmListaPeliculas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LP/frmListaPremiosPelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LP/frmListaPremiosPelicula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LP/frmPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LP/frmPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/LANDO1_2_jar/LANDO1.2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/LANDO1_2_jar/LANDO1.2.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,7 +31,7 @@
     <favorites_list name="LANDO1.2" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -219,35 +177,46 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="LANDO1-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LANDO1-2" type="462c0819:PsiDirectoryNode" />
+              <item name="LANDO1.2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LANDO1.2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="LANDO1-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LANDO1-2" type="462c0819:PsiDirectoryNode" />
+              <item name="LANDO1.2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LANDO1.2" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LANDO1.2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LANDO1.2" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LANDO1.2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LANDO1.2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="LANDO1-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LANDO1-2" type="462c0819:PsiDirectoryNode" />
+              <item name="LANDO1.2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LANDO1.2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="company" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559255939248" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559257286410" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Copia de LANDO para el merge/LANDO1-2" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -323,7 +292,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.5057283" side_tool="true" weight="0.2881997" />
       <window_info id="Image Layers" order="1" />
@@ -331,7 +300,7 @@
       <window_info id="UI Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" sideWeight="0.505176" side_tool="true" weight="0.20726173" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.49482402" visible="true" weight="0.1433902" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.49482402" visible="true" weight="0.1452345" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29252437" />
@@ -341,7 +310,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50075644" side_tool="true" weight="0.39770868" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.31744313" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.31587562" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -778,13 +747,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsAlbum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/LN/clsAlbum.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/LP/frmPrincipal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -831,10 +794,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>LANDO1.2:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.29885057" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

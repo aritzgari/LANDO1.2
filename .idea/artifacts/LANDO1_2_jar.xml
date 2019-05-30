@@ -2,12 +2,9 @@
   <artifact type="jar" name="LANDO1.2:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/LANDO1_2_jar</output-path>
     <root id="archive" name="LANDO1.2.jar">
-      <element id="directory" name="META-INF">
-        <element id="file-copy" path="$USER_HOME$/Desktop/META-INF/MANIFEST.MF" />
-      </element>
       <element id="module-output" name="LANDO1.2" />
-      <element id="library" level="project" name="mysql-connector-java" />
       <element id="library" level="project" name="mysql-connector-java-8.0" />
+      <element id="library" level="project" name="mysql-connector-java" />
     </root>
   </artifact>
 </component>
