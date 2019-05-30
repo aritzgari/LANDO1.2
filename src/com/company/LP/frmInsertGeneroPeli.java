@@ -103,7 +103,7 @@ public class frmInsertGeneroPeli extends JInternalFrame implements ActionListene
                 }
                 break;
             case "Cancelar":
-                JTFNombre.setText("");
+                dispose();;
                 break;
             default:
                 //Igual una excepcion de Runtime?

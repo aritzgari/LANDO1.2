@@ -50,7 +50,7 @@ public class clsPremios_Libro extends clsPremios implements itfPropertyV2 {
             case "Año":
                 retorno =  getAño();
                 break;
-            case "Libro_ISBN":
+            case "Libros_ISBN":
                 retorno = Libros_ISBN;
                 break;
             case "Clase":

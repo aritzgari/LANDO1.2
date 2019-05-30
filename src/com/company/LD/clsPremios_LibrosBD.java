@@ -100,6 +100,17 @@ public class clsPremios_LibrosBD extends clsConexionBD {
 
     @Override
     public int sendUpdate(String query) {
+        this.conectarBD();
+        //Updateamos
+        try {
+            this.setObjSt(this.getObjCon().prepareStatement(query));
+            this.getObjSt().executeUpdate();
+        } catch (SQLException e) {
+            //Hay que decidir que gesti?n queremos hacer aqu?
+            // e.printStackTrace();
+        }
+        //Desconectamos
+        this.desconectarBD(this.getObjCon());
         return 0;
     }
 

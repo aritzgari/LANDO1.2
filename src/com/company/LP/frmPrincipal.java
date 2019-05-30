@@ -445,7 +445,6 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         menuItemInsPremiosCancion.setText("Premios Cancion");
         menuItemInsPremiosCancion.setActionCommand("ActionInsertPremiosCancion");
         menuInsertar.add(menuItemInsPremiosCancion);
-        menuInsertar.addSeparator();
 
         /* Crea los items del menu Consultar */
         menuItemConsLibrerias_Multimedia.setText("Librerias Multimedia");
@@ -781,13 +780,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
      * Método consultar peliculas desde la ventana.
      */
     private void caseConsPeliculas() {
-        frmListaPeliculas VentanaConsPeliculas = new frmListaPeliculas();
-        ArrayList<itfPropertyV2> resultado = objGestorLN.consultarPeliculaEnBD();
-        for (itfPropertyV2 L : resultado
-        ) {
-            VentanaConsPeliculas.setItem(L);
-        }
-        desktop.add(VentanaConsPeliculas);
+        frmTablaPeliculas VentanaTablaPelicula = new frmTablaPeliculas(objGestorLN, desktop, this);
+        desktop.add(VentanaTablaPelicula);
     }
 
     /**
@@ -815,13 +809,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
      * Método consultar Autores desde la ventana.
      */
     private void caseConsAutor() {
-        frmListaAutor VentanaConsAutor = new frmListaAutor();
-        ArrayList<itfPropertyV2> resultado = objGestorLN.consultarAutoresEnBD();
-        for (itfPropertyV2 L : resultado
-        ) {
-            VentanaConsAutor.setItem(L);
-        }
-        desktop.add(VentanaConsAutor);
+        frmTablaAutor VentanaTablaAutor = new frmTablaAutor(objGestorLN, desktop, this);
+        desktop.add(VentanaTablaAutor);
     }
 
     /**
@@ -829,13 +818,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
      */
 
     private void caseConsDirector() {
-        frmListaDirector VentanaConsDirector = new frmListaDirector();
-        ArrayList<itfPropertyV2> resultado = objGestorLN.consultarDirectorEnBD();
-        for (itfPropertyV2 L : resultado
-        ) {
-            VentanaConsDirector.setItem(L);
-        }
-        desktop.add(VentanaConsDirector);
+        frmTablaDirector VentanaTablaDirector = new frmTablaDirector(objGestorLN, desktop, this);
+        desktop.add(VentanaTablaDirector);
     }
 
     /**
@@ -843,13 +827,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
      */
 
     private void caseConsEditorial() {
-        frmListaEditorial VentanaConsEditorial = new frmListaEditorial();
-        ArrayList<itfPropertyV2> resultado = objGestorLN.consultarEditorialEnBD();
-        for (itfPropertyV2 L : resultado
-        ) {
-            VentanaConsEditorial.setItem(L);
-        }
-        desktop.add(VentanaConsEditorial);
+        frmTablaEditorial VentanaTablaEditorial = new frmTablaEditorial(objGestorLN, desktop, this);
+        desktop.add(VentanaTablaEditorial);
     }
 
     /**
@@ -857,13 +836,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
      */
 
     private void caseConsGeneroPeli() {
-        frmListaGeneroPeli VentanaConsGeneroPeli = new frmListaGeneroPeli();
-        ArrayList<itfPropertyV2> resultado = objGestorLN.consultarGeneroPeliEnBD();
-        for (itfPropertyV2 L : resultado
-        ) {
-            VentanaConsGeneroPeli.setItem(L);
-        }
-        desktop.add(VentanaConsGeneroPeli);
+        frmTablaGeneroPelicula VentanaTablaGeneroPeli = new frmTablaGeneroPelicula(objGestorLN, desktop, this);
+        desktop.add(VentanaTablaGeneroPeli);
     }
 
     /**
@@ -871,39 +845,24 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
      */
 
     private void caseConsGeneroLibro() {
-        frmListaGeneroLibro VentanaConsGeneroLibro = new frmListaGeneroLibro();
-        ArrayList<itfPropertyV2> resultado = objGestorLN.consultarGeneroLibrosEnBD();
-        for (itfPropertyV2 L : resultado
-        ) {
-            VentanaConsGeneroLibro.setItem(L);
-        }
-        desktop.add(VentanaConsGeneroLibro);
+        frmTablaGeneroLibro VentanaTablaGeneroLibro = new frmTablaGeneroLibro(objGestorLN, desktop, this);
+        desktop.add(VentanaTablaGeneroLibro);
     }
 
     /**
      * Método consultar premios de película desde la ventana.
      */
     private void caseConsPremiosPelicula() {
-        frmListaPremiosPelicula VentanaConsPremiosPelicula = new frmListaPremiosPelicula();
-        ArrayList<itfPropertyV2> resultado = objGestorLN.consultarPremiosPeliculaEnBD();
-        for (itfPropertyV2 L : resultado
-        ) {
-            VentanaConsPremiosPelicula.setItem(L);
-        }
-        desktop.add(VentanaConsPremiosPelicula);
+        frmTablaPremiosPelicula VentanaTablaPremiosPelicula = new frmTablaPremiosPelicula(objGestorLN, desktop, this);
+        desktop.add(VentanaTablaPremiosPelicula);
     }
 
     /**
      * Método consultar premios de película desde la ventana.
      */
     private void caseConsPremiosLibro() {
-        frmListaPremiosLibro VentanaConsPremiosLibro = new frmListaPremiosLibro();
-        ArrayList<itfPropertyV2> resultado = objGestorLN.consultarPremiosLibrosBD();
-        for (itfPropertyV2 L : resultado
-        ) {
-            VentanaConsPremiosLibro.setItem(L);
-        }
-        desktop.add(VentanaConsPremiosLibro);
+        frmTablaPremiosLibro VentanaTablaPremiosLibro = new frmTablaPremiosLibro(objGestorLN, desktop, this);
+        desktop.add(VentanaTablaPremiosLibro);
     }
 
     private void caseCambiar() {

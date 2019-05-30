@@ -16,7 +16,7 @@ public class clsPelicula extends clsArticulo implements itfPropertyV2 {
     /*atributos de la clase pelicula*/
     private int Libreria_Multimedia_idLibreria_Multimedia;
     private int Duracion;
-    private int Calificacion;
+    private int Puntuación;
     private int Calporedad;
     private String Saga;
     private double Orden;
@@ -26,7 +26,7 @@ public class clsPelicula extends clsArticulo implements itfPropertyV2 {
 
 
     //Constructor
-    public clsPelicula(int _libreria_Multimedia_idLibreria_Multimedia, String _titulo, String _titulo_original, int _anno_de_publicacion, int _duracion, int _calificacion, int _calporedad, String _tipo_DoA, double _precio, boolean _en_propiedad, boolean _en_busqueda, String _formato, String _saga, Double _orden, String _sinopsis, String _enlace_a_trailer) {
+    public clsPelicula(int _libreria_Multimedia_idLibreria_Multimedia, String _titulo, String _titulo_original, int _anno_de_publicacion, int _duracion, int _puntuacion, int _calporedad, String _tipo_DoA, double _precio, boolean _en_propiedad, boolean _en_busqueda, String _formato, String _saga, Double _orden, String _sinopsis, String _enlace_a_trailer) {
 
         Libreria_Multimedia_idLibreria_Multimedia = _libreria_Multimedia_idLibreria_Multimedia;
         setTitulo(_titulo);
@@ -35,7 +35,7 @@ public class clsPelicula extends clsArticulo implements itfPropertyV2 {
 
         setAnno_de_publicacion(_anno_de_publicacion);
         Duracion = _duracion;
-        Calificacion = _calificacion;
+        Puntuación = _puntuacion;
         Calporedad = _calporedad;
         //  Tipo_DoA = _tipo_DoA;
         setTipo_DoA(_tipo_DoA);
@@ -58,10 +58,10 @@ public class clsPelicula extends clsArticulo implements itfPropertyV2 {
     public Object getObjectProperty(String propiedad) throws clsPropiedadNonExistantException {
         Object propResultado = new Object();
         switch (propiedad) {
-            case "Titulo":
+            case "Título":
                 propResultado = getTitulo();
                 break;
-            case "Titulo_original":
+            case "Título_Original":
                 propResultado = getTitulo_original();
                 break;
             case "Tipo_DoA":
@@ -70,13 +70,10 @@ public class clsPelicula extends clsArticulo implements itfPropertyV2 {
             case "Formato":
                 propResultado = getFormato();
                 break;
-            case "Genero":
-                propResultado = getGenero();
-                break;
             case "Premios":
                 propResultado = getPremios();
                 break;
-            case "Enlace_a_trailer":
+            case "Enlace_al_Trailer":
                 propResultado = Enlace_a_trailer;
                 break;
             case "Sinopsis":
@@ -85,19 +82,19 @@ public class clsPelicula extends clsArticulo implements itfPropertyV2 {
             case "Saga":
                 propResultado = Saga;
                 break;
-            case "Duracion":
+            case "Duración":
                 propResultado = Duracion;
                 break;
             case "Calporedad":
                 propResultado = Calporedad;
                 break;
-            case "Calificacion":
-                propResultado = Calificacion;
+            case "Puntuación":
+                propResultado = Puntuación;
                 break;
             case "Libreria_Multimedia_idLibreria_Multimedia":
                 propResultado = Libreria_Multimedia_idLibreria_Multimedia;
                 break;
-            case "Anno_de_publicacion":
+            case "Año":
                 propResultado = getAnno_de_publicacion();
                 break;
             case "Clase":
@@ -106,7 +103,7 @@ public class clsPelicula extends clsArticulo implements itfPropertyV2 {
             case "Precio":
                 propResultado = getPrecio();
                 break;
-            case "Orden":
+            case "Ordén_en_Saga":
                 propResultado = Orden;
                 break;
             case "En_propiedad":

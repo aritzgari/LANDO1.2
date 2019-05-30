@@ -13,6 +13,10 @@ public class clsDirector implements itfPropertyV2 {
     private String Nombre;
     private String Apellido;
 
+    public clsDirector() {
+
+    }
+
     public int getIdDirector() {
         return idDirector;
     }

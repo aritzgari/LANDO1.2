@@ -15,6 +15,7 @@ import java.util.LinkedList;
  * Aritz Garitano
  * <p>
  * @see ModeloListaV2
+ * @deprecated
  */
 public class frmListaActor extends JInternalFrame implements ListSelectionListener
 {

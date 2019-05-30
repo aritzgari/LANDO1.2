@@ -10,11 +10,13 @@ import java.awt.*;
 import java.util.LinkedList;
 
 /**
- * Ventana para mostrar la lista de librerias multimedia que hay en la base de datos.
+ * Ventana para mostrar la lista de generos de peliculas que hay en la base de datos.
  * <p>
  *
  * @author Ruben Domínguez
  * Aritz Garitano
+ * @see ModeloListaV2
+ * @deprecated
  */
 public class frmListaGeneroPeli extends JInternalFrame implements ListSelectionListener {
     //Objeto visual

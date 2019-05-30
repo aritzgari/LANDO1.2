@@ -38,7 +38,7 @@ public class clsGeneroLibro implements itfPropertyV2 {
         Object retorno = new Object();
 
         switch (propiedad) {
-            case "idGénero":
+            case "idGénero_Libro":
                 retorno = this.getIdGénero_Libro();
                 break;
             case "Nombre":

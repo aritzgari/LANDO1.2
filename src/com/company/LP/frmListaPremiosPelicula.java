@@ -14,6 +14,7 @@ import java.util.LinkedList;
  * @author Ruben Domínguez
  * Aritz Garitano
  * @see ModeloListaV2
+ * @deprecated
  */
 
 public class frmListaPremiosPelicula  extends JInternalFrame implements ListSelectionListener {

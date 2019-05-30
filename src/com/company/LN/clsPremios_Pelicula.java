@@ -15,7 +15,8 @@ public class clsPremios_Pelicula extends clsPremios implements itfPropertyV2 {
 
 
     //Constructor con Parametros:
-    public clsPremios_Pelicula(String _Nombre, String _Categoria, int _Año, String _Titulodepeliculas) {
+    public clsPremios_Pelicula(int _idpremios, String _Nombre, String _Categoria, int _Año, String _Titulodepeliculas) {
+       setIdPremios(_idpremios);
         setNombre(_Nombre);
         setCategoria(_Categoria);
         setAño(_Año);

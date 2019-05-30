@@ -2,7 +2,7 @@ package com.company.LD;
 
 import java.sql.SQLException;
 
-public class clsPremios_PeliculaBD extends clsConexionBD{
+public class clsPremios_PeliculaBD extends clsConexionBD {
     private String Nombre;
     private String Categoria;
     private int Anno;
@@ -64,7 +64,7 @@ public class clsPremios_PeliculaBD extends clsConexionBD{
             this.getObjSt().setString(1, getNombre());
             this.getObjSt().setString(2, getCategoria());
             this.getObjSt().setInt(3, getAnno());
-            this.getObjSt().setString(4,getPelículas_Título());
+            this.getObjSt().setString(4, getPelículas_Título());
 
             regActualizados = this.getObjSt().executeUpdate();
 
@@ -90,6 +90,17 @@ public class clsPremios_PeliculaBD extends clsConexionBD{
 
     @Override
     public int sendUpdate(String query) {
+        this.conectarBD();
+        //Updateamos
+        try {
+            this.setObjSt(this.getObjCon().prepareStatement(query));
+            this.getObjSt().executeUpdate();
+        } catch (SQLException e) {
+            //Hay que decidir que gesti?n queremos hacer aqu?
+            // e.printStackTrace();
+        }
+        //Desconectamos
+        this.desconectarBD(this.getObjCon());
         return 0;
     }
 }

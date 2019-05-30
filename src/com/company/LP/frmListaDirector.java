@@ -13,6 +13,7 @@ import java.util.LinkedList;
  * <p>
  * @author Ruben Domínguez
  * Aritz Garitano
+ * @deprecated
  */
 public class frmListaDirector extends JInternalFrame implements ListSelectionListener
 {

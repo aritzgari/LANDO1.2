@@ -6,6 +6,16 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.util.LinkedList;
 
+/**
+ * Ventana para mostrar la lista de generos de libro que hay en la base de datos.
+ * <p>
+ *
+ * @author Ruben Domínguez
+ * Aritz Garitano
+ * @see ModeloListaV2
+ * @deprecated
+ */
+
 public class frmListaGeneroLibro extends JInternalFrame implements ListSelectionListener {
 
     //Objeto visual

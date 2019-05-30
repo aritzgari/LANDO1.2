@@ -478,7 +478,7 @@ public class clsGestorLN {
     }
 
     /**
-     * M?todo para consultar Directores
+     * Método para consultar Directores
      *
      * @return
      */
@@ -542,7 +542,7 @@ public class clsGestorLN {
     }
 
     /**
-     * M?todo para consultar G?neros de pel?culas.
+     * Método para consultar Géneros de películas.
      */
     public ArrayList<itfPropertyV2> consultarGeneroPeliEnBD() {
         //Declaraciones
@@ -713,7 +713,7 @@ public class clsGestorLN {
         //Meto rs en objeto
         try {
             while (resultado.next()) {
-                clsPremios_Pelicula objPremiosPelicula = new clsPremios_Pelicula(resultado.getString(2), resultado.getString(3), resultado.getInt(4), resultado.getString(5));
+                clsPremios_Pelicula objPremiosPelicula = new clsPremios_Pelicula(resultado.getInt(1), resultado.getString(2), resultado.getString(3), resultado.getInt(4), resultado.getString(5));
                 datosPremiosPeli.add(objPremiosPelicula);
             }
         } catch (SQLException e) {
@@ -786,6 +786,64 @@ public class clsGestorLN {
         objActoresBD.sendUpdate(_query);
     }
     /**
+     * Método para actualizar autores
+     */
+    public void updateAutorEnBD(String _query) {
+        clsAutorBD objActoresBD = new clsAutorBD();
+        objActoresBD.sendUpdate(_query);
+    }
+
+    /**
+     * Método para actualizar directores
+     */
+    public void updateDirectorEnBD(String _query) {
+        clsDirectorBD objDirectoresBD = new clsDirectorBD();
+        objDirectoresBD.sendUpdate(_query);
+    }
+    /**
+     * Método para actualizar premios pelicula.
+     */
+    public void updatePremiosPeliculaEnBD(String _query) {
+        clsPremios_PeliculaBD objPremiosPeliculaBD = new clsPremios_PeliculaBD();
+        objPremiosPeliculaBD.sendUpdate(_query);
+    }
+    /**
+     * Método para actualizar premios libro.
+     */
+    public void updatePremiosLibroEnBD(String _query) {
+        clsPremios_LibrosBD objPremiosLibroBD = new clsPremios_LibrosBD();
+        objPremiosLibroBD.sendUpdate(_query);
+    }
+    /**
+     * Método para actualizar peliculas
+     */
+    public void updatePeliculaEnBD(String _query) {
+        clsPeliculaBD objPeliculaBD = new clsPeliculaBD();
+        objPeliculaBD.sendUpdate(_query);
+    }
+    /**
+     * Método para actualizar generos de peliculas
+     */
+    public void updateGeneroPeliculaEnBD(String _query) {
+        clsGeneroPeliBD objGeneroPeliBD = new clsGeneroPeliBD();
+        objGeneroPeliBD.sendUpdate(_query);
+    }
+    /**
+     * Método para actualizar generos de libros
+     */
+    public void updateGeneroLibroEnBD(String _query) {
+        clsGeneroLibroBD objGeneroLibroBD = new clsGeneroLibroBD();
+        objGeneroLibroBD.sendUpdate(_query);
+    }
+    /**
+     * Método para actualizar editorial
+     */
+    public void updateEditorialEnBD(String _query) {
+        clsEditorialBD objEditorialBD = new clsEditorialBD();
+        objEditorialBD.sendUpdate(_query);
+    }
+
+    /**
      * A partir de aquí van las Deletes - son querys para borrar lineas enteras.
      *
      * @return void
@@ -805,6 +863,62 @@ public class clsGestorLN {
     public void deleteActorEnBD(String _query) {
         clsActoresBD objActoresBD = new clsActoresBD();
         objActoresBD.sendDelete(_query);
+    }
+    /**
+     * Método para eliminar director
+     */
+    public void deleteDirectorEnBD(String _query) {
+        clsDirectorBD objDirectorBD = new clsDirectorBD();
+        objDirectorBD.sendDelete(_query);
+    }
+    /**
+     * Método para eliminar autor
+     */
+    public void deleteAutorEnBD(String _query) {
+        clsAutorBD objAutorBD = new clsAutorBD();
+        objAutorBD.sendDelete(_query);
+    }
+    /**
+     * Método para eliminar premios pelicula
+     */
+    public void deletePremiosPeliculaEnBD(String _query) {
+        clsPremios_PeliculaBD objPremiosPeliculaBD = new clsPremios_PeliculaBD();
+        objPremiosPeliculaBD.sendDelete(_query);
+    }
+    /**
+     * Método para eliminar premios libro
+     */
+    public void deletePremiosLibroEnBD(String _query) {
+        clsPremios_LibrosBD objPremiosLibrosBD = new clsPremios_LibrosBD();
+        objPremiosLibrosBD.sendDelete(_query);
+    }
+    /**
+     * Método para eliminar  pelicula
+     */
+    public void deletePeliculaEnBD(String _query) {
+        clsPeliculaBD objPeliculaBD = new clsPeliculaBD();
+        objPeliculaBD.sendDelete(_query);
+    }
+    /**
+     * Método para eliminar genero pelicula
+     */
+    public void deleteGeneroPeliculaEnBD(String _query) {
+        clsGeneroPeliBD objGeneroPeliBD = new clsGeneroPeliBD();
+        objGeneroPeliBD.sendDelete(_query);
+    }
+    /**
+     * Método para eliminar genero libro
+     */
+    public void deleteGeneroLibroEnBD(String _query) {
+        clsGeneroLibroBD objGeneroLibroBD = new clsGeneroLibroBD();
+        objGeneroLibroBD.sendDelete(_query);
+    }
+    /**
+     * Método para eliminar editorial
+     */
+    public void deleteEditorialEnBD(String _query) {
+        clsEditorialBD objEditorialBD = new clsEditorialBD();
+        objEditorialBD.sendDelete(_query);
     }
 
     /**
