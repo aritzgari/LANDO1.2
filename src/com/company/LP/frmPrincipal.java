@@ -773,8 +773,12 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
 
     private void caseConsLibrerias() {
         //Ahora con JTables:
-        frmTablaLibrerias VentanaTablaLibrerias = new frmTablaLibrerias(objGestorLN, desktop, this);
-        desktop.add(VentanaTablaLibrerias);
+    //    frmTablaLibrerias VentanaTablaLibrerias = new frmTablaLibrerias(objGestorLN, desktop, this);
+    //    desktop.add(VentanaTablaLibrerias);
+
+        //Ahora con JTables:
+        frmTablaLibreriasV2 VentanaTablaLibreriasV2 = new frmTablaLibreriasV2(objGestorLN, desktop, this);
+        desktop.add(VentanaTablaLibreriasV2);
     }
 
     /**

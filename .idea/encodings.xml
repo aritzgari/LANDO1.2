@@ -51,6 +51,7 @@
     <file url="file://$PROJECT_DIR$/src/com/company/LP/Jlist2.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/ModeloLista.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/ModeloListaV2.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LP/ModeloTablaLibrerias.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/UtilidadesLP.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/clsMenu.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/clsMenuUsuario.java" charset="ISO-8859-1" />
@@ -84,6 +85,7 @@
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmMenuLibrerias.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmPrincipal.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmTablaLibrerias.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LP/frmTablaLibreriasV2.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/LP/frmTablaMultimedia.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/com/company/clsMain.java" charset="ISO-8859-1" />
     <file url="PROJECT" charset="UTF-8" />
