@@ -31,7 +31,7 @@ import static com.company.Comun.clsConstantes.*;
 /**
  * Clase que intercomunica LP con LN
  *
- * @author Ruben Dom?nguez
+ * @author Ruben Domínguez
  * Aritz Garitano
  */
 
@@ -768,6 +768,28 @@ public class clsGestorLN {
     public void updateGeneroPeliEnBD(String _query) {
         clsGeneroPeliBD objGeneroPeliBD = new clsGeneroPeliBD();
         objGeneroPeliBD.sendUpdate(_query);
+    }
+
+    /**
+     * Método para actualizar Librerias multimedia
+     */
+    public void updateLibrerias_multimediaEnBD(String _query) {
+        clsLibreria_MultimediaBD objLibreriaMultimediaBD = new clsLibreria_MultimediaBD();
+        objLibreriaMultimediaBD.sendUpdate(_query);
+    }
+    /**
+     * A partir de aquí van las Deletes - son querys para borrar lineas enteras.
+     *
+     * @return void
+     * @author RubenD AritzG
+     */
+
+    /**
+     * Método para actualizar Géneros de películas
+     */
+    public void deleteLibrerias_multimediaEnBD(String _query) {
+        clsLibreria_MultimediaBD objLibreriaMultimediaBD = new clsLibreria_MultimediaBD();
+        objLibreriaMultimediaBD.sendDelete(_query);
     }
 
     /**

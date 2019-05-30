@@ -90,7 +90,7 @@ public class frmInsertPeliculas extends JInternalFrame implements ActionListener
     public frmInsertPeliculas(clsGestorLN _objGestorLN) {
         //Tama?o y componentes
         JPContent = new JPanel();
-        setBounds(0, 0, 1000, 475);
+        setBounds(0, 40, 1000, 475);
         //setLayout(null);
         //setPreferredSize(new Dimension(400, 400));
 

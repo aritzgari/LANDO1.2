@@ -71,7 +71,7 @@ public class frmMenuLibrerias extends JInternalFrame implements ActionListener, 
         setTitle("Menu de Librerías");
 
 
-        //News y Valores de inicializaci?n
+        //News y Valores de inicialización
         //JPanels
         JPContent = new JPanel();
         JPLista = new JPanel();
@@ -95,7 +95,7 @@ public class frmMenuLibrerias extends JInternalFrame implements ActionListener, 
         JBFIXED = new JButton("Bibidi Babidi Bu");
 
 
-        //A?adimos las cosas a sus continentes
+        //Añadimos las cosas a sus continentes
         JPLista.add(scroll);                                    //El scroll va dentro del panel que existe solo para a la lista
         JPLista.add(JLista);                                    //La lista va en el panel que existe solo para la lista
         JPContent.add(JLSeleccion);

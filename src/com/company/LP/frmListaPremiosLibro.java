@@ -9,7 +9,7 @@ import java.awt.*;
 import java.util.LinkedList;
 
 /**
- * Ventana para mostrar la lista de ºpeliculas de la base de datos.
+ * Ventana para mostrar la lista de Premios de Libros de la base de datos.
  * <p>
  *
  * @author Ruben Domínguez

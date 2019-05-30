@@ -33,7 +33,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     private JMenuBar barraMenu;
     private JMenu menuInsertar, menuConsultar;
     /* items del menu Insertar */
-    private JMenuItem menuItemInsLibrerias_Multimedia, menuItemInsPeliculas, menuItemInsLibros, menuItemInsCancion, menuItemInsActor, menuItemInsDirector, menuItemInsGeneroPeli, menuItemInsAutor, menuItemInsGeneroLibro, menuItemInsEditorial, menuItemInsPremiosPelicula, menuItemInsPremiosLibro, menuItemInsGeneroCancion, menuItemInsCantante,  menuItemInsAlbum, menuItemInsPremiosCancion;
+    private JMenuItem menuItemInsLibrerias_Multimedia, menuItemInsPeliculas, menuItemInsLibros, menuItemInsCancion, menuItemInsActor, menuItemInsDirector, menuItemInsGeneroPeli, menuItemInsAutor, menuItemInsGeneroLibro, menuItemInsEditorial, menuItemInsPremiosPelicula, menuItemInsPremiosLibro, menuItemInsGeneroCancion, menuItemInsCantante, menuItemInsAlbum, menuItemInsPremiosCancion;
     /* items del menu Consultar */
     private JMenuItem menuItemConsLibrerias_Multimedia, menuItemConsPeliculas, menuItemConsLibros, menuItemConsMusica, menuItemConsActor, menuItemConsDirector, menuItemConsGeneroPeli, menuItemConsAutor, menuItemConsGeneroLibro, menuItemConsEditorial, menuItemConsPremiosPelicula, menuItemConsPremiosLibro;
 
@@ -47,8 +47,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
     static final String SHOW = "show";
     static final String CLEAR = "clear";
     String newline = "\n";
-    static final int desktopWidth = 1000;
-    static final int desktopHeight = 600;
+    static final int desktopWidth = 1365;
+    static final int desktopHeight = 700;
 
     //Constructor
     public frmPrincipal(String title) {
@@ -57,7 +57,8 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
         //Set up the GUI.
         desktop = new JDesktopPane();
         desktop.setPreferredSize(new Dimension(desktopWidth, desktopHeight));
-        this.setExtendedState(MAXIMIZED_BOTH);
+        //this.setExtendedState(MAXIMIZED_BOTH);                                //Para que salga directamente maximizado
+        this.setResizable(false);
         setContentPane(desktop);
         //Inicializacion
         inicializador();
@@ -299,7 +300,11 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
 
         JPInterfazMenuLibreria.setBackground(Color.white);
         JPInterfazMenuLibreria.setLayout(null);
-        JLNombreLibreria2.setForeground(Color.gray);
+        if(objGestorLN.getNombreLibreriaDefinida() == "<No seleccionada>") {
+            JLNombreLibreria2.setForeground(Color.RED);
+        } else {
+            JLNombreLibreria2.setForeground(Color.gray);
+        }
         //JPInterfazMenuLibreria.setBorder();
 
         JBCambiar.setActionCommand("Cambiar");
@@ -747,7 +752,7 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
      */
     private void caseInsertarGeneroCancion() {
 
-        frmInsertGeneroCancion VentanaInsertGeneroCancion= new frmInsertGeneroCancion(objGestorLN);
+        frmInsertGeneroCancion VentanaInsertGeneroCancion = new frmInsertGeneroCancion(objGestorLN);
         desktop.add(VentanaInsertGeneroCancion);
     }
 
@@ -767,18 +772,9 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
      */
 
     private void caseConsLibrerias() {
-        frmListaLibrerias VentanaConsLibrerias = new frmListaLibrerias();
-        ArrayList<itfPropertyV2> resultado = new ArrayList<itfPropertyV2>();
-        resultado.clear();
-        resultado = objGestorLN.consultarLibreriasEnBD();
-        for (itfPropertyV2 L : resultado
-        ) {
-            VentanaConsLibrerias.setItem(L);
-            //Aqui podemos poner un sout para ver lo que est? a?adiendo y asi sabemos si es que a?ade uno cada vez o cada vez a?ade uno mas.
-            System.out.println(L.toString());
-            System.out.println(resultado.size());
-        }
-        desktop.add(VentanaConsLibrerias);
+        //Ahora con JTables:
+        frmTablaLibrerias VentanaTablaLibrerias = new frmTablaLibrerias(objGestorLN, desktop, this);
+        desktop.add(VentanaTablaLibrerias);
     }
 
     /**
@@ -931,6 +927,11 @@ public class frmPrincipal extends JFrame implements InternalFrameListener, Actio
 
     public void actualizarNombreLibreriaSeleccionada() {
         JLNombreLibreria2.setText(objGestorLN.getNombreLibreriaDefinida());
+        if(objGestorLN.getNombreLibreriaDefinida() == "<No seleccionada>") {
+            JLNombreLibreria2.setForeground(Color.RED);
+        } else {
+            JLNombreLibreria2.setForeground(Color.gray);
+        }
     }
 
 

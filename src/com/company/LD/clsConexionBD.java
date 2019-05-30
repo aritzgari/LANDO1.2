@@ -30,7 +30,7 @@ public abstract class clsConexionBD {
     public String user = "root";
 
     //Password
-    public String password = "23011604";
+    public String password = "1243";
 
     private Connection objCon;
     private PreparedStatement objSt;
@@ -93,16 +93,19 @@ public abstract class clsConexionBD {
 
     public abstract int sendUpdate(String query);
 
-    public void sendDelete/*byID*/(String query, int id) {
-
+    public void sendDelete(String query) {
+        //Conectamos
+        this.conectarBD();
+        //Updateamos
         try {
-            objSt = objCon.prepareStatement(query);
-            objSt.setInt(1, id);
-            objSt.executeUpdate();
+            this.setObjSt(this.getObjCon().prepareStatement(query));
+            this.getObjSt().executeUpdate();
         } catch (SQLException e) {
-
+            //Hay que decidir que gesti?n queremos hacer aqu?
+            // e.printStackTrace();
         }
-
+        //Desconectamos
+        this.desconectarBD(this.getObjCon());
     }
 
 

@@ -26,7 +26,7 @@ public class clsMain {
             public void run()
             {
                 //Create and set up the window.
-                frmPrincipal VentanaPrincipal = new frmPrincipal("LANDO V0.6");
+                frmPrincipal VentanaPrincipal = new frmPrincipal("LANDO V0.8");
                 VentanaPrincipal.createAndShowGUI();
 
             }
