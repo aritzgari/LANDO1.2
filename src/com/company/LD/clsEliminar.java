@@ -13,6 +13,7 @@ import java.sql.SQLException;
  * <p>
  * La clase sirve para eliminar un registro de la base de datos. Previamente, realiza una
  * conexión con la base de datos, y después de eliminar el registro, vuelve a cerrar la conexión.
+ * @deprecated Sustituida.
  */
 public class clsEliminar {
 /*
